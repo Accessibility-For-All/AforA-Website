@@ -1,4 +1,4 @@
-// navbarloader.js - Reusable navbar component for Sopris Apps
+// navbarloader.js - Reusable navbar component for Accessibility For All
 function loadFavicons() {
     // Add all favicon links to the document head
     const head = document.head;
@@ -58,7 +58,7 @@ function loadNavbar() {
         <nav class="navbar">
             <div class="navbar-container">
                 <div class="navbar-brand">
-                    <h2>Sopris Apps</h2>
+                    <h2>Accessibility For All</h2>
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-actions">
