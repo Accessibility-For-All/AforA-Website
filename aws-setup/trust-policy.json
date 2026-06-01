@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowGitHubActionsFromMain",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::155962534528:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+        },
+        "StringLike": {
+          "token.actions.githubusercontent.com:sub": "repo:Accessibility-For-All/AforA-Website:ref:refs/heads/main"
+        }
+      }
+    },
+    {
+      "Sid": "AllowManualWorkflowDispatch",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::155962534528:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:Accessibility-For-All/AforA-Website:environment:production"
+        }
+      }
+    }
+  ]
+}

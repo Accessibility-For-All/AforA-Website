@@ -1,0 +1,23 @@
+# Cowork site config — read by the cowork-site skill (and humans)
+site_slug: soprisapps
+production:
+  s3_bucket: www.soprisapps.com
+  s3_region: us-west-2
+  cloudfront_distribution_id: E31CSAAZLD937L
+  origin_type: website                  # CloudFront origin talks to the S3 *website* endpoint
+                                        # (so /folder/ serves /folder/index.html automatically — unlike schoolblocks)
+  domain: www.soprisapps.com
+  apex_domain: soprisapps.com
+preview:
+  mode: github-pages
+  branch: gh-pages
+  base_path: /AforA-Website             # GitHub Pages serves at https://accessibility-for-all.github.io/AforA-Website/
+build:
+  command: ""                           # blank = no build step (raw static site)
+  output_dir: "."                       # contents live at the repo root
+aws:
+  account_id: "155962534528"
+  deploy_role_arn: "arn:aws:iam::155962534528:role/gha-deploy-soprisapps"
+github:
+  org: Accessibility-For-All
+  repo: AforA-Website                   # note: repo branding differs from bucket name (legacy)

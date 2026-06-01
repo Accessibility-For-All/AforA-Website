@@ -1,0 +1,72 @@
+name: Deploy to production (S3 + CloudFront)
+
+# Triggered when commits land on main (typically via a merged PR).
+# Syncs the site to s3://www.soprisapps.com and invalidates CloudFront.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:           # allow manual re-deploys from the Actions tab
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false   # let an in-flight deploy finish; queue the next
+
+permissions:
+  id-token: write             # required for OIDC role assumption
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://www.soprisapps.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::155962534528:role/gha-deploy-soprisapps
+          role-session-name: gha-deploy-${{ github.run_id }}
+          aws-region: us-west-2
+
+      - name: Show what we're about to deploy
+        run: |
+          echo "Deploying commit ${{ github.sha }} to s3://www.soprisapps.com"
+          aws sts get-caller-identity
+
+      - name: Sync to S3
+        run: |
+          aws s3 sync . s3://www.soprisapps.com \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".cowork/*" \
+            --exclude "scripts/*" \
+            --exclude "aws-setup/*" \
+            --exclude ".gitignore" \
+            --exclude "README.md" \
+            --exclude "BOOTSTRAP.md"
+
+      - name: Invalidate CloudFront cache
+        id: invalidate
+        run: |
+          INV_ID=$(aws cloudfront create-invalidation \
+            --distribution-id E31CSAAZLD937L \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "invalidation_id=${INV_ID}" >> $GITHUB_OUTPUT
+          echo "Created invalidation ${INV_ID}"
+
+      - name: Wait for invalidation to complete
+        run: |
+          aws cloudfront wait invalidation-completed \
+            --distribution-id E31CSAAZLD937L \
+            --id ${{ steps.invalidate.outputs.invalidation_id }}
+
+      - name: Done
+        run: echo "Live at https://www.soprisapps.com (commit ${{ github.sha }})"

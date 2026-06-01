@@ -1,0 +1,67 @@
+name: PR Preview (GitHub Pages)
+
+# Builds a per-PR preview of the site and publishes it to GitHub Pages
+# at https://accessibility-for-all.github.io/AforA-Website/pr-<NUMBER>/
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+# Allow one preview build per PR at a time. New pushes cancel in-flight runs.
+concurrency:
+  group: preview-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write          # we push the built site to the gh-pages branch
+  pull-requests: write     # we comment the preview URL onto the PR
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Stage site content (everything but repo metadata)
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.cowork' \
+            --exclude='scripts' \
+            --exclude='aws-setup' \
+            --exclude='README.md' \
+            --exclude='BOOTSTRAP.md' \
+            --exclude='_site' \
+            ./ _site/
+
+      - name: Publish to gh-pages under pr-${{ github.event.pull_request.number }}/
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          destination_dir: pr-${{ github.event.pull_request.number }}
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'preview(pr-${{ github.event.pull_request.number }}): ${{ github.event.pull_request.title }}'
+
+      - name: Comment preview URL on PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: preview-link
+          message: |
+            **Preview ready**
+            https://accessibility-for-all.github.io/AforA-Website/pr-${{ github.event.pull_request.number }}/
+
+            _Commit `${{ github.event.pull_request.head.sha }}` · updated <abbr>${{ github.event.pull_request.updated_at }}</abbr>_
+
+            Notes:
+            - Absolute paths (e.g. `<img src="/logo.png">`) may 404 in the preview because GitHub Pages serves from a subpath. They will work in production.
+            - The preview is **public** — anyone with the URL can see it. Don't publish secrets.
