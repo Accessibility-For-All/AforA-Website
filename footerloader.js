@@ -3,7 +3,7 @@ function loadFooter() {
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-brand">
-                    <h2>Accessibility For All</h2>
+                    <img src="images/logo.png" alt="Accessibility For All" class="brand-logo">
                 </div>
             </div>
         </footer>
@@ -15,4 +15,4 @@ function loadFooter() {
 }
 
 // Load footer when DOM is ready
-document.addEventListener('DOMContentLoaded', loadFooter);
+document.addEven

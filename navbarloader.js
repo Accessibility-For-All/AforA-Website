@@ -58,7 +58,7 @@ function loadNavbar() {
         <nav class="navbar">
             <div class="navbar-container">
                 <div class="navbar-brand">
-                    <h2>Accessibility For All</h2>
+                    <a href="index.html"><img src="images/logo.png" alt="Accessibility For All" class="brand-logo"></a>
                 </div>
                 <div class="navbar-menu">
                     <div class="navbar-actions">
@@ -77,7 +77,4 @@ function loadNavbar() {
 
 
 // Load navbar and favicons when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-    loadFavicons();
-    loadNavbar();
-});
+document.addEventListener('DOMConten

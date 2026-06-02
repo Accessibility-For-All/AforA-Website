@@ -42,6 +42,18 @@ body {
     letter-spacing: -0.01em;
 }
 
+.navbar-brand .brand-logo {
+    display: block;
+    height: 40px;
+    width: auto;
+}
+
+.footer-brand .brand-logo {
+    display: block;
+    height: 34px;
+    width: auto;
+}
+
 .navbar-menu {
     display: flex;
     align-items: center;
@@ -326,6 +338,18 @@ body {
     background-color: #c19660;
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(212, 165, 116, 0.3);
+}
+
+/* Suite section images — ensure SVGs fill their column at full size */
+.features-image,
+.notifications-image,
+.pwa-image,
+.policies-image,
+.social-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
 }
 
 /* Features Section */
@@ -944,8 +968,7 @@ body {
 
 .policies-image {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    height: auto;
     border-radius: 8px;
     border: 1px solid #e5e5e5;
 }
@@ -1844,4 +1867,49 @@ body {
     .footer-brand h2 {
         font-size: 1.5rem;
     }
+}
+
+/* ===== Scroll reveal animations ===== */
+main { overflow-x: clip; } /* prevent sideways scroll during reveal */
+
+/* Hidden start state applies ONLY when JS is active (html.js-anim),
+   so content is always visible if JavaScript is disabled. */
+.js-anim .reveal {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.js-anim .reveal-left  { transform: translateX(-70px); }
+.js-anim .reveal-right { transform: translateX(70px); }
+.js-anim .reveal-up    { transform: translateY(48px); }
+
+.js-anim .reveal.revealed {
+    opacity: 1;
+    transform: none;
+}
+
+/* Respect reduced motion: keep a gentle fade, drop the sliding movement. */
+@media (prefers-reduced-motion: reduce) {
+    .js-anim .reveal { transition: opacity 0.5s ease; transform: none !important; }
+    .js-anim .reveal.revealed { opacity: 1; }
+}
+
+/* ===== Hover row highlight ===== */
+.features-section,
+.notifications-section,
+.pwa-section,
+.policies-section,
+.social-section {
+    border-radius: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features-section:hover,
+.notifications-section:hover,
+.pwa-section:hover,
+.policies-section:hover,
+.social-section:hover {
+    background-color: #f6f9fc;
+    box-shadow: 0 14px 38px rgba(20, 39, 72, 0.07);
 }
