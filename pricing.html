@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <!-- END ACCESSIBILITY FOR ALL FAVICONS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing – Accessibility For All Suite</title>
+    <meta name="description" content="Pricing for the Accessibility For All suite — start free with a WCAG 2.1 AA scan, then add DocMersion, Accessibility Monitor, VPAT & ACR, and Native Web. Custom quotes by organization size.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: '#3aa9ff', dark: '#0a2239' },
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <!-- Hero -->
+    <section class="relative pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
+      <div class="absolute top-20 left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-3xl"></div>
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center">
+        <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">Pricing</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Pricing that scales with <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">your accessibility needs</span></h1>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">Start free with an instant WCAG scan, then add the tools you need. Every quote is tailored to your organization's size, number of documents, and pages monitored — so you only pay for what fits.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="wcag-checker.html" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#10b981; color:#0d9488;" onmouseover="this.style.background='#10b981'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0d9488';"><i class="bi bi-search mr-2"></i>Start free WCAG scan</a>
+          <button onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;"><span class="relative z-10">Get a custom quote</span><div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free callout -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="relative rounded-3xl overflow-hidden border border-emerald-100 bg-gradient-to-r from-emerald-50 to-teal-50 p-8 md:p-10 flex flex-col md:flex-row items-center gap-6">
+          <span class="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl text-white text-2xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-clipboard-check"></i></span>
+          <div class="flex-1 text-center md:text-left">
+            <h2 class="text-2xl font-extrabold mb-1">Check — the WCAG 2.1 AA scanner — is free</h2>
+            <p class="text-gray-600">Scan any site or document and get an instant Legal Risk Level report — 50+ criteria, no sign-up, no cost.</p>
+          </div>
+          <a href="wcag-checker.html" class="px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all hover:scale-105 whitespace-nowrap" style="background:linear-gradient(135deg,#10b981,#14b8a6);">Scan for free</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Per-product pricing cards -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Choose your tools</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Each product is quoted on its own, or bundled across the suite for the best value. Here's what each plan covers.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- WCAG Checker (free) -->
+          <div class="relative bg-white rounded-3xl border-2 border-emerald-200 shadow-lg p-7 flex flex-col">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-clipboard-check"></i></div>
+            <h3 class="font-bold text-xl mb-1">Websites · Check</h3>
+            <div class="text-3xl font-extrabold mb-4 text-emerald-600">Free</div>
+            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-emerald-500"></i> Instant single-page scan</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-emerald-500"></i> 50+ WCAG 2.1 AA criteria</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-emerald-500"></i> Legal Risk Level report</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-emerald-500"></i> No sign-up required</li>
+            </ul>
+            <a href="wcag-checker.html" class="mt-auto text-center px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#10b981,#14b8a6);">Start scanning</a>
+          </div>
+          <!-- DocMersion -->
+          <div class="relative bg-white rounded-3xl border border-gray-100 shadow-lg p-7 flex flex-col">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:#228AFF;"><i class="bi bi-translate"></i></div>
+            <h3 class="font-bold text-xl mb-1">Documents <span class="text-sm font-semibold text-gray-400">· DocMersion</span></h3>
+            <div class="text-3xl font-extrabold mb-4">Custom quote</div>
+            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500"></i> Documents into accessible web pages</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500"></i> Full-text search &amp; 250+ languages</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500"></i> Mobile-friendly &amp; screen-reader ready</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500"></i> Readability, statistics &amp; manage tools</li>
+            </ul>
+            <button onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="mt-auto px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="background:#228AFF;">Get a quote</button>
+          </div>
+          <!-- Monitor -->
+          <div class="relative bg-white rounded-3xl border border-gray-100 shadow-lg p-7 flex flex-col">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);"><i class="bi bi-activity"></i></div>
+            <h3 class="font-bold text-xl mb-1">Websites · Monitor</h3>
+            <div class="text-3xl font-extrabold mb-4">Custom quote</div>
+            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-teal-600"></i> Continuous full-sitemap scanning</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-teal-600"></i> Prioritized, screenshot-linked fixes</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-teal-600"></i> Team controls &amp; scheduling</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-teal-600"></i> Priced by pages monitored</li>
+            </ul>
+            <button onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="mt-auto px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#0d9488,#115e59);">Get a quote</button>
+          </div>
+          <!-- VPAT -->
+          <div class="relative bg-white rounded-3xl border border-gray-100 shadow-lg p-7 flex flex-col">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:#0a2239;"><i class="bi bi-patch-check"></i></div>
+            <h3 class="font-bold text-xl mb-1">ACR Studio</h3>
+            <div class="text-3xl font-extrabold mb-4">Per report</div>
+            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700"></i> Automated scans, auto-generated ACR</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700"></i> Certified human review built in</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700"></i> Signed ACR + VPAT for procurement</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700"></i> Re-review reminders when required</li>
+            </ul>
+            <button onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="mt-auto px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="background:#0a2239;">Request a quote</button>
+          </div>
+          <!-- Native Web -->
+          <div class="relative bg-white rounded-3xl border border-gray-100 shadow-lg p-7 flex flex-col">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#14b8a6,#228AFF);"><i class="bi bi-window-stack"></i></div>
+            <h3 class="font-bold text-xl mb-1">Documents · Native</h3>
+            <div class="text-3xl font-extrabold mb-4">Custom quote</div>
+            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-cyan-500"></i> Hand-built, highest-compliance pages</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-cyan-500"></i> Structured, tagged &amp; always current</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-cyan-500"></i> WCAG 2.1 AA, Section 508, ADA Title II</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-cyan-500"></i> Priced by documents converted</li>
+            </ul>
+            <button onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="mt-auto px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg,#14b8a6,#228AFF);">Get a quote</button>
+          </div>
+          <!-- Bundle -->
+          <div class="relative bg-[#0a2239] text-white rounded-3xl shadow-xl p-7 flex flex-col">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-white/20 text-white text-xl"><i class="bi bi-stars"></i></div>
+            <h3 class="font-bold text-xl mb-1">The Full Suite</h3>
+            <div class="text-3xl font-extrabold mb-4">Best value</div>
+            <ul class="space-y-2 text-sm text-white/90 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill"></i> All three solutions, one agreement</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill"></i> Audit, monitor, remediate, document</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill"></i> Volume pricing across products</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill"></i> Dedicated implementation support</li>
+            </ul>
+            <button onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="mt-auto px-6 py-3 rounded-full font-semibold bg-white text-blue-600 transition-all hover:scale-105">Talk to sales</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How pricing works -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">How pricing works</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Three simple factors shape every quote — so it always fits your organization.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center"><i class="bi bi-building text-3xl text-blue-500 mb-3"></i><h3 class="font-bold mb-1">Organization size</h3><p class="text-gray-600 text-sm">From a single department to an enterprise or public entity.</p></div>
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center"><i class="bi bi-files text-3xl text-teal-600 mb-3"></i><h3 class="font-bold mb-1">Documents &amp; pages</h3><p class="text-gray-600 text-sm">The number of documents converted and pages monitored.</p></div>
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center"><i class="bi bi-grid-1x2 text-3xl text-teal-600 mb-3"></i><h3 class="font-bold mb-1">Tools you choose</h3><p class="text-gray-600 text-sm">Pick one product, several, or bundle the whole suite.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently asked <span class="bg-gradient-to-r from-[#0a2239] to-[#228AFF] bg-clip-text text-transparent">questions</span></h2>
+        </div>
+        <div class="space-y-5">
+          <div class="p-6 bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Is the Check scan really free?</h3>
+            <p class="text-gray-700">Yes. You can scan a page against 50+ WCAG 2.1 AA criteria and get a Legal Risk Level report instantly, with no sign-up and no cost.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl border border-teal-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Can I buy just one solution?</h3>
+            <p class="text-gray-700">Absolutely. Each solution stands on its own. Many organizations start with one and add others as their accessibility program grows.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Why custom quotes instead of fixed prices?</h3>
+            <p class="text-gray-700">Accessibility needs vary widely. Pricing is based on your organization size, the number of documents and pages involved, and the tools you choose — so you only pay for what fits.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Will this help with the April 2027 ADA Title II deadline?</h3>
+            <p class="text-gray-700">Yes. The suite is built around WCAG 2.1 AA, the standard tied to ADA Title II. Start by auditing, then monitor and remediate, and document conformance with a VPAT/ACR.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Contact Form -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-slate-50">
+      <div class="container mx-auto px-6 max-w-3xl">
+        <div id="pricing-contact-form-container"></div>
+      </div>
+    </section>
+    <script src="contactformloader.js"></script>
+  </body>
+</html>
