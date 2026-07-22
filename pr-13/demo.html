@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo – Accessibility For All</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#228AFF",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Navbar and Footer Loaders -->
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <!-- PDF Genie -->
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+
+    <!-- Demo Section -->
+    <main class="pt-32 pb-20 min-h-[60vh] bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center">Explore Our Interactive <span style="color: #228AFF;">Demo</span></h1>
+        
+        <!-- Demo Embed Container -->
+        <div class="group relative mb-8">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"></div>
+          <div class="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+            
+            <!-- Arcade Embed -->
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <!--ARCADE EMBED START-->
+              <div style="position: relative; padding-bottom: 56.25%; height: 0; width: 100%; overflow: hidden;">
+                <iframe src="https://demo.arcade.software/Q0aiaL3qDKFfQe9FboXV?embed&embed_mobile=inline&embed_desktop=inline&show_copy_link=true" 
+                        title="What is DocMersion?" 
+                        frameborder="0" 
+                        loading="lazy" 
+                        webkitallowfullscreen 
+                        mozallowfullscreen 
+                        allowfullscreen 
+                        allow="clipboard-write" 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light; border-radius: 0.75rem;">
+                </iframe>
+              </div>
+              <!--ARCADE EMBED END-->
+            </div>
+          </div>
+        </div>
+
+        <!-- Overview video -->
+        <div class="group relative mb-8">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"></div>
+          <div class="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+            <h2 class="text-2xl md:text-3xl font-extrabold mb-4 text-center">Prefer to watch? <span style="color: #0b6ad4;">See it in action</span></h2>
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <div style="position: relative; padding-bottom: 56.25%; height: 0; width: 100%; overflow: hidden;">
+                <iframe src="https://www.youtube.com/embed/6oDE1fwG_2Q"
+                        title="Accessibility For All product demo video"
+                        frameborder="0"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0.75rem;">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center relative">
+          <div class="absolute -inset-8 bg-gradient-to-r from-blue-300/20 to-teal-300/20 rounded-full blur-3xl"></div>
+          <div class="relative">
+            <h3 class="text-3xl font-bold mb-4 text-gray-900">Ready to Transform Your Documents?</h3>
+            <!-- <p class="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">See how DocMersion can make your PDFs and documents more accessible, searchable, and user-friendly for your organization.</p> -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1" style="background: #228AFF;">
+                <span class="relative z-10">Book a Personal Demo</span>
+                <div class="absolute inset-0 rounded-full bg-gradient-to-r from-[#228AFF] to-[#0d9488] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a href="pricing.html" class="group relative px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-2xl hover:-translate-y-1" style="border-color: #228AFF; color: #228AFF; background: transparent;">
+                <span class="relative z-10 transition-colors duration-300 group-hover:text-white">Learn More About Pricing</span>
+                <div class="absolute inset-0 rounded-full bg-gradient-to-r from-[#228AFF] to-[#0d9488] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        COMMENTED OUT: Solutions Highlight section
+        <section class="mt-20">
+          <div class="text-center mb-12">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Key Solutions You'll <span style="color: #228AFF;">See</span></h3>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Experience the power of modern document transformation</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            <div class="group relative text-center h-full">
+              <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+              <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i class="bi bi-search text-white text-3xl"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-gray-900">Smart Search</h4>
+                <p class="text-gray-600 leading-relaxed flex-grow">Find information instantly with AI-powered search across all your documents.</p>
+              </div>
+            </div>
+            <div class="group relative text-center h-full">
+              <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+              <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+                <div class="w-20 h-20 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i class="bi bi-universal-access text-white text-3xl"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-gray-900">WCAG 2.1 Compliant</h4>
+                <p class="text-gray-600 leading-relaxed flex-grow">Ensure accessibility for all users with full compliance standards.</p>
+              </div>
+            </div>
+            <div class="group relative text-center h-full">
+              <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+              <div class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+                <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i class="bi bi-phone text-white text-3xl"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3 text-gray-900">Mobile Responsive</h4>
+                <p class="text-gray-600 leading-relaxed flex-grow">Perfect experience on any device, from desktop to mobile.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        -->
+
+        <!-- Clutter to Clarity Section -->
+        <section class="py-20">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900">The <span style="color: #228AFF;">"Clutter to Clarity"</span> Effect</h2>
+              <p class="text-gray-600 text-lg max-w-2xl mx-auto">Turn chaos into organized, accessible information</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+              <div class="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-200">
+                <!-- Animation Container -->
+                <div id="clutter-clarity-container" class="relative h-96 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300">
+                  
+                  <!-- Chaotic Paper Files State -->
+                  <div id="paper-clutter" class="absolute inset-0 flex items-center justify-center transition-all duration-1000">
+                    <div class="relative w-full h-full flex items-center justify-center">
+                      <!-- Stack of messy papers - centered initially -->
+                      <div class="paper-stack relative flex items-center justify-center">
+                        <div class="paper bg-white shadow-lg transform rotate-12 absolute w-32 h-40 border border-gray-300 p-2 -translate-x-8 -translate-y-4" data-target="0">
+                          <div class="text-xs text-gray-600 space-y-1">
+                            <div class="h-1 bg-red-300 rounded w-3/4"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-full"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-5/6"></div>
+                            <div class="text-red-600 font-bold text-xs">URGENT</div>
+                          </div>
+                        </div>
+                        <div class="paper bg-white shadow-lg transform -rotate-6 absolute w-32 h-40 border border-gray-300 p-2 -translate-x-4 -translate-y-2" data-target="1">
+                          <div class="text-xs text-gray-600 space-y-1">
+                            <div class="h-1 bg-blue-300 rounded w-2/3"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-full"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-4/5"></div>
+                            <div class="text-blue-600 font-bold text-xs">POLICY</div>
+                          </div>
+                        </div>
+                        <div class="paper bg-white shadow-lg transform rotate-3 absolute w-32 h-40 border border-gray-300 p-2 -translate-x-10 translate-y-0" data-target="2">
+                          <div class="text-xs text-gray-600 space-y-1">
+                            <div class="h-1 bg-green-300 rounded w-4/5"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-full"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-3/4"></div>
+                            <div class="text-green-600 font-bold text-xs">FORM</div>
+                          </div>
+                        </div>
+                        <div class="paper bg-white shadow-lg transform -rotate-12 absolute w-32 h-40 border border-gray-300 p-2 -translate-x-2 -translate-y-6" data-target="3">
+                          <div class="text-xs text-gray-600 space-y-1">
+                            <div class="h-1 bg-blue-300 rounded w-1/2"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-full"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-2/3"></div>
+                            <div class="text-teal-700 font-bold text-xs">MEMO</div>
+                          </div>
+                        </div>
+                        <div class="paper bg-white shadow-lg transform rotate-8 absolute w-32 h-40 border border-gray-300 p-2 -translate-x-12 -translate-y-7" data-target="4">
+                          <div class="text-xs text-gray-600 space-y-1">
+                            <div class="h-1 bg-teal-300 rounded w-3/5"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-full"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-4/6"></div>
+                            <div class="text-teal-700 font-bold text-xs">REPORT</div>
+                          </div>
+                        </div>
+                        <div class="paper bg-white shadow-lg transform rotate-15 absolute w-32 h-40 border border-gray-300 p-2 translate-x-0 translate-y-2" data-target="5">
+                          <div class="text-xs text-gray-600 space-y-1">
+                            <div class="h-1 bg-cyan-300 rounded w-2/3"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-full"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-3/5"></div>
+                            <div class="text-cyan-600 font-bold text-xs">MANUAL</div>
+                          </div>
+                        </div>
+                        <div class="paper bg-white shadow-lg transform -rotate-9 absolute w-32 h-40 border border-gray-300 p-2 -translate-x-14 -translate-y-3" data-target="6">
+                          <div class="text-xs text-gray-600 space-y-1">
+                            <div class="h-1 bg-cyan-300 rounded w-4/5"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-full"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-2/3"></div>
+                            <div class="text-teal-700 font-bold text-xs">GUIDE</div>
+                          </div>
+                        </div>
+                        <div class="paper bg-white shadow-lg transform rotate-18 absolute w-32 h-40 border border-gray-300 p-2 -translate-x-6 -translate-y-9" data-target="7">
+                          <div class="text-xs text-gray-600 space-y-1">
+                            <div class="h-1 bg-yellow-300 rounded w-3/4"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-full"></div>
+                            <div class="h-0.5 bg-gray-400 rounded w-4/5"></div>
+                            <div class="text-yellow-600 font-bold text-xs">NOTICE</div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  <!-- Organized Documents State -->
+                  <div id="organized-docs" class="absolute inset-0 opacity-0 transition-all duration-1000 p-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl h-full border-2 border-blue-200 p-6 flex flex-col justify-center">
+                      
+                      <div class="text-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <i class="bi bi-check-circle text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Organized & Accessible</h3>
+                      </div>
+                      
+                      <!-- Organized document grid -->
+                      <div class="grid grid-cols-4 gap-3 max-w-2xl mx-auto">
+                        <div class="organized-doc bg-white rounded-lg shadow-sm border border-red-200 p-2 h-20">
+                          <div class="h-1 bg-red-300 rounded w-3/4 mb-1"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-full mb-0.5"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-2/3 mb-1"></div>
+                          <div class="text-red-600 font-bold text-xs">URGENT</div>
+                        </div>
+                        <div class="organized-doc bg-white rounded-lg shadow-sm border border-blue-200 p-2 h-20">
+                          <div class="h-1 bg-blue-300 rounded w-2/3 mb-1"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-full mb-0.5"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-3/4 mb-1"></div>
+                          <div class="text-blue-600 font-bold text-xs">POLICY</div>
+                        </div>
+                        <div class="organized-doc bg-white rounded-lg shadow-sm border border-green-200 p-2 h-20">
+                          <div class="h-1 bg-green-300 rounded w-4/5 mb-1"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-full mb-0.5"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-2/3 mb-1"></div>
+                          <div class="text-green-600 font-bold text-xs">FORM</div>
+                        </div>
+                        <div class="organized-doc bg-white rounded-lg shadow-sm border border-blue-200 p-2 h-20">
+                          <div class="h-1 bg-blue-300 rounded w-1/2 mb-1"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-full mb-0.5"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-3/5 mb-1"></div>
+                          <div class="text-teal-700 font-bold text-xs">MEMO</div>
+                        </div>
+                        <div class="organized-doc bg-white rounded-lg shadow-sm border border-teal-200 p-2 h-20">
+                          <div class="h-1 bg-teal-300 rounded w-3/5 mb-1"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-full mb-0.5"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-4/5 mb-1"></div>
+                          <div class="text-teal-700 font-bold text-xs">REPORT</div>
+                        </div>
+                        <div class="organized-doc bg-white rounded-lg shadow-sm border border-cyan-200 p-2 h-20">
+                          <div class="h-1 bg-cyan-300 rounded w-2/3 mb-1"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-full mb-0.5"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-3/4 mb-1"></div>
+                          <div class="text-cyan-600 font-bold text-xs">MANUAL</div>
+                        </div>
+                        <div class="organized-doc bg-white rounded-lg shadow-sm border border-cyan-200 p-2 h-20">
+                          <div class="h-1 bg-cyan-300 rounded w-4/5 mb-1"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-full mb-0.5"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-2/3 mb-1"></div>
+                          <div class="text-teal-700 font-bold text-xs">GUIDE</div>
+                        </div>
+                        <div class="organized-doc bg-white rounded-lg shadow-sm border border-yellow-200 p-2 h-20">
+                          <div class="h-1 bg-yellow-300 rounded w-3/4 mb-1"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-full mb-0.5"></div>
+                          <div class="h-0.5 bg-gray-300 rounded w-4/5 mb-1"></div>
+                          <div class="text-yellow-600 font-bold text-xs">NOTICE</div>
+                        </div>
+                      </div>
+                      
+                      <div class="text-center mt-4">
+                        <p class="text-sm text-gray-600">All documents searchable, accessible, and beautifully organized</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Message -->
+                <div class="text-center mt-8">
+                  <p class="text-2xl font-bold text-gray-900 mb-2">
+                    <span style="color: #228AFF;">From clutter</span> 
+                    <span class="text-teal-700">to clarity.</span>
+                  </p>
+                  <button id="replay-clutter-clarity" class="mt-4 px-6 py-3 bg-gradient-to-r from-blue-200 to-cyan-300 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <i class="bi bi-arrow-clockwise mr-2"></i>Transform Again
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <!-- Contact Form Container - Loaded by contactformloader.js -->
+    <div id="contact-form-container"></div>
+    
+    <!-- Footer will be loaded by footerloader.js -->
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Clutter to Clarity Animation
+      function initClutterClarityAnimation() {
+        const paperClutter = document.getElementById('paper-clutter');
+        const organizedDocs = document.getElementById('organized-docs');
+        const replayButton = document.getElementById('replay-clutter-clarity');
+        const container = document.getElementById('clutter-clarity-container');
+        
+        let clutterTimeout;
+        
+        // Define target positions for organized grid (4x2 grid) - perfectly centered
+        const targetPositions = [
+          { x: -105, y: -30 },  // Top row, 1st position
+          { x: -35, y: -30 },   // Top row, 2nd position  
+          { x: 35, y: -30 },    // Top row, 3rd position
+          { x: 105, y: -30 },   // Top row, 4th position
+          { x: -105, y: 30 },   // Bottom row, 1st position
+          { x: -35, y: 30 },    // Bottom row, 2nd position
+          { x: 35, y: 30 },     // Bottom row, 3rd position
+          { x: 105, y: 30 }     // Bottom row, 4th position
+        ];
+        
+        function startClutterTransform() {
+          // Reset states
+          paperClutter.style.opacity = '1';
+          organizedDocs.style.opacity = '0';
+          
+          // Clear any existing timeouts
+          if (clutterTimeout) clearTimeout(clutterTimeout);
+          
+          // Start transformation after 2 seconds
+          clutterTimeout = setTimeout(() => {
+            // Organize papers into grid positions
+            const papers = paperClutter.querySelectorAll('.paper');
+            papers.forEach((paper, index) => {
+              const target = targetPositions[index];
+              if (target) {
+                setTimeout(() => {
+                  // Move to organized position and straighten
+                  paper.style.transform = `translate(${target.x}px, ${target.y}px) rotate(0deg) scale(0.7)`;
+                  paper.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                }, index * 150);
+              }
+            });
+            
+            // After papers are organized, fade to final organized view
+            setTimeout(() => {
+              paperClutter.style.opacity = '0';
+              organizedDocs.style.opacity = '1';
+            }, 2000);
+          }, 2000);
+        }
+        
+        // Click handler for container
+        if (container) {
+          container.addEventListener('click', startClutterTransform);
+        }
+        
+        // Auto-start when section comes into view
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setTimeout(startClutterTransform, 1000);
+            }
+          });
+        }, { threshold: 0.5 });
+        
+        if (container) {
+          observer.observe(container);
+        }
+        
+        // Replay button functionality
+        if (replayButton) {
+          replayButton.addEventListener('click', () => {
+            // Reset paper positions to original chaotic state
+            const papers = paperClutter.querySelectorAll('.paper');
+            papers.forEach((paper, index) => {
+              paper.style.transition = 'none';
+              paper.style.transform = paper.getAttribute('data-original-transform') || '';
+              paper.style.opacity = '1';
+            });
+            
+            // Store original transforms if not already stored
+            papers.forEach(paper => {
+              if (!paper.getAttribute('data-original-transform')) {
+                const computedStyle = window.getComputedStyle(paper);
+                const transform = computedStyle.transform;
+                paper.setAttribute('data-original-transform', paper.style.transform);
+              }
+            });
+            
+            setTimeout(startClutterTransform, 100);
+          });
+        }
+        
+        // Store original transforms on load
+        setTimeout(() => {
+          const papers = paperClutter.querySelectorAll('.paper');
+          papers.forEach(paper => {
+            paper.setAttribute('data-original-transform', paper.style.transform);
+          });
+        }, 100);
+      }
+      
+      // Initialize clutter to clarity animation
+      initClutterClarityAnimation();
+    });
+    </script>
+    <script src="contactformloader.js"></script>
+  </body>
+</html>
