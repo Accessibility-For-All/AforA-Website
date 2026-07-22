@@ -10,3 +10,5 @@ Internal — excluded from the deploy, never served publicly.
 - [Internal dirs excluded from deploy](internal-dirs-excluded.md) — docs/.claude/memory/CLAUDE.md must stay out of both workflows' sync
 - [Repo vs bucket naming](repo-vs-bucket-naming.md) — AforA-Website repo but soprisapps.com bucket/domain (legacy, both correct)
 - [Hosting direction](hosting-direction.md) — recommended move to Cloudflare (site + scanner), front end in Astro; pending Stephen's sign-off; scanner is greenfield
+- [John Ray / GHL coordination](john-ray-ghl-coordination.md) — what John owes us (tracking code, webhook URLs, GitHub user) / we owe him; URLs get recorded there
+- [Stripe account boundary](stripe-account-boundary.md) — MCP-connected Stripe = Blend's; A4A objects only in the client account; STRIPE-SETUP runbook when connected
