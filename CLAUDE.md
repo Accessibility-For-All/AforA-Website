@@ -51,3 +51,4 @@ Every contributor leaves the same trail, so the next person reconstructs nothing
 - Watch a deploy: `gh run watch <id> --exit-status` (or the Actions tab).
 - Verify CI is actually executing before trusting it: **`/ci-reality-check`**.
 - Environment sanity at session start: **`/self-check`**.
+- Confirm you're in the right repo / branch / files before editing (guards against cross-project edits and concurrent-session clobbering): **`/whereami`**.
