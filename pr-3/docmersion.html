@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <!-- END ACCESSIBILITY FOR ALL FAVICONS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documents – The DocMersion Toolkit | Accessibility For All</title>
+    <meta name="description" content="Documents is Accessibility For All's document solution, powered by the DocMersion toolkit — accessible conversion, Flesch-Kincaid readability insights, usage statistics, and per-document management.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: '#3aa9ff', dark: '#0a2239' },
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <!-- Product Hero -->
+    <section class="relative pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
+      <div class="absolute top-24 right-1/4 w-64 h-64 bg-blue-200/40 rounded-full blur-3xl"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2 text-center lg:text-left">
+            <a href="index.html#products" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 mb-4 hover:gap-3 transition-all"><i class="bi bi-grid-1x2"></i> Accessibility For All Suite · Documents</a>
+            <div class="flex items-center justify-center lg:justify-start gap-3 mb-3">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white text-2xl" style="background:#228AFF;"><i class="bi bi-files"></i></span>
+              <h1 class="text-4xl md:text-5xl font-extrabold">Documents</h1>
+            </div>
+            <p class="text-sm font-semibold text-gray-500 mb-4 flex items-center justify-center lg:justify-start gap-2"><span class="inline-block w-8 h-px bg-gray-300"></span>Powered by the <span class="text-black font-bold">Doc<span style="color:#228AFF;">Mersion</span></span> toolkit</p>
+            <p class="text-xl text-gray-700 mb-6 leading-relaxed">Turn your documents automatically into accessible experiences — fully searchable, translatable, and mobile-friendly web pages.</p>
+            <p class="text-gray-600 mb-8 leading-relaxed">Instead of burying information in static PDFs, everyone can instantly find, read, and understand exactly what they need. Clearer documents mean better compliance and a safer, more informed organization for all.</p>
+            <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start items-center">
+              <a href="#get-started" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;"><span class="relative z-10"><i class="bi bi-rocket-takeoff mr-2"></i>Get started free</span><div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></a>
+              <a href="book-demo.html" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#228AFF; color:#228AFF;" onmouseover="this.style.background='#228AFF'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#228AFF';">Book a demo</a>
+              <a href="demo.html" class="font-semibold text-gray-600 hover:text-blue-600 transition-colors underline underline-offset-4">See a live example</a>
+            </div>
+            <p class="mt-4 text-sm text-gray-500"><i class="bi bi-check-circle-fill text-green-500 mr-1"></i> Free plan available · No credit card required</p>
+          </div>
+          <!-- Browser mock -->
+          <div class="lg:w-1/2 w-full">
+            <div class="relative max-w-lg mx-auto">
+              <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 blur-2xl"></div>
+              <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
+                <div class="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
+                  <span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-green-400"></span>
+                  <div class="ml-3 flex-1 bg-white rounded-md border border-gray-200 px-3 py-1 text-xs text-gray-500 truncate">docmersion.io/handbook/employee-policies</div>
+                </div>
+                <div class="p-5">
+                  <div class="flex items-center gap-2 mb-4">
+                    <div class="flex-1 flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
+                      <i class="bi bi-search text-gray-400"></i><span class="text-sm text-gray-700">remote work</span>
+                    </div>
+                    <button class="text-xs font-semibold text-white px-3 py-2 rounded-lg" style="background:#228AFF;">SEARCH</button>
+                  </div>
+                  <div class="flex items-center justify-between text-xs mb-4">
+                    <span class="inline-flex items-center gap-1 text-gray-600 border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-globe"></i> English</span>
+                    <span class="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 rounded-full px-3 py-1"><i class="bi bi-universal-access"></i> WCAG 2.1 AA</span>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-4">
+                    <div class="text-xs text-gray-400 mb-1">12 matches · 0.2s</div>
+                    <div class="font-bold text-gray-900 mb-2">Section 4 — Remote Work Policy</div>
+                    <div class="space-y-2">
+                      <div class="h-2 bg-gray-200 rounded w-full"></div>
+                      <div class="h-2 bg-gray-200 rounded w-5/6"></div>
+                      <div class="h-2 bg-blue-200 rounded w-2/3"></div>
+                      <div class="h-2 bg-gray-200 rounded w-full"></div>
+                    </div>
+                  </div>
+                  <div class="mt-3 flex gap-2 text-[11px]">
+                    <span class="bg-blue-50 text-blue-700 rounded-full px-2 py-1">Searchable</span>
+                    <span class="bg-teal-50 text-teal-700 rounded-full px-2 py-1">Translatable</span>
+                    <span class="bg-cyan-50 text-cyan-700 rounded-full px-2 py-1">Mobile-ready</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Conversion Demo (input -> output) -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-10">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">See it in action</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Any document in. <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">An accessible web page out.</span></h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">DocMersion doesn't stop at PDFs. Pick a file type to see how the same source becomes a searchable, translatable, screen-reader-ready page.</p>
+        </div>
+
+        <!-- File-type tabs -->
+        <div id="dm-tabs" class="flex flex-wrap justify-center gap-2 mb-8">
+          <button class="dm-tab" data-type="pdf">PDF</button>
+          <button class="dm-tab" data-type="word">Word</button>
+          <button class="dm-tab" data-type="ppt">PowerPoint</button>
+          <button class="dm-tab" data-type="excel">Excel</button>
+          <button class="dm-tab" data-type="image">Images &amp; Scans</button>
+          <button class="dm-tab" data-type="gdoc">Google Docs</button>
+          <button class="dm-tab" data-type="html">HTML</button>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 items-stretch bg-white rounded-3xl border border-gray-100 shadow-2xl p-6 md:p-8">
+
+            <!-- INPUT -->
+            <div class="flex flex-col">
+              <div class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-3">Input · your file</div>
+              <div class="flex-grow rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50 p-5">
+                <div class="flex items-center gap-3 mb-4">
+                  <span id="dm-in-icon" class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#ef4444;"><i class="bi bi-file-earmark-pdf"></i></span>
+                  <div>
+                    <div id="dm-in-name" class="font-semibold text-gray-800 text-sm">employee-handbook.pdf</div>
+                    <div class="text-xs text-red-500"><i class="bi bi-exclamation-circle"></i> Not accessible</div>
+                  </div>
+                </div>
+                <div id="dm-in-body" class="space-y-2">
+                  <div class="h-2.5 bg-gray-200 rounded w-full"></div>
+                  <div class="h-2.5 bg-gray-200 rounded w-5/6"></div>
+                  <div class="h-2.5 bg-gray-200 rounded w-11/12"></div>
+                  <div class="h-2.5 bg-gray-200 rounded w-2/3"></div>
+                  <div class="h-2.5 bg-gray-200 rounded w-full"></div>
+                  <div class="h-2.5 bg-gray-200 rounded w-3/4"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TRANSFORM ARROW -->
+            <div class="flex md:flex-col items-center justify-center gap-2 md:px-2">
+              <span class="inline-flex items-center justify-center h-12 w-12 rounded-full text-white shadow-lg" style="background: #228AFF;">
+                <i class="bi bi-arrow-down text-xl md:hidden"></i>
+                <i class="bi bi-arrow-right text-xl hidden md:inline"></i>
+              </span>
+              <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">DocMersion</span>
+            </div>
+
+            <!-- OUTPUT -->
+            <div class="flex flex-col">
+              <div class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-3">Output · accessible web page</div>
+              <div class="flex-grow rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <div class="flex items-center gap-2 px-3 py-2 bg-gray-50 border-b border-gray-100">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-300"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-300"></span><span class="w-2.5 h-2.5 rounded-full bg-green-300"></span>
+                  <span class="ml-2 text-[11px] text-gray-500 truncate">yourorg.gov/handbook</span>
+                </div>
+                <div class="p-4">
+                  <div class="flex items-center gap-2 mb-3 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
+                    <i class="bi bi-search text-gray-400 text-sm"></i><span class="text-xs text-gray-500">Search this document…</span>
+                  </div>
+                  <div class="font-bold text-gray-900 mb-2 text-sm">Employee Handbook</div>
+                  <div class="space-y-2 mb-4">
+                    <div class="h-2.5 bg-blue-200 rounded w-2/3"></div>
+                    <div class="h-2.5 bg-gray-200 rounded w-full"></div>
+                    <div class="h-2.5 bg-gray-200 rounded w-5/6"></div>
+                    <div class="h-2.5 bg-gray-200 rounded w-11/12"></div>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 text-[10px]">
+                    <span class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 rounded-full px-2 py-1"><i class="bi bi-search"></i> Searchable</span>
+                    <span class="inline-flex items-center gap-1 bg-teal-50 text-teal-700 rounded-full px-2 py-1"><i class="bi bi-translate"></i> Translatable</span>
+                    <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 rounded-full px-2 py-1"><i class="bi bi-universal-access"></i> Screen-reader ready</span>
+                  </div>
+                  <div id="dm-out-source" class="mt-3 text-[11px] text-gray-400">Converted from PDF</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <p class="text-center text-xs text-gray-400 mt-4">Illustrative example. Actual output is fully tagged, responsive HTML published to your own site.</p>
+      </div>
+    </section>
+
+    <style>
+      .dm-tab{font-size:.875rem;font-weight:600;padding:.5rem 1rem;border-radius:9999px;border:1px solid #e5e7eb;color:#374151;background:#fff;transition:all .2s;cursor:pointer;}
+      .dm-tab:hover{border-color:#93c5fd;color:#2563eb;}
+      .dm-tab.dm-active{color:#fff;border-color:transparent;background:#228AFF;box-shadow:0 8px 20px -8px rgba(34,138,255,.5);}
+    </style>
+    <script>
+      (function(){
+        var data = {
+          pdf:   {name:"employee-handbook.pdf",     icon:"bi-file-earmark-pdf",        color:"#ef4444", label:"PDF"},
+          word:  {name:"board-policy.docx",          icon:"bi-file-earmark-word",       color:"#2563eb", label:"Word"},
+          ppt:   {name:"onboarding-deck.pptx",       icon:"bi-file-earmark-ppt",        color:"#ea580c", label:"PowerPoint"},
+          excel: {name:"fee-schedule.xlsx",          icon:"bi-file-earmark-spreadsheet",color:"#16a34a", label:"Excel"},
+          image: {name:"scanned-notice.png",         icon:"bi-file-earmark-image",      color:"#9333ea", label:"an image or scan"},
+          gdoc:  {name:"Strategic Plan (Google Doc)",icon:"bi-file-earmark-text",       color:"#2563eb", label:"Google Docs"},
+          html:  {name:"legacy-page.html",           icon:"bi-filetype-html",           color:"#4f46e5", label:"HTML"}
+        };
+        var tabs = document.querySelectorAll('.dm-tab');
+        var inIcon = document.getElementById('dm-in-icon');
+        var inName = document.getElementById('dm-in-name');
+        var outSrc = document.getElementById('dm-out-source');
+        function setType(t){
+          var d = data[t]; if(!d) return;
+          inIcon.style.background = d.color;
+          inIcon.innerHTML = '<i class="bi '+d.icon+'"></i>';
+          inName.textContent = d.name;
+          outSrc.textContent = 'Converted from ' + d.label;
+          tabs.forEach(function(b){ b.classList.toggle('dm-active', b.getAttribute('data-type')===t); });
+        }
+        tabs.forEach(function(b){ b.addEventListener('click', function(){ setType(b.getAttribute('data-type')); }); });
+        setType('pdf');
+      })();
+    </script>
+
+    <!-- Features -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Everything a PDF can't do</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">DocMersion rebuilds each document as responsive HTML the moment you publish it.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-6 border border-blue-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:#228AFF;"><i class="bi bi-search"></i></div>
+            <h3 class="font-bold text-lg mb-2">Instantly searchable</h3>
+            <p class="text-gray-600 text-sm">Full-text search across every document so visitors find the exact section they need in seconds.</p>
+          </div>
+          <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 border border-teal-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#14b8a6,#0d9488);"><i class="bi bi-globe"></i></div>
+            <h3 class="font-bold text-lg mb-2">Translatable</h3>
+            <p class="text-gray-600 text-sm">Read documents in a preferred language with support for 250+ languages, translated instantly.</p>
+          </div>
+          <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-phone"></i></div>
+            <h3 class="font-bold text-lg mb-2">Mobile-friendly</h3>
+            <p class="text-gray-600 text-sm">Responsive pages that read perfectly on any phone, tablet, or desktop — no pinch-and-zoom.</p>
+          </div>
+          <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 border border-teal-100">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);"><i class="bi bi-universal-access"></i></div>
+            <h3 class="font-bold text-lg mb-2">Screen-reader ready</h3>
+            <p class="text-gray-600 text-sm">Structured, tagged output that works with assistive technology and meets WCAG 2.1 AA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The DocMersion toolkit -->
+    <section id="toolkit" class="py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-14">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">The DocMersion toolkit</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">One solution. <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Three lenses on every document.</span></h2>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto">Every tool in Accessibility For All's Documents solution is connected through DocMersion — so conversion, readability, usage, and management all work from the same source of truth.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          <!-- Readability -->
+          <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-eyeglasses"></i></span>
+              <h3 class="font-bold text-xl">Readability</h3>
+            </div>
+            <!-- mock -->
+            <div class="rounded-2xl border border-gray-100 bg-gray-50 p-4 mb-5">
+              <div class="text-xs text-gray-400 mb-1">Board Policy 4.12 — Facilities Use</div>
+              <div class="flex items-end justify-between mb-3">
+                <div><div class="text-[11px] uppercase tracking-wide text-gray-400">Flesch-Kincaid grade</div><div class="text-3xl font-extrabold text-blue-600">8.2</div></div>
+                <div class="text-right"><div class="text-[11px] uppercase tracking-wide text-gray-400">Reading ease</div><div class="text-3xl font-extrabold text-teal-700">63</div></div>
+              </div>
+              <div class="h-2 rounded-full bg-gray-200 overflow-hidden mb-2"><div class="h-full rounded-full" style="width:63%;background:linear-gradient(90deg,#228AFF,#14b8a6);"></div></div>
+              <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2 py-1"><i class="bi bi-check2-circle"></i> Plain-language friendly</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Every document is scored with the <strong>Flesch-Kincaid model</strong> — the proven standard for measuring how easy text is to read. See the grade level and reading ease of everything you publish.</p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> Know the grade level of every document at a glance</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> Reach more of your community with plain language</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> Prioritize rewrites where complexity is highest</li>
+            </ul>
+          </div>
+
+          <!-- Statistics -->
+          <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#14b8a6,#0d9488);"><i class="bi bi-bar-chart-fill"></i></span>
+              <h3 class="font-bold text-xl">Statistics</h3>
+            </div>
+            <!-- bar chart mock -->
+            <div class="rounded-2xl border border-gray-100 bg-gray-50 p-4 mb-5">
+              <div class="flex items-center justify-between text-xs text-gray-400 mb-3"><span>Document views</span><span class="font-semibold text-gray-600">12.4K this quarter</span></div>
+              <div class="flex items-end gap-2 h-28">
+                <div class="flex-1 rounded-t bg-blue-200" style="height:35%"></div>
+                <div class="flex-1 rounded-t bg-blue-300" style="height:52%"></div>
+                <div class="flex-1 rounded-t bg-blue-400" style="height:44%"></div>
+                <div class="flex-1 rounded-t" style="height:78%;background:linear-gradient(180deg,#4d9fff,#9cc8ff);"></div>
+                <div class="flex-1 rounded-t bg-blue-300" style="height:60%"></div>
+                <div class="flex-1 rounded-t" style="height:95%;background:linear-gradient(180deg,#0b6ad4,#228AFF);"></div>
+              </div>
+              <div class="flex justify-between text-[10px] text-gray-400 mt-1"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div>
+              <div class="mt-3 text-[11px] text-gray-500"><i class="bi bi-star-fill text-amber-400"></i> Most accessed: <span class="font-semibold text-gray-700">Employee Handbook</span></div>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Usage statistics show exactly <strong>how often your documents are accessed</strong> — which ones your community relies on, and which sit unread.</p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-teal-600 mt-0.5"></i> Views and searches per document, over time</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-teal-600 mt-0.5"></i> Spot your highest-impact content instantly</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-teal-600 mt-0.5"></i> Invest effort where readers actually go</li>
+            </ul>
+          </div>
+
+          <!-- Manage -->
+          <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-sliders"></i></span>
+              <h3 class="font-bold text-xl">Manage</h3>
+            </div>
+            <!-- per-document mock -->
+            <div class="rounded-2xl border border-gray-100 bg-gray-50 p-3 mb-5 text-xs">
+              <div class="grid grid-cols-[1fr_auto_auto] gap-2 px-2 py-1 text-[10px] uppercase tracking-wide text-gray-400"><span>Document</span><span>Read.</span><span>Access.</span></div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 mb-1.5 border border-gray-100">
+                <span class="font-semibold text-gray-700 truncate">Employee Handbook</span>
+                <span class="font-bold text-emerald-600">Gr 7.9</span>
+                <span class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5 font-semibold">98%</span>
+              </div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 mb-1.5 border border-gray-100">
+                <span class="font-semibold text-gray-700 truncate">Budget Report FY26</span>
+                <span class="font-bold text-amber-600">Gr 12.4</span>
+                <span class="inline-flex items-center gap-1 text-amber-700 bg-amber-50 rounded-full px-2 py-0.5 font-semibold">86%</span>
+              </div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 border border-gray-100">
+                <span class="font-semibold text-gray-700 truncate">Facilities Use Policy</span>
+                <span class="font-bold text-emerald-600">Gr 8.2</span>
+                <span class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5 font-semibold">95%</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Admins see <strong>readability and accessibility scores side by side, per document</strong> — so decisions about what to fix, rewrite, or retire are grounded in data, not guesswork.</p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Per-document scores in one dashboard</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Rank what needs attention first</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Track improvement as you publish</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Get started free / Install -->
+    <section id="get-started" class="py-20 bg-[#0a2239] text-white relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="container mx-auto px-6 max-w-6xl relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <!-- Pitch -->
+          <div>
+            <span class="inline-flex items-center gap-2 bg-white/15 backdrop-blur border border-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-5"><i class="bi bi-rocket-takeoff"></i> Free plan</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">Install DocMersion and get started for free</h2>
+            <p class="text-white/85 text-lg leading-relaxed mb-6">Create your free account and add DocMersion to your site in minutes. Tell us a little about your organization and we'll take you straight into the app to set things up.</p>
+            <ul class="space-y-3 text-white/90">
+              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Free plan — no credit card required</span></li>
+              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Set up in the DocMersion app at <span class="font-semibold">admin.docmersion.com</span></span></li>
+              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Start converting documents right away</span></li>
+            </ul>
+          </div>
+
+          <!-- Form card -->
+          <div class="relative">
+            <div class="absolute -inset-3 bg-white/20 rounded-3xl blur-2xl"></div>
+            <div class="relative bg-white text-gray-900 rounded-3xl shadow-2xl p-7 md:p-8">
+              <h3 class="text-xl font-bold mb-1">Start your free plan</h3>
+              <p class="text-gray-500 text-sm mb-6">We'll open the DocMersion app in a new window so you can finish setup.</p>
+              <form id="dm-getstarted-form" novalidate>
+                <input type="hidden" name="plan" value="DocMersion Free Plan">
+                <input type="hidden" name="source" value="docmersion.html – Get started free">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <label class="flex flex-col gap-1 text-sm font-semibold text-gray-700">Name
+                    <input type="text" name="name" required autocomplete="name" class="rounded-xl px-4 py-3 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition" placeholder="Your name">
+                  </label>
+                  <label class="flex flex-col gap-1 text-sm font-semibold text-gray-700">Work email
+                    <input type="email" name="email" required autocomplete="email" class="rounded-xl px-4 py-3 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition" placeholder="you@organization.org">
+                  </label>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                  <label class="flex flex-col gap-1 text-sm font-semibold text-gray-700">Organization
+                    <input type="text" name="organization" autocomplete="organization" class="rounded-xl px-4 py-3 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition" placeholder="Organization name">
+                  </label>
+                  <label class="flex flex-col gap-1 text-sm font-semibold text-gray-700">Website
+                    <input type="url" name="website" autocomplete="url" class="rounded-xl px-4 py-3 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition" placeholder="https://yourorg.org">
+                  </label>
+                </div>
+                <button type="submit" class="group relative w-full px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]" style="background: #228AFF;">
+                  <span class="relative z-10"><i class="bi bi-box-arrow-up-right mr-2"></i>Create free account</span>
+                </button>
+                <p id="dm-getstarted-msg" class="text-center text-sm text-emerald-600 mt-4 hidden"><i class="bi bi-check-circle-fill mr-1"></i> Opening DocMersion… If a window didn't appear, <a href="https://admin.docmersion.com" target="_blank" rel="noopener" class="underline font-semibold">continue here</a>.</p>
+                <p class="text-center text-xs text-gray-400 mt-3">By continuing you'll be taken to admin.docmersion.com to finish setting up your account.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        var form = document.getElementById('dm-getstarted-form');
+        if (!form) return;
+        var APP_URL = 'https://admin.docmersion.com';
+        var LEAD_ENDPOINT = 'https://formspree.io/f/xblyajlg'; // same lead inbox as the contact form
+        var msg = document.getElementById('dm-getstarted-msg');
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (!form.reportValidity()) return;
+          // Open the app as a popout synchronously (within the click gesture) so it isn't blocked.
+          var popout = window.open(APP_URL, 'docmersionApp', 'popup,width=1180,height=820,resizable=yes,scrollbars=yes');
+          // Capture the lead in the background; never block the visitor on it.
+          try {
+            fetch(LEAD_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: new FormData(form)
+            }).catch(function () {});
+          } catch (err) {}
+          if (msg) msg.classList.remove('hidden');
+          // Fallback if the popout was blocked: send this tab to the app.
+          if (!popout || popout.closed || typeof popout.closed === 'undefined') {
+            window.location.href = APP_URL;
+          }
+        });
+      })();
+    </script>
+
+    <!-- Video -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-10">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">Watch</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">DocMersion in two minutes</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">A quick walkthrough of how documents become accessible, searchable web pages.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-3xl opacity-20 blur-2xl"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-black" style="aspect-ratio:16/9;">
+            <iframe class="w-full h-full" style="border:0;" src="https://www.youtube.com/embed/6oDE1fwG_2Q" title="DocMersion overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">FAQ</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently asked <span class="bg-gradient-to-r from-[#0a2239] to-[#228AFF] bg-clip-text text-transparent">questions</span></h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Everything you need to know about how DocMersion turns your documents into accessible web experiences.</p>
+        </div>
+
+        <div class="space-y-3">
+          <details class="faq-card">
+            <summary><span class="faq-q">How does DocMersion actually work?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>DocMersion uses OCR, advanced image processing, and proprietary AI models to analyze your PDFs and rebuild them as clean, semantic HTML. It reconstructs headings, reading order, tables, and generates alt text for images automatically. Complex documents may also receive human review by accessibility specialists. All processing runs securely on U.S.-based AWS infrastructure.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">What accessibility standards does DocMersion target?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a">
+              <p>DocMersion is built with the goal of producing accessible documents that align with major modern accessibility standards, including:</p>
+              <ul>
+                <li><strong>WCAG 2.1 AA</strong> — our primary accessibility target</li>
+                <li>ADA <strong>Title II and Title III</strong> guidelines (including the DOJ's 28 CFR Part 35 ruling)</li>
+                <li><strong>Section 508</strong> of the Rehabilitation Act (36 CFR 1194.22)</li>
+                <li><strong>EN 301 549</strong> (EU accessibility requirements)</li>
+                <li>State-level guidance including <strong>California AB 434</strong>, the <strong>Unruh Act</strong>, and <strong>Colorado HB 21-1110</strong></li>
+              </ul>
+              <p>As standards and regulations evolve, DocMersion is actively maintained and updated. The platform is regularly audited by independent accessibility experts, automatically keeps documents accessible as they change, and aims to incorporate new requirements such as WCAG 2.2/3.0 as they are adopted.</p>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Does the accessible HTML version contain the same content as the original document?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a">
+              <p>Yes. The accessible HTML version DocMersion produces is designed to be <strong>equivalent in content</strong> to the original document, which is central to its goal of producing genuinely accessible experiences aligned with WCAG 2.1 AA.</p>
+              <ul>
+                <li>All text, headings, lists, tables, and key visual information are preserved. Charts and complex visuals are converted into data tables or detailed descriptions.</li>
+                <li>Structure, reading order, alt text, contrast, and keyboard navigation are all handled so assistive technology users can access all the same content programmatically.</li>
+                <li>DocMersion treats the <strong>HTML transcript as the primary accessible format</strong>, with the original PDF available for printing and archival.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Does using DocMersion mean we no longer need to manually remediate our PDFs?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>Yes. Because DocMersion creates a fully accessible HTML transcript of your documents — <a href="#doc-types" class="text-blue-600 underline">PDFs and many other formats</a> — that transcript can serve as an <strong>alternative accessible format</strong>, which means your original files do not require separate remediation.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">What types of PDFs does DocMersion support? What about complex or messy documents?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>DocMersion is specifically designed for messy and complex PDF documents. It uses OCR, advanced image processing, and proprietary AI models to interpret content, and complex pages get additional human review by accessibility specialists at no extra cost. There is no surcharge for difficult documents — the goal is to make seemingly unfixable files accessible and targeting WCAG 2.1 AA.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Does DocMersion work on scanned PDFs?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>Yes. DocMersion handles scanned PDFs well. It uses OCR, advanced image processing, and AI models to turn scanned pages — including handwriting, maps, diagrams, budgets, and complex layouts — into searchable, screen-reader-friendly HTML. Complex or low-quality scans are explicitly supported, and there is no extra charge for them.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">What if our documents don't have proper heading or tag structure?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>DocMersion does <strong>not</strong> rely on your existing heading or tag structure. Instead it runs OCR and AI over the PDF, then <strong>rebuilds the structure automatically</strong> into clean, semantic HTML — headings, lists, tables, and correct reading order. The resulting transcript aims to be accessible and WCAG 2.1 AA-aligned for structure and reading order, even if the original PDF has no tags or incorrect ones.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Which file types are supported?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>DocMersion supports a wide range of document formats — far more than just PDFs. See <a href="#doc-types" class="text-blue-600 underline">What types of documents does DocMersion handle?</a> for the full list.</p></div>
+          </details>
+
+          <details class="faq-card" id="doc-types">
+            <summary><span class="faq-q">What types of documents does DocMersion handle?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a">
+              <p>We're proud that DocMersion works across a broad range of document formats, not just PDFs. Whatever your organization uses, DocMersion is built to handle it:</p>
+              <ul>
+                <li><strong>PDF</strong> — including scanned, complex, and untagged files</li>
+                <li><strong>Microsoft Word</strong> (.doc, .docx)</li>
+                <li><strong>Microsoft Excel</strong> (.xls, .xlsx)</li>
+                <li><strong>Microsoft PowerPoint</strong> (.ppt, .pptx)</li>
+                <li><strong>Google Docs, Sheets, and Slides</strong></li>
+                <li><strong>OpenDocument formats</strong> — Writer (.odt), Calc (.ods), and Impress (.odp)</li>
+                <li><strong>Rich Text Format</strong> (.rtf)</li>
+                <li><strong>Plain text</strong> (.txt)</li>
+                <li><strong>CSV</strong> — spreadsheet and tabular data files</li>
+                <li><strong>Common image formats</strong> — PNG, JPEG, WebP, and TIFF (including scanned documents and photographs of text)</li>
+              </ul>
+              <p>In every case, DocMersion converts the source file into a clean, accessible HTML experience that is searchable, translatable, and screen-reader friendly — no matter how the original document was created.</p>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Will DocMersion work on unpublished or intranet documents?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>DocMersion currently works only with publicly accessible document links — <a href="#doc-types" class="text-blue-600 underline">PDFs and other supported formats</a> that anyone can reach via a public URL. It cannot process documents on intranets, behind logins, or otherwise restricted from public access. The team is working on expanding to private and intranet environments, but that capability is not yet available.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Does DocMersion bypass intranet restrictions?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>No. DocMersion can only activate on publicly accessible document links. If a PDF is on an intranet, behind a login, VPN, or any access control, DocMersion cannot retrieve or process it. It does not circumvent authentication, firewalls, or permissions in any way. Restricted documents remain restricted.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">How does the accessible version work with screen readers?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>Screen readers will announce the presence of an accessible version and the keyboard shortcuts available to navigate the DocMersion viewer. The accessible version can be toggled directly with <strong>Ctrl + Shift + V</strong>, along with additional shortcuts available through the hotkeys menu.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">How does DocMersion handle fillable PDFs?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>DocMersion provides an accessible HTML version for reading, navigating, translating, and understanding the form content. Users can still download or open the original PDF to complete and submit the form in their PDF viewer. This ensures the form content is accessible while preserving existing submission workflows.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Will enabling DocMersion slow down our site?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a">
+              <p>No. DocMersion is designed so it should not noticeably affect your site's load speed:</p>
+              <ul>
+                <li>The helper script loads asynchronously, after your main page content, so it does not block page rendering.</li>
+                <li>It inventories links and enables documents in the background once your site has finished loading.</li>
+                <li>The document interface loads up to 10× faster even on slower connections or with unoptimized PDFs, and a Safe Mode option uses compressed images for very large documents.</li>
+              </ul>
+              <p>If you ever notice slowness, you can temporarily disable DocMersion on a specific page or contact our support team to help diagnose and optimize performance.</p>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Does DocMersion require ongoing document maintenance?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a"><p>No additional remediation work is required on your end. Continue posting PDFs as usual. DocMersion automatically detects when a document at a given URL has changed and reprocesses it, keeping the accessible version current. Optional manual edits and fine-tuning are available but not required.</p></div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Does DocMersion support Single Sign-On (SSO)?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a">
+              <p>Yes. DocMersion supports Single Sign-On via a range of identity providers, including:</p>
+              <ul>
+                <li><strong>Microsoft / Azure AD (Entra ID)</strong></li>
+                <li><strong>Google</strong></li>
+                <li><strong>Facebook</strong></li>
+                <li>Any other standards-based identity provider via <strong>SAML 2.0</strong> or <strong>OpenID Connect (OIDC)</strong></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">Can you explain the AI in more detail for a leadership or board briefing?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a">
+              <p>DocMersion uses AI in several focused ways to turn PDFs into accessible, interactive experiences without requiring manual remediation for most documents:</p>
+              <ul>
+                <li><strong>Accessible HTML transcript generation:</strong> AI interprets layout and structure (headings, lists, reading order), extracts text including from scanned PDFs via OCR, and produces accessible HTML output targeting WCAG 2.1 AA.</li>
+                <li><strong>Image understanding and alt text:</strong> For figures, charts, maps, and other visuals, AI generates descriptive alternative text. Existing PDF alt text is incorporated where available.</li>
+                <li><strong>Complexity detection and routing:</strong> AI flags pages likely to be high-complexity — dense tables, diagrams, low-quality scans, handwriting — so they receive additional handling, often including human accessibility specialist review at no extra cost.</li>
+                <li><strong>Document Q&amp;A:</strong> AI powers a feature that lets end users ask natural-language questions about a document and receive answers grounded in that document's content, working even with typos and in multiple languages.</li>
+                <li><strong>Translation:</strong> AI supports on-the-fly translation of the accessible transcript into over 150 languages, with prioritization based on languages commonly spoken in the service area.</li>
+                <li><strong>Change detection and reprocessing:</strong> When a PDF changes at the same URL, the system detects the update and automatically reprocesses the document so the transcript stays current.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-card">
+            <summary><span class="faq-q">What testing has DocMersion gone through?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
+            <div class="faq-a">
+              <p>DocMersion goes through extensive, ongoing testing to validate both accessibility and reliability. This includes automated accessibility scanning, manual code review for semantic structure and ARIA correctness, and real-world testing with assistive technologies such as screen readers across major platforms and devices.</p>
+              <p>The platform is also reviewed by independent accessibility consultants on a regular basis, and we maintain active feedback loops with users of assistive technology to catch and resolve real-world friction points. DocMersion receives frequent updates — both for new features and ongoing accessibility improvements — so the platform continues to improve over time.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Still have questions CTA -->
+        <div class="mt-10 text-center bg-gradient-to-r from-blue-50 to-slate-50 border border-blue-100 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold mb-2">Still have questions?</h3>
+          <p class="text-gray-600 mb-6">Our team is happy to walk you through how DocMersion works for your specific documents and use case.</p>
+          <a href="#contact" class="inline-block px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">Contact us</a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .faq-card{border:1px solid #e5e7eb;border-radius:1rem;background:#fff;overflow:hidden;transition:box-shadow .2s,border-color .2s;}
+      .faq-card[open]{border-color:#bfdbfe;box-shadow:0 10px 30px -12px rgba(59,130,246,.25);}
+      .faq-card summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem;font-weight:700;color:#111827;}
+      .faq-card summary::-webkit-details-marker{display:none;}
+      .faq-card summary:hover{color:#2563eb;}
+      .faq-card .faq-q{flex:1;}
+      .faq-card .faq-ico{flex-shrink:0;color:#3b82f6;transition:transform .25s;font-size:1rem;}
+      .faq-card[open] .faq-ico{transform:rotate(45deg);}
+      .faq-card .faq-a{padding:0 1.5rem 1.4rem;color:#374151;line-height:1.7;}
+      .faq-card .faq-a p{margin:0 0 .75rem;}
+      .faq-card .faq-a p:last-child{margin-bottom:0;}
+      .faq-card .faq-a ul{list-style:disc;margin:.25rem 0 .9rem 1.4rem;}
+      .faq-card .faq-a li{margin-bottom:.35rem;}
+      .faq-card:focus-within{outline:none;}
+      .faq-card summary:focus-visible{outline:2px solid #3b82f6;outline-offset:2px;border-radius:.75rem;}
+    </style>
+    <script>
+      // Open a FAQ item when linked to by hash (e.g. #doc-types) and scroll to it.
+      (function(){
+        function openHash(){
+          var id = location.hash.slice(1);
+          if(!id) return;
+          var el = document.getElementById(id);
+          if(el && el.tagName.toLowerCase()==='details'){ el.open = true; el.scrollIntoView({behavior:'smooth', block:'center'}); }
+        }
+        window.addEventListener('hashchange', openHash);
+        openHash();
+        // In-page FAQ cross links
+        document.querySelectorAll('.faq-a a[href^="#"]').forEach(function(a){
+          a.addEventListener('click', function(){ setTimeout(openHash, 0); });
+        });
+      })();
+    </script>
+
+    <!-- Outcome band -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-slate-50">
+      <div class="container mx-auto px-6 max-w-4xl text-center">
+        <i class="bi bi-shield-check text-4xl text-blue-500 mb-4"></i>
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Clearer documents, lower risk</h2>
+        <p class="text-gray-700 text-lg">Better compliance and a safer, more informed organization for all — without the manual remediation work.</p>
+      </div>
+    </section>
+    <!-- Native: for your most important documents -->
+    <section id="native" class="py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2 text-center lg:text-left">
+            <span class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 mb-4"><i class="bi bi-window-stack"></i> Documents · Native</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">For your most important documents, go <span class="bg-gradient-to-r from-[#14b8a6] to-[#228AFF] bg-clip-text text-transparent">Native</span>.</h2>
+            <p class="text-xl text-gray-700 mb-5 leading-relaxed">Some documents are too important — and too highly used — to live as files at all. Native is the special solution inside Documents that rebuilds them as a native web platform.</p>
+            <p class="text-gray-600 leading-relaxed mb-6">Board policies, handbooks, and procedures become structured, tagged web pages — screen-reader ready, responsive, and always current — built for the highest level of compliance with WCAG 2.1 AA, Section 508, and ADA Title II. DocMersion gives you breadth across every document; Native gives your flagship documents the deepest treatment.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="native-web.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: linear-gradient(135deg,#14b8a6,#228AFF);"><span class="relative z-10">Explore Native <i class="bi bi-arrow-right ml-1"></i></span></a>
+              <a href="#contact" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#0891b2; color:#0891b2;" onmouseover="this.style.background='#0891b2'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0891b2';">Start a conversion</a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 w-full">
+            <div class="relative max-w-lg mx-auto">
+              <div class="absolute -inset-4 bg-gradient-to-r from-cyan-200 to-blue-300 rounded-3xl opacity-20 blur-2xl"></div>
+              <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
+                <div class="rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 p-4 flex items-center gap-3">
+                  <i class="bi bi-file-earmark-pdf text-2xl text-red-500"></i>
+                  <div class="flex-1"><div class="font-semibold text-gray-700 text-sm">employee-handbook.pdf</div><div class="text-xs text-gray-400">Your most-accessed document · 4,120 views this quarter</div></div>
+                </div>
+                <div class="flex items-center justify-center my-3">
+                  <span class="inline-flex items-center gap-2 text-xs font-semibold text-white px-4 py-2 rounded-full" style="background:linear-gradient(135deg,#14b8a6,#228AFF);"><i class="bi bi-arrow-down"></i> GOES NATIVE</span>
+                </div>
+                <div class="rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                  <div class="flex items-center gap-2 px-3 py-2 bg-gray-50 border-b border-gray-100 text-xs text-gray-500"><i class="bi bi-lock-fill text-emerald-500"></i> yourorg.gov/handbook</div>
+                  <div class="p-4">
+                    <div class="font-bold text-gray-900 mb-2">Employee Handbook</div>
+                    <div class="space-y-2 mb-4">
+                      <div class="h-2 bg-gray-200 rounded w-full"></div>
+                      <div class="h-2 bg-gray-200 rounded w-4/5"></div>
+                      <div class="h-2 bg-cyan-200 rounded w-2/3"></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-[11px]">
+                      <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 rounded-full px-2 py-1"><i class="bi bi-universal-access"></i> Screen-reader ready</span>
+                      <span class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 rounded-full px-2 py-1"><i class="bi bi-arrow-repeat"></i> Always current</span>
+                      <span class="inline-flex items-center gap-1 bg-cyan-50 text-cyan-700 rounded-full px-2 py-1"><i class="bi bi-check2-circle"></i> AA compliant</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore the rest of the suite -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-2">Part of the suite</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Explore Accessibility For All</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto mt-3">Three solutions that cover the full accessibility lifecycle. Use one — or all of them together.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <a href="docmersion.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-files"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-blue-600">Documents</span>
+            <span class="text-xs text-gray-400 -mt-1">DocMersion · Native</span>
+          </a>
+          <a href="wcag-checker.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-globe2"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-emerald-600">Websites</span>
+            <span class="text-xs text-gray-400 -mt-1">Check · Monitor</span>
+          </a>
+          <a href="vpat-acr.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#0a2239;"><i class="bi bi-journal-check"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-blue-700">ACR</span>
+            <span class="text-xs text-gray-400 -mt-1">ACR Studio</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div id="contact-form-container"></div>
+    <script src="contactformloader.js"></script>
+  </body>
+</html>
