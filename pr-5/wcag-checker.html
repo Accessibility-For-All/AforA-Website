@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <!-- END ACCESSIBILITY FOR ALL FAVICONS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Websites – Free WCAG Check + Continuous Monitor | Accessibility For All</title>
+    <meta name="description" content="The Websites solution: a free instant WCAG 2.1 AA Check with a Legal Risk Level report, plus continuous full-sitemap Monitoring. Part of the Accessibility For All suite.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: '#3aa9ff', dark: '#0a2239' },
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <!-- Product Hero -->
+    <section class="relative pt-32 pb-16 bg-gradient-to-br from-teal-50 via-white to-blue-50 overflow-hidden">
+      <div class="absolute top-24 left-1/4 w-64 h-64 bg-emerald-200/40 rounded-full blur-3xl"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <a href="index.html#products" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 mb-4 hover:gap-3 transition-all"><i class="bi bi-grid-1x2"></i> Accessibility For All Suite</a>
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white text-2xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-clipboard-check"></i></span>
+            <h1 class="text-4xl md:text-5xl font-extrabold">Websites</h1>
+          </div>
+          <p class="text-xl text-gray-700 mb-4 leading-relaxed">Everything your website needs to reach — and stay at — WCAG 2.1 AA. Start with <strong>Check</strong>, a free instant scan with a <strong>Legal Risk Level</strong> report. Then let <strong>Monitor</strong> keep every page compliant, continuously.</p>
+          <div class="flex items-center justify-center gap-3 mb-8 text-sm font-semibold">
+            <span class="inline-flex items-center gap-2 bg-white/80 border border-emerald-200 text-emerald-700 rounded-full px-4 py-2"><i class="bi bi-clipboard-check"></i> Check — free scan below</span>
+            <a href="#monitor" class="inline-flex items-center gap-2 bg-white/80 border border-teal-200 text-teal-700 rounded-full px-4 py-2 hover:shadow-md transition"><i class="bi bi-activity"></i> Monitor — continuous <i class="bi bi-arrow-down"></i></a>
+          </div>
+
+          <!-- Scan box -->
+          <div class="relative max-w-xl mx-auto">
+            <div class="absolute -inset-2 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-2xl opacity-20 blur-xl"></div>
+            <div class="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-3 flex flex-col sm:flex-row gap-3">
+              <div class="flex-1 flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3">
+                <i class="bi bi-globe text-gray-400"></i>
+                <input id="scan-url" type="url" placeholder="https://yourwebsite.gov" class="flex-1 bg-transparent outline-none text-gray-800 placeholder-gray-400">
+              </div>
+              <button id="scan-btn" class="px-6 py-3 rounded-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap" style="background:linear-gradient(135deg,#10b981,#14b8a6);">Start free scan</button>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-gray-500"><i class="bi bi-check-circle-fill text-emerald-500 mr-1"></i> Evaluates 50+ success criteria · Free · No sign-up required</p>
+        </div>
+
+        <!-- Sample report -->
+        <div id="scan-report" class="max-w-2xl mx-auto mt-10">
+          <div class="relative">
+            <div class="absolute -inset-3 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-3xl opacity-15 blur-2xl"></div>
+            <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 md:p-8">
+              <div class="flex items-center justify-between mb-6">
+                <div>
+                  <span class="text-[11px] font-semibold tracking-widest text-emerald-600 uppercase">ADA Title II · WCAG 2.1 AA</span>
+                  <h3 class="text-lg font-bold text-gray-900">Compliance Scan Report</h3>
+                  <p class="text-xs text-gray-400" id="scan-target">cityofpaxton.gov · sample report</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-extrabold text-emerald-600">82%</div>
+                  <div class="text-[11px] text-gray-400 uppercase tracking-wide">conformance</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-100">
+                <i class="bi bi-shield-check text-2xl text-emerald-600"></i>
+                <div><div class="text-xs text-gray-500 uppercase tracking-wide">Legal Risk Level</div><div class="font-bold text-emerald-700">LOW</div></div>
+                <div class="ml-auto text-sm text-gray-500">52 of 64 WCAG criteria pass</div>
+              </div>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-500"></i> Color contrast</li>
+                <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-500"></i> Keyboard access</li>
+                <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-emerald-500"></i> Alt text <span class="text-gray-400">(4)</span></li>
+                <li class="flex items-center gap-2"><i class="bi bi-exclamation-triangle-fill text-amber-500"></i> Form labels <span class="text-gray-400">(2)</span></li>
+              </ul>
+              <div class="mt-5 rounded-xl border border-gray-100 bg-gray-50 p-4 text-sm">
+                <div class="text-xs text-gray-400 uppercase tracking-wide mb-1">Issue detail</div>
+                <div class="font-mono text-gray-700">img.banner — missing alt</div>
+                <div class="mt-1 text-emerald-700"><i class="bi bi-magic"></i> AI fix: "City hall at sunset"</div>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-xs text-gray-400 mt-3">Sample report shown for illustration. Enter your own URL above to scan your site.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What it checks -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Every finding mapped to your legal exposure</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">The checker evaluates 50+ success criteria and ties each result to your risk ahead of the April 2027 ADA Title II deadline.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 text-center">
+            <i class="bi bi-palette text-3xl text-emerald-600 mb-3"></i><h3 class="font-bold mb-1">Color contrast</h3><p class="text-gray-600 text-sm">Text and UI elements meet minimum contrast ratios.</p>
+          </div>
+          <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 text-center">
+            <i class="bi bi-keyboard text-3xl text-emerald-600 mb-3"></i><h3 class="font-bold mb-1">Keyboard access</h3><p class="text-gray-600 text-sm">Everything is operable without a mouse.</p>
+          </div>
+          <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 text-center">
+            <i class="bi bi-image-alt text-3xl text-emerald-600 mb-3"></i><h3 class="font-bold mb-1">Alt text</h3><p class="text-gray-600 text-sm">Images carry meaningful text alternatives.</p>
+          </div>
+          <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 text-center">
+            <i class="bi bi-input-cursor-text text-3xl text-emerald-600 mb-3"></i><h3 class="font-bold mb-1">Form labels</h3><p class="text-gray-600 text-sm">Inputs are properly labeled for assistive tech.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monitor -->
+    <section id="monitor" class="py-20 bg-gradient-to-br from-teal-50 via-white to-cyan-50 overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12 mb-16">
+          <div class="lg:w-1/2 text-center lg:text-left">
+            <span class="inline-flex items-center gap-2 text-sm font-semibold text-teal-700 mb-4"><i class="bi bi-activity"></i> Websites · Part two</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Then <span class="bg-gradient-to-r from-[#0d9488] to-[#115e59] bg-clip-text text-transparent">Monitor</span> keeps you there.</h2>
+            <p class="text-xl text-gray-700 mb-5 leading-relaxed">Accessibility isn't a one-time fix — it's ongoing. Monitor continuously scans your full sitemap, finds violations, and tells you exactly which to correct first.</p>
+            <p class="text-gray-600 leading-relaxed">Get one-click screenshots that pinpoint the exact element at fault, in-code guidance to resolve each issue, and flexible team controls. High-volume infrastructure scans thousands of pages in minutes, so new content never silently breaks compliance.</p>
+          </div>
+          <div class="lg:w-1/2 w-full">
+            <div class="relative max-w-lg mx-auto">
+              <div class="absolute -inset-4 bg-gradient-to-r from-teal-200 to-cyan-300 rounded-3xl opacity-20 blur-2xl"></div>
+              <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-bold text-gray-900">Accessibility Overview</h3>
+                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 bg-emerald-50 rounded-full px-2 py-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Scan active</span>
+                </div>
+                <p class="text-xs text-gray-400 mb-5">19 pages monitored · last scan 4 min ago</p>
+                <div class="grid grid-cols-2 gap-3 mb-5">
+                  <div class="rounded-xl bg-gray-50 border border-gray-100 p-4"><div class="text-2xl font-extrabold text-gray-900">1.7K</div><div class="text-xs text-gray-400">Total issues</div></div>
+                  <div class="rounded-xl bg-red-50 border border-red-100 p-4"><div class="text-2xl font-extrabold text-red-600">312</div><div class="text-xs text-gray-400">Critical (A)</div></div>
+                  <div class="rounded-xl bg-amber-50 border border-amber-100 p-4"><div class="text-2xl font-extrabold text-amber-600">689</div><div class="text-xs text-gray-400">Serious (AA)</div></div>
+                  <div class="rounded-xl bg-emerald-50 border border-emerald-100 p-4"><div class="text-2xl font-extrabold text-emerald-600">+241</div><div class="text-xs text-gray-400">Resolved</div></div>
+                </div>
+                <div class="rounded-xl border border-gray-100 p-4">
+                  <div class="flex items-center justify-between text-xs text-gray-400 mb-2"><span>Issues by level</span><span>Violations across 19 pages</span></div>
+                  <div class="flex items-end gap-2 h-20">
+                    <div class="flex-1 bg-red-400 rounded-t" style="height:45%"></div>
+                    <div class="flex-1 bg-amber-400 rounded-t" style="height:90%"></div>
+                    <div class="flex-1 bg-blue-300 rounded-t" style="height:30%"></div>
+                  </div>
+                  <div class="flex justify-around text-[11px] text-gray-400 mt-1"><span>A</span><span>AA</span><span>AAA</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl p-6 border border-teal-100 shadow-sm"><div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);"><i class="bi bi-diagram-3"></i></div><h3 class="font-bold text-lg mb-2">Full-sitemap scanning</h3><p class="text-gray-600 text-sm">Crawl your entire site automatically so no page goes unchecked.</p></div>
+          <div class="bg-white rounded-2xl p-6 border border-teal-100 shadow-sm"><div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);"><i class="bi bi-sort-down"></i></div><h3 class="font-bold text-lg mb-2">Prioritized violations</h3><p class="text-gray-600 text-sm">Issues ranked by severity and level, so you know what to correct first.</p></div>
+          <div class="bg-white rounded-2xl p-6 border border-teal-100 shadow-sm"><div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);"><i class="bi bi-camera"></i></div><h3 class="font-bold text-lg mb-2">Screenshot pinpointing</h3><p class="text-gray-600 text-sm">One-click screenshots highlight the exact element at fault.</p></div>
+          <div class="bg-white rounded-2xl p-6 border border-teal-100 shadow-sm"><div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);"><i class="bi bi-code-slash"></i></div><h3 class="font-bold text-lg mb-2">In-code guidance</h3><p class="text-gray-600 text-sm">Clear, element-level direction for resolving each issue.</p></div>
+          <div class="bg-white rounded-2xl p-6 border border-teal-100 shadow-sm"><div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);"><i class="bi bi-people"></i></div><h3 class="font-bold text-lg mb-2">Flexible team controls</h3><p class="text-gray-600 text-sm">Assign, track, and manage remediation across your whole team.</p></div>
+          <div class="bg-white rounded-2xl p-6 border border-teal-100 shadow-sm"><div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white text-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);"><i class="bi bi-lightning-charge"></i></div><h3 class="font-bold text-lg mb-2">High-volume scale</h3><p class="text-gray-600 text-sm">15,000 pages · 30,000 scans in under an hour.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deadline band -->
+    <section class="py-16 bg-dark text-white">
+      <div class="container mx-auto px-6 max-w-4xl text-center">
+        <span class="inline-block text-xs font-semibold tracking-widest text-emerald-300 uppercase mb-2">Compliance Deadline · DOJ Interim Final Rule 2026</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">April 26, 2027</h2>
+        <p class="text-white/70 text-lg">Large public entities must conform to WCAG 2.1 AA. Start with a free scan, then keep every page compliant with <a href="#monitor" class="text-emerald-300 font-semibold underline">Monitor</a>.</p>
+      </div>
+    </section>
+    <!-- Explore the rest of the suite -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-2">Part of the suite</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Explore Accessibility For All</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto mt-3">Three solutions that cover the full accessibility lifecycle. Use one — or all of them together.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <a href="docmersion.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-files"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-blue-600">Documents</span>
+            <span class="text-xs text-gray-400 -mt-1">DocMersion · Native</span>
+          </a>
+          <a href="wcag-checker.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-globe2"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-emerald-600">Websites</span>
+            <span class="text-xs text-gray-400 -mt-1">Check · Monitor</span>
+          </a>
+          <a href="vpat-acr.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#0a2239;"><i class="bi bi-journal-check"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-blue-700">ACR</span>
+            <span class="text-xs text-gray-400 -mt-1">ACR Studio</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div id="contact-form-container"></div>
+    <script src="contactformloader.js"></script>
+    <script>
+      (function () {
+        var btn = document.getElementById('scan-btn');
+        var input = document.getElementById('scan-url');
+        var report = document.getElementById('scan-report');
+        var target = document.getElementById('scan-target');
+        if (!btn || !input) return;
+        function run() {
+          var val = (input.value || '').trim();
+          if (val) {
+            var host = val;
+            try { host = new URL(val.match(/^https?:\/\//) ? val : 'https://' + val).hostname; } catch (e) {}
+            if (target) target.textContent = host + ' · sample report';
+          }
+          if (report) {
+            report.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+        btn.addEventListener('click', run);
+        input.addEventListener('keydown', function (e) { if (e.key === 'Enter') run(); });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+# macOS / IDE noise
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / agent state
+.idea/
+.vscode/
+# Keep shared Claude skills tracked; ignore only per-machine local state.
+.claude/settings.local.json
+*.swp
+*.swo
+*~
+
+# Anything that looks like a nested git checkout (this site IS a git repo;
+# we never want to publish .git history to S3)
+**/.git/
+**/.gitconfig
+
+# Build artifacts (no build today, but future-proof)
+node_modules/
+dist/
+build/
+.cache/
+
+# Local secrets
+.env
+.env.*
+!.env.example
