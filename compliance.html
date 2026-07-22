@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <!-- BEGIN DOCMERSION FAVICONS -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="shortcut icon" href="/favicon/favicon.ico">
+        <!-- END DOCMERSION FAVICONS -->
+         
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compliance – Accessibility For All</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#3aa9ff',
+              dark: '#0a2239',
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Navbar and Footer Loaders -->
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <!-- PDF Genie -->
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 flex items-center overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute top-20 left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-100/20 rounded-full blur-3xl"></div>
+      
+      <div class="container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-block px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6">
+            <span class="text-sm font-semibold" style="color: #228AFF;"><i class="bi bi-universal-access"></i> Accessibility First</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+            Built around <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Accessibility</span>
+          </h1>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-4">We design the entire <span class="font-bold">Accessibility For All</span> suite around WCAG 2.1 AA, ADA, and CIPA — because accessibility isn't a box you check once. It's an ongoing commitment to serving everyone.</p>
+          <p class="text-base text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">No tool or vendor can promise that a site is permanently, fully compliant — standards evolve and content changes. What we can do is help you keep improving accessibility and stay on top of your obligations.</p>
+          
+          <!-- Get a quote today button -->
+          <div class="flex justify-center">
+            <button onclick="document.getElementById('contact-form-container').scrollIntoView({behavior: 'smooth'})" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">
+              <span class="relative z-10">Get a quote today</span>
+              <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Elements -->
+      <div class="absolute top-0 left-0 w-40 h-40 rounded-full blur-3xl -z-10" style="background-color: rgba(35, 140, 255, 0.2);"></div>
+      <div class="absolute bottom-0 right-0 w-52 h-52 bg-blue-200/30 rounded-full blur-3xl -z-10"></div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="pt-20 pb-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Our Commitment Section -->
+        <section class="mb-24">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+            <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+              <div class="text-center mb-12">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <i class="bi bi-shield-check text-white text-3xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                  Our Commitment to <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Accessibility</span>
+                </h2>
+              </div>
+              <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center max-w-4xl mx-auto">
+                At <span class="font-bold">Accessibility For All</span>, we believe digital accessibility is not just a legal requirement — it's essential to serving all people fairly, building trust, and fostering innovation. We treat it as continuous work, never a finished checkbox.
+              </p>
+              
+              <!-- Compliance Standards Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="group relative">
+                  <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+                  <div class="relative bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-6 border border-blue-100 h-full">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-xl flex items-center justify-center mb-4">
+                      <i class="bi bi-universal-access text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">WCAG 2.1 AA</h3>
+                    <p class="text-gray-700 leading-relaxed">We build to the Web Content Accessibility Guidelines (WCAG) 2.1 AA to help make our content usable by as many people as possible, including people with disabilities.</p>
+                  </div>
+                </div>
+                <div class="group relative">
+                  <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+                  <div class="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 border border-teal-100 h-full">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center mb-4">
+                      <i class="bi bi-people text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">ADA</h3>
+                    <p class="text-gray-700 leading-relaxed">Our site and platform are designed to meet standards set by the Americans with Disabilities Act (ADA), supporting equal access and opportunity for all users.</p>
+                  </div>
+                </div>
+                <div class="group relative">
+                  <div class="absolute -inset-2 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+                  <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 h-full">
+                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+                      <i class="bi bi-shield-lock text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">CIPA</h3>
+                    <p class="text-gray-700 leading-relaxed">We support compliance with the Children's Internet Protection Act (CIPA), helping organizations provide safe, responsible digital environments.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Why It Matters -->
+              <div class="bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl p-8 border border-blue-100">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Why Does This Matter?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i class="bi bi-heart text-white text-sm"></i>
+                    </div>
+                    <p class="text-gray-700">Accessibility opens your content to everyone, including people with disabilities.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i class="bi bi-shield-check text-white text-sm"></i>
+                    </div>
+                    <p class="text-gray-700">Accessibility opens your services to everyone and reduces legal risk along the way.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <i class="bi bi-graph-up text-white text-sm"></i>
+                    </div>
+                    <p class="text-gray-700">Accessible sites are easier to use, rank better in search engines, and serve broader audiences.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="text-center mt-8">
+                <p class="text-gray-700 mb-4">
+                  We are committed to ongoing improvements and welcome feedback to make our platform even more accessible and inclusive.
+                </p>
+                <a href="index.html#contact" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">
+                  <span class="relative z-10">Contact Us About Compliance</span>
+                  <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Compliance Deep Dive Sections -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+            Deep Dive into <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Compliance</span>
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Understanding the importance and implementation of digital accessibility standards.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- 1. What is digital compliance? -->
+          <div class="group relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+            <div class="relative bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 border border-blue-100 h-full">
+              <div class="w-16 h-16 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-2xl flex items-center justify-center mb-6">
+                <i class="bi bi-shield-check text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">What is digital compliance?</h3>
+              <p class="text-gray-700 leading-relaxed">Digital compliance means working to make sure your website and digital documents meet legal and ethical standards for accessibility, privacy, and security. For public-facing organizations, this is not just best practice—it's the law.</p>
+            </div>
+          </div>
+          
+          <!-- 2. Key Standards We Meet -->
+          <div class="group relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+            <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 border border-emerald-100 h-full">
+              <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                <i class="bi bi-award text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">Key Standards We Build Toward</h3>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-check text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700"><strong>WCAG 2.1 AA:</strong> Web Content Accessibility Guidelines that help make content usable by people with disabilities.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-check text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700"><strong>ADA:</strong> The Americans with Disabilities Act mandates digital accessibility for equal opportunity.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-check text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700"><strong>CIPA:</strong> Children's Internet Protection Act requires safe and responsible online environments in schools and libraries.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 3. What happens without accessibility -->
+          <div class="group relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-teal-200 to-cyan-300 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+            <div class="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-teal-100 h-full">
+              <div class="w-16 h-16 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-2xl flex items-center justify-center mb-6">
+                <i class="bi bi-exclamation-triangle text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">What happens without accessibility</h3>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-x text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700">People are shut out of services they rely on</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-x text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700">Funding and grants tied to compliance can lapse</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-x text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700">Trust and reputation erode over time</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-x text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700">Those who need your information most can't reach it</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 4. How We Support Your Accessibility -->
+          <div class="group relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+            <div class="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-teal-100 h-full">
+              <div class="w-16 h-16 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-6">
+                <i class="bi bi-gear-wide-connected text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">How We Support Your Accessibility</h3>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-check text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700">Automated accessibility testing on all documents</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-check text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700">Manual audits by accessibility experts</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-check text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700">Continuous updates to meet evolving standards</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <i class="bi bi-check text-white text-xs"></i>
+                  </div>
+                  <p class="text-gray-700">Welcoming user feedback to improve accessibility</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 5. Continuous education and resources -->
+        <div class="mt-16">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-blue-300 rounded-3xl opacity-10 blur-2xl"></div>
+            <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+              <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-20 h-20 bg-gradient-to-br from-[#0b6ad4] to-[#228AFF] rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <i class="bi bi-journal-text text-white text-3xl"></i>
+                </div>
+                <div class="text-center md:text-left">
+                  <h3 class="text-3xl font-bold mb-4 text-gray-900">Continuous education and resources</h3>
+                  <p class="text-gray-700 text-lg leading-relaxed mb-6">We provide ongoing education for our team and clients, and curate resources to help you stay informed.</p>
+                  <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener" class="group relative px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105" style="background: #228AFF;">
+                      <span class="relative z-10">W3C Resources</span>
+                      <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                    <a href="index.html#contact" class="group relative px-6 py-3 rounded-full font-semibold border-2 transition-all duration-300 hover:shadow-lg hover:scale-105" style="color: #228AFF; border-color: #228AFF;">
+                      <span class="relative z-10">Contact Us</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- More Compliance Sections -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+            Global <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Standards</span> & Beyond
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Our commitment extends worldwide with comprehensive privacy protection and inclusive design practices.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- 6. Global accessibility laws and standards -->
+          <div class="group relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-blue-300 to-blue-500 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+            <div class="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
+              <div class="w-16 h-16 bg-gradient-to-br from-[#228AFF] to-[#0b6ad4] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="bi bi-globe text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-gray-900">Global accessibility laws and standards</h3>
+              <p class="text-gray-700 leading-relaxed">DocMersion is designed to help organizations meet not just U.S. standards, but also international accessibility requirements such as EN 301 549 (EU), AODA (Canada), and more. We stay informed about global regulations to help you serve a worldwide audience.</p>
+            </div>
+          </div>
+          
+          <!-- 7. Data privacy and confidentiality -->
+          <div class="group relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+            <div class="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
+              <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="bi bi-lock text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-gray-900">Data privacy and confidentiality</h3>
+              <p class="text-gray-700 leading-relaxed">Compliance isn't just about accessibility—it's about protecting your users' information. We follow best practices for data privacy and confidentiality, supporting regulations such as GDPR (Europe), FERPA (U.S. education), and more, so your documents and your users are always protected.</p>
+            </div>
+          </div>
+          
+          <!-- 8. Inclusive design and user feedback -->
+          <div class="group relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+            <div class="relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
+              <div class="w-16 h-16 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="bi bi-people text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-gray-900">Inclusive design and user feedback</h3>
+              <p class="text-gray-700 leading-relaxed">We believe compliance is a journey, not a checkbox. Our team works with real users—including those with disabilities—to test, refine, and improve our platform. Your feedback is always welcome and helps us build a more inclusive digital world.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Container - Loaded by contactformloader.js -->
+    <div id="contact-form-container"></div>
+
+    <!-- Footer will be loaded by footerloader.js -->
+    <script src="contactformloader.js"></script>
+  </body>
+</html>
