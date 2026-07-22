@@ -3,6 +3,30 @@
 CTA review re-applied, GitHub Pages previews repaired, and a site-wide colour
 contrast audit. Written for whoever picks this up next — no reconstruction needed.
 
+> **Deployment context (confirmed by Marcus, Jul 22):** this site is **staging on
+> GitHub Pages** — https://accessibility-for-all.github.io/AforA-Website/ — and is
+> **not currently served from a live/production URL**. The S3 + CloudFront path in
+> `deploy.yml` and the README is **not in use right now**. Read the whole document
+> with that in mind: GitHub Pages *is* the site.
+
+---
+
+## ⚠️ Read this before merging — merge order matters
+
+**Merge [PR #4](https://github.com/Accessibility-For-All/AforA-Website/pull/4) first, then [PR #2](https://github.com/Accessibility-For-All/AforA-Website/pull/2).**
+
+Why: Pages used to serve directly from `main`, so staging auto-updated on every
+merge. It now serves from `gh-pages` (which is what makes per-PR previews work),
+and the `gh-pages` **root is a one-time manual snapshot** until PR #4's sync
+workflow is on main.
+
+So if PR #2 merges first, **the staging URL will not show the CTA changes.** PR #4
+installs the workflow that keeps the root current; once it's on main, every
+subsequent merge syncs automatically.
+
+The root is verified in sync with `main` as of this writing — the exposure only
+begins when main next moves.
+
 ---
 
 ## Verified shipped
@@ -34,69 +58,68 @@ Branch `claude/cta-review-improvements-5gb1q7`. 11 files, +73/−12.
 
 No `*_copy`, `*_old`, or `*_variation` file was touched.
 
-### The Pages fix (why it was needed)
+### The Pages fix (why it was needed, and what it cost)
 `preview.yml` publishes each PR to the **`gh-pages`** branch under `pr-<N>/`, but
 Pages was configured to serve from **`main`**. Every preview link the bot has
 ever posted 404'd, including PR #1's. Fixed in the safe order:
 
-1. Mirrored main's content to the `gh-pages` root (so the root URL never went dark).
+1. Mirrored main's content to the `gh-pages` root (so the staging URL never went dark).
 2. Switched the Pages source to `gh-pages`.
 3. PR #4 adds `pages-root.yml` to keep that root mirror in sync on every push to main.
 
-Until PR #4 merges, the root mirror is a **one-time manual snapshot** and will go
-stale as main moves.
+**The trade-off, stated plainly:** serving from `main` meant staging was
+self-updating but previews were impossible. Serving from `gh-pages` gives working
+previews but makes staging depend on a sync workflow. PR #4 closes that gap — it
+is not optional polish, it restores the auto-update behaviour that `main`-sourced
+Pages gave for free.
 
 ---
 
 ## Needs a manual step
 
 ### 1. Merge the two PRs — Marcus
-- **[PR #2](https://github.com/Accessibility-For-All/AforA-Website/pull/2)** — the CTA work. Review on the preview URL above.
-- **[PR #4](https://github.com/Accessibility-For-All/AforA-Website/pull/4)** — the root-sync workflow. Only takes effect once on main.
+Order matters — see the banner above. Review PR #2 on the preview URL first.
 
-### 2. Production deploy is broken — needs AWS access
-`deploy.yml`'s only run ([28916938974](https://github.com/Accessibility-For-All/AforA-Website/actions/runs/28916938974), Jul 8) **failed**:
+### 2. S3 / CloudFront deploy is broken — **not urgent, not currently used**
+`deploy.yml`'s only run ([28916938974](https://github.com/Accessibility-For-All/AforA-Website/actions/runs/28916938974), Jul 8) failed:
 
 ```
 Could not assume role with OIDC: The web identity token provided could not be validated.
 ```
 
 The workflow side is correct (`permissions: id-token: write` is present), so the
-fault is AWS-side — almost certainly the trust policy on
-`arn:aws:iam::155962534528:role/gha-deploy-soprisapps`. Check, in order:
+fault is AWS-side — most likely the trust policy on
+`arn:aws:iam::155962534528:role/gha-deploy-soprisapps`:
 
-1. The OIDC provider `token.actions.githubusercontent.com` exists in account `155962534528`.
-2. The trust policy's `sub` condition matches `repo:Accessibility-For-All/AforA-Website:*`
-   — a rename from an earlier repo name would break exactly this way.
-3. The `aud` condition is `sts.amazonaws.com`.
+1. Confirm the OIDC provider `token.actions.githubusercontent.com` exists in account `155962534528`.
+2. Confirm the trust policy's `sub` matches `repo:Accessibility-For-All/AforA-Website:*`
+   — a repo rename breaks exactly this way.
+3. Confirm `aud` is `sts.amazonaws.com`.
 
-Setup material is in `aws-setup/`. **Until this is fixed, merging to main
-publishes nothing to S3.**
+Setup material is in `aws-setup/`. **Park this until a real launch is planned** —
+it only matters when the site moves off Pages onto a live domain.
 
-### 3. Decide what "production" means for this repo — Marcus
-This needs a human call before any deploy is unblocked. Current facts:
+### 3. When the site does go live — check the deploy target first
+`www.soprisapps.com` (deploy.yml's target per the README) currently serves an
+unrelated **"Sopris Apps"** site: every page from this repo 404s there
+(`/wcag-checker.html`, `/docmersion.html`, `/contactformloader.js` …), only `/`
+resolves. `accessibilityforall.com` is a *third*, separate Cloudflare-hosted site
+with none of this repo's markers.
 
-| Host | Serves | Relationship to this repo |
-|---|---|---|
-| `www.soprisapps.com` | A **"Sopris Apps"** site (~19KB) | deploy.yml's target — but every page from this repo 404s there (`/wcag-checker.html`, `/docmersion.html`, `/contactformloader.js` …). Only `/` resolves. |
-| `accessibilityforall.com` | A different live site (~2.2MB, Cloudflare + Google) | No markers from this repo at all |
-| GitHub Pages mirror | **This repo's main** | Currently the only place this codebase renders |
-
-So this repo has **never successfully deployed anywhere**. The README describes
-`www.soprisapps.com` as the target, but that bucket holds unrelated content.
-Before fixing the OIDC role, confirm the S3 bucket is actually the intended
-destination — a successful deploy would overwrite whatever is there now.
+None of that is a problem today — it just means the S3 bucket is **not** a
+staging copy of this repo, and a first successful deploy would overwrite whatever
+is in it. Confirm the intended destination before enabling that path.
 
 ---
 
 ## Open bugs
 
-| # | Issue | Diagnosis | Fix path |
+| # | Issue | Severity now | Fix path |
 |---|---|---|---|
-| 1 | Production deploy fails | OIDC trust policy mismatch | See "Needs a manual step" §2 |
-| 2 | Live site ≠ repo main | Deploy never succeeded | Resolve §2 + §3 first |
-| 3 | 31+ sub-AA contrast spots | Brand `#228AFF` is 3.42:1 on white | See "Resolve sub-AA" below |
-| 4 | New docmersion CTA paragraph is 2.87:1 | `text-white/85` on `#228AFF` — introduced in PR #2 | Full-opacity white, or darken the panel |
+| 1 | Staging root won't update until PR #4 merges | **High** — blocks seeing merged work | Merge PR #4 first |
+| 2 | 31+ sub-AA contrast spots | Medium | See below |
+| 3 | New docmersion CTA paragraph is 2.87:1 | Medium — introduced in PR #2 | Full-opacity white, or darken the panel |
+| 4 | S3 deploy OIDC failure | **Low** — path not in use | See "Needs a manual step" §2 |
 
 ---
 
@@ -197,12 +220,15 @@ whole WCAG 2.1 AA surface should be self-audited. In rough priority order:
 
 **Note the dogfooding angle:** findings 1–10 are exactly what this company sells.
 A clean self-audit is a marketing asset; an unfixed one is a liability if a
-prospect runs a scanner on the site during evaluation.
+prospect runs a scanner on the site during evaluation. Staging on Pages is a good
+place to get this clean *before* a live domain exists.
 
 ---
 
 ## Operational patterns discovered this session
 
+- **GitHub Pages is the site right now**, not a mirror of something else. Treat
+  https://accessibility-for-all.github.io/AforA-Website/ as the thing users see.
 - **This repo is not cloned locally.** The folder at
   `~/Documents/Work/Blend Web Marketing/Clients/Accessibility for All /Website/`
   is **not a git repo** and is a **stale divergent snapshot** — its submit button
@@ -210,8 +236,8 @@ prospect runs a scanner on the site during evaluation.
   and its `wcag-checker.html` is 14KB vs main's 20KB. Do not edit it and expect
   it to matter. Clone `Accessibility-For-All/AforA-Website` instead. The sibling
   `untitled folder/` is another stale copy.
-- **Pages now serves from `gh-pages`, not `main`.** Anything that assumes `main`
-  is the Pages source is out of date.
+- **Pages serves from `gh-pages`, not `main`.** Anything that assumes `main` is
+  the Pages source is out of date.
 - **The `gh-pages` root and `pr-<N>/` previews share one branch.** Both publish
   steps must use `keep_files: true` or they will delete each other. Consequence:
   a file deleted from main is *not* removed from the mirror — prune by hand on
@@ -224,3 +250,5 @@ prospect runs a scanner on the site during evaluation.
   colour matches overstates the problem by ~50% on this site.
 - `privacy-policy.html` and `footerloader.js` correctly keep `index.html#contact`
   — neither has an on-page form, so the compliance.html fix was rightly scoped.
+- **Manual root re-sync**, if main moves before PR #4 lands: check out `gh-pages`,
+  `rsync -a` main's content over it using `preview.yml`'s exclude list, commit, push.
