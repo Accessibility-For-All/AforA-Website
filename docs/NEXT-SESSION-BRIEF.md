@@ -3,10 +3,17 @@
 > Paste this (or just open the repo and run `/session-start`, then read this file) to start the work.
 > Internal doc — excluded from deploy.
 
-**Before building anything:** run `/session-start` to load context (CLAUDE.md, `docs/`, `memory/`,
-open PRs), then **review all of the material below and produce a written plan for approval before
-writing code** (use plan mode). This is a large scope against a soft next-day goal, so the plan must
-**triage "must-ship Thursday" vs. "fast-follow"** and call out anything that can't be done well by then.
+**Step 0 — get the repo current + oriented (before anything else):**
+1. Merge the open setup/docs PRs so `main` has the full toolkit + context: **#3** (`/wrap-up` Part 3 + `docs/STEPHEN-UPDATES.md`), **#5** (`docs/HOSTING-ANALYSIS.md` + hosting-direction memory), **#6** (this brief). They're internal-only — no site change.
+2. Run **`/whereami`** to confirm you're in `Accessibility-For-All/AforA-Website`, on a fresh task branch (not `main`, not another session's branch), with no foreign changes in the tree.
+3. Run **`/session-start`** to load context (CLAUDE.md, `docs/`, `memory/`, open PRs). Read `docs/HOSTING-ANALYSIS.md` and `memory/hosting-direction.md` for the platform direction (Cloudflare + Astro, pending sign-off), and `memory/` for the deploy/preview gotchas.
+
+**Then:** **review all of the material below and produce a written plan for approval before writing
+code** (use plan mode). This is large scope against a soft next-day goal, so the plan must **triage
+"must-ship Thursday" vs. "fast-follow"** and call out anything that can't be done well by then.
+
+**Throughout:** run `/whereami` again any time you switch context or aren't sure you're on the right
+branch/files; end with `/wrap-up` (which now writes the Stephen stakeholder update too, via Part 3).
 
 ## Context (confirm, don't rediscover)
 - `Accessibility-For-All/AforA-Website` is a **static HTML site**, live only on the GitHub Pages staging URL. Prod S3/CloudFront deploy is broken (OIDC) and likely being retired.
