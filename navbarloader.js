@@ -59,9 +59,9 @@ function loadNavbar() {
           </div>
           <a href="pricing.html" class="hover:text-brand transition whitespace-nowrap">Pricing</a>
           <a href="compliance.html" class="hover:text-brand transition whitespace-nowrap">Compliance</a>
-          <a href="wcag-checker.html" class="group relative ml-2 px-4 xl:px-5 py-2 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 whitespace-nowrap" style="background: #228AFF;">
-            <span class="relative z-10">Free WCAG scan</span>
-            <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <a href="book-demo.html" class="group relative ml-2 px-4 xl:px-5 py-2 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 whitespace-nowrap" style="background: #0b6ad4;">
+            <span class="relative z-10">Book a demo</span>
+            <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
         </div>
         <button class="lg:hidden text-3xl" id="mobile-menu-btn"><i class="bi bi-list"></i></button>
@@ -93,9 +93,9 @@ function loadNavbar() {
         </div>
         <a href="pricing.html" class="block py-2 hover:text-brand">Pricing</a>
         <a href="compliance.html" class="block py-2 hover:text-brand">Compliance</a>
-        <a href="wcag-checker.html" class="group relative block py-2 mt-2 px-5 rounded-full font-semibold text-white text-center shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">
-          <span class="relative z-10">Free WCAG scan</span>
-          <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <a href="book-demo.html" class="group relative block py-2 mt-2 px-5 rounded-full font-semibold text-white text-center shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #0b6ad4;">
+          <span class="relative z-10">Book a demo</span>
+          <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </a>
       </div>
     </nav>`;
