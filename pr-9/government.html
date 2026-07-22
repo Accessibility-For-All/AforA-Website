@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <!-- BEGIN DOCMERSION FAVICONS -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="shortcut icon" href="/favicon/favicon.ico">
+        <!-- END DOCMERSION FAVICONS -->
+         
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Government – Accessibility For All</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#228AFF',
+              dark: '#0a2239',
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- HLS.js for video streaming -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Navbar and Footer Loaders -->
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <!-- PDF Genie -->
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <script>
+// Initialize HLS video players
+document.addEventListener('DOMContentLoaded', function() {
+  // Government video
+  const governmentVideo = document.getElementById('government-video');
+  const playButton = document.getElementById('government-play-button');
+  const governmentVideoSrc = 'https://customer-394md8sxxno51fu2.cloudflarestream.com/7f27b48056bbc8fb6dbe5670d0f7aee0/manifest/video.m3u8';
+  
+  let isPlaying = false;
+  
+  if (Hls.isSupported()) {
+    const governmentHls = new Hls();
+    governmentHls.loadSource(governmentVideoSrc);
+    governmentHls.attachMedia(governmentVideo);
+  } else if (governmentVideo.canPlayType('application/vnd.apple.mpegurl')) {
+    // Safari native HLS support
+    governmentVideo.src = governmentVideoSrc;
+  }
+  
+  // Video click handler
+  function toggleVideo() {
+    if (isPlaying) {
+      governmentVideo.pause();
+      playButton.style.opacity = '1';
+      isPlaying = false;
+    } else {
+      governmentVideo.play();
+      playButton.style.opacity = '0';
+      isPlaying = true;
+    }
+  }
+  
+  // Add click handlers
+  governmentVideo.addEventListener('click', toggleVideo);
+  playButton.addEventListener('click', toggleVideo);
+  
+  // Hide play button when video is playing
+  governmentVideo.addEventListener('play', function() {
+    playButton.style.opacity = '0';
+    isPlaying = true;
+  });
+  
+  // Show play button when video is paused
+  governmentVideo.addEventListener('pause', function() {
+    playButton.style.opacity = '1';
+    isPlaying = false;
+  });
+});
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-teal-50 pt-28 pb-16">
+      <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 px-8 relative z-10">
+        <div class="max-w-xl lg:text-left text-center lg:basis-5/12 lg:max-w-[45%] w-full order-1 lg:order-1">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider" style="background-color: rgba(35, 140, 255, 0.1); color: #228AFF;">For Government Agencies</span>
+<h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+  Public records, policies, and forms<br />
+  <span style="color: #228AFF;">Accessible to Every Citizen</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">DocMersion helps governments modernize public access to ordinances, meeting minutes, and compliance documents. Make public information transparent, accessible, and easy to trust.</p>
+          <div class="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start text-center lg:text-left">
+            <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">
+              <span class="relative z-10">Book a demo</span>
+              <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+            <a href="wcag-checker.html" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#228AFF; color:#228AFF;" onmouseover="this.style.background='#228AFF'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#228AFF';">Run a free WCAG scan</a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center lg:basis-7/12 lg:max-w-[55%] w-full order-2 lg:order-2">
+          <div class="relative w-full max-w-2xl">
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 blur-2xl"></div>
+            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-2xl border border-white/50">
+              <div class="relative">
+                <video 
+                  id="government-video"
+                  class="w-full h-auto rounded-xl shadow-lg cursor-pointer"
+                  loop 
+                  playsinline
+                  style="aspect-ratio: 16/9; object-fit: cover;">
+                  Your browser does not support the video tag.
+                </video>
+                <!-- Play button overlay -->
+                <div id="government-play-button" class="absolute inset-0 flex items-center justify-center bg-black/20 rounded-xl transition-opacity duration-300">
+                  <div class="bg-white/90 rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-blue-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile CTA Button - appears below video on mobile -->
+        <div class="lg:hidden w-full flex flex-col sm:flex-row gap-4 justify-center order-3">
+          <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">
+            <span class="relative z-10">Book a demo</span>
+            <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          <a href="wcag-checker.html" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#228AFF; color:#228AFF;" onmouseover="this.style.background='#228AFF'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#228AFF';">Run a free WCAG scan</a>
+        </div>
+      </div>
+      <!-- Decorative shapes -->
+      <div class="absolute top-0 left-0 w-40 h-40 rounded-full blur-3xl -z-10" style="background-color: rgba(35, 140, 255, 0.2);"></div>
+      <div class="absolute bottom-0 right-0 w-52 h-52 bg-blue-200/30 rounded-full blur-3xl -z-10"></div>
+    </section>
+    
+    <main class="pt-32 pb-20 min-h-[60vh] bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <!-- COMMENTED OUT: Main heading block
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center">
+              Accessible <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Government Documents</span> for <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">All</span>
+            </h1>
+            <p class="text-lg text-gray-700 text-center mb-10 leading-relaxed"><span class="text-black font-bold">Doc</span><span class="font-bold" style="color: #228AFF;">Mersion</span> helps government agencies publish public records, policies, and forms that are fully compliant, searchable, and easy for every citizen to use.</p>
+            <div class="flex justify-center mb-6">
+              <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">
+                <span class="relative z-10">Book a demo</span>
+                <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+        -->
+        
+        <!-- Nonprofit Impact Section -->
+        <section class="relative py-16 mb-12">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+              The <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Government</span> Advantage
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">Understanding how accessible document management uniquely serves government agencies and their constituents.</p>
+          </div>
+          
+          <!-- Alternating Layout -->
+          <div class="space-y-16">
+            <!-- First Feature - Left Text, Right Visual -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div class="order-2 lg:order-1">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
+                    <i class="bi bi-people-fill text-white text-xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900">Transparency & Trust</h3>
+                </div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">Government agencies serve diverse constituents with varying accessibility needs. Digital documents ensure every citizen can access vital public information regardless of ability, language, or device.</p>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">Screen Reader Compatible</span>
+                  <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">Multi-Language Support</span>
+                  <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Mobile Optimized</span>
+                </div>
+              </div>
+              <div class="order-1 lg:order-2">
+                <div class="relative">
+                  <div class="absolute -inset-4 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-3xl opacity-20 blur-2xl"></div>
+                  <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 shadow-2xl border border-emerald-100">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <i class="bi bi-universal-access text-emerald-600 text-2xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-700">Accessibility First</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <i class="bi bi-translate text-teal-600 text-2xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-700">Global Reach</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <i class="bi bi-phone text-blue-600 text-2xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-700">Any Device</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <i class="bi bi-heart text-teal-700 text-2xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-700">Inclusive Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div class="order-2 lg:order-2">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-14 h-14 bg-gradient-to-br from-[#228AFF] to-[#0b6ad4] rounded-full flex items-center justify-center">
+                    <i class="bi bi-arrow-repeat text-white text-xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900">Regulatory Compliance</h3>
+                </div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">Meet ADA, WCAG 2.2, and public records law requirements automatically. Staff can focus on public service while citizens self-serve information efficiently.</p>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-gray-700">Reduce public records requests by 70%</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-gray-700">24/7 self-service access for citizens</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                    <span class="text-gray-700">Free up staff time for public service</span>
+                  </div>
+                </div>
+              </div>
+              <div class="order-1 lg:order-1">
+                <div class="relative">
+                  <div class="absolute -inset-4 bg-gradient-to-r from-blue-300 to-blue-500 rounded-3xl opacity-20 blur-2xl"></div>
+                  <div class="relative bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 shadow-2xl border border-blue-100">
+                    <div class="text-center">
+                      <div class="w-20 h-20 bg-gradient-to-br from-[#228AFF] to-[#0b6ad4] rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-graph-up-arrow text-white text-2xl"></i>
+                      </div>
+                      <h4 class="text-lg font-bold text-gray-900 mb-2">Resource Efficiency</h4>
+                      <p class="text-gray-600 mb-4">One document serves thousands</p>
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <div class="flex justify-between items-center mb-2">
+                          <span class="text-sm text-gray-600">Staff Time Saved</span>
+                          <span class="text-sm font-bold text-blue-600">73%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                          <div class="bg-gradient-to-r from-[#228AFF] to-[#0b6ad4] h-2 rounded-full" style="width: 73%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          -->
+            <!-- Bottom Benefits Bar -->
+            <div class="relative">
+              <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 via-cyan-200 to-teal-200 rounded-2xl opacity-10 blur-xl"></div>
+              <div class="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <i class="bi bi-shield-check text-white text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 text-gray-900">Regulatory Compliance</h4>
+                    <p class="text-gray-600 text-sm">Meet ADA and public records requirements</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <i class="bi bi-globe text-white text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 text-gray-900">Citizen Access</h4>
+                    <p class="text-gray-600 text-sm">Serve all community members</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <i class="bi bi-heart text-white text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 text-gray-900">Public Service</h4>
+                    <p class="text-gray-600 text-sm">Amplify government transparency</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- ARCHIVED: How It Works Section
+        <section class="relative py-16 mb-12">
+          <div class="absolute -inset-4 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                How It <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Works</span>
+              </h2>
+              <p class="text-gray-600 text-lg max-w-2xl mx-auto">Transform your documents in three simple steps</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="group relative text-center h-full">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+                  <div class="w-20 h-20 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-upload text-white text-3xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">1. Upload</h3>
+                  <p class="text-gray-600 leading-relaxed flex-grow">Send us your PDF or document. We'll handle the conversion.</p>
+                </div>
+              </div>
+              <div class="group relative text-center h-full">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-teal-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+                  <div class="w-20 h-20 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-diagram-3 text-white text-3xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">2. Organize</h3>
+                  <p class="text-gray-600 leading-relaxed flex-grow">We'll structure your content with sub-items, navigation, and search.</p>
+                </div>
+              </div>
+              <div class="group relative text-center h-full">
+                <div class="absolute -inset-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+                  <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-share text-white text-3xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">3. Share</h3>
+                  <p class="text-gray-600 leading-relaxed flex-grow">Publish your compliant, searchable portal for your community members.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        -->
+        <section class="relative py-16 mb-12">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                Key <span class="bg-gradient-to-r from-[#0a2239] to-[#123a5e] bg-clip-text text-transparent">Solutions</span> for <span class="text-black">Government</span><span style="color: #228AFF;"></span>
+              </h2>
+              <p class="text-gray-600 text-lg max-w-3xl mx-auto">Transform your agency's document experience with modern, compliant solutions.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4 h-full">
+                  <div class="w-16 h-16 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <i class="bi bi-shield-check text-white text-xl"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Regulatory & ADA Compliance</h3>
+                    <p class="text-gray-600">Meet ADA, WCAG 2.2, and CIPA standards for all digital government documents.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-teal-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4 h-full">
+                  <div class="w-16 h-16 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <i class="bi bi-search text-white text-xl"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Instant AI Search</h3>
+                    <p class="text-gray-600">Make ordinances, minutes, and public records instantly searchable for constituents.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4 h-full">
+                  <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <i class="bi bi-list-ul text-white text-xl"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Intuitive Navigation</h3>
+                    <p class="text-gray-600">Organize complex documents with sub-items and easy-to-use navigation.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-300 to-cyan-400 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4 h-full">
+                  <div class="w-16 h-16 bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <i class="bi bi-translate text-white text-xl"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Translation & Accessibility</h3>
+                    <p class="text-gray-600">Support diverse communities with translation and accessible formats. Share or print any document for meetings, records, or public access.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                Key <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Solutions</span> for <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Government</span>
+              </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div class="w-16 h-16 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-search text-white text-2xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">Searchable AI Resources</h3>
+                  <p class="text-gray-600 leading-relaxed flex-grow">Find any policy or resource instantly with in-accordion AI search and filters.</p>
+                </div>
+              </div>
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-teal-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div class="w-16 h-16 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-list-ul text-white text-2xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">Sub-items & Navigation</h3>
+                  <p class="text-gray-600 leading-relaxed flex-grow">Break down large documents, expand for details, and use arrows to move between items.</p>
+                </div>
+              </div>
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-translate text-white text-2xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">Translation & Accessibility</h3>
+                  <p class="text-gray-600 leading-relaxed flex-grow">Compliant with all major standards and supports multiple languages for global access.</p>
+                </div>
+              </div>
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-300 to-cyan-400 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div class="w-16 h-16 bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-share text-white text-2xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">Share & Print</h3>
+                  <p class="text-gray-600 leading-relaxed flex-grow">Share or print any document for meetings, records, or public access.</p>
+                </div>
+              </div>
+            </div>
+            -->
+        </section>
+        <section class="relative py-16 mb-12">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                Why <span class="bg-gradient-to-r from-[#0a2239] to-[#123a5e] bg-clip-text text-transparent">Governments</span> Love <span class="text-black">Doc</span><span style="color: #228AFF;">Mersion</span>
+              </h2>
+              <p class="text-gray-600 text-lg max-w-3xl mx-auto">Discover the comprehensive benefits that make DocMersion the trusted choice for government agencies.</p>
+            </div>
+            
+            <!-- Hero Feature Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              <div class="group relative h-full">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-300 to-blue-500 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+                <div class="relative bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-blue-100 h-full flex flex-col">
+                  <div class="flex items-start gap-6 flex-grow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#228AFF] to-[#0b6ad4] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <i class="bi bi-bank text-white text-2xl"></i>
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="font-bold text-2xl mb-3 text-gray-900">Transparency & Trust</h3>
+                      <p class="text-gray-700 text-lg leading-relaxed">Build public trust with transparent, always-accessible records and policies for your community.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+                <div class="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-teal-100 h-full flex flex-col">
+                  <div class="flex items-start gap-6 flex-grow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <i class="bi bi-people text-white text-2xl"></i>
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="font-bold text-2xl mb-3 text-gray-900">Citizen Engagement</h3>
+                      <p class="text-gray-700 text-lg leading-relaxed">Empower citizens to find information, forms, and updates easily from any device.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Grid of Additional Features -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-globe text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Global Accessibility</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Meet accessibility standards and serve every resident, regardless of ability or language.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-200 to-cyan-300 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-shield-check text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Compliance & Security</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Ensure your documents are always compliant with ADA, WCAG, and public records laws.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-200 to-blue-300 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#14b8a6] to-[#228AFF] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-translate text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Translation & Inclusion</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Provide information in multiple languages to serve diverse communities.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-300 to-cyan-300 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#0b6ad4] to-[#228AFF] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-headset text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Agency Support</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Rely on expert support for onboarding, compliance, and ongoing success.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-amber-300 to-amber-400 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#b45309] to-[#92400e] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-lightbulb text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Data & Insights</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Track document access and usage to improve public service delivery.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-300 to-cyan-300 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-award text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Recognition & Progress</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Highlight agency achievements and milestones for your community.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          <div class="flex justify-center mb-12">
+          <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">
+            <span class="relative z-10">Book a demo</span>
+            <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+        </div>
+      
+          <!-- Contact Form Container - Loaded by contactformloader.js -->
+    <div id="contact-form-container"></div>
+      </div>
+    </main>
+    <!-- Footer will be loaded by footerloader.js -->
+    <script src="contactformloader.js"></script>
+  </body>
+</html>
