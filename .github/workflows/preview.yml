@@ -35,6 +35,10 @@ jobs:
             --exclude='.cowork' \
             --exclude='scripts' \
             --exclude='aws-setup' \
+            --exclude='docs' \
+            --exclude='.claude' \
+            --exclude='memory' \
+            --exclude='CLAUDE.md' \
             --exclude='README.md' \
             --exclude='BOOTSTRAP.md' \
             --exclude='_site' \

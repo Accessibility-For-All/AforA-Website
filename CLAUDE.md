@@ -1,0 +1,53 @@
+# CLAUDE.md — AforA-Website (soprisapps.com static site)
+
+Static marketing site for **Accessibility For All**, served at **https://www.soprisapps.com**
+(apex `soprisapps.com` aliases here too). Repo: `Accessibility-For-All/AforA-Website`.
+Maintained by Blend Web Marketing. Multiple people (and Claude, in Cowork / Code / VS Code)
+edit this repo — so **process discipline is what keeps everyone in sync.**
+
+> **Every session starts with `/session-start` and ends with `/wrap-up`.** Not optional.
+> These two skills are the whole reason nobody loses work or context. See below.
+
+## What this is (30 seconds)
+- **Plain static site.** Raw `*.html` + `*.js` loaders (`footerloader.js`, `contactformloader.js`) + images. **No build step, no npm, no framework.** What's in the repo root IS what ships.
+- **Deploy = merge to `main`.** GitHub Actions (`.github/workflows/deploy.yml`) syncs the repo to `s3://www.soprisapps.com` and invalidates CloudFront `E31CSAAZLD937L`. Live in ~60s. No AWS keys anywhere — deploy uses GitHub OIDC to assume an IAM role.
+- **Preview = open a PR.** `.github/workflows/preview.yml` publishes a per-PR preview to GitHub Pages and comments the URL on the PR: `https://accessibility-for-all.github.io/AforA-Website/pr-<N>/`.
+- **Folder URLs work** because CloudFront points at the S3 *website* endpoint (`/about/` → `/about/index.html` automatically). Adding `foo/index.html` gives you a working `/foo/` URL.
+- Config the tooling reads: `.cowork/site.yml`. Full narrative: `README.md`.
+
+## Version control — the rules (this is the core of the whole system)
+There is **no magic sync** between machines. Git IS the sync. Desktop Code, Cowork, and
+VS Code are each just a checkout of the same GitHub repo; a change only reaches another
+person (or another Claude session) when it is **pushed**. Work committed but not pushed is
+invisible and at risk on one machine.
+
+1. **Pull before you touch anything.** `git fetch origin` → work from current `main`.
+2. **One branch per change.** `git switch -c <kind>/<short-desc>` (e.g. `content/hero-copy`, `fix/contact-form`). Never commit straight to `main`.
+3. **Commit in small, self-contained steps** with clear messages — one logical change per commit.
+4. **Push before you stop. Always.** If it's not on GitHub, it doesn't exist. **Never end a session with unpushed commits.**
+5. **Every change ships through a PR** so it gets a preview URL and a review. `main` is protected-by-convention: merge only reviewed, preview-checked PRs.
+6. **Merge to `main` deploys to production immediately.** Treat every merge as a release.
+7. **Rollback** = revert the merge commit on `main` (`git revert -m 1 <sha>`) and push — that redeploys the previous state in ~60s.
+
+Branch prefixes: `content/` copy & pages · `fix/` bugs · `feat/` new sections/pages · `setup/` tooling & process · `chore/` deps & housekeeping.
+
+## Note-taking — how we stay consistent across people (`docs/` + `memory/`)
+Every contributor leaves the same trail, so the next person reconstructs nothing:
+- **`docs/CHANGELOG.md`** — one running log. Every merged change appends a dated one-liner (what changed + PR #). Newest on top.
+- **`docs/sessions/<date>-<who>.md`** — a short per-session handoff written by `/wrap-up` (copy `docs/sessions/_TEMPLATE.md`). What you did, what's open, what the next person should do.
+- **`docs/DECISIONS.md`** — durable "why" decisions (infra, domains, conventions) so they aren't re-litigated.
+- **`memory/`** — cross-session facts for Claude: one fact per file, indexed in `memory/MEMORY.md`. Gotchas, resource IDs, non-obvious constraints. Read at session start.
+
+## Guardrails (do not undo these)
+- **Internal notes never ship to the public site.** `docs/`, `.claude/`, `memory/`, and `CLAUDE.md` are excluded in **both** workflows' sync/rsync steps. If you add a new internal folder, add it to the exclude lists in `deploy.yml` AND `preview.yml`, or it will be published to `www.soprisapps.com`.
+- **No secrets in the repo, ever.** Deploy auth is OIDC role assumption — there are deliberately no AWS keys in the repo or in GitHub secrets. `.env*` is gitignored. PR previews are **public**.
+- **Don't hand-edit the legacy cruft.** Files like `associations_copy_--old.html` and `government_--_old_copy.html` are dead copies. Don't edit them; if anything, a `chore/` PR should delete them (confirm with Marcus first).
+- **Absolute paths (`/logo.png`) 404 in the PR preview** (Pages serves from a subpath) but work in production — don't "fix" them to relative on account of the preview.
+- **`aws-setup/` is admin-only infrastructure.** Terraform + IAM/OIDC. Don't touch as part of content work.
+
+## Commands
+- Preview a change: push a branch, open a PR (`gh pr create`), open the preview URL the bot comments.
+- Ship: merge the PR to `main` (deploy runs automatically).
+- Watch a deploy: `gh run watch <id> --exit-status` (or the Actions tab).
+- Verify CI is actually executing before trusting it: **`/ci-reality-check`**.
+- Environment sanity at session start: **`/self-check`**.
