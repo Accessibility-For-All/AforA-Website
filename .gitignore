@@ -10,7 +10,8 @@ Desktop.ini
 # Editor / agent state
 .idea/
 .vscode/
-.claude/
+# Keep shared Claude skills tracked; ignore only per-machine local state.
+.claude/settings.local.json
 *.swp
 *.swo
 *~
