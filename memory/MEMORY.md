@@ -9,3 +9,4 @@ Internal — excluded from the deploy, never served publicly.
 - [Preview flow](preview-flow.md) — PR → GitHub Pages preview URL; absolute paths 404 in preview but work in prod
 - [Internal dirs excluded from deploy](internal-dirs-excluded.md) — docs/.claude/memory/CLAUDE.md must stay out of both workflows' sync
 - [Repo vs bucket naming](repo-vs-bucket-naming.md) — AforA-Website repo but soprisapps.com bucket/domain (legacy, both correct)
+- [Hosting direction](hosting-direction.md) — recommended move to Cloudflare (site + scanner), front end in Astro; pending Stephen's sign-off; scanner is greenfield
