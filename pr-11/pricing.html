@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TX5BQW6XZ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TX5BQW6XZ6');
+</script>
+    <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <!-- END ACCESSIBILITY FOR ALL FAVICONS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing – Accessibility For All Suite</title>
+    <meta name="description" content="Simple self-service pricing for the Accessibility For All suite. Start free with a WCAG 2.1 AA scan, then pick a plan — Starter, Growth, Scale, or Enterprise — that grows with your organization.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: '#3aa9ff', dark: '#0a2239' },
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="pricing-config.js"></script>
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <!-- Hero -->
+    <section class="relative pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
+      <div class="absolute top-20 left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-3xl"></div>
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center">
+        <span class="inline-block text-sm font-semibold tracking-widest text-[#0b6ad4] uppercase mb-3">Pricing</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Simple plans that scale with <span class="bg-gradient-to-r from-[#0b6ad4] to-[#0d9488] bg-clip-text text-transparent">your accessibility needs</span></h1>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">Start free with an instant WCAG scan. When you're ready to stay compliant, pick a plan and get started today — no sales call required. Every plan covers websites and documents together, because your accessibility obligation covers both.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="wcag-checker.html" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]" style="border-color:#10b981; color:#0d7a70;" onmouseover="this.style.background='#10b981'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0d7a70';"><i class="bi bi-search mr-2" aria-hidden="true"></i>Start free WCAG scan</a>
+          <a href="#plans" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background: #0b6ad4;"><span class="relative z-10">See plans &amp; pricing</span><div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free callout -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="relative rounded-3xl overflow-hidden border border-emerald-100 bg-gradient-to-r from-emerald-50 to-teal-50 p-8 md:p-10 flex flex-col md:flex-row items-center gap-6">
+          <span class="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl text-white text-2xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);" aria-hidden="true"><i class="bi bi-clipboard-check"></i></span>
+          <div class="flex-1 text-center md:text-left">
+            <h2 class="text-2xl font-extrabold mb-1">Check — the WCAG 2.1 AA scanner — is free</h2>
+            <p class="text-gray-600">Scan any site or document and get an instant Legal Risk Level report — 50+ criteria, no sign-up, no cost. Every paid plan starts here.</p>
+          </div>
+          <a href="wcag-checker.html" class="px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all hover:scale-105 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0d9488]" style="background:linear-gradient(135deg,#10b981,#14b8a6);">Scan for free</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section id="plans" class="py-16 bg-white scroll-mt-24">
+      <div class="container mx-auto px-6 max-w-7xl">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Pick the plan that fits today</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Upgrade any time as your organization — and your obligation — grows.</p>
+        </div>
+
+        <!-- Billing toggle -->
+        <div class="flex justify-center mb-12">
+          <div class="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 p-1" role="group" aria-label="Billing period">
+            <button id="billing-monthly" type="button" aria-pressed="false" class="billing-btn px-6 py-2 rounded-full font-semibold text-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">Monthly</button>
+            <button id="billing-annual" type="button" aria-pressed="true" class="billing-btn px-6 py-2 rounded-full font-semibold text-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">Annual <span class="font-normal">(2 months free)</span></button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+          <!-- Starter -->
+          <div class="relative bg-white rounded-3xl border border-gray-200 shadow-lg p-7 flex flex-col">
+            <h3 class="font-bold text-xl mb-1">Starter</h3>
+            <p class="text-sm text-gray-600 mb-4">Get compliant. For small organizations with one website and a modest document library.</p>
+            <div class="mb-4 price-block" data-plan="starter" data-monthly="59" data-annual="590">
+              <span class="text-4xl font-extrabold price-amount">$590</span>
+              <span class="text-gray-600 price-period">/year</span>
+              <p class="text-xs text-gray-500 mt-1 price-note">billed annually — $59/mo billed monthly</p>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> 1 website</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Monitor up to 250 pages</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Weekly automated scans</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> DocMersion: 50 documents/mo</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Email support</li>
+            </ul>
+            <a href="#" class="plan-cta mt-auto text-center px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" data-plan="starter" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started</a>
+          </div>
+          <!-- Growth (highlighted) -->
+          <div class="relative bg-white rounded-3xl border-2 border-[#0b6ad4] shadow-xl p-7 flex flex-col">
+            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold text-white whitespace-nowrap" style="background:#0b6ad4;">MOST POPULAR</span>
+            <h3 class="font-bold text-xl mb-1">Growth</h3>
+            <p class="text-sm text-gray-600 mb-4">Stay compliant as you grow. For organizations with multiple sites and real publishing volume.</p>
+            <div class="mb-4 price-block" data-plan="growth" data-monthly="149" data-annual="1490">
+              <span class="text-4xl font-extrabold price-amount">$1,490</span>
+              <span class="text-gray-600 price-period">/year</span>
+              <p class="text-xs text-gray-500 mt-1 price-note">billed annually — $149/mo billed monthly</p>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Up to 3 websites</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Monitor up to 1,000 pages</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Daily automated scans</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> DocMersion: 250 documents/mo</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Automated ACR draft (unsigned)</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Priority support</li>
+            </ul>
+            <a href="#" class="plan-cta mt-auto text-center px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" data-plan="growth" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started</a>
+          </div>
+          <!-- Scale -->
+          <div class="relative bg-white rounded-3xl border border-gray-200 shadow-lg p-7 flex flex-col">
+            <h3 class="font-bold text-xl mb-1">Scale</h3>
+            <p class="text-sm text-gray-600 mb-4">Prove it to procurement. For multi-site organizations that must document conformance.</p>
+            <div class="mb-4 price-block" data-plan="scale" data-monthly="399" data-annual="3990">
+              <span class="text-4xl font-extrabold price-amount">$3,990</span>
+              <span class="text-gray-600 price-period">/year</span>
+              <p class="text-xs text-gray-500 mt-1 price-note">billed annually — $399/mo billed monthly</p>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Up to 10 websites</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Monitor up to 5,000 pages</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Daily automated scans</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> DocMersion: 1,000 documents/mo</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> 1 signed ACR/VPAT per year</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Onboarding + quarterly review</li>
+            </ul>
+            <a href="#" class="plan-cta mt-auto text-center px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" data-plan="scale" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started</a>
+          </div>
+          <!-- Enterprise -->
+          <div class="relative bg-[#0a2239] text-white rounded-3xl shadow-xl p-7 flex flex-col">
+            <h3 class="font-bold text-xl mb-1">Enterprise</h3>
+            <p class="text-sm text-white/80 mb-4">A program, not a plan. For large and regulated organizations with complex requirements.</p>
+            <div class="mb-4">
+              <span class="text-4xl font-extrabold">Custom</span>
+              <p class="text-xs text-white/70 mt-1">tailored agreement &amp; volume pricing</p>
+            </div>
+            <ul class="space-y-2 text-sm text-white/90 flex-grow mb-6">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Unlimited sites &amp; pages</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Unlimited DocMersion volume</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Native Web document conversions</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Multi-year VPAT/ACR program</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> SSO &amp; team management</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Dedicated account manager</li>
+            </ul>
+            <a href="book-demo.html" class="mt-auto text-center px-6 py-3 rounded-full font-semibold bg-white text-[#0a2239] transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Book a demo</a>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-600 mt-8">Need a signed ACR/VPAT on Starter or Growth? They're available per report — <button type="button" onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="underline font-semibold text-[#0b6ad4] hover:text-[#09519f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">request a quote</button>.</p>
+      </div>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Compare plans</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Everything in every plan is built on the same engine — plans differ in scale, cadence, and how much proof you need.</p>
+        </div>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-lg">
+          <table class="w-full text-sm text-left">
+            <caption class="sr-only">Feature comparison across Starter, Growth, Scale, and Enterprise plans</caption>
+            <thead>
+              <tr class="border-b border-gray-200 bg-gray-50">
+                <th scope="col" class="px-5 py-4 font-bold text-gray-900">Features</th>
+                <th scope="col" class="px-5 py-4 font-bold text-gray-900 text-center">Starter</th>
+                <th scope="col" class="px-5 py-4 font-bold text-center text-[#0b6ad4]">Growth</th>
+                <th scope="col" class="px-5 py-4 font-bold text-gray-900 text-center">Scale</th>
+                <th scope="col" class="px-5 py-4 font-bold text-gray-900 text-center">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100"><th scope="row" class="px-5 py-3 font-medium text-gray-800">Websites</th><td class="px-5 py-3 text-center">1</td><td class="px-5 py-3 text-center">3</td><td class="px-5 py-3 text-center">10</td><td class="px-5 py-3 text-center">Unlimited</td></tr>
+              <tr class="border-b border-gray-100"><th scope="row" class="px-5 py-3 font-medium text-gray-800">Pages monitored</th><td class="px-5 py-3 text-center">250</td><td class="px-5 py-3 text-center">1,000</td><td class="px-5 py-3 text-center">5,000</td><td class="px-5 py-3 text-center">Unlimited</td></tr>
+              <tr class="border-b border-gray-100"><th scope="row" class="px-5 py-3 font-medium text-gray-800">Scan frequency</th><td class="px-5 py-3 text-center">Weekly</td><td class="px-5 py-3 text-center">Daily</td><td class="px-5 py-3 text-center">Daily</td><td class="px-5 py-3 text-center">Custom</td></tr>
+              <tr class="border-b border-gray-100"><th scope="row" class="px-5 py-3 font-medium text-gray-800">DocMersion documents/mo</th><td class="px-5 py-3 text-center">50</td><td class="px-5 py-3 text-center">250</td><td class="px-5 py-3 text-center">1,000</td><td class="px-5 py-3 text-center">Unlimited</td></tr>
+              <tr class="border-b border-gray-100"><th scope="row" class="px-5 py-3 font-medium text-gray-800">Automated ACR draft</th><td class="px-5 py-3 text-center" aria-label="Not included"><i class="bi bi-dash text-gray-400" aria-hidden="true"></i></td><td class="px-5 py-3 text-center"><i class="bi bi-check-lg text-[#0b6ad4]" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="px-5 py-3 text-center"><i class="bi bi-check-lg text-[#0b6ad4]" aria-hidden="true"></i><span class="sr-only">Included</span></td><td class="px-5 py-3 text-center"><i class="bi bi-check-lg text-[#0b6ad4]" aria-hidden="true"></i><span class="sr-only">Included</span></td></tr>
+              <tr class="border-b border-gray-100"><th scope="row" class="px-5 py-3 font-medium text-gray-800">Signed ACR/VPAT</th><td class="px-5 py-3 text-center text-gray-600">Add-on</td><td class="px-5 py-3 text-center text-gray-600">Add-on</td><td class="px-5 py-3 text-center">1/year</td><td class="px-5 py-3 text-center">Program</td></tr>
+              <tr class="border-b border-gray-100"><th scope="row" class="px-5 py-3 font-medium text-gray-800">Native Web conversions</th><td class="px-5 py-3 text-center" aria-label="Not included"><i class="bi bi-dash text-gray-400" aria-hidden="true"></i></td><td class="px-5 py-3 text-center" aria-label="Not included"><i class="bi bi-dash text-gray-400" aria-hidden="true"></i></td><td class="px-5 py-3 text-center text-gray-600">Add-on</td><td class="px-5 py-3 text-center"><i class="bi bi-check-lg text-[#0b6ad4]" aria-hidden="true"></i><span class="sr-only">Included</span></td></tr>
+              <tr class="border-b border-gray-100"><th scope="row" class="px-5 py-3 font-medium text-gray-800">Support</th><td class="px-5 py-3 text-center">Email</td><td class="px-5 py-3 text-center">Priority</td><td class="px-5 py-3 text-center">Priority + reviews</td><td class="px-5 py-3 text-center">Dedicated manager</td></tr>
+              <tr><th scope="row" class="px-5 py-3 font-medium text-gray-800">SSO &amp; team management</th><td class="px-5 py-3 text-center" aria-label="Not included"><i class="bi bi-dash text-gray-400" aria-hidden="true"></i></td><td class="px-5 py-3 text-center" aria-label="Not included"><i class="bi bi-dash text-gray-400" aria-hidden="true"></i></td><td class="px-5 py-3 text-center" aria-label="Not included"><i class="bi bi-dash text-gray-400" aria-hidden="true"></i></td><td class="px-5 py-3 text-center"><i class="bi bi-check-lg text-[#0b6ad4]" aria-hidden="true"></i><span class="sr-only">Included</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently asked <span class="bg-gradient-to-r from-[#0a2239] to-[#0b6ad4] bg-clip-text text-transparent">questions</span></h2>
+        </div>
+        <div class="space-y-5">
+          <div class="p-6 bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Is the Check scan really free?</h3>
+            <p class="text-gray-700">Yes. You can scan a page against 50+ WCAG 2.1 AA criteria and get a Legal Risk Level report instantly, with no sign-up and no cost.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl border border-teal-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">What happens after I purchase?</h3>
+            <p class="text-gray-700">You'll get an immediate confirmation, and our team reaches out within one business day to set up your sites, documents, and monitoring. You're never left staring at an empty dashboard.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Can I change or cancel my plan?</h3>
+            <p class="text-gray-700">Yes — upgrade, downgrade, or cancel any time. Annual plans include two months free compared to monthly billing.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">What's the difference between the ACR draft and a signed ACR/VPAT?</h3>
+            <p class="text-gray-700">The automated draft (Growth and up) is a machine-generated conformance report — great for internal tracking. A signed ACR/VPAT adds certified human review and a signature you can hand to procurement. Scale includes one per year; on other plans it's a per-report add-on.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl border border-teal-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Will this help with the April 2027 ADA Title II deadline?</h3>
+            <p class="text-gray-700">Yes. The suite is built around WCAG 2.1 AA, the standard tied to ADA Title II. Start by auditing, then monitor and remediate, and document conformance with a VPAT/ACR.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">My organization doesn't fit these plans. Can I still get a custom quote?</h3>
+            <p class="text-gray-700">Of course. Use the form below and tell us about your sites, documents, and timeline — we'll put together a quote that fits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Contact Form -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-slate-50">
+      <div class="container mx-auto px-6 max-w-3xl">
+        <div id="pricing-contact-form-container"></div>
+      </div>
+    </section>
+    <script src="contactformloader.js"></script>
+    <script>
+      // Self-service plan CTAs + billing toggle, driven by pricing-config.js.
+      (function () {
+        var cfg = window.A4A_PRICING || { selfServe: false, showPrices: true, checkout: {} };
+        var billing = 'annual';
+
+        function fmt(n) { return '$' + Number(n).toLocaleString('en-US'); }
+
+        function checkoutUrl(plan) {
+          var links = (cfg.checkout || {})[plan] || {};
+          var url = billing === 'annual' ? links.annual : links.monthly;
+          return (cfg.selfServe && url) ? url : null;
+        }
+
+        function scrollToQuote(e) {
+          e.preventDefault();
+          var el = document.getElementById('pricing-contact-form-container');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function render() {
+          document.querySelectorAll('.price-block').forEach(function (block) {
+            var amount = block.querySelector('.price-amount');
+            var period = block.querySelector('.price-period');
+            var note = block.querySelector('.price-note');
+            if (!cfg.showPrices) {
+              amount.textContent = 'Contact us';
+              period.textContent = '';
+              note.textContent = 'for current pricing';
+              return;
+            }
+            var m = block.getAttribute('data-monthly');
+            var y = block.getAttribute('data-annual');
+            if (billing === 'annual') {
+              amount.textContent = fmt(y);
+              period.textContent = '/year';
+              note.textContent = 'billed annually — ' + fmt(m) + '/mo billed monthly';
+            } else {
+              amount.textContent = fmt(m);
+              period.textContent = '/month';
+              note.textContent = 'billed monthly — save with annual (' + fmt(y) + '/yr)';
+            }
+          });
+
+          document.querySelectorAll('.plan-cta').forEach(function (cta) {
+            var plan = cta.getAttribute('data-plan');
+            var url = checkoutUrl(plan);
+            cta.removeEventListener('click', scrollToQuote);
+            if (url) {
+              cta.href = url;
+              cta.textContent = 'Get started';
+            } else {
+              cta.href = '#pricing-contact-form-container';
+              cta.textContent = 'Get a quote';
+              cta.addEventListener('click', scrollToQuote);
+            }
+          });
+
+          var mBtn = document.getElementById('billing-monthly');
+          var aBtn = document.getElementById('billing-annual');
+          [mBtn, aBtn].forEach(function (btn) {
+            var active = (btn === aBtn) === (billing === 'annual');
+            btn.setAttribute('aria-pressed', String(active));
+            btn.style.background = active ? '#0b6ad4' : 'transparent';
+            btn.style.color = active ? '#ffffff' : '#374151';
+          });
+        }
+
+        document.getElementById('billing-monthly').addEventListener('click', function () { billing = 'monthly'; render(); });
+        document.getElementById('billing-annual').addEventListener('click', function () { billing = 'annual'; render(); });
+        render();
+      })();
+    </script>
+  </body>
+</html>

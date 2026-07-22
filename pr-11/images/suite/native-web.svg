@@ -1,0 +1,80 @@
+<svg width="800" height="580" viewBox="0 0 800 580" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="nwBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f8f9fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="580" fill="url(#nwBg)"/>
+
+  <!-- Left: stacked source documents (PDF/Word) -->
+  <g transform="translate(70,150)">
+    <rect x="24" y="40" width="150" height="190" rx="8" fill="#ffffff" stroke="#e5e5e5" transform="rotate(-6 99 135)"/>
+    <rect x="12" y="20" width="150" height="190" rx="8" fill="#ffffff" stroke="#e5e5e5" transform="rotate(-3 87 115)"/>
+    <rect x="0" y="0" width="150" height="190" rx="8" fill="#ffffff" stroke="#d9534f" stroke-width="1.5"/>
+    <rect x="0" y="0" width="150" height="34" rx="8" fill="#d9534f"/>
+    <rect x="0" y="22" width="150" height="12" fill="#d9534f"/>
+    <text x="14" y="22" font-size="12" fill="#ffffff" font-weight="800">PDF</text>
+    <text x="64" y="22" font-size="10" fill="#f3c9c6">handbook.pdf</text>
+    <rect x="16" y="50" width="118" height="8" rx="4" fill="#e8ebee"/>
+    <rect x="16" y="68" width="100" height="8" rx="4" fill="#e8ebee"/>
+    <rect x="16" y="86" width="118" height="8" rx="4" fill="#e8ebee"/>
+    <rect x="16" y="104" width="86" height="8" rx="4" fill="#e8ebee"/>
+    <rect x="16" y="122" width="118" height="8" rx="4" fill="#e8ebee"/>
+    <rect x="16" y="140" width="104" height="8" rx="4" fill="#e8ebee"/>
+    <rect x="16" y="158" width="118" height="8" rx="4" fill="#e8ebee"/>
+    <text x="14" y="184" font-size="9" fill="#d9534f" font-weight="600">Not accessible</text>
+  </g>
+  <text x="118" y="138" font-size="12" fill="#9aa0a8" text-anchor="middle">Policies · Procedures · Handbooks</text>
+
+  <!-- Arrow -->
+  <g transform="translate(266,250)">
+    <line x1="0" y1="0" x2="64" y2="0" stroke="#d4a574" stroke-width="4"/>
+    <path d="M62 -10 l18 10 l-18 10 z" fill="#d4a574"/>
+    <text x="40" y="-20" font-size="11" fill="#9a743f" text-anchor="middle" font-weight="700">CONVERT</text>
+    <text x="40" y="34" font-size="10" fill="#5b6472" text-anchor="middle">tagged &amp; structured</text>
+  </g>
+
+  <!-- Right: native web on devices -->
+  <!-- desktop browser -->
+  <rect x="376" y="120" width="360" height="252" rx="12" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5"/>
+  <rect x="376" y="120" width="360" height="36" rx="12" fill="#2c2c2c"/>
+  <rect x="376" y="146" width="360" height="10" fill="#2c2c2c"/>
+  <circle cx="396" cy="138" r="5" fill="#d4a574"/><circle cx="412" cy="138" r="5" fill="#5b6472"/><circle cx="428" cy="138" r="5" fill="#5b6472"/>
+  <rect x="452" y="129" width="266" height="18" rx="9" fill="#3a3f47"/>
+  <text x="464" y="142" font-size="10" fill="#cfd4da">yourorg.gov/handbook</text>
+  <text x="400" y="190" font-size="15" fill="#2c2c2c" font-weight="800">Employee Handbook</text>
+  <rect x="400" y="202" width="312" height="9" rx="4.5" fill="#e8ebee"/>
+  <rect x="400" y="220" width="280" height="9" rx="4.5" fill="#e8ebee"/>
+  <rect x="400" y="238" width="312" height="9" rx="4.5" fill="#e8ebee"/>
+  <rect x="400" y="256" width="240" height="9" rx="4.5" fill="#e8ebee"/>
+  <rect x="400" y="282" width="120" height="28" rx="6" fill="#eef7f1"/>
+  <text x="460" y="301" font-size="11" fill="#2f9e6b" text-anchor="middle" font-weight="600">Screen-reader ready</text>
+  <rect x="532" y="282" width="120" height="28" rx="6" fill="#f4f0ea"/>
+  <text x="592" y="301" font-size="11" fill="#9a743f" text-anchor="middle" font-weight="600">Always current</text>
+  <rect x="400" y="324" width="312" height="9" rx="4.5" fill="#e8ebee"/>
+  <rect x="400" y="342" width="260" height="9" rx="4.5" fill="#e8ebee"/>
+
+  <!-- mobile overlapping -->
+  <rect x="640" y="252" width="110" height="220" rx="20" fill="#2c2c2c"/>
+  <rect x="649" y="270" width="92" height="184" rx="6" fill="#ffffff"/>
+  <rect x="680" y="261" width="30" height="5" rx="2.5" fill="#4a4f57"/>
+  <text x="660" y="292" font-size="9" fill="#2c2c2c" font-weight="700">Handbook</text>
+  <rect x="660" y="300" width="70" height="6" rx="3" fill="#e8ebee"/>
+  <rect x="660" y="312" width="58" height="6" rx="3" fill="#e8ebee"/>
+  <rect x="660" y="328" width="70" height="6" rx="3" fill="#e8ebee"/>
+  <rect x="660" y="340" width="64" height="6" rx="3" fill="#e8ebee"/>
+  <rect x="660" y="356" width="70" height="6" rx="3" fill="#e8ebee"/>
+  <rect x="660" y="382" width="70" height="18" rx="9" fill="#eef7f1"/>
+  <text x="695" y="395" font-size="8" fill="#2f9e6b" text-anchor="middle" font-weight="600">AA compliant</text>
+
+  <!-- compliance ribbon -->
+  <g transform="translate(376,396)">
+    <rect x="0" y="0" width="280" height="44" rx="10" fill="#2b386b"/>
+    <circle cx="30" cy="22" r="13" fill="#2f9e6b"/><path d="M24 22 l4 4 l8 -9" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <text x="52" y="20" font-size="12" fill="#ffffff" font-weight="700">Highest level of compliance</text>
+    <text x="52" y="36" font-size="10.5" fill="#aeb8d6">WCAG 2.1 AA · Section 508 · ADA Title II</text>
+  </g>
+
+  <text x="70" y="512" font-size="15" fill="#2c2c2c" font-weight="700">Native Web for Your Most Important Documents</text>
+  <text x="70" y="534" font-size="13" fill="#5b6472">Policies, procedures &amp; handbooks rebuilt as a compliant native web platform</text>
+</svg>
