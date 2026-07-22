@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <!-- END ACCESSIBILITY FOR ALL FAVICONS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACR Studio – Automated Scans, Certified Human Review | Accessibility For All</title>
+    <meta name="description" content="ACR Studio is mission control for your accessibility documentation — automated WCAG scanning, auto-generated Accessibility Conformance Reports, and certified human review, all in one place.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: '#3aa9ff', dark: '#0a2239' },
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+
+    <!-- Product Hero -->
+    <section class="relative pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-slate-50 overflow-hidden">
+      <div class="absolute top-24 left-1/4 w-64 h-64 bg-blue-200/40 rounded-full blur-3xl"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <a href="index.html#products" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 mb-4 hover:gap-3 transition-all"><i class="bi bi-grid-1x2"></i> Accessibility For All Suite · ACR</a>
+          <div class="flex items-center justify-center gap-3 mb-3">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white text-2xl font-extrabold" style="background:#0a2239;">AC</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold">ACR Studio</h1>
+          </div>
+          <p class="text-xl text-gray-700 mb-4 leading-relaxed">Automated accessibility scanning with <strong>certified human review</strong>.</p>
+          <p class="text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">ACR Studio is mission control for your organization's accessibility documentation. The result: a comprehensive, audit-ready repository of the steps you've taken — and the steps you'll take — to be and remain accessible to all.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #0a2239;"><span class="relative z-10">Request a walkthrough</span></a>
+            <a href="book-demo.html" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#228AFF; color:#228AFF;" onmouseover="this.style.background='#228AFF'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#228AFF';">Book a demo</a>
+          </div>
+        </div>
+
+        <!-- Dashboard mock -->
+        <div class="max-w-4xl mx-auto mt-12">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-slate-300 rounded-3xl opacity-20 blur-2xl"></div>
+            <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 md:p-8">
+              <div class="flex items-center justify-between mb-1">
+                <h3 class="font-bold text-gray-900 text-lg">ACR Overview</h3>
+                <span class="text-[11px] text-gray-400">Test School District</span>
+              </div>
+              <p class="text-xs text-gray-400 mb-5">A quick pulse across every site you track — the site-by-site work happens in Sites &amp; Scans.</p>
+              <div class="grid grid-cols-3 gap-3 mb-6">
+                <div class="rounded-xl bg-gray-50 border border-gray-100 p-4"><div class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Sites tracked</div><div class="text-2xl font-extrabold text-gray-900">3</div></div>
+                <div class="rounded-xl bg-emerald-50 border border-emerald-100 p-4"><div class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Certified</div><div class="text-2xl font-extrabold text-emerald-600">1</div></div>
+                <div class="rounded-xl bg-amber-50 border border-amber-100 p-4"><div class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Needs review</div><div class="text-2xl font-extrabold text-amber-600">2</div></div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="rounded-xl border border-gray-100 p-4">
+                  <div class="text-xs font-semibold text-gray-500 mb-3">Needs attention</div>
+                  <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2 text-sm"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-blue-100 text-blue-700 text-[11px] font-bold">D</span><span class="font-semibold text-gray-700">docs.example.com</span><span class="ml-auto text-xs text-gray-400">In review · 68%</span></div>
+                  <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 text-sm"><span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-teal-100 text-teal-700 text-[11px] font-bold">F</span><span class="font-semibold text-gray-700">foundation.example.org</span><span class="ml-auto text-xs text-gray-400">Scanned · 42%</span></div>
+                </div>
+                <div class="rounded-xl border border-gray-100 p-4">
+                  <div class="text-xs font-semibold text-gray-500 mb-3">Certification calendar</div>
+                  <div class="flex items-center gap-3 mb-2 text-sm"><span class="text-center leading-tight"><span class="block text-[9px] uppercase text-gray-400">May</span><span class="block font-bold text-gray-700">28</span></span><span class="font-semibold text-gray-700">boards.example.com</span><span class="ml-auto text-[11px] font-semibold text-emerald-600">Certified</span></div>
+                  <div class="flex items-center gap-3 mb-2 text-sm"><span class="text-center leading-tight"><span class="block text-[9px] uppercase text-gray-400">Jul</span><span class="block font-bold text-gray-700">20</span></span><span class="font-semibold text-gray-700">docs.example.com</span><span class="ml-auto text-[11px] text-gray-400">Est. certification</span></div>
+                  <div class="flex items-center gap-3 text-sm"><span class="text-center leading-tight"><span class="block text-[9px] uppercase text-gray-400">Aug</span><span class="block font-bold text-gray-700">05</span></span><span class="font-semibold text-gray-700">foundation.example.org</span><span class="ml-auto text-[11px] text-gray-400">Est. certification</span></div>
+                </div>
+              </div>
+              <div class="rounded-xl border border-gray-100 p-4">
+                <div class="flex items-center justify-between text-xs text-gray-400 mb-3"><span class="font-semibold text-gray-500">Recent activity</span><span>Every site, one timeline</span></div>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center gap-2"><i class="bi bi-patch-check-fill text-emerald-500"></i><span class="text-gray-700"><strong>boards.example.com</strong> was certified — signed ACR + VPAT are ready to download.</span><span class="ml-auto text-[11px] text-gray-400 whitespace-nowrap">2d ago</span></li>
+                  <li class="flex items-center gap-2"><i class="bi bi-pencil-square text-teal-600"></i><span class="text-gray-700">D. Okafor reviewed 3 criteria on <strong>docs.example.com</strong> (Contrast, Keyboard, Focus Visible).</span><span class="ml-auto text-[11px] text-gray-400 whitespace-nowrap">3d ago</span></li>
+                  <li class="flex items-center gap-2"><i class="bi bi-search text-blue-700"></i><span class="text-gray-700">Auto-scan completed for <strong>foundation.example.org</strong> — 42% verified.</span><span class="ml-auto text-[11px] text-gray-400 whitespace-nowrap">5d ago</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-xs text-gray-400 mt-3">Sample dashboard shown for illustration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sites & Scans -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="inline-block text-sm font-semibold tracking-widest text-blue-700 uppercase mb-3">Sites &amp; Scans</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Multiple sites? All organized.</h2>
+            <p class="text-gray-600 text-lg leading-relaxed">Does your organization manage multiple sites? Keep them all organized in ACR Studio. Every site's ACR lives in one place — click a site to see its full report, its scan status, and how far its review has progressed.</p>
+          </div>
+          <div class="relative">
+            <div class="absolute -inset-3 bg-gradient-to-r from-blue-200 to-slate-300 rounded-3xl opacity-15 blur-2xl"></div>
+            <div class="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-5 space-y-3">
+              <div class="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-sm"><span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-blue-100 text-blue-700 text-xs font-bold">D</span><div><div class="font-semibold text-gray-800">docs.example.com</div><div class="text-[11px] text-gray-400">Primary district website</div></div><span class="ml-auto text-[11px] font-semibold text-blue-700 bg-blue-50 rounded-full px-2.5 py-1">68% reviewed</span></div>
+              <div class="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-sm"><span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-blue-100 text-blue-600 text-xs font-bold">B</span><div><div class="font-semibold text-gray-800">boards.example.com</div><div class="text-[11px] text-gray-400">Board of Trustees minisite</div></div><span class="ml-auto text-[11px] font-semibold text-emerald-600 bg-emerald-50 rounded-full px-2.5 py-1">100% complete</span></div>
+              <div class="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-sm"><span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-teal-100 text-teal-700 text-xs font-bold">F</span><div><div class="font-semibold text-gray-800">foundation.example.org</div><div class="text-[11px] text-gray-400">Education foundation site</div></div><span class="ml-auto text-[11px] font-semibold text-amber-600 bg-amber-50 rounded-full px-2.5 py-1">42% auto-verified</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Auto Generated ACR -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-slate-50">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-12">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-700 uppercase mb-3">The deliverable</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">An auto-generated ACR</h2>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto">Expand a site and its full Accessibility Conformance Report opens in place — headed by a four-step progress tracker and the WCAG 2.1 AA target. Every criterion is organized by WCAG principle, with a color-coded verdict and remarks. Toggle between a list, a blocks layout, and a polished PDF preview — even a report still in review already reads like a finished, deliverable document.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-slate-300 rounded-3xl opacity-15 blur-2xl"></div>
+          <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 md:p-8">
+            <!-- progress tracker + view toggle -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+              <div class="flex items-center gap-2 text-[11px] font-semibold flex-wrap">
+                <span class="inline-flex items-center gap-1 text-emerald-700"><i class="bi bi-check-circle-fill"></i> Scanning</span><span class="w-5 h-px bg-gray-200"></span>
+                <span class="inline-flex items-center gap-1 text-emerald-700"><i class="bi bi-check-circle-fill"></i> Scanned</span><span class="w-5 h-px bg-gray-200"></span>
+                <span class="inline-flex items-center gap-1 text-blue-800 bg-blue-50 rounded-full px-2.5 py-1"><span class="w-2 h-2 rounded-full bg-blue-500"></span> In review</span><span class="w-5 h-px bg-gray-200"></span>
+                <span class="inline-flex items-center gap-1 text-gray-400"><i class="bi bi-circle"></i> Completed</span>
+              </div>
+              <div class="flex items-center gap-1 text-[11px] font-semibold">
+                <span class="px-3 py-1.5 rounded-lg text-gray-500 border border-gray-200">List</span>
+                <span class="px-3 py-1.5 rounded-lg text-gray-500 border border-gray-200">Blocks</span>
+                <span class="px-3 py-1.5 rounded-lg text-white" style="background:#0a2239;">PDF preview</span>
+              </div>
+            </div>
+            <div class="text-center mb-5">
+              <div class="text-[10px] uppercase tracking-widest text-gray-400">DocMersion ACR Studio</div>
+              <div class="font-bold text-gray-900">Accessibility Conformance Report</div>
+              <div class="text-xs text-gray-400">docs.example.com · WCAG 2.1 Level AA</div>
+            </div>
+            <div class="rounded-xl border border-gray-100 overflow-hidden text-sm">
+              <div class="grid grid-cols-[1fr_auto_auto] gap-3 bg-gray-50 text-[10px] uppercase tracking-wide font-semibold text-gray-400 px-4 py-2"><span>Criterion</span><span>Level</span><span>Conformance</span></div>
+              <div class="px-4 py-1.5 bg-blue-50/50 text-[10px] uppercase tracking-widest font-bold text-blue-700">Perceivable</div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100"><span class="text-gray-700 font-medium">1.1.1 Non-text Content</span><span class="text-gray-400 text-xs">A</span><span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2.5 py-1">Supports</span></div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100"><span class="text-gray-700 font-medium">1.3.1 Info and Relationships</span><span class="text-gray-400 text-xs">A</span><span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2.5 py-1">Supports</span></div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100"><span class="text-gray-700 font-medium">1.4.3 Contrast (Minimum)</span><span class="text-gray-400 text-xs">AA</span><span class="text-[11px] font-semibold text-amber-700 bg-amber-50 rounded-full px-2.5 py-1">Needs human review</span></div>
+              <div class="px-4 py-1.5 bg-blue-50/50 text-[10px] uppercase tracking-widest font-bold text-blue-700 border-t border-gray-100">Operable</div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100"><span class="text-gray-700 font-medium">2.1.1 Keyboard</span><span class="text-gray-400 text-xs">A</span><span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2.5 py-1">Supports</span></div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100"><span class="text-gray-700 font-medium">2.4.7 Focus Visible</span><span class="text-gray-400 text-xs">AA</span><span class="text-[11px] font-semibold text-amber-700 bg-amber-50 rounded-full px-2.5 py-1">Needs human review</span></div>
+              <div class="px-4 py-1.5 bg-blue-50/50 text-[10px] uppercase tracking-widest font-bold text-blue-700 border-t border-gray-100">Understandable</div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100"><span class="text-gray-700 font-medium">3.1.1 Language of Page</span><span class="text-gray-400 text-xs">A</span><span class="text-[11px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2.5 py-1">Supports</span></div>
+              <div class="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100"><span class="text-gray-700 font-medium">3.3.2 Labels or Instructions</span><span class="text-gray-400 text-xs">A</span><span class="text-[11px] font-semibold text-amber-700 bg-amber-50 rounded-full px-2.5 py-1">Needs human review</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviewer Studio -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1 relative">
+            <div class="absolute -inset-3 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-15 blur-2xl"></div>
+            <div class="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+              <div class="flex items-center justify-between mb-4">
+                <div><div class="text-[10px] uppercase tracking-widest text-gray-400">Step 1 of 6 · WCAG 1.1.1 · Level A</div><div class="font-bold text-gray-900">Non-text Content</div></div>
+                <div class="text-right"><div class="text-[10px] uppercase tracking-widest text-gray-400">Report completion</div><div class="font-extrabold text-blue-700">68%</div></div>
+              </div>
+              <div class="rounded-xl bg-amber-50 border border-amber-100 p-3 text-xs text-amber-800 mb-4"><i class="bi bi-lightbulb"></i> <strong>Why this needs a human:</strong> The scan can tell an image has alt text, but only a person can judge whether that text actually conveys what the image shows.</div>
+              <div class="text-xs font-semibold text-gray-500 mb-2"><i class="bi bi-list-ol"></i> How to check it</div>
+              <ol class="text-xs text-gray-600 space-y-1.5 mb-4 list-decimal list-inside">
+                <li>Open each flagged image and read its alt text aloud.</li>
+                <li>Ask: does the wording convey the same information a sighted user gets?</li>
+                <li>For purely decorative images, confirm the alt is empty so screen readers skip it.</li>
+              </ol>
+              <div class="text-xs font-semibold text-gray-500 mb-2"><i class="bi bi-geo-alt"></i> Where the scan flagged it</div>
+              <div class="space-y-1.5 mb-4 text-xs">
+                <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2"><code class="text-[10px] bg-blue-100 text-blue-800 rounded px-1.5 py-0.5">img.hero</code><span class="text-gray-600">Homepage banner — alt is "image"</span></div>
+                <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2"><code class="text-[10px] bg-blue-100 text-blue-800 rounded px-1.5 py-0.5">.board-photo</code><span class="text-gray-600">3 trustee portraits — alt repeats file name</span></div>
+              </div>
+              <div class="text-xs font-semibold text-gray-500 mb-2">Your verdict <span class="font-normal text-gray-400">· press 1–4</span></div>
+              <div class="grid grid-cols-2 gap-2 text-xs mb-4">
+                <span class="border border-gray-200 rounded-lg px-3 py-2 text-gray-600"><b class="text-gray-400 mr-1">1</b> Supports</span>
+                <span class="border border-gray-200 rounded-lg px-3 py-2 text-gray-600"><b class="text-gray-400 mr-1">2</b> Partially Supports</span>
+                <span class="border border-gray-200 rounded-lg px-3 py-2 text-gray-600"><b class="text-gray-400 mr-1">3</b> Does Not Support</span>
+                <span class="border-2 border-blue-400 bg-blue-50 rounded-lg px-3 py-2 text-blue-800 font-semibold"><b class="mr-1">4</b> Not Applicable <i class="bi bi-check"></i></span>
+              </div>
+              <div class="flex items-center justify-between text-xs"><span class="text-gray-400">Findings &amp; remarks — appears in the customer's report</span><span class="inline-flex items-center gap-1 font-semibold text-teal-700 bg-teal-50 rounded-full px-2.5 py-1"><i class="bi bi-stars"></i> Draft with AI</span></div>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <span class="inline-block text-sm font-semibold tracking-widest text-teal-600 uppercase mb-3">Reviewer Studio</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Certified human review, built in</h2>
+            <p class="text-gray-600 text-lg leading-relaxed mb-4">Turn an automated scan into a certified report. Reviewer Studio leverages trained accessibility experts to solve what AI cannot.</p>
+            <p class="text-gray-600 leading-relaxed">For each criterion a machine can't judge, it explains why a human is needed, gives step-by-step "how to check it" guidance, and pinpoints the exact spots the scan flagged. Reviewers record a verdict with a single keypress, a "Draft with AI" helper turns quick notes into polished report language, and a live completion meter tracks progress through every item that needs review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End-to-end support -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-slate-50">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-700 uppercase mb-3">Confirmation</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">End-to-end support</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">From the first auto-scan to a signed, certified report — the whole process is tracked in one timeline, and it resets automatically when you're legally required to re-review.</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-r from-blue-200 to-slate-300 rounded-3xl opacity-15 blur-2xl"></div>
+          <div class="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8">
+            <div class="text-xs font-semibold text-gray-500 mb-4">What happens next</div>
+            <ol class="relative border-l-2 border-blue-100 ml-3 space-y-6">
+              <li class="pl-6 relative"><span class="absolute -left-[13px] top-0 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white text-xs"><i class="bi bi-check"></i></span><div class="flex items-center gap-2"><span class="font-bold text-gray-900 text-sm">Auto-scan complete</span><span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5">Done</span></div><p class="text-xs text-gray-500 mt-1">68% of your report verified automatically.</p></li>
+              <li class="pl-6 relative"><span class="absolute -left-[13px] top-0 inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white text-xs"><i class="bi bi-check"></i></span><div class="flex items-center gap-2"><span class="font-bold text-gray-900 text-sm">Review requested</span><span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5">Done</span></div><p class="text-xs text-gray-500 mt-1">Request #ACR-4821 confirmed — a reviewer has been assigned.</p></li>
+              <li class="pl-6 relative"><span class="absolute -left-[13px] top-0 inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-700 text-white text-[10px] font-bold">3</span><div class="flex items-center gap-2"><span class="font-bold text-gray-900 text-sm">In human review</span><span class="text-[10px] font-semibold text-blue-800 bg-blue-50 rounded-full px-2 py-0.5">Now</span></div><p class="text-xs text-gray-500 mt-1">A specialist completes the remaining 32%, including assistive-technology testing.</p></li>
+              <li class="pl-6 relative"><span class="absolute -left-[13px] top-0 inline-flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-gray-500 text-[10px] font-bold">4</span><div class="flex items-center gap-2"><span class="font-bold text-gray-900 text-sm">Certified report ready</span><span class="text-[10px] font-semibold text-gray-500 bg-gray-100 rounded-full px-2 py-0.5">Upcoming</span></div><p class="text-xs text-gray-500 mt-1">We'll notify you — download the signed ACR + VPAT from this page.</p></li>
+            </ol>
+            <div class="mt-6 rounded-xl bg-blue-50 border border-blue-100 p-3 text-xs text-blue-800"><i class="bi bi-clock"></i> No further action needed from you — we'll email you the moment your certified report is ready.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing band -->
+    <section class="py-16 bg-dark text-white">
+      <div class="container mx-auto px-6 max-w-4xl text-center">
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Automated scanning. Human certification.</h2>
+        <p class="text-white/70 text-lg">ACR Studio makes accessibility conformance measurable, reviewable, and ready to certify — all in one place.</p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="rounded-3xl px-8 py-14 text-center text-white shadow-xl bg-dark">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Ready for an audit-ready ACR?</h2>
+          <p class="text-white/70 text-lg max-w-2xl mx-auto mb-8">See how ACR Studio takes you from automated scan to a certified, defensible conformance report.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" class="px-8 py-4 rounded-full font-semibold bg-white text-dark shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">Request a walkthrough</a>
+            <a href="book-demo.html" class="px-8 py-4 border-2 border-white rounded-full font-semibold text-white transition-all duration-300 hover:bg-white hover:text-dark">Book a demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore the rest of the suite -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-2">Part of the suite</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Explore Accessibility For All</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto mt-3">Three solutions that cover the full accessibility lifecycle. Use one — or all of them together.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <a href="docmersion.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-files"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-blue-600">Documents</span>
+            <span class="text-xs text-gray-400 -mt-1">DocMersion · Native</span>
+          </a>
+          <a href="wcag-checker.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-globe2"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-emerald-600">Websites</span>
+            <span class="text-xs text-gray-400 -mt-1">Check · Monitor</span>
+          </a>
+          <a href="vpat-acr.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#0a2239;"><i class="bi bi-journal-check"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-blue-700">ACR</span>
+            <span class="text-xs text-gray-400 -mt-1">ACR Studio</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div id="contact-form-container"></div>
+    <script src="contactformloader.js"></script>
+  </body>
+</html>
