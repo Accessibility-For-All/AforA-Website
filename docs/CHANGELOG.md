@@ -9,4 +9,5 @@ One running log of what shipped. **Newest on top.** Every merged PR adds a line 
 
 ---
 
-- 2026-07-21 — Add session-workflow system: CLAUDE.md, session-start/wrap-up/self-check/ci-reality-check skills, docs/ note system, memory/ dir; exclude internal dirs from deploy + preview (PR — open) — Marcus + Claude
+- 2026-07-21 — Add hosting analysis + recommendation (Cloudflare + Astro); scanner greenfield; client PDF sent to Stephen (PR — open) — Marcus + Claude
+- 2026-07-21 — Add session-workflow system: CLAUDE.md, session-start/wrap-up/self-check/ci-reality-check skills, docs/ note system, memory/ dir; exclude internal dirs from deploy + preview (PR #1, merged) — Marcus + Claude
