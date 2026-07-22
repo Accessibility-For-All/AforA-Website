@@ -1,0 +1,61 @@
+name: Publish main to Pages root
+
+# GitHub Pages serves this repo from the `gh-pages` branch, because that is
+# where the per-PR previews live (see preview.yml, which publishes each PR to
+# gh-pages under pr-<NUMBER>/).
+#
+# This workflow keeps the gh-pages *root* in sync with `main`, so
+# https://accessibility-for-all.github.io/AforA-Website/ always shows the
+# current main branch alongside those previews.
+#
+# Note: production (accessibilityforall.com) is deployed separately to
+# S3 + CloudFront by deploy.yml. This is the Pages mirror only.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two root publishes race each other.
+concurrency:
+  group: pages-root
+  cancel-in-progress: true
+
+permissions:
+  contents: write          # we push the built site to the gh-pages branch
+
+jobs:
+  publish-root:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Stage site content (everything but repo metadata)
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.cowork' \
+            --exclude='scripts' \
+            --exclude='aws-setup' \
+            --exclude='README.md' \
+            --exclude='BOOTSTRAP.md' \
+            --exclude='_site' \
+            ./ _site/
+
+      - name: Publish to the gh-pages root
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          # keep_files preserves the pr-<N>/ preview directories that
+          # preview.yml writes to this same branch. Trade-off: a file deleted
+          # from main is not removed from the mirror, so if you delete or
+          # rename a page, prune it from gh-pages by hand.
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'chore(pages): sync root with main (${{ github.sha }})'
