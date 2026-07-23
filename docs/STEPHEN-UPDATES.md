@@ -16,10 +16,10 @@ Internal file — excluded from the deploy, never published to the public site.
 progress. Any Stephen update should be clear about what he can see vs. what's actually public.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-07-21
-main_commit: f5aab77
-last_pr: 1
-note: baseline set at the session-workflow setup; nothing client-facing summarized yet. First real summary covers work merged AFTER this point.
+last_generated: 2026-07-22
+main_commit: cef3ecc
+last_pr: 7
+note: merged work through PR #7 summarized. PRs #8-#14 were reported as "in progress" — when they merge, summarize them as NEW (shipped) work.
 -->
 
 ---
@@ -36,3 +36,19 @@ note: baseline set at the session-workflow setup; nothing client-facing summariz
 **Needs Stephen / a decision**
 - <anything waiting on him>
 -->
+
+## 2026-07-22 — update for Stephen
+
+**What's new / live (on the staging site)**
+- The staging site now updates itself automatically every time we finish a piece of work — previously it could silently fall behind.
+- A round of clearer calls-to-action went live across the site: every industry page now offers the free scan alongside "Book a demo," several pages got stronger closing sections, and the contact form's submit button is easier to read.
+
+**In progress (built today, going through review — targeting Thursday)**
+- **Self-service pricing.** Instead of "contact us for a quote," the pricing page now offers four plans people can buy on the spot — Starter $59/mo, Growth $149/mo, Scale $399/mo (each ~2 months free if paid annually), plus Enterprise for the big/complex cases, which books a call. Modeled on how AccessiBe (the market leader) sells, adapted to our products.
+- **Online checkout.** Card payments will run through Stripe, the industry standard. A buyer picks a plan, pays, and lands on a welcome page; our team then sets them up within one business day. One switch turns the whole thing off and back to "get a quote" if we ever want to.
+- **Visitor analytics** (Google Analytics) is being added to every page so we can finally see what visitors do.
+- **Readability fix baked in:** all the new buttons use a slightly deeper blue that passes accessibility contrast rules — important for a company selling accessibility. The rest of the site's buttons follow next.
+- The demo page now includes the product overview video, and the GoHighLevel (CRM) specialist John has a full task list so leads and purchases flow into the CRM.
+
+**Needs Stephen / a decision**
+- Nothing blocking from you today. Two items coming your way soon: final say on the plan prices above, and the hosting decision already with you (moving the site to its permanent home). Payment processing will be set up in the company's own Stripe account — Marcus is arranging access.
