@@ -16,10 +16,10 @@ Internal file — excluded from the deploy, never published to the public site.
 progress. Any Stephen update should be clear about what he can see vs. what's actually public.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-07-22
-main_commit: cef3ecc
-last_pr: 7
-note: merged work through PR #7 summarized. PRs #8-#14 were reported as "in progress" — when they merge, summarize them as NEW (shipped) work.
+last_generated: 2026-07-23
+main_commit: 475de58
+last_pr: 15
+note: covers the Jul-23-night merges (#9 navbar CTA, #10 analytics, #15 internal docs). PRs #8, #11-#14 are still open — when they merge, summarize them as NEW (shipped) work, esp. #11 pricing.
 -->
 
 ---
@@ -36,6 +36,19 @@ note: merged work through PR #7 summarized. PRs #8-#14 were reported as "in prog
 **Needs Stephen / a decision**
 - <anything waiting on him>
 -->
+
+## 2026-07-23 — update for Stephen
+
+**What's new / live (on the staging site)**
+- Visitor analytics is now on every page of the site. From today we can see how many people visit, which pages they read, and where they came from — the numbers that tell us whether the marketing works.
+- The main button in the site's top menu now says **"Book a demo"** on every page, in the deeper blue that passes accessibility contrast rules — fitting for a company that sells accessibility.
+
+**In progress**
+- The new pricing page — the four plans people can buy on the spot — is fully built, reviewed, and next in line; it should appear on the staging site at the start of the next work session. Online payment stays switched **off** until the safety checks pass: honest free-scan results, real privacy and terms pages, and the company's own Stripe payment account connected.
+- After that: a top-to-bottom review of the whole site before anything goes on sale.
+
+**Needs Stephen / a decision**
+- Nothing new tonight. Still open from before: the hosting decision (the site's permanent home), and — together with Mark — who watches for incoming purchases over the fair weekend once buying switches on.
 
 ## 2026-07-22 — update for Stephen
 
