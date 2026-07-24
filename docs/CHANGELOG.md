@@ -9,6 +9,7 @@ One running log of what shipped. **Newest on top.** Every merged PR adds a line 
 
 ---
 
+- 2026-07-23 — Wave partially merged, session cut short by design: GA4 on all pages (PR #10, **merged**), navbar "Book a demo" CTA in #0b6ad4 (PR #9, **merged**), Jul-22 wrap-up trail + GHL five-hat review (PR #15, **merged**); pricing tiers PR rebased onto post-GA4 main, preview re-green, merge queued (PR #11, open); #12/#13/#14/#8 untouched, still open — Marcus + Claude
 - 2026-07-22 — Self-service pricing wave opened: GHL build checklist + rollback plan + John email draft (PR #8, open); navbar CTA → "Book a demo" in AA #0b6ad4 (PR #9, open); GA4 on all 16 pages (PR #10, open); pricing tiers + billing toggle + pricing-config.js kill switch (PR #11, open); welcome.html + Stripe runbook (PR #12, open); demo video embed (PR #13, open); cruft deletion (PR #14, open) — Marcus + Claude
 - 2026-07-22 — Merge session handoff doc — Pages-is-staging context + contrast audit inventory (PR #7, merged) — Marcus + Claude
 - 2026-07-22 — Merge CTA improvements across 11 files (PR #2, merged; staging root now shows them) — Marcus + Claude

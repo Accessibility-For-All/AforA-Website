@@ -1,31 +1,41 @@
-# Next-session brief — merge the pricing wave, clear the launch gates (Thu Jul 24 2026 →)
+# Next-session brief — finish the wave, then the launch gates (resumes the Jul 23 stop)
 
 > Open the repo folder
 > `~/Documents/Work/Blend Web Marketing/Clients/Accessibility for All /Development/AforA-Website`
 > (note the trailing space in `Accessibility for All `), run `/whereami` then `/session-start`,
 > and read this file. Internal doc — excluded from deploy.
-> Supersedes the Jul-22 version of this brief (that work is done — see
-> `docs/sessions/2026-07-22-marcus.md`).
+> Supersedes the Jul-22 version. Jul 23's session merged the first three PRs of the wave and
+> stopped by design — see `docs/sessions/2026-07-23-marcus.md` for the exact stop point.
 
-## State you're inheriting (verified Jul 22, end of session)
-- `main` @ cef3ecc; staging root auto-syncs on merge (pages-root.yml) and is verified current.
-- **8 open PRs, all preview-green:** #8 GHL checklist/rollback/John-email docs · #9 navbar
-  "Book a demo" CTA (#0b6ad4) · #10 GA4 all pages · #11 pricing tiers (+`pricing-config.js`,
-  **flag ships OFF**) · #12 welcome.html + STRIPE-SETUP · #13 demo video · #14 cruft deletion ·
-  #15 wrap-up trail + `docs/GHL-FIVE-HAT-REVIEW.md`.
-- Zoho draft of the John email exists in Marcus's Drafts (self-addressed; Marcus swaps
-  recipient + sends). Stripe: NOTHING created; the MCP-connected account is Blend's — see
-  `memory/stripe-account-boundary.md`.
+## State you're inheriting (verified Jul 23, end of session)
+- `main` @ 475de58; staging root in sync (latest pages-root run green — intermediate runs
+  showing `cancelled` are normal, see `memory/pages-root-concurrency.md`).
+- **Merged ✅:** #15 (docs trail + five-hat review), #10 (GA4 everywhere), #9 (navbar
+  "Book a demo" CTA, #0b6ad4).
+- **#11 (pricing tiers) is rebased onto post-GA4 main and its preview re-ran GREEN** — the
+  predicted pricing.html-head conflict is already resolved (GA4 snippet deduped to exactly 1).
+  It is ready to merge after a preview spot-check of `…/pr-11/pricing.html`.
+- **Still open, untouched:** #12 (welcome + STRIPE-SETUP), #13 (demo video), #14 (cruft
+  deletion), #8 (GHL checklist/rollback/John-email docs). Previews green as of Jul 22.
+- `pricing-config.js` in #11 ships `selfServe: false` AND empty checkout URLs (verified —
+  double-disabled).
+- Stripe: NOTHING created; the MCP-connected account is Blend's — `memory/stripe-account-boundary.md`.
+- Prod S3 deploy still fails on every merge (known OIDC issue, `memory/deploy-oidc-broken.md`);
+  merge = staging deploy only.
 
 ## Work queue (in order)
 
-1. **Merge the wave** (Marcus approves; merge = staging deploy): #10 → #9 → #11 → #12 → #13
-   → #14 → #8 → #15. #11 may need a trivial rebase on #10 (both touch pricing.html's head —
-   identical GA4 snippet). After #14: hand-prune the 4 deleted cruft files from the
-   `gh-pages` root (keep_files gotcha). Confirm the pages-root run goes green and spot-check
-   staging.
-2. **Pre-flip criticals from `docs/GHL-FIVE-HAT-REVIEW.md`** (read it first — findings 3 & 4
-   are Claude-session-owned site work):
+1. **Finish the wave** (Marcus approves; merge = staging deploy): #11 → #12 → #13 → #14 → #8.
+   - #11: spot-check the pr-11 preview pricing page renders right, then merge.
+   - Poll ~20–30 s if GitHub shows `UNKNOWN` mergeability after each merge (it recomputes).
+   - **After #14:** the pages-root workflow uses `keep_files`, so hand-prune the 4 deleted
+     cruft files from the `gh-pages` ROOT (not the pr-* subfolders):
+     `associations_copy_--old.html`, `government_--_old_copy.html`, `non-profit_copy.html`,
+     `pricing_-_variation.html`.
+   - Confirm the latest pages-root run is green and spot-check staging (pricing page shows
+     tiers with "Get a quote" CTAs since the flag is off; navbar says "Book a demo").
+2. **Pre-flip criticals from `docs/GHL-FIVE-HAT-REVIEW.md`** (findings 3 & 4 are
+   Claude-session-owned site work):
    - **Scanner honesty** (finding 3): wcag-checker.html must stop relabeling the canned
      sample report with the visitor's real domain; sample clearly marked, button copy honest,
      pricing-FAQ "instant report" claim softened, welcome.html scan CTA reviewed.
@@ -58,4 +68,5 @@
   (serves the working tree on :8737). `navigate` strips paths — use in-page
   `location.assign('/page.html')` to reach subpages.
 - Decisions needing people, not this session: GHL Starter purchase + account custody
-  (Marcus/Stephen), signed-ACR price (Mark), hosting sign-off (Stephen).
+  (Marcus/Stephen), signed-ACR price (Mark), hosting sign-off (Stephen), fair-weekend
+  purchase watcher (Mark/Stephen).
