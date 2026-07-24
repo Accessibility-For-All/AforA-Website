@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TX5BQW6XZ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TX5BQW6XZ6');
+</script>
+    <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <!-- END ACCESSIBILITY FOR ALL FAVICONS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome aboard – Accessibility For All</title>
+    <meta name="description" content="Your Accessibility For All plan is active. Here's what happens next.">
+    <meta name="robots" content="noindex">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: '#3aa9ff', dark: '#0a2239' },
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <section class="relative pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden min-h-screen">
+      <div class="absolute top-20 left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-40 h-40 bg-teal-200/30 rounded-full blur-3xl"></div>
+      <div class="container mx-auto px-6 max-w-3xl relative z-10">
+        <div class="bg-white rounded-3xl border border-gray-200 shadow-xl p-8 md:p-12 text-center">
+          <span class="inline-flex h-16 w-16 items-center justify-center rounded-2xl text-white text-3xl mb-6" style="background:#0b6ad4;" aria-hidden="true"><i class="bi bi-check2-circle"></i></span>
+          <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Welcome aboard!</h1>
+          <p id="plan-line" class="text-lg text-gray-700 mb-8">Your Accessibility For All plan is active.</p>
+
+          <div class="text-left bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100 p-6 md:p-8 mb-8">
+            <h2 class="text-xl font-bold mb-4">What happens next</h2>
+            <ol class="space-y-4 text-gray-700">
+              <li class="flex gap-3"><span class="flex-shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full text-white text-sm font-bold" style="background:#0b6ad4;" aria-hidden="true">1</span><span><strong>Check your inbox.</strong> Your Stripe receipt is on its way to the email you used at checkout.</span></li>
+              <li class="flex gap-3"><span class="flex-shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full text-white text-sm font-bold" style="background:#0b6ad4;" aria-hidden="true">2</span><span><strong>We reach out within 1 business day.</strong> A real person from our team will email you to set up your sites, documents, and monitoring — you're never left staring at an empty dashboard.</span></li>
+              <li class="flex gap-3"><span class="flex-shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full text-white text-sm font-bold" style="background:#0b6ad4;" aria-hidden="true">3</span><span><strong>Want to move faster?</strong> Book an onboarding call now and we'll do the setup together.</span></li>
+            </ol>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="book-demo.html" class="px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Book your onboarding call</a>
+            <a href="wcag-checker.html" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]" style="border-color:#0b6ad4; color:#0b6ad4;">Run a scan meanwhile</a>
+          </div>
+
+          <p class="text-sm text-gray-600 mt-8">Questions right now? Email us via the <a href="index.html#contact" class="underline font-semibold text-[#0b6ad4] hover:text-[#09519f]">contact form</a> and we'll get right back to you.</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Personalize the confirmation line from the Stripe success-URL params
+      // (welcome.html?plan=growth&billing=annual). Falls back to a generic line.
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var plan = (params.get('plan') || '').toLowerCase();
+        var billing = (params.get('billing') || '').toLowerCase();
+        var names = { starter: 'Starter', growth: 'Growth', scale: 'Scale' };
+        if (names[plan]) {
+          var line = 'Your <strong>' + names[plan] + '</strong> plan is active' +
+            (billing === 'annual' || billing === 'monthly' ? ' (' + billing + ' billing)' : '') + '.';
+          document.getElementById('plan-line').innerHTML = line + ' Thank you for choosing Accessibility For All.';
+        }
+        if (window.gtag) {
+          gtag('event', 'purchase_confirmation_view', { plan: plan || 'unknown', billing: billing || 'unknown' });
+        }
+      })();
+    </script>
+  </body>
+</html>
