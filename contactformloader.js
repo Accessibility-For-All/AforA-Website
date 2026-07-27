@@ -31,7 +31,7 @@ function loadContactForm(containerId, options = {}) {
     <section id="contact" class="py-20 ${sectionBgClass}">
       <div class="container mx-auto px-4 max-w-2xl">
         <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-extrabold mb-4" style="color: #228AFF;">${config.title}</h2>
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4" style="color: #0b6ad4;">${config.title}</h2>
           <p class="text-gray-600 text-lg">${config.subtitle}</p>
         </div>
         <div class="relative">
@@ -65,9 +65,9 @@ function loadContactForm(containerId, options = {}) {
               Other Comments or Questions:
               <textarea name="message" rows="6" class="rounded-xl px-6 py-4 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-lg resize-none" placeholder="Tell us about your accessibility and compliance goals and how we can help..."></textarea>
             </label>
-            <button type="submit" style="background: #228AFF;" class="group relative w-full py-4 rounded-full text-white font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+            <button type="submit" style="background: #0b6ad4;" class="group relative w-full py-4 rounded-full text-white font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]">
               <span class="relative z-10">${config.buttonText}</span>
-              <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </form>
         </div>

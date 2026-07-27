@@ -13,7 +13,7 @@ function loadFooter() {
             </a>
             <p class="text-sm text-gray-500 mb-4 leading-relaxed">One suite to audit, monitor, remediate, and document — the whole journey to compliance.</p>
             <a href="wcag-checker.html" class="inline-block text-sm text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors duration-200">
-              Run a free WCAG scan
+              Request a free WCAG audit
             </a>
           </div>
 
@@ -60,8 +60,8 @@ function loadFooter() {
 
         <!-- Bottom Bar -->
         <div class="pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="text-sm text-gray-400">© <span id="year"></span> Sopris Apps, LLC. Accessibility For All is a product suite of Sopris Apps, LLC.</div>
-          <div class="flex items-center gap-2 text-xs text-gray-400">
+          <div class="text-sm text-gray-500">© <span id="year"></span> Sopris Apps, LLC. Accessibility For All is a product suite of Sopris Apps, LLC.</div>
+          <div class="flex items-center gap-2 text-xs text-gray-500">
             <i class="bi bi-universal-access"></i>
             <span>WCAG 2.1 AA · Section 508 · ADA Title II</span>
           </div>
