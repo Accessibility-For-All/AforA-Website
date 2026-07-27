@@ -17,12 +17,13 @@ progress. Any Stephen update should be clear about what he can see vs. what's ac
 
 <!-- STEPHEN_SUMMARY_WATERMARK
 last_generated: 2026-07-27
-main_commit: e5ca89e
-last_pr: 16
-note: Jul-27 entry was a WEEKLY DIGEST (emailed by Marcus) — it already describes the full
-pricing wave + honesty/contrast work as "in review" via PR #17's preview. When #17 merges
-(which auto-lands #11–#14), report only "approved and now on the staging site" — do NOT
-re-describe the tiers/copy work as new.
+main_commit: ec6ae6b
+last_pr: 17
+note: the Jul-27 weekly-digest entry covers EVERYTHING through the #17 merge (#11–#14 rode
+in with it) — the wave, honesty/contrast work, AND its arrival on staging (entry was amended
+same-day pre-send when Marcus approved the merge). Next summary starts after ec6ae6b: only
+new merges (e.g. #18/#8 docs — skip, internal) and genuinely new site work. Do NOT
+re-describe the tiers/copy/scanner work in any form.
 -->
 
 ---
@@ -40,12 +41,13 @@ re-describe the tiers/copy work as new.
 - <anything waiting on him>
 -->
 
-## 2026-07-27 — update for Stephen (weekly digest — drafted as an email for Marcus to send)
+## 2026-07-27 — update for Stephen (weekly digest — drafted as an email for Marcus to send;
+amended same-day after Marcus approved and merged: the package is now LIVE on staging)
 
-**What's new / ready for your review**
-- The complete next version of the site — including the new self-service pricing — is built
-  and on a preview link for review before anything ships:
-  `https://accessibility-for-all.github.io/AforA-Website/pr-17/`
+**What's new / live on the staging site**
+- The complete next version of the site — including the new self-service pricing — is
+  approved and **live on the staging site**:
+  `https://accessibility-for-all.github.io/AforA-Website/`
 - Four plans: Starter $59/mo, Growth $149/mo, Scale $399/mo (~2 months free paid annually),
   Enterprise books a call. Online payment stays **off** until the safety checks pass and the
   company's own Stripe account is connected — until then every buy button asks for a quote.
@@ -55,11 +57,11 @@ re-describe the tiers/copy work as new.
 - Accessibility pass on our own site: buttons/text that failed contrast rules now pass,
   verified with the same math the standard uses.
 - Also this week: analytics on every page, "Book a demo" as the site-wide main button, the
-  product video on the demo page, old duplicate pages removed, staging auto-updates, and the
-  CRM specialist's task list is ready to send.
+  product video on the demo page, old duplicate pages removed (their old links now correctly
+  show "not found"), staging auto-updates, and the CRM specialist's task list is ready to send.
 
 **Needs Stephen / a decision**
-- Look over the preview link — especially plans and prices; approval puts it on staging.
+- Look over the staging site — especially plans and prices — and flag anything you'd change.
 - Still open: the hosting decision, and (with Mark) who watches for purchases over fair
   weekend once buying switches on.
 - Coming next for approval: a real privacy policy + terms of service (current privacy text is
