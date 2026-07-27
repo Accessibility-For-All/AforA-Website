@@ -16,10 +16,13 @@ Internal file — excluded from the deploy, never published to the public site.
 progress. Any Stephen update should be clear about what he can see vs. what's actually public.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-07-23
-main_commit: 475de58
-last_pr: 15
-note: covers the Jul-23-night merges (#9 navbar CTA, #10 analytics, #15 internal docs). PRs #8, #11-#14 are still open — when they merge, summarize them as NEW (shipped) work, esp. #11 pricing.
+last_generated: 2026-07-27
+main_commit: e5ca89e
+last_pr: 16
+note: Jul-27 entry was a WEEKLY DIGEST (emailed by Marcus) — it already describes the full
+pricing wave + honesty/contrast work as "in review" via PR #17's preview. When #17 merges
+(which auto-lands #11–#14), report only "approved and now on the staging site" — do NOT
+re-describe the tiers/copy work as new.
 -->
 
 ---
@@ -36,6 +39,31 @@ note: covers the Jul-23-night merges (#9 navbar CTA, #10 analytics, #15 internal
 **Needs Stephen / a decision**
 - <anything waiting on him>
 -->
+
+## 2026-07-27 — update for Stephen (weekly digest — drafted as an email for Marcus to send)
+
+**What's new / ready for your review**
+- The complete next version of the site — including the new self-service pricing — is built
+  and on a preview link for review before anything ships:
+  `https://accessibility-for-all.github.io/AforA-Website/pr-17/`
+- Four plans: Starter $59/mo, Growth $149/mo, Scale $399/mo (~2 months free paid annually),
+  Enterprise books a call. Online payment stays **off** until the safety checks pass and the
+  company's own Stripe account is connected — until then every buy button asks for a quote.
+- Truthfulness pass: the free scanner no longer presents a pre-made sample as the visitor's
+  own result — it now clearly labels the sample and offers a **free audit run by our team**.
+  All "instant scan" wording brought in line.
+- Accessibility pass on our own site: buttons/text that failed contrast rules now pass,
+  verified with the same math the standard uses.
+- Also this week: analytics on every page, "Book a demo" as the site-wide main button, the
+  product video on the demo page, old duplicate pages removed, staging auto-updates, and the
+  CRM specialist's task list is ready to send.
+
+**Needs Stephen / a decision**
+- Look over the preview link — especially plans and prices; approval puts it on staging.
+- Still open: the hosting decision, and (with Mark) who watches for purchases over fair
+  weekend once buying switches on.
+- Coming next for approval: a real privacy policy + terms of service (current privacy text is
+  leftover boilerplate that doesn't describe this business) — required before payments turn on.
 
 ## 2026-07-23 — update for Stephen
 

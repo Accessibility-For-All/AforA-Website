@@ -22,3 +22,9 @@ keep Formspree until the GHL path is verified end-to-end).
 - Scanner-leads webhook URL: (pending)
 - Stripe-purchase-intake webhook URL: (pending)
 - Tracking snippet: (pending)
+
+**Custody question is NOT in the email (2026-07-27):** Marcus had the "whose agency account
+does the A4A location live under" item removed from the John email before sending. It remains
+a five-hat **High** finding gating the GHL plan purchase — it must be resolved via another
+channel (Marcus/Mark/Stephen directly), not assumed answered. Don't re-add it to John's task
+list without Marcus's say-so.

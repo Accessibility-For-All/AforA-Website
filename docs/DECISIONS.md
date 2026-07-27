@@ -50,3 +50,15 @@ MCP is **Blend Web Marketing** (`acct_17Q44sI1WmzJxdCb`) and must not hold A4A o
 **Why:** Revenue, refunds, disputes, tax, and payouts belong to the client's entity; mixing them
 into the agency account creates accounting and liability mess that's painful to unwind.
 Runbook: docs/STRIPE-SETUP.md.
+
+## 2026-07-27 — No "instant scan" claims until a real scan engine exists
+**Decision:** Site copy must not promise instant/automated scan results anywhere. The free
+entry offer is a **team-run free WCAG audit**: the wcag-checker URL box routes into the real
+contact form (prefills website + tools fields), the sample report card is permanently labeled
+as illustrative sample data and is never relabeled with a visitor's domain, and pricing/index/
+industry copy says "request a free audit," not "scan instantly." (Five-hat finding 3 — the old
+widget stamped the visitor's hostname onto a canned 82%/LOW-risk report.)
+**Why:** A compliance vendor fabricating compliance results is an integrity and legal-exposure
+problem, not a copy nuance. Any future copy edit that reintroduces "instant"/"scan now"
+language, or a real scanner build, should consciously revisit this entry rather than drift
+back. Revisit trigger: a real engine ships (then restore instant-scan framing deliberately).
