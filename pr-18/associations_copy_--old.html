@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <!-- BEGIN DOCMERSION FAVICONS -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="shortcut icon" href="/favicon/favicon.ico">
+        <!-- END DOCMERSION FAVICONS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Associations – DocMersion</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#228AFF',
+              dark: '#0a2239',
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Navbar and Footer Loaders -->
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-teal-50 pt-28 pb-16">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10 px-4">
+        <div class="max-w-xl md:text-left text-center order-1 md:order-1">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider" style="background-color: rgba(35, 140, 255, 0.1); color: #228AFF;">For Associations</span>
+<h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+  Member Handbooks & Research<br />
+  <span style="color: #228AFF;">Organized. Searchable. Branded.</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">DocMersion helps associations publish bylaws, research, and resources in a central, accessible portal. Make it easy for your members to find information and stay engaged year-round.</p>
+          <div class="hidden md:flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="book-demo.html" class="px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1" style="background: #228AFF;">Book a demo</a>
+            
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center order-2 md:order-2">
+          <div class="group relative">
+            <!-- Glow effect -->
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"></div>
+            <div class="relative w-[340px] h-[400px] bg-gradient-to-br from-blue-50 to-slate-50 rounded-3xl shadow-2xl border border-blue-100 overflow-hidden flex flex-col justify-between items-center hover:shadow-3xl transition-all duration-300">
+              <!-- Platform Excellence Badge - inside card -->
+              <div class="w-full pt-4 px-4">
+                <div class="bg-gradient-to-r from-blue-200 to-cyan-300 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg mx-auto w-fit">
+                  ✨ Platform Excellence
+                </div>
+              </div>
+              <div class="flex flex-col items-center justify-center flex-1 w-full">
+                <div class="text-white rounded-full p-5 shadow-xl group-hover:scale-110 transition-transform duration-300 mb-4" style="background: #228AFF;"><i class="bi bi-people-fill text-3xl"></i></div>
+                <div class="px-6 text-center">
+                  <h2 class="font-bold text-2xl mb-3 text-gray-900">
+                    <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">AI-Powered Search</span>
+                  </h2>
+                  <p class="text-gray-600 text-sm leading-relaxed">Ask questions, get instant answers from your docs. No more CTRL+F.</p>
+                </div>
+              </div>
+              <div class="pb-6">
+                <span class="inline-flex items-center gap-2 font-semibold px-4 py-2 rounded-full" style="color: #228AFF; background-color: rgba(35, 140, 255, 0.1);"><i class="bi bi-universal-access"></i> ADA & WCAG 2.1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile CTA Button - appears below AI card on mobile -->
+        <div class="md:hidden order-3 w-full flex justify-center mt-8">
+          <a href="book-demo.html" class="px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1" style="background: #228AFF;">Book a demo</a>
+        </div>
+      </div>
+      <!-- Decorative shapes -->
+      <div class="absolute top-0 left-0 w-40 h-40 bg-brand/20 rounded-full blur-3xl -z-10"></div>
+      <div class="absolute bottom-0 right-0 w-52 h-52 bg-blue-200/30 rounded-full blur-3xl -z-10"></div>
+    </section>
+    
+    <main class="pt-32 pb-20 min-h-[60vh] bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center">
+              Modern Document Portals for <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Associations</span>
+            </h1>
+            <p class="text-lg text-gray-700 text-center mb-10 leading-relaxed">Transform bylaws, member handbooks, and resources into accessible, organized, and searchable web pages. DocMersion makes it easy for associations to keep members informed and compliant.</p>
+            <div class="flex justify-center mb-6">
+              <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;">
+                <span class="relative z-10">Book a demo</span>
+                <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <section class="relative py-20 mb-16">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+            <div class="text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                Why Associations Choose <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">DocMersion</span>
+              </h2>
+              <p class="text-gray-600 text-lg max-w-3xl mx-auto">Transform your organization's document experience with modern, accessible solutions.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-shield-check text-white text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Member Access & Compliance</h3>
+                    <p class="text-gray-600">Ensure all members have access to the latest bylaws, policies, and updates while meeting accessibility standards.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-teal-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-search text-white text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Searchable Handbooks</h3>
+                    <p class="text-gray-600">Make handbooks and resources instantly searchable for your entire membership.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-list-ul text-white text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Organized Content</h3>
+                    <p class="text-gray-600">Group content with sub-items and intuitive navigation for easy reference.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-300 to-cyan-400 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-translate text-white text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Translation & Accessibility</h3>
+                    <p class="text-gray-600">Support all members with translation options and fully accessible documents.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                Key <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Features</span> for Associations
+              </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center">
+                  <div class="w-16 h-16 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-search text-white text-2xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">Searchable Handbooks</h3>
+                  <p class="text-gray-600 leading-relaxed">Members can find policies, procedures, or resources with a simple search.</p>
+                </div>
+              </div>
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-teal-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center">
+                  <div class="w-16 h-16 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-list-ul text-white text-2xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">Sub-items & Navigation</h3>
+                  <p class="text-gray-600 leading-relaxed">Group content, expand for details, and move between items easily.</p>
+                </div>
+              </div>
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center">
+                  <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-translate text-white text-2xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">Translation & Accessibility</h3>
+                  <p class="text-gray-600 leading-relaxed">Fully WCAG 2.1 compliant and supports the latest translation options for all members.</p>
+                </div>
+              </div>
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-300 to-cyan-400 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col items-center text-center">
+                  <div class="w-16 h-16 bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-share text-white text-2xl"></i>
+                  </div>
+                  <h3 class="font-bold text-xl mb-3 text-gray-900">Share & Print</h3>
+                  <p class="text-gray-600 leading-relaxed">Easily share or print any page for your members or board.</p>
+            </div>
+          </div>
+        </section>
+        <section class="py-16 bg-gradient-to-br from-brand/10 to-blue-100 mb-12 rounded-3xl">
+          <div class="container mx-auto px-4 max-w-4xl text-center">
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+              <div class="flex-1 flex flex-col items-center">
+                <div class="bg-white rounded-full p-5 mb-4 shadow"><i class="bi bi-people text-brand text-3xl"></i></div>
+                <h3 class="font-bold text-xl mb-2">Impactful Member Engagement</h3>
+                <p class="text-gray-700">Keep your members informed and involved with always-accessible, up-to-date resources and announcements.</p>
+              </div>
+              <div class="flex-1 flex flex-col items-center">
+                <div class="bg-white rounded-full p-5 mb-4 shadow"><i class="bi bi-chat-dots text-brand text-3xl"></i></div>
+                <h3 class="font-bold text-xl mb-2">Community Collaboration</h3>
+                <p class="text-gray-700">Facilitate collaboration and knowledge sharing through centralized, searchable documentation.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-16 bg-white mb-12 rounded-3xl">
+          <div class="container mx-auto px-4 max-w-4xl text-center">
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+              <div class="flex-1 flex flex-col items-center">
+                <div class="bg-brand/10 rounded-full p-5 mb-4 shadow"><i class="bi bi-plug text-brand text-3xl"></i></div>
+                <h3 class="font-bold text-xl mb-2">Seamless Integrations</h3>
+                <p class="text-gray-700">Connect your portal with existing tools and platforms to streamline operations and communications.</p>
+              </div>
+              <div class="flex-1 flex flex-col items-center">
+                <div class="bg-brand/10 rounded-full p-5 mb-4 shadow"><i class="bi bi-shield-check text-brand text-3xl"></i></div>
+                <h3 class="font-bold text-xl mb-2">Compliance & Security</h3>
+                <p class="text-gray-700">Ensure your documents meet industry standards for privacy, accessibility, and data protection.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-16 bg-gradient-to-br from-brand/10 to-blue-100 mb-12 rounded-3xl">
+          <div class="container mx-auto px-4 max-w-4xl text-center">
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+              <div class="flex-1 flex flex-col items-center">
+                <div class="bg-white rounded-full p-5 mb-4 shadow"><i class="bi bi-translate text-brand text-3xl"></i></div>
+                <h3 class="font-bold text-xl mb-2">Accessibility & Translation</h3>
+                <p class="text-gray-700">Serve a diverse membership with full WCAG 2.1 compliance and multilingual support.</p>
+              </div>
+              <div class="flex-1 flex flex-col items-center">
+                <div class="bg-white rounded-full p-5 mb-4 shadow"><i class="bi bi-headset text-brand text-3xl"></i></div>
+                <h3 class="font-bold text-xl mb-2">Dedicated Support</h3>
+                <p class="text-gray-700">Get expert help whenever you need it with responsive, association-focused support.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-16 bg-white mb-12 rounded-3xl">
+          <div class="container mx-auto px-4 max-w-4xl text-center">
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+              <div class="flex-1 flex flex-col items-center">
+                <div class="bg-brand/10 rounded-full p-5 mb-4 shadow"><i class="bi bi-lightbulb text-brand text-3xl"></i></div>
+                <h3 class="font-bold text-xl mb-2">Insights & Analytics</h3>
+                <p class="text-gray-700">Track member engagement and document usage to continually improve your offerings.</p>
+              </div>
+              <div class="flex-1 flex flex-col items-center">
+                <div class="bg-brand/10 rounded-full p-5 mb-4 shadow"><i class="bi bi-award text-brand text-3xl"></i></div>
+                <h3 class="font-bold text-xl mb-2">Recognition & Growth</h3>
+                <p class="text-gray-700">Highlight achievements and foster organizational growth with member spotlights and awards.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="flex justify-center mt-8">
+          <a href="book-demo.html" class="px-8 py-3 rounded-full bg-brand text-white font-semibold hover:bg-blue-700 transition text-lg shadow">Book a demo</a>
+        </div>
+      </div>
+
+          <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-white border-t border-gray-100">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4" style="color: #228AFF;">Contact Us</h2>
+          <p class="text-gray-600 text-lg">Ready to transform your document experience? Let's talk!</p>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <form action="https://formspree.io/f/xblyajlg" method="POST" class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12 flex flex-col gap-8">
+            <label class="flex flex-col gap-3 font-semibold text-gray-700">
+              Your email:
+              <input type="email" name="email" required class="rounded-xl px-6 py-4 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-lg" placeholder="you@email.com">
+            </label>
+            <label class="flex flex-col gap-3 font-semibold text-gray-700">
+              Your message:
+              <textarea name="message" required rows="6" class="rounded-xl px-6 py-4 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-lg resize-none" placeholder="How can we help transform your document experience?"></textarea>
+            </label>
+            <button type="submit" class="group relative w-full py-4 rounded-full bg-gradient-to-r from-blue-200 to-cyan-300 text-white font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+              <span class="relative z-10">Send Message</span>
+              <div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    </main>
+    <!-- Footer will be loaded by footerloader.js -->
+  </body>
+</html>
