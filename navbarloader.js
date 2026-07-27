@@ -1,16 +1,19 @@
 // Navbar Loader - Loads consistent navbar across all pages
 
-// Load Google Analytics / Google Ads tag
+// Load Google Ads tag. Every page already loads gtag.js + GA4 (G-TX5BQW6XZ6)
+// in its <head>, so reuse that library and only add the Ads config here —
+// injecting a second gtag.js would double-load the library on every page.
 function loadGoogleTag() {
-  const gtagScript = document.createElement('script');
-  gtagScript.async = true;
-  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-957201829';
-  document.head.appendChild(gtagScript);
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'AW-957201829');
+  if (typeof window.gtag !== 'function') {
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-957201829';
+    document.head.appendChild(gtagScript);
+    window.gtag = function () { dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+  }
+  window.gtag('config', 'AW-957201829');
 }
 
 function loadNavbar() {

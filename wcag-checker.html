@@ -23,7 +23,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Websites – Free WCAG Check + Continuous Monitor | Accessibility For All</title>
-    <meta name="description" content="The Websites solution: a free instant WCAG 2.1 AA Check with a Legal Risk Level report, plus continuous full-sitemap Monitoring. Part of the Accessibility For All suite.">
+    <meta name="description" content="The Websites solution: request a free WCAG 2.1 AA audit with a Legal Risk Level report, plus continuous full-sitemap Monitoring. Part of the Accessibility For All suite.">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -55,9 +55,9 @@
             <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white text-2xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-clipboard-check"></i></span>
             <h1 class="text-4xl md:text-5xl font-extrabold">Websites</h1>
           </div>
-          <p class="text-xl text-gray-700 mb-4 leading-relaxed">Everything your website needs to reach — and stay at — WCAG 2.1 AA. Start with <strong>Check</strong>, a free instant scan with a <strong>Legal Risk Level</strong> report. Then let <strong>Monitor</strong> keep every page compliant, continuously.</p>
+          <p class="text-xl text-gray-700 mb-4 leading-relaxed">Everything your website needs to reach — and stay at — WCAG 2.1 AA. Start with <strong>Check</strong> — a free WCAG audit of your site by our team, with a <strong>Legal Risk Level</strong> report. Then let <strong>Monitor</strong> keep every page compliant, continuously.</p>
           <div class="flex items-center justify-center gap-3 mb-8 text-sm font-semibold">
-            <span class="inline-flex items-center gap-2 bg-white/80 border border-emerald-200 text-emerald-700 rounded-full px-4 py-2"><i class="bi bi-clipboard-check"></i> Check — free scan below</span>
+            <span class="inline-flex items-center gap-2 bg-white/80 border border-emerald-200 text-emerald-700 rounded-full px-4 py-2"><i class="bi bi-clipboard-check"></i> Check — free audit below</span>
             <a href="#monitor" class="inline-flex items-center gap-2 bg-white/80 border border-teal-200 text-teal-700 rounded-full px-4 py-2 hover:shadow-md transition"><i class="bi bi-activity"></i> Monitor — continuous <i class="bi bi-arrow-down"></i></a>
           </div>
 
@@ -66,13 +66,13 @@
             <div class="absolute -inset-2 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-2xl opacity-20 blur-xl"></div>
             <div class="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-3 flex flex-col sm:flex-row gap-3">
               <div class="flex-1 flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3">
-                <i class="bi bi-globe text-gray-400"></i>
-                <input id="scan-url" type="url" placeholder="https://yourwebsite.gov" class="flex-1 bg-transparent outline-none text-gray-800 placeholder-gray-400">
+                <i class="bi bi-globe text-gray-400" aria-hidden="true"></i>
+                <input id="scan-url" type="url" aria-label="Your website URL" placeholder="https://yourwebsite.gov" class="flex-1 bg-transparent outline-none text-gray-800 placeholder-gray-500">
               </div>
-              <button id="scan-btn" class="px-6 py-3 rounded-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap" style="background:linear-gradient(135deg,#10b981,#14b8a6);">Start free scan</button>
+              <button id="scan-btn" class="px-6 py-3 rounded-xl font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Request free audit</button>
             </div>
           </div>
-          <p class="mt-3 text-sm text-gray-500"><i class="bi bi-check-circle-fill text-emerald-500 mr-1"></i> Evaluates 50+ success criteria · Free · No sign-up required</p>
+          <p class="mt-3 text-sm text-gray-500"><i class="bi bi-check-circle-fill text-emerald-500 mr-1" aria-hidden="true"></i> 50+ success criteria reviewed by our team · Free · No obligation</p>
         </div>
 
         <!-- Sample report -->
@@ -82,9 +82,9 @@
             <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 md:p-8">
               <div class="flex items-center justify-between mb-6">
                 <div>
-                  <span class="text-[11px] font-semibold tracking-widest text-emerald-600 uppercase">ADA Title II · WCAG 2.1 AA</span>
-                  <h3 class="text-lg font-bold text-gray-900">Compliance Scan Report</h3>
-                  <p class="text-xs text-gray-400" id="scan-target">cityofpaxton.gov · sample report</p>
+                  <span class="text-[11px] font-semibold tracking-widest text-[#0d7a70] uppercase">ADA Title II · WCAG 2.1 AA</span>
+                  <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">Sample compliance report <span class="text-[10px] font-bold tracking-wider uppercase text-white rounded-full px-2 py-0.5" style="background:#0a2239;">Sample</span></h3>
+                  <p class="text-xs text-gray-500" id="scan-target">Example: cityofpaxton.gov — illustrative data</p>
                 </div>
                 <div class="text-center">
                   <div class="text-3xl font-extrabold text-emerald-600">82%</div>
@@ -109,7 +109,7 @@
               </div>
             </div>
           </div>
-          <p class="text-center text-xs text-gray-400 mt-3">Sample report shown for illustration. <a href="book-demo.html" class="text-emerald-600 font-semibold hover:underline">Book a demo</a> for a full audit of your own site.</p>
+          <p class="text-center text-xs text-gray-600 mt-3">This is a sample report with illustrative data — nothing is scanned in your browser. Request a free audit above and our team will review your actual site, or <a href="book-demo.html" class="text-[#0b6ad4] font-semibold hover:underline hover:text-[#09519f]">book a demo</a> for a full walkthrough.</p>
         </div>
       </div>
     </section>
@@ -192,7 +192,7 @@
       <div class="container mx-auto px-6 max-w-4xl text-center">
         <span class="inline-block text-xs font-semibold tracking-widest text-emerald-300 uppercase mb-2">Compliance Deadline · DOJ Interim Final Rule 2026</span>
         <h2 class="text-2xl md:text-3xl font-extrabold mb-3">April 26, 2027</h2>
-        <p class="text-white/70 text-lg">Large public entities must conform to WCAG 2.1 AA. Start with a free scan, then keep every page compliant with <a href="#monitor" class="text-emerald-300 font-semibold underline">Monitor</a>.</p>
+        <p class="text-white/70 text-lg">Large public entities must conform to WCAG 2.1 AA. Start with a free audit, then keep every page compliant with <a href="#monitor" class="text-emerald-300 font-semibold underline">Monitor</a>.</p>
       </div>
     </section>
     <!-- Final CTA -->
@@ -200,7 +200,7 @@
       <div class="container mx-auto px-6 max-w-4xl">
         <div class="rounded-3xl px-8 py-14 text-center text-white shadow-xl" style="background:linear-gradient(135deg,#0d9488,#115e59);">
           <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Ready to see where your site really stands?</h2>
-          <p class="text-white/80 text-lg max-w-2xl mx-auto mb-8">A free scan is a great start. A full audit shows you every issue, prioritized, with the guidance to fix it.</p>
+          <p class="text-white/80 text-lg max-w-2xl mx-auto mb-8">Your free audit is a great start. A demo walks you through every issue, prioritized, with the guidance to fix it.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="book-demo.html" class="px-8 py-4 rounded-full font-semibold bg-white text-emerald-700 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">Book a demo</a>
             <a href="#contact" class="px-8 py-4 border-2 border-white rounded-full font-semibold text-white transition-all duration-300 hover:bg-white hover:text-emerald-700">Talk to our team</a>
@@ -240,24 +240,26 @@
     <script src="contactformloader.js"></script>
     <script>
       (function () {
+        // Honest audit-request flow: the sample report card is never relabeled
+        // with the visitor's URL. Requesting an audit hands the URL to the real
+        // contact form so a human runs the review.
         var btn = document.getElementById('scan-btn');
         var input = document.getElementById('scan-url');
-        var report = document.getElementById('scan-report');
-        var target = document.getElementById('scan-target');
         if (!btn || !input) return;
         function run() {
           var val = (input.value || '').trim();
-          if (val) {
-            var host = val;
-            try { host = new URL(val.match(/^https?:\/\//) ? val : 'https://' + val).hostname; } catch (e) {}
-            if (target) target.textContent = host + ' · sample report';
-          }
-          if (report) {
-            report.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+          var contact = document.getElementById('contact');
+          if (!contact) return;
+          var site = contact.querySelector('input[name="website"]');
+          var tools = contact.querySelector('input[name="tools_interested"]');
+          if (site && val) site.value = val.match(/^https?:\/\//) ? val : 'https://' + val;
+          if (tools && !tools.value) tools.value = 'Websites Check — free WCAG audit';
+          contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          var first = contact.querySelector('input[name="name"]');
+          if (first) first.focus({ preventScroll: true });
         }
         btn.addEventListener('click', run);
-        input.addEventListener('keydown', function (e) { if (e.key === 'Enter') run(); });
+        input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); run(); } });
       })();
     </script>
   </body>
