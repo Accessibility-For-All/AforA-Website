@@ -13,3 +13,6 @@ Internal — excluded from the deploy, never served publicly.
 - [Hosting direction](hosting-direction.md) — recommended move to Cloudflare (site + scanner), front end in Astro; pending Stephen's sign-off; scanner is greenfield
 - [John Ray / GHL coordination](john-ray-ghl-coordination.md) — what John owes us (tracking code, webhook URLs, GitHub user) / we owe him; URLs get recorded there
 - [Stripe account boundary](stripe-account-boundary.md) — MCP-connected Stripe = Blend's; A4A objects only in the client account; STRIPE-SETUP runbook when connected
+- [Plan Mode blocks subagents too](plan-mode-blocks-subagents.md) — a mid-session Plan Mode toggle silently makes background Agent-tool subagents write plans instead of editing; check completion summaries for "I did research only" and resume via SendMessage
+- [Local env tooling gaps](local-env-tooling-gaps.md) — no `gh` CLI, no Node/Python, no browser-automation tool on this machine; static-server workaround for local preview
+- [Sandbox blocks raw file writes](sandbox-blocks-raw-file-writes.md) — Bash/PowerShell binary-asset writes (images, etc.) can silently no-op under the default sandbox; verify file timestamps, use `dangerouslyDisableSandbox` if needed

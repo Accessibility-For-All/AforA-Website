@@ -50,3 +50,30 @@ MCP is **Blend Web Marketing** (`acct_17Q44sI1WmzJxdCb`) and must not hold A4A o
 **Why:** Revenue, refunds, disputes, tax, and payouts belong to the client's entity; mixing them
 into the agency account creates accounting and liability mess that's painful to unwind.
 Runbook: docs/STRIPE-SETUP.md.
+
+## 2026-07-27 — Fourth product "Response," ACR rebranded to "Reports," Free tier added
+**Decision:** The suite is now four products — Documents, Websites, **Reports** (renamed from
+"ACR"/"ACR Studio" — the deliverable is still a VPAT/Accessibility Conformance Report, only the
+brand name changed to match the plain-noun style of the others), and **Response** (rolls up
+status from the other three into suggested remediation steps, delivered by monthly email).
+Pricing is now five tiers — **Free**, Starter, Growth, Scale, Enterprise — described along four
+consistent axes (Documents/Website/Reports/Response) instead of the old site-count/pages-
+monitored/scan-frequency axes. Response's feature line is identical across every tier (it doesn't
+scale like the other three); an enhanced "monitoring" version is a custom-quote add-on, not a
+named-tier feature. `vpat-acr.html` was renamed to `reports.html` with a client-side redirect
+stub left at the old URL.
+**Why:** The old 3-product/no-free-tier model had no low-friction way to get prospects into the
+system; Free is explicitly a lead-gen play (get everyone in, email them monthly). Response gives
+a reason to keep customers engaged across products instead of just one. Renaming ACR→Reports
+matches the other three products' plain-noun naming.
+
+## 2026-07-27 — VPAT completion is 40% automated / 60% requires 3rd-party expert review
+**Decision:** Site copy (pricing FAQ, Reports product page) now states the real mechanics: our
+system automatically completes ~40% of a VPAT via machine scanning; the remaining 60% must be
+completed by a 3rd-party disability expert, per legal stipulation and the limits of automation.
+This replaced a vaguer "automated draft vs. signed version" framing that didn't give a number and
+implied the automated portion alone was largely sufficient.
+**Why:** The old framing was inaccurate/overstated what automation alone can certify. Any future
+copy about VPAT/Reports completion percentages (illustrative dashboard mockups included) should
+stay consistent with this 40/60 split rather than inventing new numbers — `reports.html`'s
+"68%"/"32%" illustrative figures were corrected to match this session.

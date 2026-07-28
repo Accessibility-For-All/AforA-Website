@@ -16,10 +16,10 @@ Internal file — excluded from the deploy, never published to the public site.
 progress. Any Stephen update should be clear about what he can see vs. what's actually public.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-07-23
-main_commit: 475de58
-last_pr: 15
-note: covers the Jul-23-night merges (#9 navbar CTA, #10 analytics, #15 internal docs). PRs #8, #11-#14 are still open — when they merge, summarize them as NEW (shipped) work, esp. #11 pricing.
+last_generated: 2026-07-27
+main_commit: ec6ae6b
+last_pr: 17
+note: covers PR #16 (internal docs) + #17 (pricing wave: tiers, welcome page, demo video, cruft cleanup, GA4 fix, contrast fixes, honest checker copy). A large follow-on (Response product, free plan, 5-tier pricing v2, industry-page rewrites) is a separate open PR not yet merged — summarize it as NEW next time once it lands.
 -->
 
 ---
@@ -36,6 +36,22 @@ note: covers the Jul-23-night merges (#9 navbar CTA, #10 analytics, #15 internal
 **Needs Stephen / a decision**
 - <anything waiting on him>
 -->
+
+## 2026-07-27 — update for Stephen
+
+**What's new / live** (on the staging preview site)
+- Pricing is live: four ready-to-buy plans (Starter, Growth, Scale, Enterprise) with monthly or annual billing, so visitors can sign up directly instead of needing a sales call.
+- New welcome page confirms next steps right after someone signs up.
+- Added a short product overview video to the demo page.
+- The website checker tool no longer implies it's scanning a visitor's site instantly — it's upfront that a real person reviews it after they ask, which matters for an accessibility company's own credibility.
+- Fixed a few color-contrast spots (a button, a page title, footer text) so the site meets the same AA standard it sells.
+- Removed some leftover old pages that were no longer needed.
+
+**In progress**
+- A much larger update is finished and sitting in a pull request, ready for review: a new 4th product ("Response" — a monthly plain-English report on where your accessibility stands), a free plan, and a rewrite of the Government/Education/Nonprofit/Association pages so each one talks about the whole product line instead of just one piece. Not live yet — waiting on review and merge.
+
+**Needs Stephen / a decision**
+- Nothing urgent — the open work above is ready whenever there's time to look at it.
 
 ## 2026-07-23 — update for Stephen
 
