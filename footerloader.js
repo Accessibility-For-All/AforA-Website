@@ -12,8 +12,8 @@ function loadFooter() {
               <div class="text-lg font-bold leading-tight"><span class="text-black">Accessibility</span><span style="color: #228AFF;"> For All</span></div>
             </a>
             <p class="text-sm text-gray-500 mb-4 leading-relaxed">One suite to audit, monitor, remediate, and document — the whole journey to compliance.</p>
-            <a href="wcag-checker.html" class="inline-block text-sm text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors duration-200">
-              Request a free WCAG audit
+            <a href="pricing.html#free-plan" class="inline-block text-sm text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors duration-200">
+              Get started for free
             </a>
           </div>
 
@@ -22,7 +22,7 @@ function loadFooter() {
             <h3 class="font-semibold text-gray-900 mb-4">Solutions</h3>
             <ul class="space-y-2 text-sm">
               <li><a href="docmersion.html" class="text-gray-600 hover:text-blue-600 transition-colors">Documents</a></li>
-              <li><a href="wcag-checker.html" class="text-gray-600 hover:text-blue-600 transition-colors">Websites</a></li>
+              <li><a href="websites.html" class="text-gray-600 hover:text-blue-600 transition-colors">Websites</a></li>
               <li><a href="reports.html" class="text-gray-600 hover:text-blue-600 transition-colors">Reports</a></li>
               <li><a href="remediation.html" class="text-gray-600 hover:text-blue-600 transition-colors">Response</a></li>
             </ul>

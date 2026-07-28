@@ -22,7 +22,7 @@ function loadNavbar() {
     <nav class="fixed w-full z-30 bg-white/90 backdrop-blur shadow-sm border-b border-gray-100">
       <div class="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="index.html" class="flex items-center text-xl xl:text-2xl font-bold whitespace-nowrap">
-          <img src="logo.png" alt="" class="h-9 w-9 mr-3 flex-shrink-0 object-contain">
+          <img src="logo.png" alt="" class="h-9 w-auto mr-2 flex-shrink-0 object-contain">
           <span class="text-black">Accessibility</span><span style="color: #228AFF;">&nbsp;For&nbsp;All</span>
         </a>
         <div class="hidden lg:flex space-x-5 xl:space-x-7 items-center">
@@ -37,7 +37,7 @@ function loadNavbar() {
                 <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: #228AFF;"><i class="bi bi-files"></i></span>
                 <span><span class="block font-semibold text-gray-900 group-hover:text-blue-600">Documents</span><span class="block text-xs text-gray-500">DocMersion toolkit + Native for flagship documents</span></span>
               </a>
-              <a href="wcag-checker.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 transition-all duration-200 group">
+              <a href="websites.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 transition-all duration-200 group">
                 <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-globe2"></i></span>
                 <span><span class="block font-semibold text-gray-900 group-hover:text-emerald-600">Websites</span><span class="block text-xs text-gray-500">Free WCAG Check + continuous Monitor</span></span>
               </a>
@@ -82,7 +82,7 @@ function loadNavbar() {
           </button>
           <div id="mobile-products-menu" class="hidden pl-3 border-l-2 border-blue-100 ml-1">
             <a href="docmersion.html" class="block px-2 py-2 hover:text-blue-600">Documents</a>
-            <a href="wcag-checker.html" class="block px-2 py-2 hover:text-blue-600">Websites</a>
+            <a href="websites.html" class="block px-2 py-2 hover:text-blue-600">Websites</a>
             <a href="reports.html" class="block px-2 py-2 hover:text-blue-600">Reports</a>
             <a href="remediation.html" class="block px-2 py-2 hover:text-blue-600">Response</a>
           </div>
