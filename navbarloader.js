@@ -41,9 +41,13 @@ function loadNavbar() {
                 <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-globe2"></i></span>
                 <span><span class="block font-semibold text-gray-900 group-hover:text-emerald-600">Websites</span><span class="block text-xs text-gray-500">Free WCAG Check + continuous Monitor</span></span>
               </a>
-              <a href="vpat-acr.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-slate-50 transition-all duration-200 group">
+              <a href="reports.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-slate-50 transition-all duration-200 group">
                 <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: #0a2239;"><i class="bi bi-journal-check"></i></span>
-                <span><span class="block font-semibold text-gray-900 group-hover:text-blue-700">ACR</span><span class="block text-xs text-gray-500">ACR Studio — automated scans, certified human review</span></span>
+                <span><span class="block font-semibold text-gray-900 group-hover:text-blue-700">Reports</span><span class="block text-xs text-gray-500">Automated VPAT scans, certified human review</span></span>
+              </a>
+              <a href="remediation.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-amber-50 hover:to-orange-50 transition-all duration-200 group">
+                <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: #b45309;"><i class="bi bi-lightbulb"></i></span>
+                <span><span class="block font-semibold text-gray-900 group-hover:text-amber-700">Response</span><span class="block text-xs text-gray-500">Suggested remediation steps, rolled up across the suite</span></span>
               </a>
             </div>
           </div>
@@ -79,7 +83,8 @@ function loadNavbar() {
           <div id="mobile-products-menu" class="hidden pl-3 border-l-2 border-blue-100 ml-1">
             <a href="docmersion.html" class="block px-2 py-2 hover:text-blue-600">Documents</a>
             <a href="wcag-checker.html" class="block px-2 py-2 hover:text-blue-600">Websites</a>
-            <a href="vpat-acr.html" class="block px-2 py-2 hover:text-blue-600">ACR</a>
+            <a href="reports.html" class="block px-2 py-2 hover:text-blue-600">Reports</a>
+            <a href="remediation.html" class="block px-2 py-2 hover:text-blue-600">Response</a>
           </div>
         </div>
         <div class="relative" id="solutions-mobile">

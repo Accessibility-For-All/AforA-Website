@@ -23,7 +23,8 @@ function loadFooter() {
             <ul class="space-y-2 text-sm">
               <li><a href="docmersion.html" class="text-gray-600 hover:text-blue-600 transition-colors">Documents</a></li>
               <li><a href="wcag-checker.html" class="text-gray-600 hover:text-blue-600 transition-colors">Websites</a></li>
-              <li><a href="vpat-acr.html" class="text-gray-600 hover:text-blue-600 transition-colors">ACR</a></li>
+              <li><a href="reports.html" class="text-gray-600 hover:text-blue-600 transition-colors">Reports</a></li>
+              <li><a href="remediation.html" class="text-gray-600 hover:text-blue-600 transition-colors">Response</a></li>
             </ul>
           </div>
 
