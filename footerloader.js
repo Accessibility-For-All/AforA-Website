@@ -45,7 +45,7 @@ function loadFooter() {
             <ul class="space-y-2 text-sm">
               <li><a href="pricing.html" class="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a></li>
               <li><a href="compliance.html" class="text-gray-600 hover:text-blue-600 transition-colors">Compliance</a></li>
-              <li><a href="demo.html" class="text-gray-600 hover:text-blue-600 transition-colors">Live demo</a></li>
+              <li><a href="docmersion-demo.html" class="text-gray-600 hover:text-blue-600 transition-colors">Live demo</a></li>
               <li><a href="index.html#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>
             </ul>
           </div>
