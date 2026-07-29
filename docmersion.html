@@ -111,17 +111,10 @@
                   <span id="dm-in-icon" class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#ef4444;"><i class="bi bi-file-earmark-pdf"></i></span>
                   <div>
                     <div id="dm-in-name" class="font-semibold text-gray-800 text-sm">employee-handbook.pdf</div>
-                    <div class="text-xs text-red-500"><i class="bi bi-exclamation-circle"></i> Not accessible</div>
+                    <div class="text-xs text-red-500"><i class="bi bi-exclamation-circle"></i> <span id="dm-in-issue">No tags, no reading order</span></div>
                   </div>
                 </div>
-                <div id="dm-in-body" class="space-y-2">
-                  <div class="h-2.5 bg-gray-200 rounded w-full"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-5/6"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-11/12"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-2/3"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-full"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-3/4"></div>
-                </div>
+                <div id="dm-in-body"></div>
               </div>
             </div>
 
@@ -140,19 +133,14 @@
               <div class="flex-grow rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div class="flex items-center gap-2 px-3 py-2 bg-gray-50 border-b border-gray-100">
                   <span class="w-2.5 h-2.5 rounded-full bg-red-300"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-300"></span><span class="w-2.5 h-2.5 rounded-full bg-green-300"></span>
-                  <span class="ml-2 text-[11px] text-gray-500 truncate">yourorg.gov/handbook</span>
+                  <span id="dm-out-url" class="ml-2 text-[11px] text-gray-500 truncate">yourorg.gov/handbook</span>
                 </div>
                 <div class="p-4">
                   <div class="flex items-center gap-2 mb-3 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
                     <i class="bi bi-search text-gray-400 text-sm"></i><span class="text-xs text-gray-500">Search this document…</span>
                   </div>
-                  <div class="font-bold text-gray-900 mb-2 text-sm">Employee Handbook</div>
-                  <div class="space-y-2 mb-4">
-                    <div class="h-2.5 bg-blue-200 rounded w-2/3"></div>
-                    <div class="h-2.5 bg-gray-200 rounded w-full"></div>
-                    <div class="h-2.5 bg-gray-200 rounded w-5/6"></div>
-                    <div class="h-2.5 bg-gray-200 rounded w-11/12"></div>
-                  </div>
+                  <div id="dm-out-title" class="font-bold text-gray-900 mb-2 text-sm">Employee Handbook</div>
+                  <div id="dm-out-body" class="mb-4"></div>
                   <div class="flex flex-wrap gap-1.5 text-[10px]">
                     <span class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 rounded-full px-2 py-1"><i class="bi bi-search"></i> Searchable</span>
                     <span class="inline-flex items-center gap-1 bg-teal-50 text-teal-700 rounded-full px-2 py-1"><i class="bi bi-translate"></i> Translatable</span>
@@ -177,24 +165,141 @@
     <script>
       (function(){
         var data = {
-          pdf:   {name:"employee-handbook.pdf",     icon:"bi-file-earmark-pdf",        color:"#ef4444", label:"PDF"},
-          word:  {name:"board-policy.docx",          icon:"bi-file-earmark-word",       color:"#2563eb", label:"Word"},
-          ppt:   {name:"onboarding-deck.pptx",       icon:"bi-file-earmark-ppt",        color:"#ea580c", label:"PowerPoint"},
-          excel: {name:"fee-schedule.xlsx",          icon:"bi-file-earmark-spreadsheet",color:"#16a34a", label:"Excel"},
-          image: {name:"scanned-notice.png",         icon:"bi-file-earmark-image",      color:"#9333ea", label:"an image or scan"},
-          gdoc:  {name:"Strategic Plan (Google Doc)",icon:"bi-file-earmark-text",       color:"#2563eb", label:"Google Docs"},
-          html:  {name:"legacy-page.html",           icon:"bi-filetype-html",           color:"#4f46e5", label:"HTML"}
+          pdf: {
+            name:"employee-handbook.pdf", icon:"bi-file-earmark-pdf", color:"#ef4444", label:"PDF",
+            issue:"No tags, no reading order", kind:"paragraph",
+            outputTitle:"Employee Handbook", url:"yourorg.gov/handbook"
+          },
+          word: {
+            name:"board-policy.docx", icon:"bi-file-earmark-word", color:"#2563eb", label:"Word",
+            issue:"No heading structure, manual formatting only", kind:"paragraph",
+            outputTitle:"Board Policy 4.12 — Facilities Use", url:"yourorg.gov/board-policy-4-12"
+          },
+          ppt: {
+            name:"onboarding-deck.pptx", icon:"bi-file-earmark-ppt", color:"#ea580c", label:"PowerPoint",
+            issue:"No slide narration, low-contrast text", kind:"slides",
+            outputTitle:"New Employee Onboarding", url:"yourorg.gov/onboarding"
+          },
+          excel: {
+            name:"fee-schedule.xlsx", icon:"bi-file-earmark-spreadsheet", color:"#16a34a", label:"Excel",
+            issue:"No table headers — unreadable to screen readers", kind:"table",
+            outputTitle:"Fee Schedule FY26", url:"yourorg.gov/fee-schedule"
+          },
+          image: {
+            name:"scanned-notice.png", icon:"bi-file-earmark-image", color:"#9333ea", label:"an image or scan",
+            issue:"No OCR text layer — invisible to screen readers", kind:"scan",
+            outputTitle:"Public Notice — Water Main Closure", url:"yourorg.gov/notices/water-main"
+          },
+          gdoc: {
+            name:"Strategic Plan (Google Doc)", icon:"bi-file-earmark-text", color:"#2563eb", label:"Google Docs",
+            issue:"Share link only — no public accessible format", kind:"paragraph",
+            outputTitle:"Strategic Plan 2024–2028", url:"yourorg.gov/strategic-plan"
+          },
+          html: {
+            name:"legacy-page.html", icon:"bi-filetype-html", color:"#4f46e5", label:"HTML",
+            issue:"Broken ARIA labels, contrast failures", kind:"code",
+            outputTitle:"Legacy Policy Page", url:"yourorg.gov/legacy-policy"
+          }
         };
+
+        function inputPreview(kind){
+          if (kind === 'slides') {
+            var slides = ['Welcome','Benefits','Our team','Your first week','Tools &amp; access','Questions?'];
+            return '<div class="grid grid-cols-3 gap-2">' + slides.map(function(s){
+              return '<div class="aspect-video bg-gray-200 rounded flex items-center justify-center text-center px-1 text-[9px] text-gray-400 font-semibold">' + s + '</div>';
+            }).join('') + '</div>';
+          }
+          if (kind === 'table') {
+            var row = '<div class="grid grid-cols-3 gap-1.5 mb-1.5">' +
+              '<div class="h-5 bg-gray-200 rounded"></div><div class="h-5 bg-gray-200 rounded"></div><div class="h-5 bg-gray-200 rounded"></div></div>';
+            return '<div>' + row + row + row + row + '</div>';
+          }
+          if (kind === 'scan') {
+            return '<div class="relative h-32 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">' +
+              '<i class="bi bi-image text-4xl text-gray-400"></i>' +
+              '<div class="absolute inset-x-4 bottom-3 h-1.5 bg-gray-300 rounded"></div>' +
+            '</div>';
+          }
+          if (kind === 'code') {
+            return '<div class="font-mono text-[10px] text-gray-400 space-y-1.5 leading-relaxed bg-gray-100 rounded-lg p-3">' +
+              '<div>&lt;div class="content"&gt;</div>' +
+              '<div class="pl-3">&lt;span style="color:#ccc"&gt;...&lt;/span&gt;</div>' +
+              '<div class="pl-3 text-red-400">&lt;img&gt; <span class="text-red-500 font-semibold">missing alt</span></div>' +
+              '<div>&lt;/div&gt;</div>' +
+            '</div>';
+          }
+          return '<div class="space-y-2">' +
+            '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-5/6"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-11/12"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-2/3"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-3/4"></div>' +
+          '</div>';
+        }
+
+        function outputPreview(kind){
+          if (kind === 'slides') {
+            return '<ol class="space-y-1.5 text-xs text-gray-700 list-decimal list-inside">' +
+              '<li>Welcome to the team</li>' +
+              '<li>Benefits overview</li>' +
+              '<li>Meet your team</li>' +
+              '<li>First-week checklist</li>' +
+            '</ol>';
+          }
+          if (kind === 'table') {
+            return '<div class="rounded-lg border border-gray-200 overflow-hidden text-xs">' +
+              '<div class="grid grid-cols-2 bg-gray-50 font-semibold text-gray-600 px-2 py-1.5"><span>Fee type</span><span>Amount</span></div>' +
+              '<div class="grid grid-cols-2 px-2 py-1.5 border-t border-gray-100"><span>Recreation pass</span><span>$45</span></div>' +
+              '<div class="grid grid-cols-2 px-2 py-1.5 border-t border-gray-100"><span>Facility rental</span><span>$120</span></div>' +
+              '<div class="grid grid-cols-2 px-2 py-1.5 border-t border-gray-100"><span>Late fee</span><span>$10</span></div>' +
+            '</div>';
+          }
+          if (kind === 'scan') {
+            return '<div class="space-y-2">' +
+              '<div class="h-2.5 bg-blue-200 rounded w-2/3"></div>' +
+              '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+              '<div class="h-2.5 bg-gray-200 rounded w-5/6"></div>' +
+              '<span class="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5 mt-1"><i class="bi bi-stars"></i> OCR confidence: 98%</span>' +
+            '</div>';
+          }
+          if (kind === 'code') {
+            return '<div class="space-y-2">' +
+              '<div class="h-2.5 bg-blue-200 rounded w-2/3"></div>' +
+              '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+              '<div class="h-2.5 bg-gray-200 rounded w-5/6"></div>' +
+              '<span class="inline-flex items-center gap-1 text-[10px] font-semibold text-blue-700 bg-blue-50 rounded-full px-2 py-0.5 mt-1"><i class="bi bi-code-slash"></i> Semantic HTML rebuilt</span>' +
+            '</div>';
+          }
+          return '<div class="space-y-2">' +
+            '<div class="h-2.5 bg-blue-200 rounded w-2/3"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-5/6"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-11/12"></div>' +
+          '</div>';
+        }
+
         var tabs = document.querySelectorAll('.dm-tab');
         var inIcon = document.getElementById('dm-in-icon');
         var inName = document.getElementById('dm-in-name');
+        var inIssue = document.getElementById('dm-in-issue');
+        var inBody = document.getElementById('dm-in-body');
         var outSrc = document.getElementById('dm-out-source');
+        var outUrl = document.getElementById('dm-out-url');
+        var outTitle = document.getElementById('dm-out-title');
+        var outBody = document.getElementById('dm-out-body');
+
         function setType(t){
           var d = data[t]; if(!d) return;
           inIcon.style.background = d.color;
           inIcon.innerHTML = '<i class="bi '+d.icon+'"></i>';
           inName.textContent = d.name;
+          inIssue.textContent = d.issue;
+          inBody.innerHTML = inputPreview(d.kind);
           outSrc.textContent = 'Converted from ' + d.label;
+          outUrl.textContent = d.url;
+          outTitle.textContent = d.outputTitle;
+          outBody.innerHTML = outputPreview(d.kind);
           tabs.forEach(function(b){ b.classList.toggle('dm-active', b.getAttribute('data-type')===t); });
         }
         tabs.forEach(function(b){ b.addEventListener('click', function(){ setType(b.getAttribute('data-type')); }); });
