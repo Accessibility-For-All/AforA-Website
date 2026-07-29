@@ -16,3 +16,4 @@ Internal — excluded from the deploy, never served publicly.
 - [Plan Mode blocks subagents too](plan-mode-blocks-subagents.md) — a mid-session Plan Mode toggle silently makes background Agent-tool subagents write plans instead of editing; check completion summaries for "I did research only" and resume via SendMessage
 - [Local env tooling gaps](local-env-tooling-gaps.md) — no `gh` CLI, no Node/Python, no browser-automation tool on this machine; static-server workaround for local preview
 - [Sandbox blocks raw file writes](sandbox-blocks-raw-file-writes.md) — Bash/PowerShell binary-asset writes (images, etc.) can silently no-op under the default sandbox; verify file timestamps, use `dangerouslyDisableSandbox` if needed
+- [Receiving images from the user](receiving-images-from-user.md) — no tool pulls a pasted image to disk; ask the user to save it into the repo, then find it by scanning for the newest file

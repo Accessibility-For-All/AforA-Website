@@ -67,6 +67,20 @@ system; Free is explicitly a lead-gen play (get everyone in, email them monthly)
 a reason to keep customers engaged across products instead of just one. Renaming ACR→Reports
 matches the other three products' plain-noun naming.
 
+## 2026-07-28 — New logo: full lockup replaces icon + live text
+**Decision:** The site's brand mark changed from a blue wave/swoosh icon to a circular "A" mark
+(mountain/road motif, blue gradient), and the nav/footer no longer pair a small icon image with
+separately-styled HTML text ("Accessibility" + "For All" spans) — they now render one image, the
+full lockup (icon + wordmark baked in together), from `images/logo-full.png` (cropped/resized
+from the source asset `images/aforalogo.png`). Every favicon size was regenerated from just the
+icon-mark portion of the new logo. The old root `logo.png` is left in place but is now unused.
+**Why:** The user supplied a full lockup as the new brand asset and asked for the full image to
+be used, not just its icon extracted to slot into the old icon+text pattern.
+**How to apply:** Any future logo change needs to re-crop/resize into `images/logo-full.png` and
+regenerate the favicon set from the icon portion — there's no separate live-text company name to
+edit anymore; the `alt` attribute on that image is now the only accessible name for the brand
+mark in the nav/footer.
+
 ## 2026-07-27 — VPAT completion is 40% automated / 60% requires 3rd-party expert review
 **Decision:** Site copy (pricing FAQ, Reports product page) now states the real mechanics: our
 system automatically completes ~40% of a VPAT via machine scanning; the remaining 60% must be
