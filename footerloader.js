@@ -7,9 +7,8 @@ function loadFooter() {
         <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           <!-- Brand Column -->
           <div class="col-span-2 md:col-span-1">
-            <a href="index.html" class="flex items-center gap-3 mb-4">
-              <img src="logo.png" alt="" class="h-8 w-8 object-contain">
-              <div class="text-lg font-bold leading-tight"><span class="text-black">Accessibility</span><span style="color: #228AFF;"> For All</span></div>
+            <a href="index.html" class="flex items-center mb-4">
+              <img src="images/logo-full.png" alt="Accessibility For All" class="h-7 w-auto object-contain">
             </a>
             <p class="text-sm text-gray-500 mb-4 leading-relaxed">One suite to audit, monitor, remediate, and document — the whole journey to compliance.</p>
             <a href="pricing.html#free-plan" class="inline-block text-sm text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors duration-200">

@@ -21,9 +21,8 @@ function loadNavbar() {
     <!-- Navbar -->
     <nav class="fixed w-full z-30 bg-white/90 backdrop-blur shadow-sm border-b border-gray-100">
       <div class="container mx-auto flex items-center justify-between px-4 py-3">
-        <a href="index.html" class="flex items-center text-xl xl:text-2xl font-bold whitespace-nowrap">
-          <img src="logo.png" alt="" class="h-9 w-auto mr-2 flex-shrink-0 object-contain">
-          <span class="text-black">Accessibility</span><span style="color: #228AFF;">&nbsp;For&nbsp;All</span>
+        <a href="index.html" class="flex items-center whitespace-nowrap">
+          <img src="images/logo-full.png" alt="Accessibility For All" class="h-8 xl:h-9 w-auto object-contain">
         </a>
         <div class="hidden lg:flex space-x-5 xl:space-x-7 items-center">
           <!-- Products Dropdown -->
