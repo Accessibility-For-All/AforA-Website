@@ -270,15 +270,43 @@
         <div class="text-center mb-14">
           <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">The DocMersion toolkit</span>
           <h2 class="text-3xl md:text-4xl font-extrabold mb-4">One solution. <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Three lenses on every document.</span></h2>
-          <p class="text-gray-600 text-lg max-w-3xl mx-auto">Every tool in Accessibility For All's Documents solution is connected through DocMersion — so conversion, readability, usage, and management all work from the same source of truth.</p>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto">Every tool in Accessibility For All's Documents solution is connected through DocMersion — so accessibility, readability, and insights all work from the same source of truth.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
+          <!-- Accessibility -->
+          <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-universal-access"></i></span>
+              <h3 class="font-bold text-xl">Accessibility</h3>
+            </div>
+            <!-- mock -->
+            <div class="rounded-2xl border border-gray-100 bg-gray-50 p-4 mb-5">
+              <div class="text-xs text-gray-400 mb-1">Employee Handbook — WCAG 2.1 AA</div>
+              <div class="flex items-end justify-between mb-3">
+                <div><div class="text-[11px] uppercase tracking-wide text-gray-400">Criteria passing</div><div class="text-3xl font-extrabold text-blue-600">62<span class="text-lg text-gray-400">/64</span></div></div>
+                <div class="text-right"><span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2 py-1"><i class="bi bi-check2-circle"></i> AA target</span></div>
+              </div>
+              <div class="h-2 rounded-full bg-gray-200 overflow-hidden mb-3"><div class="h-full rounded-full" style="width:97%;background:linear-gradient(90deg,#228AFF,#14b8a6);"></div></div>
+              <ul class="space-y-1 text-[11px] text-gray-600">
+                <li class="flex items-center gap-1"><i class="bi bi-check-circle-fill text-emerald-500"></i> Alt text generated for 24 images</li>
+                <li class="flex items-center gap-1"><i class="bi bi-check-circle-fill text-emerald-500"></i> Reading order rebuilt</li>
+                <li class="flex items-center gap-1"><i class="bi bi-check-circle-fill text-emerald-500"></i> Headings tagged &amp; keyboard navigable</li>
+              </ul>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Every document is automatically rebuilt with proper heading structure, reading order, and AI-generated alt text — targeting <strong>WCAG 2.1 AA</strong> without manual remediation.</p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> Structure, reading order, and alt text handled automatically</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> Built toward WCAG 2.1 AA, Section 508, and ADA Title II</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> No manual remediation needed for supported formats</li>
+            </ul>
+          </div>
+
           <!-- Readability -->
           <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
             <div class="flex items-center gap-3 mb-4">
-              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-eyeglasses"></i></span>
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#14b8a6,#0d9488);"><i class="bi bi-eyeglasses"></i></span>
               <h3 class="font-bold text-xl">Readability</h3>
             </div>
             <!-- mock -->
@@ -299,11 +327,11 @@
             </ul>
           </div>
 
-          <!-- Statistics -->
+          <!-- Insights -->
           <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
             <div class="flex items-center gap-3 mb-4">
-              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#14b8a6,#0d9488);"><i class="bi bi-bar-chart-fill"></i></span>
-              <h3 class="font-bold text-xl">Statistics</h3>
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#0a2239;"><i class="bi bi-bar-chart-fill"></i></span>
+              <h3 class="font-bold text-xl">Insights</h3>
             </div>
             <!-- bar chart mock -->
             <div class="rounded-2xl border border-gray-100 bg-gray-50 p-4 mb-5">
@@ -327,39 +355,6 @@
             </ul>
           </div>
 
-          <!-- Manage -->
-          <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-sliders"></i></span>
-              <h3 class="font-bold text-xl">Manage</h3>
-            </div>
-            <!-- per-document mock -->
-            <div class="rounded-2xl border border-gray-100 bg-gray-50 p-3 mb-5 text-xs">
-              <div class="grid grid-cols-[1fr_auto_auto] gap-2 px-2 py-1 text-[10px] uppercase tracking-wide text-gray-400"><span>Document</span><span>Read.</span><span>Access.</span></div>
-              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 mb-1.5 border border-gray-100">
-                <span class="font-semibold text-gray-700 truncate">Employee Handbook</span>
-                <span class="font-bold text-emerald-600">Gr 7.9</span>
-                <span class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5 font-semibold">98%</span>
-              </div>
-              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 mb-1.5 border border-gray-100">
-                <span class="font-semibold text-gray-700 truncate">Budget Report FY26</span>
-                <span class="font-bold text-amber-600">Gr 12.4</span>
-                <span class="inline-flex items-center gap-1 text-amber-700 bg-amber-50 rounded-full px-2 py-0.5 font-semibold">86%</span>
-              </div>
-              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 border border-gray-100">
-                <span class="font-semibold text-gray-700 truncate">Facilities Use Policy</span>
-                <span class="font-bold text-emerald-600">Gr 8.2</span>
-                <span class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5 font-semibold">95%</span>
-              </div>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Admins see <strong>readability and accessibility scores side by side, per document</strong> — so decisions about what to fix, rewrite, or retire are grounded in data, not guesswork.</p>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Per-document scores in one dashboard</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Rank what needs attention first</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Track improvement as you publish</li>
-            </ul>
-          </div>
-
         </div>
       </div>
     </section>
@@ -377,8 +372,7 @@
             <p class="text-white/85 text-lg leading-relaxed mb-6">Create your free account and add DocMersion to your site in minutes. Tell us a little about your organization and we'll take you straight into the app to set things up.</p>
             <ul class="space-y-3 text-white/90">
               <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Free plan — no credit card required</span></li>
-              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Set up in the DocMersion app at <span class="font-semibold">admin.docmersion.com</span></span></li>
-              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Start converting documents right away</span></li>
+              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Make your documents accessible in a few minutes.</span></li>
             </ul>
           </div>
 
