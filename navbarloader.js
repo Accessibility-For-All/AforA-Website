@@ -64,8 +64,9 @@ function loadNavbar() {
               <a href="education.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-200 text-gray-700 hover:text-blue-600 font-medium">Education</a>
             </div>
           </div>
-          <a href="pricing.html" class="hover:text-brand transition whitespace-nowrap">Pricing</a>
           <a href="compliance.html" class="hover:text-brand transition whitespace-nowrap">Compliance</a>
+          <a href="about.html" class="hover:text-brand transition whitespace-nowrap">About</a>
+          <a href="pricing.html" class="hover:text-brand transition whitespace-nowrap">Pricing</a>
           <a href="book-demo.html" class="group relative ml-2 px-4 xl:px-5 py-2 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 whitespace-nowrap" style="background: #0b6ad4;">
             <span class="relative z-10">Book a demo</span>
             <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -99,8 +100,9 @@ function loadNavbar() {
             <a href="education.html" class="block px-2 py-2 hover:text-blue-600">Education</a>
           </div>
         </div>
-        <a href="pricing.html" class="block py-2 hover:text-brand">Pricing</a>
         <a href="compliance.html" class="block py-2 hover:text-brand">Compliance</a>
+        <a href="about.html" class="block py-2 hover:text-brand">About</a>
+        <a href="pricing.html" class="block py-2 hover:text-brand">Pricing</a>
         <a href="book-demo.html" class="group relative block py-2 mt-2 px-5 rounded-full font-semibold text-white text-center shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #0b6ad4;">
           <span class="relative z-10">Book a demo</span>
           <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

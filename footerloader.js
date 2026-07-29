@@ -43,6 +43,7 @@ function loadFooter() {
           <div>
             <h3 class="font-semibold text-gray-900 mb-4">Company</h3>
             <ul class="space-y-2 text-sm">
+              <li><a href="about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About</a></li>
               <li><a href="pricing.html" class="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a></li>
               <li><a href="compliance.html" class="text-gray-600 hover:text-blue-600 transition-colors">Compliance</a></li>
               <li><a href="docmersion-demo.html" class="text-gray-600 hover:text-blue-600 transition-colors">Live demo</a></li>
