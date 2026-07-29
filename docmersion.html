@@ -311,7 +311,7 @@
     <section class="py-20 bg-white">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Everything a PDF can't do</h2>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Everything a document doesn't do</h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto">DocMersion rebuilds each document as responsive HTML the moment you publish it.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -520,13 +520,19 @@
     <!-- FAQ -->
     <section id="faq" class="py-20 bg-white">
       <div class="container mx-auto px-6 max-w-4xl">
-        <div class="text-center mb-12">
-          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">FAQ</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently asked <span class="bg-gradient-to-r from-[#0a2239] to-[#228AFF] bg-clip-text text-transparent">questions</span></h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Everything you need to know about how DocMersion turns your documents into accessible web experiences.</p>
-        </div>
+        <details class="faq-section">
+          <summary class="text-center mb-0">
+            <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">FAQ</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently asked <span class="bg-gradient-to-r from-[#0a2239] to-[#228AFF] bg-clip-text text-transparent">questions</span></h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-3">Everything you need to know about how DocMersion turns your documents into accessible web experiences.</p>
+            <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#0b6ad4]">
+              <span class="faq-section-show">Click to view all FAQs</span>
+              <span class="faq-section-hide">Hide FAQs</span>
+              <i class="bi bi-chevron-down faq-section-ico"></i>
+            </span>
+          </summary>
 
-        <div class="space-y-3">
+          <div class="space-y-3 mt-10">
           <details class="faq-card">
             <summary><span class="faq-q">How does DocMersion actually work?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
             <div class="faq-a"><p>DocMersion uses OCR, advanced image processing, and proprietary AI models to analyze your PDFs and rebuild them as clean, semantic HTML. It reconstructs headings, reading order, tables, and generates alt text for images automatically. Complex documents may also receive human review by accessibility specialists. All processing runs securely on U.S.-based AWS infrastructure.</p></div>
@@ -677,7 +683,8 @@
               <p>The platform is also reviewed by independent accessibility consultants on a regular basis, and we maintain active feedback loops with users of assistive technology to catch and resolve real-world friction points. DocMersion receives frequent updates — both for new features and ongoing accessibility improvements — so the platform continues to improve over time.</p>
             </div>
           </details>
-        </div>
+          </div>
+        </details>
 
         <!-- Still have questions CTA -->
         <div class="mt-10 text-center bg-gradient-to-r from-blue-50 to-slate-50 border border-blue-100 rounded-2xl p-8">
@@ -704,6 +711,14 @@
       .faq-card .faq-a li{margin-bottom:.35rem;}
       .faq-card:focus-within{outline:none;}
       .faq-card summary:focus-visible{outline:2px solid #3b82f6;outline-offset:2px;border-radius:.75rem;}
+      .faq-section > summary{list-style:none;cursor:pointer;}
+      .faq-section > summary::-webkit-details-marker{display:none;}
+      .faq-section > summary:focus-visible{outline:2px solid #3b82f6;outline-offset:4px;border-radius:.75rem;}
+      .faq-section-hide{display:none;}
+      .faq-section[open] .faq-section-show{display:none;}
+      .faq-section[open] .faq-section-hide{display:inline;}
+      .faq-section-ico{transition:transform .25s;}
+      .faq-section[open] .faq-section-ico{transform:rotate(180deg);}
     </style>
     <script>
       // Open a FAQ item when linked to by hash (e.g. #doc-types) and scroll to it.
