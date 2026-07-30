@@ -19,11 +19,14 @@ progress. Any Stephen update should be clear about what he can see vs. what's ac
 last_generated: 2026-07-27
 main_commit: ec6ae6b
 last_pr: 17
-note: the Jul-27 weekly-digest entry covers EVERYTHING through the #17 merge (#11–#14 rode
-in with it) — the wave, honesty/contrast work, AND its arrival on staging (entry was amended
-same-day pre-send when Marcus approved the merge). Next summary starts after ec6ae6b: only
-new merges (e.g. #18/#8 docs — skip, internal) and genuinely new site work. Do NOT
-re-describe the tiers/copy/scanner work in any form.
+note: the Jul-27 weekly-digest entry below covers EVERYTHING through the #17 merge (#11–#14
+rode in with it) — the wave, honesty/contrast work, AND its arrival on staging (entry was
+amended same-day pre-send when Marcus approved the merge). Do NOT re-describe the
+tiers/copy/scanner work in any form. Separately, the Jul-27 "in progress" entry below refers
+to the Response/free-plan/5-tier-pricing-v2/industry-rewrite follow-on
+(`feat/response-product-and-pricing`) — that branch has now MERGED to `main` (2026-07-30,
+direct merge, no PR). Next summary should cover it as NEWLY LIVE (4th product "Response," Free
+tier, rewritten industry pages, new About page, new logo) — not as still-in-progress.
 -->
 
 ---
@@ -66,6 +69,22 @@ amended same-day after Marcus approved and merged: the package is now LIVE on st
   weekend once buying switches on.
 - Coming next for approval: a real privacy policy + terms of service (current privacy text is
   leftover boilerplate that doesn't describe this business) — required before payments turn on.
+
+## 2026-07-27 — update for Stephen
+
+**What's new / live** (on the staging preview site)
+- Pricing is live: four ready-to-buy plans (Starter, Growth, Scale, Enterprise) with monthly or annual billing, so visitors can sign up directly instead of needing a sales call.
+- New welcome page confirms next steps right after someone signs up.
+- Added a short product overview video to the demo page.
+- The website checker tool no longer implies it's scanning a visitor's site instantly — it's upfront that a real person reviews it after they ask, which matters for an accessibility company's own credibility.
+- Fixed a few color-contrast spots (a button, a page title, footer text) so the site meets the same AA standard it sells.
+- Removed some leftover old pages that were no longer needed.
+
+**In progress**
+- A much larger update is finished and sitting in a pull request, ready for review: a new 4th product ("Response" — a monthly plain-English report on where your accessibility stands), a free plan, and a rewrite of the Government/Education/Nonprofit/Association pages so each one talks about the whole product line instead of just one piece. Not live yet — waiting on review and merge.
+
+**Needs Stephen / a decision**
+- Nothing urgent — the open work above is ready whenever there's time to look at it.
 
 ## 2026-07-23 — update for Stephen
 

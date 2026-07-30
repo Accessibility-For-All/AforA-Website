@@ -62,3 +62,44 @@ widget stamped the visitor's hostname onto a canned 82%/LOW-risk report.)
 problem, not a copy nuance. Any future copy edit that reintroduces "instant"/"scan now"
 language, or a real scanner build, should consciously revisit this entry rather than drift
 back. Revisit trigger: a real engine ships (then restore instant-scan framing deliberately).
+
+## 2026-07-27 — Fourth product "Response," ACR rebranded to "Reports," Free tier added
+**Decision:** The suite is now four products — Documents, Websites, **Reports** (renamed from
+"ACR"/"ACR Studio" — the deliverable is still a VPAT/Accessibility Conformance Report, only the
+brand name changed to match the plain-noun style of the others), and **Response** (rolls up
+status from the other three into suggested remediation steps, delivered by monthly email).
+Pricing is now five tiers — **Free**, Starter, Growth, Scale, Enterprise — described along four
+consistent axes (Documents/Website/Reports/Response) instead of the old site-count/pages-
+monitored/scan-frequency axes. Response's feature line is identical across every tier (it doesn't
+scale like the other three); an enhanced "monitoring" version is a custom-quote add-on, not a
+named-tier feature. `vpat-acr.html` was renamed to `reports.html` with a client-side redirect
+stub left at the old URL.
+**Why:** The old 3-product/no-free-tier model had no low-friction way to get prospects into the
+system; Free is explicitly a lead-gen play (get everyone in, email them monthly). Response gives
+a reason to keep customers engaged across products instead of just one. Renaming ACR→Reports
+matches the other three products' plain-noun naming.
+
+## 2026-07-28 — New logo: full lockup replaces icon + live text
+**Decision:** The site's brand mark changed from a blue wave/swoosh icon to a circular "A" mark
+(mountain/road motif, blue gradient), and the nav/footer no longer pair a small icon image with
+separately-styled HTML text ("Accessibility" + "For All" spans) — they now render one image, the
+full lockup (icon + wordmark baked in together), from `images/logo-full.png` (cropped/resized
+from the source asset `images/aforalogo.png`). Every favicon size was regenerated from just the
+icon-mark portion of the new logo. The old root `logo.png` is left in place but is now unused.
+**Why:** The user supplied a full lockup as the new brand asset and asked for the full image to
+be used, not just its icon extracted to slot into the old icon+text pattern.
+**How to apply:** Any future logo change needs to re-crop/resize into `images/logo-full.png` and
+regenerate the favicon set from the icon portion — there's no separate live-text company name to
+edit anymore; the `alt` attribute on that image is now the only accessible name for the brand
+mark in the nav/footer.
+
+## 2026-07-27 — VPAT completion is 40% automated / 60% requires 3rd-party expert review
+**Decision:** Site copy (pricing FAQ, Reports product page) now states the real mechanics: our
+system automatically completes ~40% of a VPAT via machine scanning; the remaining 60% must be
+completed by a 3rd-party disability expert, per legal stipulation and the limits of automation.
+This replaced a vaguer "automated draft vs. signed version" framing that didn't give a number and
+implied the automated portion alone was largely sufficient.
+**Why:** The old framing was inaccurate/overstated what automation alone can certify. Any future
+copy about VPAT/Reports completion percentages (illustrative dashboard mockups included) should
+stay consistent with this 40/60 split rather than inventing new numbers — `reports.html`'s
+"68%"/"32%" illustrative figures were corrected to match this session.
