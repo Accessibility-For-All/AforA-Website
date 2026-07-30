@@ -62,46 +62,16 @@
             <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start items-center">
               <a href="#get-started" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #228AFF;"><span class="relative z-10"><i class="bi bi-rocket-takeoff mr-2"></i>Get started free</span><div class="absolute inset-0 bg-[#0b6ad4] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div></a>
               <a href="book-demo.html" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#228AFF; color:#228AFF;" onmouseover="this.style.background='#228AFF'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#228AFF';">Book a demo</a>
-              <a href="demo.html" class="font-semibold text-gray-600 hover:text-blue-600 transition-colors underline underline-offset-4">See a live example</a>
+              <a href="docmersion-demo.html" class="font-semibold text-gray-600 hover:text-blue-600 transition-colors underline underline-offset-4">See a live example</a>
             </div>
             <p class="mt-4 text-sm text-gray-500"><i class="bi bi-check-circle-fill text-green-500 mr-1"></i> Free plan available · No credit card required</p>
           </div>
-          <!-- Browser mock -->
+          <!-- Overview video -->
           <div class="lg:w-1/2 w-full">
             <div class="relative max-w-lg mx-auto">
               <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 blur-2xl"></div>
-              <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
-                <div class="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
-                  <span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-green-400"></span>
-                  <div class="ml-3 flex-1 bg-white rounded-md border border-gray-200 px-3 py-1 text-xs text-gray-500 truncate">docmersion.io/handbook/employee-policies</div>
-                </div>
-                <div class="p-5">
-                  <div class="flex items-center gap-2 mb-4">
-                    <div class="flex-1 flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
-                      <i class="bi bi-search text-gray-400"></i><span class="text-sm text-gray-700">remote work</span>
-                    </div>
-                    <button class="text-xs font-semibold text-white px-3 py-2 rounded-lg" style="background:#228AFF;">SEARCH</button>
-                  </div>
-                  <div class="flex items-center justify-between text-xs mb-4">
-                    <span class="inline-flex items-center gap-1 text-gray-600 border border-gray-200 rounded-full px-3 py-1"><i class="bi bi-globe"></i> English</span>
-                    <span class="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 rounded-full px-3 py-1"><i class="bi bi-universal-access"></i> WCAG 2.1 AA</span>
-                  </div>
-                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-4">
-                    <div class="text-xs text-gray-400 mb-1">12 matches · 0.2s</div>
-                    <div class="font-bold text-gray-900 mb-2">Section 4 — Remote Work Policy</div>
-                    <div class="space-y-2">
-                      <div class="h-2 bg-gray-200 rounded w-full"></div>
-                      <div class="h-2 bg-gray-200 rounded w-5/6"></div>
-                      <div class="h-2 bg-blue-200 rounded w-2/3"></div>
-                      <div class="h-2 bg-gray-200 rounded w-full"></div>
-                    </div>
-                  </div>
-                  <div class="mt-3 flex gap-2 text-[11px]">
-                    <span class="bg-blue-50 text-blue-700 rounded-full px-2 py-1">Searchable</span>
-                    <span class="bg-teal-50 text-teal-700 rounded-full px-2 py-1">Translatable</span>
-                    <span class="bg-cyan-50 text-cyan-700 rounded-full px-2 py-1">Mobile-ready</span>
-                  </div>
-                </div>
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-black" style="aspect-ratio:16/9;">
+                <iframe class="w-full h-full" style="border:0;" src="https://www.youtube.com/embed/6oDE1fwG_2Q" title="DocMersion overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -141,17 +111,10 @@
                   <span id="dm-in-icon" class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#ef4444;"><i class="bi bi-file-earmark-pdf"></i></span>
                   <div>
                     <div id="dm-in-name" class="font-semibold text-gray-800 text-sm">employee-handbook.pdf</div>
-                    <div class="text-xs text-red-500"><i class="bi bi-exclamation-circle"></i> Not accessible</div>
+                    <div class="text-xs text-red-500"><i class="bi bi-exclamation-circle"></i> <span id="dm-in-issue">No tags, no reading order</span></div>
                   </div>
                 </div>
-                <div id="dm-in-body" class="space-y-2">
-                  <div class="h-2.5 bg-gray-200 rounded w-full"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-5/6"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-11/12"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-2/3"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-full"></div>
-                  <div class="h-2.5 bg-gray-200 rounded w-3/4"></div>
-                </div>
+                <div id="dm-in-body"></div>
               </div>
             </div>
 
@@ -170,19 +133,14 @@
               <div class="flex-grow rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div class="flex items-center gap-2 px-3 py-2 bg-gray-50 border-b border-gray-100">
                   <span class="w-2.5 h-2.5 rounded-full bg-red-300"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-300"></span><span class="w-2.5 h-2.5 rounded-full bg-green-300"></span>
-                  <span class="ml-2 text-[11px] text-gray-500 truncate">yourorg.gov/handbook</span>
+                  <span id="dm-out-url" class="ml-2 text-[11px] text-gray-500 truncate">yourorg.gov/handbook</span>
                 </div>
                 <div class="p-4">
                   <div class="flex items-center gap-2 mb-3 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
                     <i class="bi bi-search text-gray-400 text-sm"></i><span class="text-xs text-gray-500">Search this document…</span>
                   </div>
-                  <div class="font-bold text-gray-900 mb-2 text-sm">Employee Handbook</div>
-                  <div class="space-y-2 mb-4">
-                    <div class="h-2.5 bg-blue-200 rounded w-2/3"></div>
-                    <div class="h-2.5 bg-gray-200 rounded w-full"></div>
-                    <div class="h-2.5 bg-gray-200 rounded w-5/6"></div>
-                    <div class="h-2.5 bg-gray-200 rounded w-11/12"></div>
-                  </div>
+                  <div id="dm-out-title" class="font-bold text-gray-900 mb-2 text-sm">Employee Handbook</div>
+                  <div id="dm-out-body" class="mb-4"></div>
                   <div class="flex flex-wrap gap-1.5 text-[10px]">
                     <span class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 rounded-full px-2 py-1"><i class="bi bi-search"></i> Searchable</span>
                     <span class="inline-flex items-center gap-1 bg-teal-50 text-teal-700 rounded-full px-2 py-1"><i class="bi bi-translate"></i> Translatable</span>
@@ -207,24 +165,141 @@
     <script>
       (function(){
         var data = {
-          pdf:   {name:"employee-handbook.pdf",     icon:"bi-file-earmark-pdf",        color:"#ef4444", label:"PDF"},
-          word:  {name:"board-policy.docx",          icon:"bi-file-earmark-word",       color:"#2563eb", label:"Word"},
-          ppt:   {name:"onboarding-deck.pptx",       icon:"bi-file-earmark-ppt",        color:"#ea580c", label:"PowerPoint"},
-          excel: {name:"fee-schedule.xlsx",          icon:"bi-file-earmark-spreadsheet",color:"#16a34a", label:"Excel"},
-          image: {name:"scanned-notice.png",         icon:"bi-file-earmark-image",      color:"#9333ea", label:"an image or scan"},
-          gdoc:  {name:"Strategic Plan (Google Doc)",icon:"bi-file-earmark-text",       color:"#2563eb", label:"Google Docs"},
-          html:  {name:"legacy-page.html",           icon:"bi-filetype-html",           color:"#4f46e5", label:"HTML"}
+          pdf: {
+            name:"employee-handbook.pdf", icon:"bi-file-earmark-pdf", color:"#ef4444", label:"PDF",
+            issue:"No tags, no reading order", kind:"paragraph",
+            outputTitle:"Employee Handbook", url:"yourorg.gov/handbook"
+          },
+          word: {
+            name:"board-policy.docx", icon:"bi-file-earmark-word", color:"#2563eb", label:"Word",
+            issue:"No heading structure, manual formatting only", kind:"paragraph",
+            outputTitle:"Board Policy 4.12 — Facilities Use", url:"yourorg.gov/board-policy-4-12"
+          },
+          ppt: {
+            name:"onboarding-deck.pptx", icon:"bi-file-earmark-ppt", color:"#ea580c", label:"PowerPoint",
+            issue:"No slide narration, low-contrast text", kind:"slides",
+            outputTitle:"New Employee Onboarding", url:"yourorg.gov/onboarding"
+          },
+          excel: {
+            name:"fee-schedule.xlsx", icon:"bi-file-earmark-spreadsheet", color:"#16a34a", label:"Excel",
+            issue:"No table headers — unreadable to screen readers", kind:"table",
+            outputTitle:"Fee Schedule FY26", url:"yourorg.gov/fee-schedule"
+          },
+          image: {
+            name:"scanned-notice.png", icon:"bi-file-earmark-image", color:"#9333ea", label:"an image or scan",
+            issue:"No OCR text layer — invisible to screen readers", kind:"scan",
+            outputTitle:"Public Notice — Water Main Closure", url:"yourorg.gov/notices/water-main"
+          },
+          gdoc: {
+            name:"Strategic Plan (Google Doc)", icon:"bi-file-earmark-text", color:"#2563eb", label:"Google Docs",
+            issue:"Share link only — no public accessible format", kind:"paragraph",
+            outputTitle:"Strategic Plan 2024–2028", url:"yourorg.gov/strategic-plan"
+          },
+          html: {
+            name:"legacy-page.html", icon:"bi-filetype-html", color:"#4f46e5", label:"HTML",
+            issue:"Broken ARIA labels, contrast failures", kind:"code",
+            outputTitle:"Legacy Policy Page", url:"yourorg.gov/legacy-policy"
+          }
         };
+
+        function inputPreview(kind){
+          if (kind === 'slides') {
+            var slides = ['Welcome','Benefits','Our team','Your first week','Tools &amp; access','Questions?'];
+            return '<div class="grid grid-cols-3 gap-2">' + slides.map(function(s){
+              return '<div class="aspect-video bg-gray-200 rounded flex items-center justify-center text-center px-1 text-[9px] text-gray-400 font-semibold">' + s + '</div>';
+            }).join('') + '</div>';
+          }
+          if (kind === 'table') {
+            var row = '<div class="grid grid-cols-3 gap-1.5 mb-1.5">' +
+              '<div class="h-5 bg-gray-200 rounded"></div><div class="h-5 bg-gray-200 rounded"></div><div class="h-5 bg-gray-200 rounded"></div></div>';
+            return '<div>' + row + row + row + row + '</div>';
+          }
+          if (kind === 'scan') {
+            return '<div class="relative h-32 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">' +
+              '<i class="bi bi-image text-4xl text-gray-400"></i>' +
+              '<div class="absolute inset-x-4 bottom-3 h-1.5 bg-gray-300 rounded"></div>' +
+            '</div>';
+          }
+          if (kind === 'code') {
+            return '<div class="font-mono text-[10px] text-gray-400 space-y-1.5 leading-relaxed bg-gray-100 rounded-lg p-3">' +
+              '<div>&lt;div class="content"&gt;</div>' +
+              '<div class="pl-3">&lt;span style="color:#ccc"&gt;...&lt;/span&gt;</div>' +
+              '<div class="pl-3 text-red-400">&lt;img&gt; <span class="text-red-500 font-semibold">missing alt</span></div>' +
+              '<div>&lt;/div&gt;</div>' +
+            '</div>';
+          }
+          return '<div class="space-y-2">' +
+            '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-5/6"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-11/12"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-2/3"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-3/4"></div>' +
+          '</div>';
+        }
+
+        function outputPreview(kind){
+          if (kind === 'slides') {
+            return '<ol class="space-y-1.5 text-xs text-gray-700 list-decimal list-inside">' +
+              '<li>Welcome to the team</li>' +
+              '<li>Benefits overview</li>' +
+              '<li>Meet your team</li>' +
+              '<li>First-week checklist</li>' +
+            '</ol>';
+          }
+          if (kind === 'table') {
+            return '<div class="rounded-lg border border-gray-200 overflow-hidden text-xs">' +
+              '<div class="grid grid-cols-2 bg-gray-50 font-semibold text-gray-600 px-2 py-1.5"><span>Fee type</span><span>Amount</span></div>' +
+              '<div class="grid grid-cols-2 px-2 py-1.5 border-t border-gray-100"><span>Recreation pass</span><span>$45</span></div>' +
+              '<div class="grid grid-cols-2 px-2 py-1.5 border-t border-gray-100"><span>Facility rental</span><span>$120</span></div>' +
+              '<div class="grid grid-cols-2 px-2 py-1.5 border-t border-gray-100"><span>Late fee</span><span>$10</span></div>' +
+            '</div>';
+          }
+          if (kind === 'scan') {
+            return '<div class="space-y-2">' +
+              '<div class="h-2.5 bg-blue-200 rounded w-2/3"></div>' +
+              '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+              '<div class="h-2.5 bg-gray-200 rounded w-5/6"></div>' +
+              '<span class="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5 mt-1"><i class="bi bi-stars"></i> OCR confidence: 98%</span>' +
+            '</div>';
+          }
+          if (kind === 'code') {
+            return '<div class="space-y-2">' +
+              '<div class="h-2.5 bg-blue-200 rounded w-2/3"></div>' +
+              '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+              '<div class="h-2.5 bg-gray-200 rounded w-5/6"></div>' +
+              '<span class="inline-flex items-center gap-1 text-[10px] font-semibold text-blue-700 bg-blue-50 rounded-full px-2 py-0.5 mt-1"><i class="bi bi-code-slash"></i> Semantic HTML rebuilt</span>' +
+            '</div>';
+          }
+          return '<div class="space-y-2">' +
+            '<div class="h-2.5 bg-blue-200 rounded w-2/3"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-full"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-5/6"></div>' +
+            '<div class="h-2.5 bg-gray-200 rounded w-11/12"></div>' +
+          '</div>';
+        }
+
         var tabs = document.querySelectorAll('.dm-tab');
         var inIcon = document.getElementById('dm-in-icon');
         var inName = document.getElementById('dm-in-name');
+        var inIssue = document.getElementById('dm-in-issue');
+        var inBody = document.getElementById('dm-in-body');
         var outSrc = document.getElementById('dm-out-source');
+        var outUrl = document.getElementById('dm-out-url');
+        var outTitle = document.getElementById('dm-out-title');
+        var outBody = document.getElementById('dm-out-body');
+
         function setType(t){
           var d = data[t]; if(!d) return;
           inIcon.style.background = d.color;
           inIcon.innerHTML = '<i class="bi '+d.icon+'"></i>';
           inName.textContent = d.name;
+          inIssue.textContent = d.issue;
+          inBody.innerHTML = inputPreview(d.kind);
           outSrc.textContent = 'Converted from ' + d.label;
+          outUrl.textContent = d.url;
+          outTitle.textContent = d.outputTitle;
+          outBody.innerHTML = outputPreview(d.kind);
           tabs.forEach(function(b){ b.classList.toggle('dm-active', b.getAttribute('data-type')===t); });
         }
         tabs.forEach(function(b){ b.addEventListener('click', function(){ setType(b.getAttribute('data-type')); }); });
@@ -236,7 +311,7 @@
     <section class="py-20 bg-white">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Everything a PDF can't do</h2>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Everything a document doesn't do</h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto">DocMersion rebuilds each document as responsive HTML the moment you publish it.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -270,15 +345,43 @@
         <div class="text-center mb-14">
           <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">The DocMersion toolkit</span>
           <h2 class="text-3xl md:text-4xl font-extrabold mb-4">One solution. <span class="bg-gradient-to-r from-[#228AFF] to-[#0d9488] bg-clip-text text-transparent">Three lenses on every document.</span></h2>
-          <p class="text-gray-600 text-lg max-w-3xl mx-auto">Every tool in Accessibility For All's Documents solution is connected through DocMersion — so conversion, readability, usage, and management all work from the same source of truth.</p>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto">Every tool in Accessibility For All's Documents solution is connected through DocMersion — so accessibility, readability, and insights all work from the same source of truth.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
+          <!-- Accessibility -->
+          <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-universal-access"></i></span>
+              <h3 class="font-bold text-xl">Accessibility</h3>
+            </div>
+            <!-- mock -->
+            <div class="rounded-2xl border border-gray-100 bg-gray-50 p-4 mb-5">
+              <div class="text-xs text-gray-400 mb-1">Employee Handbook — WCAG 2.1 AA</div>
+              <div class="flex items-end justify-between mb-3">
+                <div><div class="text-[11px] uppercase tracking-wide text-gray-400">Criteria passing</div><div class="text-3xl font-extrabold text-blue-600">62<span class="text-lg text-gray-400">/64</span></div></div>
+                <div class="text-right"><span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 rounded-full px-2 py-1"><i class="bi bi-check2-circle"></i> AA target</span></div>
+              </div>
+              <div class="h-2 rounded-full bg-gray-200 overflow-hidden mb-3"><div class="h-full rounded-full" style="width:97%;background:linear-gradient(90deg,#228AFF,#14b8a6);"></div></div>
+              <ul class="space-y-1 text-[11px] text-gray-600">
+                <li class="flex items-center gap-1"><i class="bi bi-check-circle-fill text-emerald-500"></i> Alt text generated for 24 images</li>
+                <li class="flex items-center gap-1"><i class="bi bi-check-circle-fill text-emerald-500"></i> Reading order rebuilt</li>
+                <li class="flex items-center gap-1"><i class="bi bi-check-circle-fill text-emerald-500"></i> Headings tagged &amp; keyboard navigable</li>
+              </ul>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Every document is automatically rebuilt with proper heading structure, reading order, and AI-generated alt text — targeting <strong>WCAG 2.1 AA</strong> without manual remediation.</p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> Structure, reading order, and alt text handled automatically</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> Built toward WCAG 2.1 AA, Section 508, and ADA Title II</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-500 mt-0.5"></i> No manual remediation needed for supported formats</li>
+            </ul>
+          </div>
+
           <!-- Readability -->
           <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
             <div class="flex items-center gap-3 mb-4">
-              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-eyeglasses"></i></span>
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#14b8a6,#0d9488);"><i class="bi bi-eyeglasses"></i></span>
               <h3 class="font-bold text-xl">Readability</h3>
             </div>
             <!-- mock -->
@@ -299,11 +402,11 @@
             </ul>
           </div>
 
-          <!-- Statistics -->
+          <!-- Insights -->
           <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
             <div class="flex items-center gap-3 mb-4">
-              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#14b8a6,#0d9488);"><i class="bi bi-bar-chart-fill"></i></span>
-              <h3 class="font-bold text-xl">Statistics</h3>
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#0a2239;"><i class="bi bi-bar-chart-fill"></i></span>
+              <h3 class="font-bold text-xl">Insights</h3>
             </div>
             <!-- bar chart mock -->
             <div class="rounded-2xl border border-gray-100 bg-gray-50 p-4 mb-5">
@@ -327,39 +430,26 @@
             </ul>
           </div>
 
-          <!-- Manage -->
-          <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-7 flex flex-col">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-sliders"></i></span>
-              <h3 class="font-bold text-xl">Manage</h3>
-            </div>
-            <!-- per-document mock -->
-            <div class="rounded-2xl border border-gray-100 bg-gray-50 p-3 mb-5 text-xs">
-              <div class="grid grid-cols-[1fr_auto_auto] gap-2 px-2 py-1 text-[10px] uppercase tracking-wide text-gray-400"><span>Document</span><span>Read.</span><span>Access.</span></div>
-              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 mb-1.5 border border-gray-100">
-                <span class="font-semibold text-gray-700 truncate">Employee Handbook</span>
-                <span class="font-bold text-emerald-600">Gr 7.9</span>
-                <span class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5 font-semibold">98%</span>
-              </div>
-              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 mb-1.5 border border-gray-100">
-                <span class="font-semibold text-gray-700 truncate">Budget Report FY26</span>
-                <span class="font-bold text-amber-600">Gr 12.4</span>
-                <span class="inline-flex items-center gap-1 text-amber-700 bg-amber-50 rounded-full px-2 py-0.5 font-semibold">86%</span>
-              </div>
-              <div class="grid grid-cols-[1fr_auto_auto] gap-2 items-center bg-white rounded-lg px-2 py-2 border border-gray-100">
-                <span class="font-semibold text-gray-700 truncate">Facilities Use Policy</span>
-                <span class="font-bold text-emerald-600">Gr 8.2</span>
-                <span class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 rounded-full px-2 py-0.5 font-semibold">95%</span>
-              </div>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">Admins see <strong>readability and accessibility scores side by side, per document</strong> — so decisions about what to fix, rewrite, or retire are grounded in data, not guesswork.</p>
-            <ul class="space-y-2 text-sm text-gray-700">
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Per-document scores in one dashboard</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Rank what needs attention first</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-blue-700 mt-0.5"></i> Track improvement as you publish</li>
-            </ul>
-          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Case Study -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-3xl opacity-20 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+            <div class="w-20 h-20 rounded-2xl flex items-center justify-center text-white text-3xl flex-shrink-0" style="background:#228AFF;"><i class="bi bi-file-earmark-bar-graph"></i></div>
+            <div class="flex-1 text-center md:text-left">
+              <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-2">Case Study</span>
+              <h2 class="text-2xl md:text-3xl font-extrabold mb-3">See DocMersion in a real deployment</h2>
+              <p class="text-gray-600 leading-relaxed">Read the full case study to see how an organization put DocMersion to work — and click to open it in the DocMersion viewer itself.</p>
+            </div>
+            <a href="https://docmersion.com/DocMersion%20Case%20Study_FinalDraft.pdf" class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex-shrink-0" style="background: #228AFF;">
+              <i class="bi bi-file-earmark-pdf"></i> Read the case study
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -377,8 +467,7 @@
             <p class="text-white/85 text-lg leading-relaxed mb-6">Create your free account and add DocMersion to your site in minutes. Tell us a little about your organization and we'll take you straight into the app to set things up.</p>
             <ul class="space-y-3 text-white/90">
               <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Free plan — no credit card required</span></li>
-              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Set up in the DocMersion app at <span class="font-semibold">admin.docmersion.com</span></span></li>
-              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Start converting documents right away</span></li>
+              <li class="flex items-start gap-3"><i class="bi bi-check-circle-fill mt-1"></i> <span>Make your documents accessible in a few minutes.</span></li>
             </ul>
           </div>
 
@@ -448,33 +537,22 @@
       })();
     </script>
 
-    <!-- Video -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div class="container mx-auto px-6 max-w-4xl">
-        <div class="text-center mb-10">
-          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">Watch</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">DocMersion in two minutes</h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">A quick walkthrough of how documents become accessible, searchable web pages.</p>
-        </div>
-        <div class="relative">
-          <div class="absolute -inset-3 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-3xl opacity-20 blur-2xl"></div>
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-black" style="aspect-ratio:16/9;">
-            <iframe class="w-full h-full" style="border:0;" src="https://www.youtube.com/embed/6oDE1fwG_2Q" title="DocMersion overview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- FAQ -->
     <section id="faq" class="py-20 bg-white">
       <div class="container mx-auto px-6 max-w-4xl">
-        <div class="text-center mb-12">
-          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">FAQ</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently asked <span class="bg-gradient-to-r from-[#0a2239] to-[#228AFF] bg-clip-text text-transparent">questions</span></h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Everything you need to know about how DocMersion turns your documents into accessible web experiences.</p>
-        </div>
+        <details class="faq-section">
+          <summary class="text-center mb-0">
+            <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">FAQ</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently asked <span class="bg-gradient-to-r from-[#0a2239] to-[#228AFF] bg-clip-text text-transparent">questions</span></h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-3">Everything you need to know about how DocMersion turns your documents into accessible web experiences.</p>
+            <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#0b6ad4]">
+              <span class="faq-section-show">Click to view all FAQs</span>
+              <span class="faq-section-hide">Hide FAQs</span>
+              <i class="bi bi-chevron-down faq-section-ico"></i>
+            </span>
+          </summary>
 
-        <div class="space-y-3">
+          <div class="space-y-3 mt-10">
           <details class="faq-card">
             <summary><span class="faq-q">How does DocMersion actually work?</span><i class="bi bi-plus-lg faq-ico"></i></summary>
             <div class="faq-a"><p>DocMersion uses OCR, advanced image processing, and proprietary AI models to analyze your PDFs and rebuild them as clean, semantic HTML. It reconstructs headings, reading order, tables, and generates alt text for images automatically. Complex documents may also receive human review by accessibility specialists. All processing runs securely on U.S.-based AWS infrastructure.</p></div>
@@ -625,7 +703,8 @@
               <p>The platform is also reviewed by independent accessibility consultants on a regular basis, and we maintain active feedback loops with users of assistive technology to catch and resolve real-world friction points. DocMersion receives frequent updates — both for new features and ongoing accessibility improvements — so the platform continues to improve over time.</p>
             </div>
           </details>
-        </div>
+          </div>
+        </details>
 
         <!-- Still have questions CTA -->
         <div class="mt-10 text-center bg-gradient-to-r from-blue-50 to-slate-50 border border-blue-100 rounded-2xl p-8">
@@ -652,6 +731,14 @@
       .faq-card .faq-a li{margin-bottom:.35rem;}
       .faq-card:focus-within{outline:none;}
       .faq-card summary:focus-visible{outline:2px solid #3b82f6;outline-offset:2px;border-radius:.75rem;}
+      .faq-section > summary{list-style:none;cursor:pointer;}
+      .faq-section > summary::-webkit-details-marker{display:none;}
+      .faq-section > summary:focus-visible{outline:2px solid #3b82f6;outline-offset:4px;border-radius:.75rem;}
+      .faq-section-hide{display:none;}
+      .faq-section[open] .faq-section-show{display:none;}
+      .faq-section[open] .faq-section-hide{display:inline;}
+      .faq-section-ico{transition:transform .25s;}
+      .faq-section[open] .faq-section-ico{transform:rotate(180deg);}
     </style>
     <script>
       // Open a FAQ item when linked to by hash (e.g. #doc-types) and scroll to it.
@@ -671,56 +758,60 @@
       })();
     </script>
 
-    <!-- Outcome band -->
-    <section class="py-16 bg-gradient-to-br from-blue-50 to-slate-50">
-      <div class="container mx-auto px-6 max-w-4xl text-center">
-        <i class="bi bi-shield-check text-4xl text-blue-500 mb-4"></i>
-        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Clearer documents, lower risk</h2>
-        <p class="text-gray-700 text-lg">Better compliance and a safer, more informed organization for all — without the manual remediation work.</p>
+    <!-- Native Web: a side note for the handful of documents that need extra depth -->
+    <section id="native" class="py-16 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+      <div class="container mx-auto px-6 max-w-3xl text-center">
+        <span class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 mb-4"><i class="bi bi-window-stack"></i> A closer look: Native Web</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-6 leading-snug">Do you have some documents that feel so important that they deserve to be converted to accessible web content?</h2>
+        <a id="native-quote-btn" href="#contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 mb-8" style="background: linear-gradient(135deg,#14b8a6,#228AFF);">Get a quote for Accessibility For All's Native Web solution <i class="bi bi-arrow-right"></i></a>
+        <p class="text-gray-600 leading-relaxed">Native Web is an additional-fee solution inside Documents for the handful of files that matter most — board policies, employee handbooks, core procedures. Rather than an accessible transcript alongside the original file, Native rebuilds the document from the ground up as its own structured, screen-reader-ready web page — responsive, always current, and built for the deepest level of WCAG 2.1 AA, Section 508, and ADA Title II compliance. Most documents don't need this level of treatment — DocMersion already covers them — but for the few that do, Native Web is available as a custom quote.</p>
       </div>
     </section>
-    <!-- Native: for your most important documents -->
-    <section id="native" class="py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 overflow-hidden">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col lg:flex-row items-center gap-12">
-          <div class="lg:w-1/2 text-center lg:text-left">
-            <span class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 mb-4"><i class="bi bi-window-stack"></i> Documents · Native</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">For your most important documents, go <span class="bg-gradient-to-r from-[#14b8a6] to-[#228AFF] bg-clip-text text-transparent">Native</span>.</h2>
-            <p class="text-xl text-gray-700 mb-5 leading-relaxed">Some documents are too important — and too highly used — to live as files at all. Native is the special solution inside Documents that rebuilds them as a native web platform.</p>
-            <p class="text-gray-600 leading-relaxed mb-6">Board policies, handbooks, and procedures become structured, tagged web pages — screen-reader ready, responsive, and always current — built for the highest level of compliance with WCAG 2.1 AA, Section 508, and ADA Title II. DocMersion gives you breadth across every document; Native gives your flagship documents the deepest treatment.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="native-web.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: linear-gradient(135deg,#14b8a6,#228AFF);"><span class="relative z-10">Explore Native <i class="bi bi-arrow-right ml-1"></i></span></a>
-              <a href="#contact" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#0891b2; color:#0891b2;" onmouseover="this.style.background='#0891b2'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0891b2';">Start a conversion</a>
-            </div>
-          </div>
-          <div class="lg:w-1/2 w-full">
-            <div class="relative max-w-lg mx-auto">
-              <div class="absolute -inset-4 bg-gradient-to-r from-cyan-200 to-blue-300 rounded-3xl opacity-20 blur-2xl"></div>
-              <div class="relative bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
-                <div class="rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 p-4 flex items-center gap-3">
-                  <i class="bi bi-file-earmark-pdf text-2xl text-red-500"></i>
-                  <div class="flex-1"><div class="font-semibold text-gray-700 text-sm">employee-handbook.pdf</div><div class="text-xs text-gray-400">Your most-accessed document · 4,120 views this quarter</div></div>
-                </div>
-                <div class="flex items-center justify-center my-3">
-                  <span class="inline-flex items-center gap-2 text-xs font-semibold text-white px-4 py-2 rounded-full" style="background:linear-gradient(135deg,#14b8a6,#228AFF);"><i class="bi bi-arrow-down"></i> GOES NATIVE</span>
-                </div>
-                <div class="rounded-xl border border-gray-100 shadow-sm overflow-hidden">
-                  <div class="flex items-center gap-2 px-3 py-2 bg-gray-50 border-b border-gray-100 text-xs text-gray-500"><i class="bi bi-lock-fill text-emerald-500"></i> yourorg.gov/handbook</div>
-                  <div class="p-4">
-                    <div class="font-bold text-gray-900 mb-2">Employee Handbook</div>
-                    <div class="space-y-2 mb-4">
-                      <div class="h-2 bg-gray-200 rounded w-full"></div>
-                      <div class="h-2 bg-gray-200 rounded w-4/5"></div>
-                      <div class="h-2 bg-cyan-200 rounded w-2/3"></div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-[11px]">
-                      <span class="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 rounded-full px-2 py-1"><i class="bi bi-universal-access"></i> Screen-reader ready</span>
-                      <span class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 rounded-full px-2 py-1"><i class="bi bi-arrow-repeat"></i> Always current</span>
-                      <span class="inline-flex items-center gap-1 bg-cyan-50 text-cyan-700 rounded-full px-2 py-1"><i class="bi bi-check2-circle"></i> AA compliant</span>
-                    </div>
-                  </div>
-                </div>
+    <script>
+      (function () {
+        var btn = document.getElementById('native-quote-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          var contact = document.getElementById('contact');
+          if (!contact) return;
+          e.preventDefault();
+          var docsCheckbox = contact.querySelector('input[name="tools_interested"][value="Documents"]');
+          var message = contact.querySelector('textarea[name="message"]');
+          if (docsCheckbox) docsCheckbox.checked = true;
+          if (message && !message.value) message.value = "I'm interested in a quote for the Native Web solution.";
+          contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          var first = contact.querySelector('input[name="name"]');
+          if (first) first.focus({ preventScroll: true });
+        });
+      })();
+    </script>
+
+    <!-- Interactive Demo -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-3">See it in action</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Explore Our Interactive Demo</h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Click through a real walkthrough of what DocMersion does.</p>
+        </div>
+        <div class="group relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-cyan-300 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-xl"></div>
+          <div class="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <!--ARCADE EMBED START-->
+              <div style="position: relative; padding-bottom: 56.25%; height: 0; width: 100%; overflow: hidden;">
+                <iframe src="https://demo.arcade.software/Q0aiaL3qDKFfQe9FboXV?embed&embed_mobile=inline&embed_desktop=inline&show_copy_link=true"
+                        title="What is DocMersion?"
+                        frameborder="0"
+                        loading="lazy"
+                        webkitallowfullscreen
+                        mozallowfullscreen
+                        allowfullscreen
+                        allow="clipboard-write"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light; border-radius: 0.75rem;">
+                </iframe>
               </div>
+              <!--ARCADE EMBED END-->
             </div>
           </div>
         </div>
@@ -747,23 +838,28 @@
         <div class="text-center mb-12">
           <span class="inline-block text-sm font-semibold tracking-widest text-blue-500 uppercase mb-2">Part of the suite</span>
           <h2 class="text-3xl md:text-4xl font-extrabold">Explore Accessibility For All</h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto mt-3">Three solutions that cover the full accessibility lifecycle. Use one — or all of them together.</p>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto mt-3">Four solutions that cover the full accessibility lifecycle. Use one — or all of them together.</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
           <a href="docmersion.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
             <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#228AFF;"><i class="bi bi-files"></i></span>
             <span class="text-base font-bold text-gray-800 group-hover:text-blue-600">Documents</span>
             <span class="text-xs text-gray-400 -mt-1">DocMersion · Native</span>
           </a>
-          <a href="wcag-checker.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+          <a href="websites.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
             <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-globe2"></i></span>
             <span class="text-base font-bold text-gray-800 group-hover:text-emerald-600">Websites</span>
             <span class="text-xs text-gray-400 -mt-1">Check · Monitor</span>
           </a>
-          <a href="vpat-acr.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+          <a href="reports.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
             <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#0a2239;"><i class="bi bi-journal-check"></i></span>
-            <span class="text-base font-bold text-gray-800 group-hover:text-blue-700">ACR</span>
-            <span class="text-xs text-gray-400 -mt-1">ACR Studio</span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-blue-700">Reports</span>
+            <span class="text-xs text-gray-400 -mt-1">VPAT · ACR</span>
+          </a>
+          <a href="remediation.html" class="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-white shadow-sm hover:shadow-lg border border-gray-100 transition group">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white text-xl" style="background:#b45309;"><i class="bi bi-lightbulb"></i></span>
+            <span class="text-base font-bold text-gray-800 group-hover:text-amber-700">Response</span>
+            <span class="text-xs text-gray-400 -mt-1">Suggested remediation</span>
           </a>
         </div>
       </div>

@@ -57,10 +57,23 @@ function loadContactForm(containerId, options = {}) {
                 <input type="url" name="website" class="rounded-xl px-6 py-4 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-lg" placeholder="https://yourwebsite.com">
               </label>
             </div>
-            <label class="flex flex-col gap-3 font-semibold text-gray-700">
-              Accessibility For All Tools You're Interested In:
-              <input type="text" name="tools_interested" class="rounded-xl px-6 py-4 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-lg" placeholder="e.g., DocMersion, WCAG Checker, Accessibility Monitor, VPAT/ACR...">
-            </label>
+            <fieldset class="flex flex-col gap-3">
+              <legend class="font-semibold text-gray-700 mb-1">Accessibility For All Tools You're Interested In:</legend>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <label class="flex items-center gap-2 text-gray-700 rounded-xl px-4 py-3 border-2 border-gray-200 cursor-pointer">
+                  <input type="checkbox" name="tools_interested" value="Websites" class="h-5 w-5 rounded border-2 border-gray-300 text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]"> Websites
+                </label>
+                <label class="flex items-center gap-2 text-gray-700 rounded-xl px-4 py-3 border-2 border-gray-200 cursor-pointer">
+                  <input type="checkbox" name="tools_interested" value="Documents" class="h-5 w-5 rounded border-2 border-gray-300 text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]"> Documents
+                </label>
+                <label class="flex items-center gap-2 text-gray-700 rounded-xl px-4 py-3 border-2 border-gray-200 cursor-pointer">
+                  <input type="checkbox" name="tools_interested" value="Reports" class="h-5 w-5 rounded border-2 border-gray-300 text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]"> Reports
+                </label>
+                <label class="flex items-center gap-2 text-gray-700 rounded-xl px-4 py-3 border-2 border-gray-200 cursor-pointer">
+                  <input type="checkbox" name="tools_interested" value="Response" class="h-5 w-5 rounded border-2 border-gray-300 text-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]"> Response
+                </label>
+              </div>
+            </fieldset>
             <label class="flex flex-col gap-3 font-semibold text-gray-700">
               Other Comments or Questions:
               <textarea name="message" rows="6" class="rounded-xl px-6 py-4 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-lg resize-none" placeholder="Tell us about your accessibility and compliance goals and how we can help..."></textarea>
@@ -77,6 +90,35 @@ function loadContactForm(containerId, options = {}) {
 
   // Insert the HTML into the container
   container.innerHTML = contactFormHTML;
+
+  // Require a business email address. This is a client-side heuristic (blocks
+  // known free/personal webmail domains) rather than a verified guarantee —
+  // there's no backend on this static site to check further, and Formspree
+  // doesn't offer domain verification on our plan.
+  var form = container.querySelector('form');
+  var emailInput = form && form.querySelector('input[name="email"]');
+  if (emailInput) {
+    var FREE_EMAIL_DOMAINS = [
+      'gmail.com', 'googlemail.com', 'yahoo.com', 'yahoo.co.uk', 'yahoo.ca', 'ymail.com',
+      'hotmail.com', 'hotmail.co.uk', 'outlook.com', 'live.com', 'msn.com',
+      'aol.com', 'icloud.com', 'me.com', 'mac.com',
+      'protonmail.com', 'proton.me', 'mail.com', 'gmx.com', 'gmx.us',
+      'yandex.com', 'yandex.ru', 'aim.com', 'inbox.com', 'qq.com', '163.com', 'naver.com'
+    ];
+    emailInput.addEventListener('input', function () {
+      emailInput.setCustomValidity('');
+    });
+    form.addEventListener('submit', function (e) {
+      var domain = (emailInput.value.split('@')[1] || '').trim().toLowerCase();
+      if (FREE_EMAIL_DOMAINS.indexOf(domain) !== -1) {
+        emailInput.setCustomValidity('Please use your business email address rather than a personal ' + domain + ' account.');
+        emailInput.reportValidity();
+        e.preventDefault();
+      } else {
+        emailInput.setCustomValidity('');
+      }
+    });
+  }
 }
 
 // Auto-load contact form if a container with id "contact-form-container" exists
