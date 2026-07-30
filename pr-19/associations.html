@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TX5BQW6XZ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TX5BQW6XZ6');
+</script>
+
+        <!-- BEGIN DOCMERSION FAVICONS -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <link rel="shortcut icon" href="/favicon/favicon.ico">
+        <!-- END DOCMERSION FAVICONS -->
+         
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Associations – Accessibility For All</title>
+    <meta name="description" content="Accessibility For All helps professional and membership associations keep bylaws, governance documents, member portals, event pages, and compliance reporting accessible — DocMersion for documents, Websites for portals and events, Reports for VPAT/ACR credibility, and Response for monthly remediation rollups." />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#228AFF',
+              dark: '#0a2239',
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- HLS.js for video streaming -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Navbar and Footer Loaders -->
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <!-- PDF Genie -->
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <script>
+// Initialize HLS video players
+document.addEventListener('DOMContentLoaded', function() {
+  // Associations video
+  const associationsVideo = document.getElementById('associations-video');
+  const playButton = document.getElementById('associations-play-button');
+  const associationsVideoSrc = 'https://customer-394md8sxxno51fu2.cloudflarestream.com/28120df431ce6370641e876802fadf68/manifest/video.m3u8';
+  
+  let isPlaying = false;
+  
+  if (Hls.isSupported()) {
+    const associationsHls = new Hls();
+    associationsHls.loadSource(associationsVideoSrc);
+    associationsHls.attachMedia(associationsVideo);
+  } else if (associationsVideo.canPlayType('application/vnd.apple.mpegurl')) {
+    // Safari native HLS support
+    associationsVideo.src = associationsVideoSrc;
+  }
+  
+  // Video click handler
+  function toggleVideo() {
+    if (isPlaying) {
+      associationsVideo.pause();
+      playButton.style.opacity = '1';
+      isPlaying = false;
+    } else {
+      associationsVideo.play();
+      playButton.style.opacity = '0';
+      isPlaying = true;
+    }
+  }
+  
+  // Add click handlers
+  associationsVideo.addEventListener('click', toggleVideo);
+  playButton.addEventListener('click', toggleVideo);
+  
+  // Hide play button when video is playing
+  associationsVideo.addEventListener('play', function() {
+    playButton.style.opacity = '0';
+    isPlaying = true;
+  });
+  
+  // Show play button when video is paused
+  associationsVideo.addEventListener('pause', function() {
+    playButton.style.opacity = '1';
+    isPlaying = false;
+  });
+});
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-teal-50 pt-28 pb-16">
+      <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 px-8 relative z-10">
+        <div class="max-w-xl lg:text-left text-center lg:basis-5/12 lg:max-w-[45%] w-full order-1 lg:order-1">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider" style="background-color: rgba(35, 140, 255, 0.1); color: #228AFF;">For Associations</span>
+<h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+  Member Resources & Bylaws<br />
+  <span style="color: #228AFF;">Always Accessible</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-700 mb-8">Strengthen your association with an accessible, professional experience across everything members touch — bylaws and governance documents, your member portal and event pages, and the compliance reporting that proves it. Accessibility For All helps you keep members, board, and committees informed, engaged, and covered.</p>
+          <div class="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start text-center lg:text-left">
+            <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #0b6ad4;">
+              <span class="relative z-10">Book a demo</span>
+              <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+            <a href="http://app.accessibility-for-all.com/onboarding" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#0b6ad4; color:#0b6ad4;" onmouseover="this.style.background='#0b6ad4'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0b6ad4';">Get started for free</a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center lg:basis-7/12 lg:max-w-[55%] w-full order-2 lg:order-2">
+          <div class="relative w-full max-w-2xl">
+            <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 blur-2xl"></div>
+            <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-2xl border border-white/50">
+              <div class="relative">
+                <video 
+                  id="associations-video"
+                  class="w-full h-auto rounded-xl shadow-lg cursor-pointer"
+                  loop 
+                  playsinline
+                  style="aspect-ratio: 16/9; object-fit: cover;">
+                  Your browser does not support the video tag.
+                </video>
+                <!-- Play button overlay -->
+                <div id="associations-play-button" class="absolute inset-0 flex items-center justify-center bg-black/20 rounded-xl transition-opacity duration-300">
+                  <div class="bg-white/90 rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-blue-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile CTA Button - appears below video on mobile -->
+        <div class="lg:hidden w-full flex flex-col sm:flex-row gap-4 justify-center order-3">
+          <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #0b6ad4;">
+            <span class="relative z-10">Book a demo</span>
+            <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          <a href="http://app.accessibility-for-all.com/onboarding" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5" style="border-color:#0b6ad4; color:#0b6ad4;" onmouseover="this.style.background='#0b6ad4'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0b6ad4';">Get started for free</a>
+        </div>
+      </div>
+      <!-- Decorative shapes -->
+      <div class="absolute top-0 left-0 w-40 h-40 rounded-full blur-3xl -z-10" style="background-color: rgba(35, 140, 255, 0.2);"></div>
+      <div class="absolute bottom-0 right-0 w-52 h-52 bg-blue-200/30 rounded-full blur-3xl -z-10"></div>
+    </section>
+    
+    <main class="pt-32 pb-20 min-h-[60vh] bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Nonprofit Impact Section -->
+        <section class="relative py-16 mb-12">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+              The <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Association</span> Advantage
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">Understanding how accessible documents, websites, and compliance reporting uniquely serve professional associations and their members.</p>
+          </div>
+          
+          <!-- Alternating Layout -->
+          <div class="space-y-16">
+            <!-- First Feature - Left Text, Right Visual -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div class="order-2 lg:order-1">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center">
+                    <i class="bi bi-people-fill text-white text-xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-900">Member-First Design</h3>
+                </div>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">Associations serve diverse professional members with varying accessibility needs. Digital documents ensure every member can access bylaws, resources, and governance information regardless of ability, language, or device.</p>
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">Screen Reader Compatible</span>
+                  <span class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">Multi-Language Support</span>
+                  <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Mobile Optimized</span>
+                </div>
+              </div>
+              <div class="order-1 lg:order-2">
+                <div class="relative">
+                  <div class="absolute -inset-4 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-3xl opacity-20 blur-2xl"></div>
+                  <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 shadow-2xl border border-emerald-100">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <i class="bi bi-universal-access text-emerald-600 text-2xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-700">Accessibility First</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <i class="bi bi-translate text-teal-600 text-2xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-700">Global Reach</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <i class="bi bi-phone text-blue-600 text-2xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-700">Any Device</p>
+                      </div>
+                      <div class="bg-white rounded-lg p-4 shadow-lg">
+                        <i class="bi bi-heart text-teal-700 text-2xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-700">Inclusive Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Bottom Benefits Bar -->
+            <div class="relative">
+              <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 via-cyan-200 to-teal-200 rounded-2xl opacity-10 blur-xl"></div>
+              <div class="relative bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <i class="bi bi-shield-check text-white text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 text-gray-900">Grant Compliance</h4>
+                    <p class="text-gray-600 text-sm">Meet funder accessibility requirements</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <i class="bi bi-globe text-white text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 text-gray-900">Global Reach</h4>
+                    <p class="text-gray-600 text-sm">Serve international communities</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <i class="bi bi-heart text-white text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 text-gray-900">Mission Impact</h4>
+                    <p class="text-gray-600 text-sm">Amplify organizational reach</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="relative py-16 mb-12">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                Key <span class="bg-gradient-to-r from-[#0a2239] to-[#123a5e] bg-clip-text text-transparent">Solutions</span> <span class="text-black">for Associations</span>
+              </h2>
+              <p class="text-gray-600 text-lg max-w-3xl mx-auto">One suite covering your bylaws and member resources, your member portal and event pages, your compliance reporting, and the monthly rollup that keeps it all on track.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Documents -->
+              <a href="docmersion.html" class="group relative h-full block">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4 h-full">
+                  <div class="w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0" style="background:#228AFF;">
+                    <i class="bi bi-files text-white text-xl"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Documents — Bylaws & Member Resources</h3>
+                    <p class="text-gray-600">DocMersion turns bylaws, governance policies, and committee materials into accessible, searchable, translatable web pages every member can use.</p>
+                    <span class="mt-3 inline-flex items-center gap-1 font-semibold text-blue-600">Learn more <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+                  </div>
+                </div>
+              </a>
+              <!-- Websites -->
+              <a href="websites.html" class="group relative h-full block">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4 h-full">
+                  <div class="w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0" style="background:linear-gradient(135deg,#10b981,#14b8a6);">
+                    <i class="bi bi-globe2 text-white text-xl"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Websites — Member Portals & Events</h3>
+                    <p class="text-gray-600">Check gives your member portal, certification content, and event-registration pages a free WCAG 2.1 AA audit. Monitor keeps them compliant every time you add a new event or resource.</p>
+                    <span class="mt-3 inline-flex items-center gap-1 font-semibold text-emerald-600">Get a free audit <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+                  </div>
+                </div>
+              </a>
+              <!-- Reports -->
+              <a href="reports.html" class="group relative h-full block">
+                <div class="absolute -inset-1 bg-gradient-to-r from-slate-300 to-blue-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4 h-full">
+                  <div class="w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0" style="background:#0a2239;">
+                    <i class="bi bi-journal-check text-white text-xl"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Reports — VPAT & Conformance Documentation</h3>
+                    <p class="text-gray-600">Generate a signed VPAT and Accessibility Conformance Report — credibility for your board and membership, and essential if your association sets or certifies standards for its own industry.</p>
+                    <span class="mt-3 inline-flex items-center gap-1 font-semibold text-blue-700">Meet Reports <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+                  </div>
+                </div>
+              </a>
+              <!-- Response -->
+              <a href="remediation.html" class="group relative h-full block">
+                <div class="absolute -inset-1 bg-gradient-to-r from-amber-200 to-orange-200 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex items-start gap-4 h-full">
+                  <div class="w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0" style="background:#b45309;">
+                    <i class="bi bi-lightbulb text-white text-xl"></i>
+                  </div>
+                  <div class="flex-grow">
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Response — Monthly Remediation Rollups</h3>
+                    <p class="text-gray-600">One monthly email rolls up document compliance, website errors, and VPAT progress into clear next steps — built for lean association staff without a dedicated compliance team.</p>
+                    <span class="mt-3 inline-flex items-center gap-1 font-semibold text-amber-700">See a sample report <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="relative py-16 mb-12">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-10 blur-2xl"></div>
+          <div class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+                Why <span class="bg-gradient-to-r from-[#0a2239] to-[#123a5e] bg-clip-text text-transparent">Associations</span> Love <span class="text-black">Accessibility For All</span>
+              </h2>
+              <p class="text-gray-600 text-lg max-w-3xl mx-auto">Discover the comprehensive benefits that make the full suite — Documents, Websites, Reports, and Response — the trusted choice for professional associations.</p>
+            </div>
+            
+            <!-- Hero Feature Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              <div class="group relative h-full">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-300 to-blue-500 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+                <div class="relative bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-blue-100 h-full flex flex-col">
+                  <div class="flex items-start gap-6 flex-grow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#228AFF] to-[#0b6ad4] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <i class="bi bi-bank text-white text-2xl"></i>
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="font-bold text-2xl mb-3 text-gray-900">Transparency & Trust</h3>
+                      <p class="text-gray-700 text-lg leading-relaxed">An informed membership makes for a better-functioning association: accessible bylaws, governance documents, and a compliant website mean every member can actually understand how things run. And engagement insights, backed by a certified VPAT, show your board where communication needs to improve, so you can serve members better.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
+                <div class="relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-teal-100 h-full flex flex-col">
+                  <div class="flex items-start gap-6 flex-grow">
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <i class="bi bi-people text-white text-2xl"></i>
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="font-bold text-2xl mb-3 text-gray-900">Community Engagement</h3>
+                      <p class="text-gray-700 text-lg leading-relaxed">Make every bylaw and member resource something every member can actually read, understand, and ask questions about — Document Q&amp;A answers them instantly. Engagement insights then show your board which resources get the most attention and what members are asking most, so you know where communication needs to improve.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Grid of Additional Features -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-200 to-emerald-200 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-globe text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Global Accessibility</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Meet accessibility standards across your documents and website, serving every member regardless of ability, language, or device.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-200 to-cyan-300 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#0a2239] to-[#123a5e] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-shield-check text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Compliance & Security</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Back it up with a signed VPAT and Accessibility Conformance Report — documented proof of compliance for your board, membership, and industry standards.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-200 to-blue-300 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#14b8a6] to-[#228AFF] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-translate text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Translation & Inclusion</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Provide bylaws, resources, and member communications in multiple languages to serve your diverse membership.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-300 to-cyan-300 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#0b6ad4] to-[#228AFF] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-headset text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Expert Support</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Rely on expert support across every product — from document onboarding to VPAT review to remediation planning.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-amber-300 to-amber-400 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#b45309] to-[#92400e] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-lightbulb text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Remediation Rollups</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Response delivers a monthly email rolling up document, website, and VPAT status into clear next steps — built for lean staff.</p>
+                </div>
+              </div>
+              
+              <div class="group relative h-full">
+                <div class="absolute -inset-1 bg-gradient-to-r from-teal-300 to-cyan-300 rounded-xl opacity-15 group-hover:opacity-25 transition-opacity blur-sm"></div>
+                <div class="relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center h-full flex flex-col">
+                  <div class="w-12 h-12 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-award text-white text-lg"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-2 text-gray-900">Recognition & Progress</h4>
+                  <p class="text-gray-600 text-sm flex-grow">Highlight your association's accessibility milestones and share progress with your board and membership.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+          <div class="flex justify-center mb-12">
+          <a href="book-demo.html" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #0b6ad4;">
+            <span class="relative z-10">Book a demo</span>
+            <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+        </div>
+      
+          <!-- Contact Form Container - Loaded by contactformloader.js -->
+    <div id="contact-form-container"></div>
+      </div>
+    </main>
+    <!-- Footer will be loaded by footerloader.js -->
+    <script src="contactformloader.js"></script>
+  </body>
+</html>
