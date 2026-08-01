@@ -1,31 +1,34 @@
 ---
 name: local-env-tooling-gaps
-description: This Windows machine has no gh CLI, no Node/Python, and no browser-automation tool connected — plan verification accordingly
+description: This Windows machine has no Node/Python and needs a manual static-file server for local preview; gh CLI and a Claude_Browser tool ARE available (updated 2026-07-31)
 metadata:
   type: project
 ---
 
-**Confirmed 2026-07-27** on the machine this repo is worked on (Windows, git-bash + PowerShell
+**Updated 2026-07-31** on the machine this repo is worked on (Windows, git-bash + PowerShell
 available):
 
-- **No `gh` CLI.** Confirmed absent in both bash (`which gh`) and PowerShell (`Get-Command gh`).
-  PR creation/viewing/status checks need a person with GitHub web access or `gh` installed —
-  Claude can push branches and give the "open a PR" link GitHub returns on push, but can't
-  create/merge/inspect PRs directly here.
-- **No Node.js/npm and no real Python** (only a Windows Store app-execution-alias stub that
-  errors asking to install from the Store) — `npx`-based tools (e.g. Playwright MCP) can't run
-  until Node is actually installed.
-- **No browser-automation tool connected** (no Playwright/Puppeteer MCP) as of this date —
-  visual verification of pages has to happen via link-integrity greps, HTML tag-balance counts,
-  and a locally-started static file server, not an actual rendered screenshot. To add one: install
-  Node, then `claude mcp add playwright -- npx -y @playwright/mcp@latest`, then reconnect
-  (`/mcp` or a new session) — adding it mid-session doesn't make the tool available in that same
-  session.
-- **Static-file preview workaround:** since this is a build-less static site with some
-  absolute-path assets (`/favicon/...`), opening files via `file://` breaks those paths. A small
-  PowerShell `System.Net.HttpListener`-based static server (no external dependency) works as a
-  drop-in local server — write it once to a scratch temp file and run it with
-  `run_in_background: true`, `dangerouslyDisableSandbox` may be needed for raw file **writes**
-  under `favicon/` or similar (see [[sandbox-blocks-raw-file-writes]] if that file exists yet).
+- **`gh` CLI now works** (contradicts the 2026-07-27 note below — confirmed working 2026-07-31:
+  `gh pr list`, `gh pr create`, `gh pr edit`, `gh api`, `gh run list/watch` all functioned
+  normally). Don't assume it's absent; just try it.
+- **A `mcp__Claude_Browser__*` tool is now connected** (as of 2026-07-31) — real rendered-page
+  verification, `javascript_tool` for exec/inspection, console/network reading, screenshots. Note:
+  `computer{action:"screenshot"}` fails with "Browser pane is not displayed" in this headless
+  session — use `javascript_tool`/`get_page_text`/`read_console_messages` for verification
+  instead of relying on screenshots.
+- **Still no Node.js/npm and no real Python** (only a Windows Store app-execution-alias stub that
+  errors asking to install from the Store) — `npx`-based tools can't run until Node is installed.
+- **Static-file preview workaround (still needed for `preview_start`):** this is a build-less
+  static site with some absolute-path assets (`/favicon/...`), so opening files via `file://`
+  breaks those paths, and there's no real Python for `python3 -m http.server`. A small PowerShell
+  `System.Net.HttpListener`-based static server (no external dependency) works as a drop-in local
+  server on `127.0.0.1:8737` — write it once to a scratch temp file, launch with PowerShell
+  `Start-Process ... -WindowStyle Hidden` (not Bash `run_in_background`, which ties the server's
+  lifetime to the tool call), then point `.claude/launch.json` at it with `{"name":"afora-static",
+  "url":"http://127.0.0.1:8737"}` — note `.claude/launch.json` must live under the **primary
+  working directory** (`C:\Users\Dell\.claude\launch.json`), not the repo's own
+  `.claude\launch.json`, or `preview_start` won't find it. Stop the PowerShell process by matching
+  `static-server.ps1` in `Get-CimInstance Win32_Process` command lines when done.
 
-See [[plan-mode-blocks-subagents]] for another environment-specific gotcha from the same session.
+See [[plan-mode-blocks-subagents]] for another environment-specific gotcha from a prior session.
+See [[github-pages-source-branch]] for a real (not environment-specific) infra bug found 2026-07-31.
