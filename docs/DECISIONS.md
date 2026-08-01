@@ -103,3 +103,22 @@ implied the automated portion alone was largely sufficient.
 copy about VPAT/Reports completion percentages (illustrative dashboard mockups included) should
 stay consistent with this 40/60 split rather than inventing new numbers — `reports.html`'s
 "68%"/"32%" illustrative figures were corrected to match this session.
+
+## 2026-07-31 — Legal entity confirmed as Accessibility For All LLC; legal-page terms set
+**Decision:** The operating legal entity is **Accessibility For All LLC** — confirmed by Stephen
+after the privacy-policy rewrite (PR #20) surfaced a conflict (the page said "Accessibility For
+All LLC," the sitewide footer said "Sopris Apps, LLC"). All three ended up saying different
+things across the site before this; now reconciled everywhere (privacy-policy.html,
+terms-of-service.html, about.html, footerloader.js's copyright line) to **Accessibility For All
+LLC**. Also confirmed alongside it: legal/privacy contact is **legal@accessibilityforall.com**;
+data retention is **90 days** post-cancellation for account/document data (**7 years** for
+billing records, per tax law) and **12 months** for unconverted contact/quote leads; cancellation
+terms are cancel-anytime-effective-end-of-period with no prorated refunds; governing law is
+**Colorado**.
+**Why:** These are the facts a privacy policy/ToS legally needs to state accurately, and none of
+them were written down anywhere before. Recorded here so future sessions don't have to
+re-derive or re-ask, and don't reintroduce "Sopris Apps, LLC" anywhere new. Any future feature
+that touches billing, cancellation, or a new legal-notice page should stay consistent with these
+figures rather than inventing new ones. Note: the Limitation-of-Liability clause in
+terms-of-service.html is still explicitly flagged for an actual attorney's review before real
+payments launch — that one was NOT resolved by this decision, on purpose.
