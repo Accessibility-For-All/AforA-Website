@@ -55,6 +55,7 @@ function loadFooter() {
             <h3 class="font-semibold text-gray-900 mb-4">Legal</h3>
             <ul class="space-y-2 text-sm">
               <li><a href="privacy-policy.html" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy policy</a></li>
+              <li><a href="terms-of-service.html" class="text-gray-600 hover:text-blue-600 transition-colors">Terms of service</a></li>
             </ul>
           </div>
         </div>

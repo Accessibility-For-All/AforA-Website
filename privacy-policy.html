@@ -20,10 +20,11 @@
         <link rel="manifest" href="/favicon/site.webmanifest">
         <link rel="shortcut icon" href="/favicon/favicon.ico">
         <!-- END DOCMERSION FAVICONS -->
-         
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy – Accessibility For All</title>
+    <meta name="description" content="How Accessibility For All collects, uses, and protects information across the DocMersion, Websites, Reports, and Response suite.">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -56,9 +57,20 @@
         scroll-behavior: smooth;
       }
       /* Offset for fixed navbar */
-      #summary, #personal-info, #right-to-delete, #consent, #cookies {
+      #summary, #who-we-are, #info-we-collect, #how-we-use, #cookies, #third-parties,
+      #document-content, #retention, #your-rights, #children, #security, #changes, #contact {
         scroll-margin-top: 100px;
       }
+      .review-callout {
+        background: #fffbeb;
+        border: 1px dashed #d97706;
+        border-radius: 0.75rem;
+        padding: 1rem 1.25rem;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+        color: #78350f;
+      }
+      .review-callout strong { color: #92400e; }
     </style>
   </head>
   <body class="bg-white text-gray-900">
@@ -73,9 +85,20 @@
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Privacy Policy
             </h1>
-            <p class="text-xl text-gray-600 mb-8">
-              Your privacy is important to us. Learn how we protect and handle your information.
+            <p class="text-xl text-gray-600 mb-4">
+              How we collect, use, and protect information across the Accessibility For All suite.
             </p>
+            <p class="text-sm text-gray-500">Last updated: <span data-review>[DATE — set when this page is approved and published]</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Draft notice -->
+      <section class="py-6 bg-amber-50 border-y border-amber-200">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto flex items-start gap-3 text-sm text-amber-900">
+            <i class="bi bi-exclamation-triangle-fill mt-0.5"></i>
+            <p><strong>Draft for review.</strong> This page replaces prior boilerplate that described a different product (a school-district staff directory) and made claims that were no longer true. The sections below marked with a dashed amber box are open decisions or missing facts that need Stephen/Mark's confirmation before this goes live — see <code>docs/GHL-FIVE-HAT-REVIEW.md</code> finding&nbsp;4 for background.</p>
           </div>
         </div>
       </section>
@@ -84,7 +107,7 @@
       <section class="py-16">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            
+
             <!-- Table of Contents -->
             <div class="bg-gradient-to-r from-blue-50 to-slate-50 rounded-lg p-6 mb-12 border border-blue-100">
               <h2 class="text-xl font-bold text-gray-900 mb-4">Table of Contents</h2>
@@ -93,74 +116,197 @@
                   <i class="bi bi-shield-check text-sm"></i>
                   <span class="font-medium">Summary</span>
                 </a>
-                <a href="#personal-info" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                <a href="#who-we-are" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-building text-sm"></i>
+                  <span class="font-medium">Who We Are</span>
+                </a>
+                <a href="#info-we-collect" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
                   <i class="bi bi-person-check text-sm"></i>
-                  <span class="font-medium">Use of Personal Information</span>
+                  <span class="font-medium">Information We Collect</span>
                 </a>
-                <a href="#right-to-delete" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
-                  <i class="bi bi-trash text-sm"></i>
-                  <span class="font-medium">Right to Delete</span>
-                </a>
-                <a href="#consent" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
-                  <i class="bi bi-check-circle text-sm"></i>
-                  <span class="font-medium">Consent</span>
+                <a href="#how-we-use" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-gear text-sm"></i>
+                  <span class="font-medium">How We Use Information</span>
                 </a>
                 <a href="#cookies" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
                   <i class="bi bi-cookie text-sm"></i>
-                  <span class="font-medium">Cookies</span>
+                  <span class="font-medium">Cookies &amp; Analytics</span>
+                </a>
+                <a href="#third-parties" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-diagram-3 text-sm"></i>
+                  <span class="font-medium">Third-Party Service Providers</span>
+                </a>
+                <a href="#document-content" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-file-earmark-lock text-sm"></i>
+                  <span class="font-medium">Documents &amp; Sites You Submit</span>
+                </a>
+                <a href="#retention" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-clock-history text-sm"></i>
+                  <span class="font-medium">Data Retention</span>
+                </a>
+                <a href="#your-rights" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-trash text-sm"></i>
+                  <span class="font-medium">Your Rights</span>
+                </a>
+                <a href="#children" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-person-heart text-sm"></i>
+                  <span class="font-medium">Children's Privacy</span>
+                </a>
+                <a href="#security" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-lock text-sm"></i>
+                  <span class="font-medium">Security</span>
+                </a>
+                <a href="#changes" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200">
+                  <i class="bi bi-arrow-repeat text-sm"></i>
+                  <span class="font-medium">Changes to This Policy</span>
                 </a>
               </nav>
             </div>
 
             <div class="prose prose-lg max-w-none">
-              
+
               <!-- Summary Section -->
               <div id="summary" class="mb-12">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Summary</h2>
                 <p class="text-gray-700 leading-relaxed">
-                  Accessibility For All LLC ("Accessibility For All," "we," "us," or "our") takes every precaution to protect our users' information. When users submit sensitive information via this website or our products, this information is protected both online and offline. Only employees who need the information to perform a specific job are granted access to personally identifiable information.
+                  This policy explains what information Accessibility For All collects when you visit this site, request a demo or quote, try the free WCAG check, or use the DocMersion, Websites, Reports, or Response tools — and how that information is used, shared, and protected. It covers <strong>www.soprisapps.com</strong> and the Accessibility For All product suite.
                 </p>
               </div>
 
-              <!-- Use of Personal Information Section -->
-              <div id="personal-info" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Use of Personal Information</h2>
+              <!-- Who We Are -->
+              <div id="who-we-are" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Who We Are</h2>
+                <p class="text-gray-700 leading-relaxed">
+                  Accessibility For All is a product of <span data-review>[Sopris Apps, LLC — confirm exact legal entity name]</span> ("Accessibility For All," "we," "us," or "our"). References to "Accessibility For All LLC" on this site prior to this revision were incorrect — the footer of this site names <strong>Sopris Apps, LLC</strong> as the operating entity, and this policy uses that name unless corrected.
+                </p>
+                <div class="review-callout">
+                  <strong>Needs confirmation:</strong> the site currently uses two different legal-entity names in different places (this page previously said "Accessibility For All LLC"; the footer says "Sopris Apps, LLC"). Please confirm the correct registered entity name (and whether "Accessibility For All" is a trade name/DBA of it) before this page ships.
+                </div>
+              </div>
+
+              <!-- Information We Collect -->
+              <div id="info-we-collect" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Information We Collect</h2>
                 <div class="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    We do not collect any personal information unless you voluntarily provide it by sending us email, participating in a survey, or completing an online form. Personal information submitted will not be transferred to any non-affiliated third parties unless otherwise stated at the time of collection. When a user submits personally identifiable information it is used only for the purpose stated at the time of collection.
+                    We do not collect personal information unless you voluntarily provide it. Depending on how you use the site, that includes:
                   </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Contact and quote requests</strong> — name, email, company, website URL, the tools you're interested in, and any message you write, submitted through our contact and pricing-quote forms.</li>
+                    <li><strong>Demo bookings</strong> — the name, email, and any details you provide when scheduling a demo through our booking calendar.</li>
+                    <li><strong>Getting started with the suite</strong> — when you create an organization in the product, we collect your organization's name and website, and your name and role.</li>
+                    <li><strong>The free website check</strong> — the URL you enter is used only in your browser to personalize the sample report you're shown; it is not transmitted to us or stored, unless you separately request a real audit through a form above.</li>
+                    <li><strong>Billing information</strong> — if you purchase a paid plan, payment details are collected and processed directly by our payment processor (Stripe); we do not receive or store your card number.</li>
+                    <li><strong>Usage and device information</strong> — standard analytics data (pages visited, general location, device/browser type, referring site) collected automatically via the tools described in <a href="#cookies">Cookies &amp; Analytics</a> below.</li>
+                  </ul>
                   <p>
-                    Users who login via Google, Office365, Facebook, or any other identity provider, automatically share their first name, last name, and email address with our system. Our system saves this information and displays it to the user and, if specified by the school district, in a profile card that is publicly available in an official staff directory. No other personal information from Google, Office365, or Facebook is saved in our system.
+                    Information submitted will not be sold or transferred to unaffiliated third parties except as described in <a href="#third-parties">Third-Party Service Providers</a>, or as needed to provide the service you've requested.
                   </p>
                 </div>
               </div>
 
-              <!-- Right to Delete Section -->
-              <div id="right-to-delete" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Right to Delete</h2>
-                <p class="text-gray-700 leading-relaxed">
-                  Upon verifiable request we will delete personal information we have collected about you and will inform our client organization (e.g. the government agency, school, association, or nonprofit) of the request.
-                </p>
-              </div>
-
-              <!-- Consent Section -->
-              <div id="consent" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Consent</h2>
-                <p class="text-gray-700 leading-relaxed">
-                  Where consent for the use and disclosure of personal information is required, our client organization will seek consent from the appropriate person. Where the information belongs to a minor, our client organization will seek consent from the minor and/or their parent or guardian, depending on the circumstances and the minor's ability and maturity to understand the consequences of the proposed use and disclosure.
-                </p>
+              <!-- How We Use Information -->
+              <div id="how-we-use" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">How We Use Information</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">We use the information described above to:</p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
+                  <li>Respond to your inquiries, quote requests, and demo bookings;</li>
+                  <li>Set up, provision, and support your account and organization once you get started;</li>
+                  <li>Process payments and send billing-related communications for paid plans;</li>
+                  <li>Send onboarding and service communications about the plan you've selected;</li>
+                  <li>Understand how the site is used, so we can improve it (see <a href="#cookies">Cookies &amp; Analytics</a>); and</li>
+                  <li>Meet legal, security, and fraud-prevention obligations.</li>
+                </ul>
               </div>
 
               <!-- Cookies Section -->
               <div id="cookies" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Cookies</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Cookies &amp; Analytics</h2>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    A cookie is a small text file your browser stores that lets a site "remember" things between visits. We use cookies and similar technologies for:
+                  </p>
+                  <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Google Analytics (GA4)</strong> — to understand how visitors use the site (pages viewed, general location, device type) in aggregate.</li>
+                    <li><strong>Google Ads conversion tracking</strong> — to measure the performance of our advertising and, if you arrived via an ad, to understand which ads led to a visit or inquiry.</li>
+                  </ul>
+                  <p>
+                    Your browser lets you block or delete cookies at any time; doing so may make some site features (like remembering a billing-period toggle) unavailable, but won't prevent you from browsing or contacting us.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Third-Party Service Providers -->
+              <div id="third-parties" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Third-Party Service Providers</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  We use a small number of outside services to run this site and the product suite. Each only receives the information it needs to do its job:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
+                  <li><strong>Formspree</strong> — delivers submissions from our contact and quote-request forms to our team.</li>
+                  <li><strong>Calendly</strong> — powers demo-booking scheduling.</li>
+                  <li><strong>Google Analytics &amp; Google Ads</strong> — site analytics and advertising measurement, described above.</li>
+                  <li><strong>Our document-rendering service</strong> — powers the interactive document preview features in DocMersion; it processes the documents you view or submit for that purpose only.</li>
+                  <li><strong>Stripe</strong> — processes payments for paid plans. Stripe receives your billing details directly; we never see or store full card numbers.</li>
+                </ul>
+                <p class="text-gray-700 leading-relaxed mt-4">
+                  As the product adds new integrations (for example, a customer-relationship or support platform), we will update this section before that integration goes live — not after.
+                </p>
+              </div>
+
+              <!-- Documents & Sites You Submit -->
+              <div id="document-content" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Documents &amp; Sites You Submit</h2>
                 <p class="text-gray-700 leading-relaxed">
-                  A cookie is a small text file stored by your browser that allows the website to "remember" your preferences such as calendar settings and site bookmarks on the site from visit to visit, or to maintain your "logged in" status when visiting protected areas. Use of a cookie is in no way linked to any personally identifiable information while on our site. Web browsers have settings allowing you to reject cookies, or selectively accept cookies, or delete cookies previously accepted. Please be aware that rejecting or deleting cookies from our website may make certain functions unavailable to you.
+                  When you use DocMersion, Websites, Reports, or Response, you may submit documents or a website address for us to scan, remediate, or report on. That content remains yours. We process it only to provide the service you've requested (for example, generating an accessibility report or a suggested remediation) and do not sell it, use it to train unrelated products, or share it outside the service providers named in this policy, except where you direct us to (for example, sharing a report with your own team).
+                </p>
+              </div>
+
+              <!-- Data Retention -->
+              <div id="retention" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Data Retention</h2>
+                <p class="text-gray-700 leading-relaxed">
+                  We keep account and document information for as long as your account is active, plus a limited period afterward to meet legal, tax, and support obligations. Inquiries or leads that never convert into a customer are periodically deleted.
+                </p>
+                <div class="review-callout">
+                  <strong>Needs a decision:</strong> no specific retention period has been set yet (the security review that flagged this recommended roughly 12 months for unconverted leads). Please confirm a retention period for (a) unconverted contact-form/quote leads and (b) customer account data after cancellation, so this section can state a specific timeframe.
+                </div>
+              </div>
+
+              <!-- Your Rights -->
+              <div id="your-rights" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Rights</h2>
+                <p class="text-gray-700 leading-relaxed">
+                  You can ask us to access, correct, or delete the personal information we hold about you at any time by <a href="index.html#contact">contacting us</a>. Upon a verifiable request, we will delete the personal information we've collected about you, subject to what we're legally required to retain (for example, billing records).
+                </p>
+              </div>
+
+              <!-- Children's Privacy -->
+              <div id="children" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Children's Privacy</h2>
+                <p class="text-gray-700 leading-relaxed">
+                  This site and our services are directed at businesses, government agencies, schools, associations, and nonprofits, not at individual children. We do not knowingly collect personal information directly from children under 13. Documents or websites submitted to our tools for accessibility scanning may incidentally contain information about students or other individuals; that content is handled per <a href="#document-content">Documents &amp; Sites You Submit</a> above and is never used for any purpose beyond providing the requested service.
+                </p>
+              </div>
+
+              <!-- Security -->
+              <div id="security" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Security</h2>
+                <p class="text-gray-700 leading-relaxed">
+                  We take reasonable technical and organizational precautions to protect the information we collect, both online and offline. Only team members who need access to personal information to do their job are given it. No method of transmission or storage is 100% secure, so we can't guarantee absolute security, but we work to keep this practice current as the product grows.
+                </p>
+              </div>
+
+              <!-- Changes to This Policy -->
+              <div id="changes" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Changes to This Policy</h2>
+                <p class="text-gray-700 leading-relaxed">
+                  We'll update this page as our practices change — for example, when a new integration or feature starts collecting information it didn't before. We'll update the "Last updated" date at the top when we do. If a change is significant, we'll make that clear on this page.
                 </p>
               </div>
 
               <!-- Contact Section -->
-              <div class="bg-gradient-to-r from-teal-50 to-blue-50 rounded-lg p-8 mt-12">
+              <div id="contact" class="bg-gradient-to-r from-teal-50 to-blue-50 rounded-lg p-8 mt-12">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Questions About Our Privacy Policy?</h2>
                 <p class="text-gray-700 mb-6">
                   If you have any questions about this privacy policy or how we handle your information, please don't hesitate to contact us.
@@ -169,6 +315,9 @@
                   <i class="bi bi-envelope"></i>
                   Contact Us
                 </a>
+                <div class="review-callout mt-6">
+                  <strong>Needs a decision:</strong> there's no dedicated privacy/legal contact email published on the site today — only this contact form. Consider adding one (e.g. <code>privacy@[domain]</code>) for formal privacy requests, or confirm the contact form is sufficient.
+                </div>
               </div>
 
             </div>
