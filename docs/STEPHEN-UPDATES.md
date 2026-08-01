@@ -16,17 +16,15 @@ Internal file — excluded from the deploy, never published to the public site.
 progress. Any Stephen update should be clear about what he can see vs. what's actually public.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-07-27
-main_commit: ec6ae6b
-last_pr: 17
-note: the Jul-27 weekly-digest entry below covers EVERYTHING through the #17 merge (#11–#14
-rode in with it) — the wave, honesty/contrast work, AND its arrival on staging (entry was
-amended same-day pre-send when Marcus approved the merge). Do NOT re-describe the
-tiers/copy/scanner work in any form. Separately, the Jul-27 "in progress" entry below refers
-to the Response/free-plan/5-tier-pricing-v2/industry-rewrite follow-on
-(`feat/response-product-and-pricing`) — that branch has now MERGED to `main` (2026-07-30,
-direct merge, no PR). Next summary should cover it as NEWLY LIVE (4th product "Response," Free
-tier, rewritten industry pages, new About page, new logo) — not as still-in-progress.
+last_generated: 2026-07-31
+main_commit: ce01d28
+last_pr: 18
+note: main_commit ce01d28 is a DIRECT merge of `feat/response-product-and-pricing` (no PR
+number — merged straight to main 2026-07-30 per Stephen's go-ahead), covered as newly-live in
+the 2026-07-31 entry below (4th product "Response," Free tier, rewritten industry pages, new
+About page, new logo). last_pr:18 is the last actual numbered PR merged before that direct
+merge. PR #19 (onboarding wizard + CTA rework) is OPEN, not merged — do not describe it as
+live in any future summary until it actually merges to main.
 -->
 
 ---
@@ -43,6 +41,37 @@ tier, rewritten industry pages, new About page, new logo) — not as still-in-pr
 **Needs Stephen / a decision**
 - <anything waiting on him>
 -->
+
+## 2026-07-31 — update for Stephen
+
+**What's new / live on the staging site**
+- The big update from last week is now fully live on staging: a fourth product called
+  "Response" (suggested fixes rolled up across the whole suite), the old "ACR" report renamed
+  to the clearer "Reports," pricing rebuilt around 5 tiers including a real **Free plan** (not
+  a limited trial — the whole suite, free), a new About page, and a brand-new logo across the
+  entire site.
+- The Documents page (DocMersion) got a big overhaul: a real interactive demo you can click
+  through file types on, a case study, and a simplified, collapsed FAQ.
+
+**In progress — ready for your review**
+- Reworked how "Get started for free" works everywhere on the site. Before, it just linked to
+  the pricing page. Now, clicking it walks a visitor through three quick steps right on the
+  site — tell us about your organization, confirm you want the Free plan (already picked for
+  you), and get simple install instructions — without ever leaving soprisapps.com or needing a
+  separate app. Paid-plan buttons still work exactly like they do today (either a real Stripe
+  checkout once that's turned on, or "get a quote").
+- Found and fixed a bug where the preview links shared for review (like this one) had actually
+  never worked — they showed "page not found" no matter what. That's fixed now, so preview
+  links going forward will actually load.
+- Preview link, ready for your look: https://accessibility-for-all.github.io/AforA-Website/pr-19/
+
+**Needs Stephen / a decision**
+- Take a look at the new "Get started for free" flow on the preview link above and confirm
+  you're happy with it before it merges.
+- Standing reminder, not new this week: merging changes to the site still doesn't make them
+  appear on the real `soprisapps.com` domain automatically — that still needs a one-time AWS
+  fix from whoever manages your hosting account. Everything described as "live" above is live
+  on the staging preview link only.
 
 ## 2026-07-27 — update for Stephen (weekly digest — drafted as an email for Marcus to send;
 amended same-day after Marcus approved and merged: the package is now LIVE on staging)
