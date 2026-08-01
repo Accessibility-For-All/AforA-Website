@@ -62,7 +62,7 @@ function loadFooter() {
 
         <!-- Bottom Bar -->
         <div class="pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="text-sm text-gray-500">© <span id="year"></span> Sopris Apps, LLC. Accessibility For All is a product suite of Sopris Apps, LLC.</div>
+          <div class="text-sm text-gray-500">© <span id="year"></span> Accessibility For All LLC.</div>
           <div class="flex items-center gap-2 text-xs text-gray-500">
             <i class="bi bi-universal-access"></i>
             <span>WCAG 2.1 AA · Section 508 · ADA Title II</span>
