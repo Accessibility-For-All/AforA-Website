@@ -24,6 +24,19 @@ a static site.
 process notes and memory would be served at `www.soprisapps.com`. Any new internal folder must
 be added to both exclude lists.
 
+## 2026-07-31 — Onboarding wizard's paid-tier checkout reuses existing Stripe logic, not a mock card form
+**Decision:** The org-creation → plan-choice → activation wizard embedded in `pricing.html`
+(adapted from a reference build) does NOT include a credit-card entry step for paid tiers. The
+reference build's card form is explicitly commented in its own source as a placeholder with no
+backend. Paid-tier selection instead calls the same `checkoutUrl()` function pricing.html already
+used, driven by `pricing-config.js`'s `selfServe` flag — redirects to a real Stripe Payment Link
+if configured, else falls back to the real contact-form quote flow.
+**Why:** Shipping a card-entry form that doesn't actually charge anyone or create a Stripe
+customer would present real site visitors with what looks like a working payment form that
+silently does nothing — a trust/security problem, and a direct contradiction of the site's own
+already-shipped design (the `selfServe` kill switch, `docs/STRIPE-SETUP.md`'s documented plan to
+use real external Stripe Payment Links). See `memory/onboarding-wizard-no-mock-payment.md`.
+
 ## (pre-existing) Branding vs. bucket name mismatch
 The GitHub org/repo is `Accessibility-For-All / AforA-Website` but the S3 bucket and Route 53
 zone are still `soprisapps.com` (legacy). Both are correct — just out of sync due to history.
