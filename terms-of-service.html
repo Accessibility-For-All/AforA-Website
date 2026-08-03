@@ -57,7 +57,8 @@
         scroll-behavior: smooth;
       }
       #summary, #the-service, #accounts, #plans-billing, #free-plan, #cancellation,
-      #acceptable-use, #your-content, #disclaimers, #warranty, #liability, #termination, #governing-law,
+      #acceptable-use, #your-content, #disclaimers, #warranty, #liability, #indemnification,
+      #third-party-claims, #termination, #governing-law,
       #changes, #contact {
         scroll-margin-top: 100px;
       }
@@ -117,6 +118,8 @@
                 <a href="#disclaimers" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200"><i class="bi bi-info-circle text-sm"></i><span class="font-medium">Disclaimers</span></a>
                 <a href="#warranty" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200"><i class="bi bi-exclamation-diamond text-sm"></i><span class="font-medium">Warranty</span></a>
                 <a href="#liability" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200"><i class="bi bi-shield-check text-sm"></i><span class="font-medium">Limitation of Liability</span></a>
+                <a href="#indemnification" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200"><i class="bi bi-shield-lock text-sm"></i><span class="font-medium">Indemnification</span></a>
+                <a href="#third-party-claims" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200"><i class="bi bi-envelope-exclamation text-sm"></i><span class="font-medium">Third-Party Accessibility Claims</span></a>
                 <a href="#termination" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200"><i class="bi bi-door-closed text-sm"></i><span class="font-medium">Termination</span></a>
                 <a href="#governing-law" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-white/50 px-3 py-2 rounded-lg transition-all duration-200"><i class="bi bi-bank text-sm"></i><span class="font-medium">Governing Law</span></a>
               </nav>
@@ -223,6 +226,12 @@
                     <strong>What the Service actually does.</strong> The Service is a good-faith attempt to identify accessibility barriers in your documents and websites and suggest improvements. Its scans, remediation suggestions, and reports may or may not align with the specific standard a government body, regulator, or court applies to your organization at any given time — standards, their interpretations, and enforcement all change over time, and no service can promise to track every jurisdiction's current requirements perfectly. You remain solely responsible for determining what level of accessibility compliance your organization is legally required to meet, and for verifying — with your own qualified counsel and, where appropriate, independent accessibility experts — whether that level has been reached.
                   </p>
                   <p>
+                    <strong>Automated and AI-assisted components.</strong> Parts of the Service — including document transcription, accessibility scanning, and remediation suggestions — rely on automated and AI-assisted processing. These components may not correctly handle every document format, website structure, or content type, and may occasionally produce inaccurate, incomplete, or unexpected results. Where a plan includes human review, that review is intended to catch what automation misses, but even combined automated-plus-human review cannot catch every issue.
+                  </p>
+                  <p>
+                    <strong>Known limitations.</strong> No accessibility tool addresses every possible barrier. Where we're aware of specific categories of issues the Service does not detect or remediate, we'll describe them in our product documentation rather than leaving you to discover them on your own.
+                  </p>
+                  <p>
                     <strong>Service provided "as is."</strong> Except as expressly stated in these Terms, the Service is provided without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement.
                   </p>
                 </div>
@@ -230,18 +239,40 @@
 
               <div id="liability" class="mb-12">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Limitation of Liability</h2>
-                <p class="text-gray-700 leading-relaxed">
-                  To the fullest extent permitted by law, Accessibility For All will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenue, arising from your use of the Service. Our total liability for any claim relating to the Service will not exceed the amount you paid us in the 12 months before the claim arose.
-                </p>
-                <div class="review-callout">
-                  <strong>Recommend legal review:</strong> this is a standard SaaS limitation-of-liability clause. Given the Service makes representations about legal-compliance risk (accessibility law is actively litigated), we'd recommend a lawyer review this section and the Disclaimers section above before launch, rather than relying on this draft as-is.
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    To the fullest extent permitted by law, Accessibility For All will not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or any loss of profits, revenue, data, or goodwill, arising from your use of or inability to use the Service — even if we've been advised of the possibility of those damages. Our total liability for any claim relating to the Service will not exceed the amount you paid us in the 12 months before the claim arose.
+                  </p>
+                  <p>
+                    If you're not satisfied with the Service for any reason, your sole and exclusive remedy is to stop using it and, where applicable, cancel your plan per <a href="#cancellation">Cancellation &amp; Refunds</a> above.
+                  </p>
+                  <p>
+                    Some jurisdictions don't allow the exclusion of certain warranties or the limitation of certain damages — in those jurisdictions, the limitations in this section and in <a href="#warranty">Warranty</a> above apply only to the extent permitted by law.
+                  </p>
                 </div>
+                <div class="review-callout">
+                  <strong>Recommend legal review:</strong> this is a standard SaaS limitation-of-liability structure (modeled in part on how comparable accessibility-SaaS vendors structure theirs). Given the Service makes representations about accessibility and legal-compliance risk (an actively litigated area), we'd recommend a lawyer review this section, Warranty, Disclaimers, Indemnification, and Third-Party Accessibility Claims before launch, rather than relying on this draft as-is. Also flagging a business decision, not a legal-wording one: some competitors offer a paid-tier "litigation coverage" pledge (covering a capped dollar amount of a customer's legal costs if their tool specifically failed) as a sales differentiator — that's a real financial/insurance commitment this draft deliberately does NOT include, since it needs your explicit sign-off, not a drafting choice.
+                </div>
+              </div>
+
+              <div id="indemnification" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Indemnification</h2>
+                <p class="text-gray-700 leading-relaxed">
+                  You agree to indemnify and hold Accessibility For All LLC harmless from any claim, demand, loss, or expense (including reasonable attorneys' fees) arising from: your use of the Service in violation of these Terms; Your Content, including any claim that it infringes another party's rights or violates the law; or your organization's own accessibility, privacy, or other legal compliance obligations, which exist independently of your use of the Service.
+                </p>
+              </div>
+
+              <div id="third-party-claims" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Third-Party Accessibility Claims</h2>
+                <p class="text-gray-700 leading-relaxed">
+                  If you receive a demand letter, regulatory complaint, or lawsuit alleging that your website or documents aren't accessible, and you'd like help understanding what the Service has and hasn't addressed, let us know as soon as possible. We have no control over, and no advance notice of, communications or legal action third parties take against you — the sooner we hear from you, the more we can help. Notifying us doesn't expand our obligations beyond what's stated elsewhere in these Terms, including <a href="#liability">Limitation of Liability</a> above.
+                </p>
               </div>
 
               <div id="termination" class="mb-12">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Termination</h2>
                 <p class="text-gray-700 leading-relaxed">
-                  You may stop using the Service at any time. We may suspend or terminate your access if you violate these Terms, or with reasonable notice for any other reason. Sections of these Terms that by their nature should survive termination (including Your Content ownership, Disclaimers, and Limitation of Liability) will continue to apply.
+                  You may stop using the Service at any time. We may suspend or terminate your access if you violate these Terms, or with reasonable notice for any other reason. Sections of these Terms that by their nature should survive termination (including Your Content ownership, Disclaimers, Warranty, Limitation of Liability, Indemnification, and Third-Party Accessibility Claims) will continue to apply.
                 </p>
               </div>
 
