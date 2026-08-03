@@ -43,6 +43,403 @@
     <script src="navbarloader.js"></script>
     <script src="footerloader.js"></script>
     <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+    <!-- Onboarding wizard styles (scoped to #onboard-wizard). Global resets/typography/
+         focus-visible rules from the source prototype are intentionally omitted here —
+         styles.css already defines equivalent rules site-wide with the same values. -->
+    <style>
+      :root{
+        --blue1:#0b6ad4;
+        --blue2:#228AFF;
+        --teal:#0d9488;
+        --dark:#0a2239;
+        --ink:#1b2436;
+        --muted:#64748b;
+        --line:#e2e8f0;
+        --light:#f8fafc;
+        --soft:#eaf3ff;
+        --good:#10b981;
+      }
+
+      #onboard-wizard{
+        width:100%;
+        max-width:1400px;
+        margin:0 auto;
+        min-height:400px;
+        display:grid;
+        grid-template-columns:1.05fr .95fr;
+        align-items:stretch;
+        background:white;
+        border-radius:28px;
+        overflow:hidden;
+        box-shadow:0 40px 80px rgba(9,20,43,.14);
+      }
+
+      /* ============ LEFT BRAND / PROGRESS PANEL ============ */
+      .brand-panel{
+        position:relative;
+        background:linear-gradient(135deg,var(--blue1),var(--blue2));
+        padding:28px 64px 0;
+        color:white;
+        overflow:hidden;
+        display:flex;
+        flex-direction:column;
+      }
+
+      .brand-panel::before{
+        content:"";
+        position:absolute;
+        width:620px; height:620px;
+        top:-220px; right:-160px;
+        border-radius:50%;
+        background:radial-gradient(rgba(255,255,255,.18),transparent 70%);
+        pointer-events:none;
+      }
+      .brand-panel::after{
+        content:"";
+        position:absolute;
+        width:420px; height:420px;
+        bottom:-170px; left:-130px;
+        border-radius:50%;
+        background:radial-gradient(rgba(13,148,136,.4),transparent 70%);
+        pointer-events:none;
+      }
+
+      .content-logo{
+        height:22px;
+        width:auto;
+        display:block;
+        align-self:flex-start;
+        flex:none;
+        margin-bottom:14px;
+      }
+
+      .step-eyebrow{
+        font-size:14px;
+        font-weight:600;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        opacity:.85;
+        margin-bottom:10px;
+        position:relative;
+      }
+
+      .hero-title{
+        font-size:30px;
+        line-height:1.15;
+        font-weight:800;
+        letter-spacing:-.5px;
+        max-width:440px;
+        position:relative;
+        color:white;
+      }
+      @media(min-width:961px){
+        .hero-title{ font-size:36px; }
+      }
+
+      .hero-subtitle{
+        margin-top:14px;
+        font-size:16px;
+        line-height:1.6;
+        opacity:.92;
+        max-width:420px;
+        position:relative;
+      }
+      @media(min-width:961px){
+        .hero-subtitle{ font-size:18px; }
+      }
+
+      /* floating glass tiles */
+      .floating-card{
+        position:absolute;
+        backdrop-filter:blur(12px);
+        background:rgba(255,255,255,.13);
+        border:1px solid rgba(255,255,255,.22);
+        border-radius:18px;
+        pointer-events:none;
+      }
+      .card1{ width:120px; height:90px; right:46px; top:110px; }
+      .card2{ width:80px; height:80px; right:130px; top:216px; border-radius:24px; }
+
+      /* progress rail */
+      .rail{
+        margin-top:18px;
+        padding:0 0 4px;
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        gap:2px;
+      }
+      .rail-item{
+        display:flex;
+        align-items:center;
+        gap:16px;
+        padding:8px 0;
+        position:relative;
+        transition:.3s;
+      }
+      .rail-dot{
+        flex:none;
+        width:34px; height:34px;
+        border-radius:50%;
+        border:2px solid rgba(255,255,255,.35);
+        display:flex; align-items:center; justify-content:center;
+        font-size:14px; font-weight:700;
+        background:rgba(255,255,255,.1);
+        transition:.3s;
+        color:white;
+      }
+      .rail-label{ font-size:16px; font-weight:500; opacity:.72; transition:.3s; color:white; }
+      .rail-item.active .rail-dot{
+        background:white; color:var(--blue1);
+        border-color:white;
+        box-shadow:0 8px 20px rgba(0,0,0,.18);
+      }
+      .rail-item.active .rail-label{ opacity:1; font-weight:700; }
+      .rail-item.done .rail-dot{
+        background:rgba(255,255,255,.92); color:var(--blue1); border-color:transparent;
+      }
+      .rail-item.done .rail-label{ opacity:.92; }
+      .rail-item:not(:last-child)::after{
+        content:"";
+        position:absolute;
+        left:16px; top:42px;
+        width:2px; height:12px;
+        background:rgba(255,255,255,.28);
+      }
+
+      /* ============ RIGHT CONTENT PANEL ============ */
+      .content-panel{
+        background:white;
+        padding:24px 60px;
+        display:flex;
+        flex-direction:column;
+      }
+
+      #onboard-wizard .step{ display:none; width:100%; max-width:520px; animation:onboard-fade .35s ease; }
+      #onboard-wizard .step.active{ display:block; }
+      @keyframes onboard-fade{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;} }
+
+      #onboard-wizard .badge{
+        width:56px; height:56px;
+        margin-bottom:20px;
+        border-radius:14px;
+        background:var(--soft);
+        color:var(--blue1);
+        display:flex; align-items:center; justify-content:center;
+        font-size:22px;
+      }
+      #onboard-wizard .step h2{ font-size:24px; font-weight:800; letter-spacing:-.4px; color:var(--ink); }
+      @media(min-width:641px){
+        #onboard-wizard .step h2{ font-size:30px; }
+      }
+      #onboard-wizard .step .lead{ color:var(--muted); margin-top:10px; margin-bottom:32px; font-size:16px; line-height:1.6; }
+
+      /* form fields */
+      #onboard-wizard .field{ margin-bottom:10px; }
+      #onboard-wizard .field.row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+      #onboard-wizard .field label{ display:block; margin-bottom:5px; font-weight:600; font-size:14px; color:var(--ink); }
+      #onboard-wizard .field input, #onboard-wizard .field select{
+        width:100%; height:48px;
+        border:1px solid var(--line);
+        border-radius:12px;
+        padding:0 16px;
+        font-size:16px;
+        line-height:46px;
+        font-family:inherit;
+        color:var(--ink);
+        background:white;
+        transition:.2s;
+      }
+      #onboard-wizard .field select{ line-height:normal; }
+      #onboard-wizard .field input:hover, #onboard-wizard .field select:hover{ border-color:var(--blue2); }
+      #onboard-wizard .field input:focus, #onboard-wizard .field select:focus{ outline:none; border-color:var(--blue2); }
+
+      #onboard-wizard .input-prefix{
+        display:flex; align-items:center;
+        height:48px;
+        border:1px solid var(--line);
+        border-radius:12px;
+        padding:0 16px;
+        background:white;
+        transition:.2s;
+      }
+      #onboard-wizard .input-prefix:hover{ border-color:var(--blue2); }
+      #onboard-wizard .input-prefix:focus-within{ border-color:var(--blue2); outline:3px solid var(--blue2); outline-offset:2px; }
+      #onboard-wizard .input-prefix span{ color:var(--muted); font-size:16px; flex:none; }
+      #onboard-wizard .input-prefix input{
+        flex:1; width:auto; height:auto;
+        border:none; border-radius:0;
+        padding:0 0 0 2px;
+        line-height:normal;
+        background:transparent;
+      }
+      #onboard-wizard .input-prefix input:hover{ border:none; }
+      #onboard-wizard .input-prefix input:focus{ box-shadow:none; border:none; outline:none; }
+
+      /* buttons */
+      #onboard-wizard .btn-row{ display:flex; gap:12px; margin-top:16px; align-items:center; }
+      #onboard-wizard .btn{
+        height:48px; padding:0 24px;
+        border:none; border-radius:12px;
+        font-size:16px; font-weight:600; font-family:inherit;
+        cursor:pointer; transition:.2s;
+        display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      }
+      #onboard-wizard .btn-primary{
+        flex:1;
+        color:white;
+        background:linear-gradient(90deg,var(--blue1),var(--blue2));
+      }
+      #onboard-wizard .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 16px 35px rgba(34,138,255,.32); }
+      #onboard-wizard .btn-primary:active{ transform:translateY(0); }
+      #onboard-wizard .btn-ghost{
+        background:white; border:1px solid var(--line); color:var(--ink);
+      }
+      #onboard-wizard .btn-ghost:hover{ background:var(--light); }
+
+      /* ============ PLAN CARDS (compact, dropdown-style — collapsed row, features reveal on selection) ============ */
+      #onboard-wizard .plans{ display:grid; gap:10px; }
+      #onboard-wizard .plan{
+        border:2px solid var(--line);
+        border-radius:16px;
+        cursor:pointer;
+        transition:border-color .2s, box-shadow .2s;
+        position:relative;
+        overflow:hidden;
+      }
+      #onboard-wizard .plan:hover{ border-color:var(--blue2); }
+      #onboard-wizard .plan.selected{ border-color:var(--blue1); box-shadow:0 10px 26px rgba(34,138,255,.14); }
+
+      #onboard-wizard .plan-head{ display:flex; align-items:center; gap:14px; padding:16px 18px; }
+      #onboard-wizard .plan-radio{
+        flex:none; width:20px; height:20px; border-radius:50%;
+        border:2px solid var(--line); transition:.2s;
+        display:flex; align-items:center; justify-content:center;
+      }
+      #onboard-wizard .plan.selected .plan-radio{ border-color:var(--blue1); }
+      #onboard-wizard .plan.selected .plan-radio::after{
+        content:""; width:10px; height:10px; border-radius:50%;
+        background:linear-gradient(90deg,var(--blue1),var(--blue2));
+      }
+      #onboard-wizard .plan-name-wrap{ flex:1; display:flex; align-items:center; gap:8px; flex-wrap:wrap; min-width:0; }
+      #onboard-wizard .plan-name{ font-size:16px; font-weight:700; color:var(--ink); }
+      #onboard-wizard .plan-tag{
+        font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+        color:var(--blue1); background:var(--soft); padding:3px 9px; border-radius:20px;
+      }
+      #onboard-wizard .plan-price{ font-size:16px; font-weight:800; color:var(--ink); display:flex; align-items:baseline; gap:4px; flex:none; white-space:nowrap; }
+      #onboard-wizard .plan-price-period{ font-size:13px; font-weight:600; color:var(--muted); }
+      #onboard-wizard .plan-chevron{ color:var(--muted); font-size:13px; flex:none; transition:transform .25s ease, color .2s; }
+      #onboard-wizard .plan.selected .plan-chevron{ transform:rotate(180deg); color:var(--blue1); }
+
+      #onboard-wizard .plan-collapse{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s ease; }
+      #onboard-wizard .plan.selected .plan-collapse{ grid-template-rows:1fr; }
+      #onboard-wizard .plan-collapse-inner{ overflow:hidden; }
+      #onboard-wizard .plan-price-note{ font-size:12px; color:var(--muted); padding:2px 18px 0; }
+      #onboard-wizard .plan-desc{ font-size:14px; color:var(--muted); line-height:1.5; padding:8px 18px 0; }
+      #onboard-wizard .plan-features{ list-style:none; padding:12px 18px 18px; margin-top:12px; border-top:1px solid var(--line); display:grid; gap:6px; }
+      #onboard-wizard .plan-features li{ display:flex; gap:8px; align-items:flex-start; font-size:14px; color:var(--ink); line-height:1.5; }
+      #onboard-wizard .plan-features li i{ color:var(--blue1); margin-top:3px; flex:none; font-size:12px; }
+      #onboard-wizard .billing-toggle{ display:inline-flex; align-items:center; gap:2px; padding:4px; border:1px solid var(--line); background:var(--light); border-radius:999px; margin-bottom:20px; }
+      #onboard-wizard .billing-btn{ border:none; background:none; font-family:inherit; font-size:14px; font-weight:600; padding:9px 18px; border-radius:999px; cursor:pointer; color:var(--muted); transition:.2s; }
+      #onboard-wizard .billing-btn.active{ background:linear-gradient(90deg,var(--blue1),var(--blue2)); color:white; }
+      #onboard-wizard .billing-btn .save-tag{ font-weight:500; opacity:.85; }
+      #onboard-wizard .plan-note{
+        display:flex; align-items:center; gap:8px;
+        margin-top:16px; padding:12px 14px;
+        background:var(--soft); border-radius:12px;
+        font-size:14px; color:var(--blue1); font-weight:600;
+      }
+
+      /* ============ INSTALL / EMBED STEP ============ */
+      #onboard-wizard .code-block{
+        position:relative;
+        background:var(--dark);
+        border-radius:16px;
+        padding:22px 22px 20px;
+        margin-bottom:14px;
+      }
+      #onboard-wizard .code-block pre{
+        font-family:'JetBrains Mono',monospace;
+        font-size:13.5px;
+        line-height:1.7;
+        color:#cfe0ff;
+        white-space:pre-wrap;
+        word-break:break-all;
+      }
+      #onboard-wizard .code-block .tok{ color:#7fd1ff; }
+      #onboard-wizard .code-block .attr{ color:#9ad0a0; }
+      #onboard-wizard .copy-btn{
+        position:absolute; top:14px; right:14px;
+        height:36px; padding:0 14px;
+        border:none; border-radius:9px;
+        background:rgba(255,255,255,.12); color:white;
+        font-size:13px; font-weight:600; cursor:pointer; transition:.2s;
+        font-family:inherit;
+      }
+      #onboard-wizard .copy-btn:hover{ background:rgba(255,255,255,.22); }
+      #onboard-wizard .copy-btn.copied{ background:var(--good); }
+
+      #onboard-wizard .section-h{ font-size:18px; font-weight:700; margin:30px 0 8px; color:var(--ink); }
+      #onboard-wizard .muted-note{ font-size:14px; color:var(--muted); line-height:1.6; }
+
+      #onboard-wizard .guide{ display:flex; flex-direction:column; gap:0; margin-top:8px; }
+      #onboard-wizard .guide-item{ border-top:1px solid var(--line); }
+      #onboard-wizard .guide-q{
+        width:100%; text-align:left; background:none; border:none;
+        padding:16px 0; font-size:16px; font-weight:600; font-family:inherit;
+        color:var(--ink); cursor:pointer;
+        display:flex; justify-content:space-between; align-items:center; gap:12px;
+      }
+      #onboard-wizard .guide-q .chev{ transition:.25s; color:var(--muted); flex:none; }
+      #onboard-wizard .guide-item.open .chev{ transform:rotate(90deg); }
+      #onboard-wizard .guide-a{ display:none; padding:0 0 18px; font-size:14px; line-height:1.65; color:var(--muted); }
+      #onboard-wizard .guide-item.open .guide-a{ display:block; }
+      #onboard-wizard .guide-a code{
+        font-family:'JetBrains Mono',monospace; font-size:13px;
+        background:var(--soft); color:var(--blue1); padding:2px 6px; border-radius:6px;
+      }
+      #onboard-wizard .steps-list{ counter-reset:s; padding-left:0; list-style:none; margin-top:6px; }
+      #onboard-wizard .steps-list li{
+        counter-increment:s; position:relative; padding-left:38px; margin-bottom:14px;
+        font-size:14px; line-height:1.6; color:var(--ink);
+      }
+      #onboard-wizard .steps-list li::before{
+        content:counter(s); position:absolute; left:0; top:-2px;
+        width:26px; height:26px; border-radius:8px;
+        background:var(--soft); color:var(--blue1);
+        font-size:13px; font-weight:700;
+        display:flex; align-items:center; justify-content:center;
+      }
+
+      #onboard-wizard .summary-box{
+        background:var(--light); border:1px solid var(--line);
+        border-radius:16px; padding:22px 24px; margin-bottom:28px;
+      }
+      #onboard-wizard .summary-box .row{ display:flex; justify-content:space-between; padding:7px 0; font-size:16px; }
+      #onboard-wizard .summary-box .row span:first-child{ color:var(--muted); }
+      #onboard-wizard .summary-box .row span:last-child{ font-weight:600; color:var(--ink); }
+
+      #onboard-wizard .success-ico{
+        width:68px; height:68px; border-radius:50%;
+        background:rgba(16,185,129,.12); color:var(--good);
+        display:flex; align-items:center; justify-content:center;
+        font-size:28px; margin-bottom:22px;
+      }
+
+      /* ============ MOBILE ============ */
+      @media(max-width:960px){
+        #onboard-wizard{ grid-template-columns:1fr; min-height:0; border-radius:20px; }
+        .brand-panel{ padding:40px 28px 32px; }
+        .card1,.card2{ display:none; }
+        .rail{ margin-top:30px; padding:8px 0 0; flex-direction:row; flex-wrap:wrap; gap:6px 18px; }
+        .rail-item{ padding:4px 0; }
+        .rail-item:not(:last-child)::after{ display:none; }
+        .rail-label{ font-size:14px; }
+        .content-panel{ padding:36px 26px 48px; }
+        #onboard-wizard .field.row{ grid-template-columns:1fr; }
+      }
+    </style>
   </head>
   <body class="bg-white text-gray-900">
     <!-- Navbar will be loaded by navbarloader.js -->
@@ -56,7 +453,7 @@
         <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6">Pick a plan, install the widget (we're here to help), then enjoy the comprehensive website + documents compliance report. Keep it on to receive ongoing document remediation services, visitor intelligence, compliance reports, and ongoing monitoring.</p>
         <p class="text-base md:text-lg text-gray-600 italic max-w-2xl mx-auto leading-relaxed mb-8 border-l-4 pl-4 text-left sm:text-center sm:border-l-0 sm:pl-0" style="border-color:#0b6ad4;">"Accessibility For All is offering such a robust free plan because we truly want everyone, including those with disabilities, to have access to your content."</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#free-plan" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="border-color:#0b6ad4; color:#0b6ad4;" onmouseover="this.style.background='#0b6ad4'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0b6ad4';"><i class="bi bi-rocket-takeoff mr-2" aria-hidden="true"></i>Get started for free</a>
+          <a href="?plan=free#plans" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="border-color:#0b6ad4; color:#0b6ad4;" onmouseover="this.style.background='#0b6ad4'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0b6ad4';"><i class="bi bi-rocket-takeoff mr-2" aria-hidden="true"></i>Get started for free</a>
           <a href="#plans" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background: #0b6ad4;"><span class="relative z-10">See plans &amp; pricing</span><div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div></a>
         </div>
       </div>
@@ -71,117 +468,326 @@
             <h2 class="text-2xl font-extrabold mb-1">Get started for free — the entire suite included</h2>
             <p class="text-gray-600">The Free plan isn't a limited trial — you get Documents, Websites, Reports, and Response, the whole suite, at no cost. To activate scanning and monitoring, you'll install our lightweight widget on your site; it only takes a few minutes.</p>
           </div>
-          <a href="#free-plan" class="px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all hover:scale-105 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started for free</a>
+          <a href="?plan=free#plans" class="px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all hover:scale-105 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started for free</a>
         </div>
       </div>
     </section>
 
-    <!-- Plans -->
+    <!-- Get started: org creation → plan choice → activation -->
     <section id="plans" class="py-16 bg-white scroll-mt-24">
       <div class="container mx-auto px-6 max-w-7xl">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Pick the plan that fits today</h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Upgrade any time as your organization — and your obligation — grows.</p>
-        </div>
 
-        <!-- Billing toggle -->
-        <div class="flex justify-center mb-12">
-          <div class="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 p-1" role="group" aria-label="Billing period">
-            <button id="billing-monthly" type="button" aria-pressed="false" class="billing-btn px-6 py-2 rounded-full font-semibold text-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">Monthly</button>
-            <button id="billing-annual" type="button" aria-pressed="true" class="billing-btn px-6 py-2 rounded-full font-semibold text-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">Annual <span class="font-normal">(2 months free)</span></button>
-          </div>
-        </div>
+        <div id="onboard-wizard" class="login-wrapper">
 
-        <!-- Free (full-width bar) -->
-        <div id="free-plan" class="relative bg-white rounded-3xl border border-gray-200 shadow-lg p-7 md:p-8 flex flex-col lg:flex-row lg:items-center gap-6 mb-6 scroll-mt-24">
-          <div class="lg:w-56 lg:flex-shrink-0 text-center lg:text-left">
-            <h3 class="font-bold text-2xl mb-1">Free</h3>
-            <span class="text-4xl font-extrabold">$0</span>
-            <p class="text-xs text-gray-500 mt-1">free, forever</p>
-          </div>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm text-gray-700 flex-1">
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Documents: 5 documents — transcribe &amp; assess</li>
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Website: Front page + Monitor</li>
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Reports: pre-filled partial VPAT</li>
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Response: suggested remediation, emailed monthly</li>
-          </ul>
-          <a href="#pricing-contact-form-container" onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'}); return false;" class="lg:flex-shrink-0 text-center px-8 py-3 rounded-full font-semibold text-white transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started for free</a>
-        </div>
+          <!-- LEFT: BRAND + PROGRESS -->
+          <div class="brand-panel" id="brandPanel">
+            <div class="floating-card card1"></div>
+            <div class="floating-card card2"></div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          <!-- Starter -->
-          <div class="relative bg-white rounded-3xl border border-gray-200 shadow-lg p-7 flex flex-col">
-            <h3 class="font-bold text-xl mb-1">Starter</h3>
-            <p class="text-sm text-gray-600 mb-4">Get compliant. For small organizations just getting their website and documents in order.</p>
-            <div class="mb-4 price-block" data-plan="starter" data-monthly="59" data-annual="590">
-              <span class="text-4xl font-extrabold price-amount">$590</span>
-              <span class="text-gray-600 price-period">/year</span>
-              <p class="text-xs text-gray-500 mt-1 price-note">billed annually — $59/mo billed monthly</p>
+            <div class="step-eyebrow" id="eyebrow">Step 1 of 3</div>
+            <h1 class="hero-title" id="heroTitle">Create your organization</h1>
+            <p class="hero-subtitle" id="heroSub">Gain access to the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.</p>
+
+            <div class="rail" id="rail" role="list" aria-label="Onboarding progress">
+              <div class="rail-item active" data-rail="1" role="listitem" aria-current="step">
+                <div class="rail-dot">1</div>
+                <div class="rail-label">Create organization</div>
+              </div>
+              <div class="rail-item" data-rail="2" role="listitem">
+                <div class="rail-dot">2</div>
+                <div class="rail-label">Choose a plan</div>
+              </div>
+              <div class="rail-item" data-rail="3" role="listitem">
+                <div class="rail-dot">3</div>
+                <div class="rail-label">Activate the suite</div>
+              </div>
             </div>
-            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Documents: 20 documents</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Website: 5 Pages + Monitor</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Reports: VPAT</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Response: suggested remediation steps</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Email support</li>
-            </ul>
-            <a href="#" class="plan-cta mt-auto text-center px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" data-plan="starter" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started</a>
           </div>
-          <!-- Growth (highlighted) -->
-          <div class="relative bg-white rounded-3xl border-2 border-[#0b6ad4] shadow-xl p-7 flex flex-col">
-            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold text-white whitespace-nowrap" style="background:#0b6ad4;">MOST POPULAR</span>
-            <h3 class="font-bold text-xl mb-1">Growth</h3>
-            <p class="text-sm text-gray-600 mb-4">Stay compliant as you grow. For organizations publishing more content across a bigger site.</p>
-            <div class="mb-4 price-block" data-plan="growth" data-monthly="149" data-annual="1490">
-              <span class="text-4xl font-extrabold price-amount">$1,490</span>
-              <span class="text-gray-600 price-period">/year</span>
-              <p class="text-xs text-gray-500 mt-1 price-note">billed annually — $149/mo billed monthly</p>
-            </div>
-            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Documents: 100 documents</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Website: 25 Pages + Monitor</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Reports: VPAT</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Response: suggested remediation steps</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Priority support</li>
-            </ul>
-            <a href="#" class="plan-cta mt-auto text-center px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" data-plan="growth" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started</a>
-          </div>
-          <!-- Scale -->
-          <div class="relative bg-white rounded-3xl border border-gray-200 shadow-lg p-7 flex flex-col">
-            <h3 class="font-bold text-xl mb-1">Scale</h3>
-            <p class="text-sm text-gray-600 mb-4">Prove it to procurement. For larger organizations that must document conformance at scale.</p>
-            <div class="mb-4 price-block" data-plan="scale" data-monthly="399" data-annual="3990">
-              <span class="text-4xl font-extrabold price-amount">$3,990</span>
-              <span class="text-gray-600 price-period">/year</span>
-              <p class="text-xs text-gray-500 mt-1 price-note">billed annually — $399/mo billed monthly</p>
-            </div>
-            <ul class="space-y-2 text-sm text-gray-700 flex-grow mb-6">
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Documents: 1,000 documents</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Website: 100 Pages + Monitor</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Reports: VPAT</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Response: suggested remediation steps</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#0b6ad4]" aria-hidden="true"></i> Onboarding + quarterly review</li>
-            </ul>
-            <a href="#" class="plan-cta mt-auto text-center px-6 py-3 rounded-full font-semibold text-white transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" data-plan="scale" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started</a>
-          </div>
-        </div>
 
-        <!-- Enterprise (full-width bar) -->
-        <div class="relative bg-[#0a2239] text-white rounded-3xl shadow-xl p-7 md:p-8 flex flex-col lg:flex-row lg:items-center gap-6 mt-6">
-          <div class="lg:w-56 lg:flex-shrink-0 text-center lg:text-left">
-            <h3 class="font-bold text-2xl mb-1">Enterprise</h3>
-            <span class="text-4xl font-extrabold">Custom</span>
-            <p class="text-xs text-white/70 mt-1">tailored agreement &amp; volume pricing</p>
+          <!-- RIGHT: STEP CONTENT -->
+          <div class="content-panel" id="contentPanel">
+
+            <img class="content-logo" src="images/logo-full.png" alt="Accessibility For All">
+
+            <!-- STEP 1 — CREATE ORGANIZATION -->
+            <div class="step active" data-step="1">
+              <h2 style="margin-bottom:10px">Organization Information</h2>
+
+              <div class="field">
+                <label for="orgName">Organization name</label>
+                <input id="orgName" type="text" placeholder="Acme District" autocomplete="organization">
+              </div>
+
+              <div class="field">
+                <label for="orgUrl">Organization website</label>
+                <div class="input-prefix">
+                  <span>https://</span>
+                  <input id="orgUrl" type="text" placeholder="acme.org">
+                </div>
+              </div>
+
+              <div class="field row">
+                <div>
+                  <label for="personName">Your name</label>
+                  <input id="personName" type="text" placeholder="Jordan Lee" autocomplete="name">
+                </div>
+                <div>
+                  <label for="personRole">Your role</label>
+                  <select id="personRole">
+                    <option value="">Select a role…</option>
+                    <option>Owner / Administrator</option>
+                    <option>Web Developer</option>
+                    <option>Accessibility Coordinator</option>
+                    <option>Communications / Marketing</option>
+                    <option>IT Manager</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="btn-row">
+                <button class="btn btn-primary" onclick="createOrg()">Create organization →</button>
+              </div>
+            </div>
+
+            <!-- STEP 2 — CHOOSE A PLAN -->
+            <div class="step" data-step="2">
+              <h2>Choose a plan</h2>
+              <p class="lead">Start free and upgrade any time. Every plan includes the complete suite — there's no à la carte pricing.</p>
+
+              <div class="billing-toggle" role="group" aria-label="Billing period">
+                <button type="button" class="billing-btn" id="billingMonthly" aria-pressed="false" onclick="setBilling('monthly')">Monthly</button>
+                <button type="button" class="billing-btn active" id="billingAnnual" aria-pressed="true" onclick="setBilling('annual')">Annual <span class="save-tag">(2 months free)</span></button>
+              </div>
+
+              <div class="plans" role="radiogroup" aria-label="Choose a plan">
+                <div class="plan selected" data-plan="free" role="radio" aria-checked="true" tabindex="0" onclick="selectPlan('free')" onkeydown="planKeydown(event,'free')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Free</span></div>
+                    <div class="plan-price">$0</div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note">free, forever</div>
+                      <div class="plan-desc">Everything you need to get started — no credit card required.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: 5 documents — transcribe &amp; assess</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: Front page + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: pre-filled partial VPAT</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation, emailed monthly</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plan" data-plan="starter" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('starter')" onkeydown="planKeydown(event,'starter')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Starter</span></div>
+                    <div class="plan-price price-block" data-monthly="59" data-annual="590"><span class="price-amount">$590</span><span class="plan-price-period price-period">/year</span></div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note price-note">billed annually — $59/mo billed monthly</div>
+                      <div class="plan-desc">Get compliant. For small organizations just getting their website and documents in order.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: 20 documents</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: 5 Pages + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: VPAT</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation steps</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Email support</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plan" data-plan="growth" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('growth')" onkeydown="planKeydown(event,'growth')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Growth</span> <span class="plan-tag">Most popular</span></div>
+                    <div class="plan-price price-block" data-monthly="149" data-annual="1490"><span class="price-amount">$1,490</span><span class="plan-price-period price-period">/year</span></div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note price-note">billed annually — $149/mo billed monthly</div>
+                      <div class="plan-desc">Stay compliant as you grow. For organizations publishing more content across a bigger site.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: 100 documents</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: 25 Pages + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: VPAT</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation steps</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Priority support</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plan" data-plan="scale" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('scale')" onkeydown="planKeydown(event,'scale')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Scale</span></div>
+                    <div class="plan-price price-block" data-monthly="399" data-annual="3990"><span class="price-amount">$3,990</span><span class="plan-price-period price-period">/year</span></div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note price-note">billed annually — $399/mo billed monthly</div>
+                      <div class="plan-desc">Prove it to procurement. For larger organizations that must document conformance at scale.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: 1,000 documents</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: 100 Pages + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: VPAT</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation steps</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Onboarding + quarterly review</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plan" data-plan="enterprise" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('enterprise')" onkeydown="planKeydown(event,'enterprise')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Enterprise</span></div>
+                    <div class="plan-price">Custom</div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note">tailored agreement &amp; volume pricing</div>
+                      <div class="plan-desc">For organizations that need volume, procurement, and a dedicated point of contact.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: unlimited</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: multiple websites + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: VPAT 100% executed with 3rd-party experts</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation steps</li>
+                        <li><i class="bi bi-check-circle-fill"></i> SSO &amp; team management</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Dedicated account manager</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-note"><i class="bi bi-info-circle-fill"></i> Documents, Websites, Reports, and Response are included on every plan, including Enterprise — you're never asked to add tools separately.</div>
+
+              <div class="btn-row">
+                <button class="btn btn-ghost" onclick="goStep(1)">Back</button>
+                <button class="btn btn-primary" id="planContinue" onclick="continueFromPlan()">Continue →</button>
+              </div>
+            </div>
+
+            <!-- STEP 2b — CUSTOM QUOTE CONFIRMATION -->
+            <div class="step" data-step="quote">
+              <div class="success-ico"><i class="bi bi-check-lg"></i></div>
+              <h2>We'll build your quote</h2>
+              <p class="lead">Thanks — a member of our team will reach out within one business day with an Enterprise plan tailored to your traffic. It still includes the full suite.</p>
+
+              <div class="summary-box">
+                <div class="row"><span>Organization</span><span id="qOrg">—</span></div>
+                <div class="row"><span>Website</span><span id="qUrl">—</span></div>
+                <div class="row"><span>Contact</span><span id="qPerson">—</span></div>
+                <div class="row"><span>Plan</span><span>Enterprise</span></div>
+              </div>
+
+              <p class="muted-note">In the meantime, you can switch to Free, Starter, Growth, or Scale to start using Accessibility For All right away.</p>
+
+              <div class="btn-row">
+                <button class="btn btn-ghost" onclick="goStep(2)">Back to plans</button>
+                <button class="btn btn-primary" onclick="goStep(2)">Choose a different plan</button>
+              </div>
+            </div>
+
+            <!-- STEP 3 — ACTIVATE -->
+            <div class="step" data-step="3">
+              <div class="badge"><i class="bi bi-rocket-takeoff"></i></div>
+              <h2>Activate your suite</h2>
+              <p class="lead">Your workspace for <strong id="installSite">your site</strong> is ready. Paste the snippet below to turn on the Website widget and monitor — Documents, Reports, and Response are already live in your dashboard.</p>
+
+              <div class="code-block">
+                <button class="copy-btn" id="copyBtn" onclick="copyCode()">Copy</button>
+                <pre id="embedCode"></pre>
+              </div>
+              <p class="muted-note">Paste this snippet once. It loads asynchronously and won't block your page from rendering.</p>
+
+              <div class="section-h">Quick install</div>
+              <ol class="steps-list">
+                <li>Copy the embed code above.</li>
+                <li>Open the HTML of your website and paste it just before the closing <code>&lt;/body&gt;</code> tag.</li>
+                <li>Save and publish. The accessibility button appears in the corner of every page within a few minutes.</li>
+              </ol>
+
+              <div class="section-h">Platform guides</div>
+              <p class="muted-note">Not editing raw HTML? Pick your platform.</p>
+              <div class="guide" id="guide">
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">WordPress <span class="chev">›</span></button>
+                  <div class="guide-a">Go to <strong>Appearance → Theme File Editor</strong> and open <code>footer.php</code>, then paste the code right before <code>&lt;/body&gt;</code>. If you'd rather not touch theme files, install a "header &amp; footer scripts" plugin and paste the snippet into the footer field.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Squarespace <span class="chev">›</span></button>
+                  <div class="guide-a">Open <strong>Settings → Advanced → Code Injection</strong> and paste the snippet into the <strong>Footer</strong> box, then save. It will load on every page of your site.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Wix <span class="chev">›</span></button>
+                  <div class="guide-a">Go to <strong>Settings → Custom Code → Add Custom Code</strong>. Paste the snippet, set it to load on <strong>All pages</strong>, place it in the <strong>Body – end</strong> position, and apply.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Shopify <span class="chev">›</span></button>
+                  <div class="guide-a">From your admin, open <strong>Online Store → Themes → Edit code</strong>, open <code>theme.liquid</code>, and paste the snippet immediately before <code>&lt;/body&gt;</code>. Save.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Google Tag Manager <span class="chev">›</span></button>
+                  <div class="guide-a">Create a new <strong>Custom HTML</strong> tag, paste the snippet, set the trigger to <strong>All Pages</strong>, then save and publish your container.</div>
+                </div>
+              </div>
+
+              <div class="section-h">Frequently asked questions</div>
+              <div class="guide" id="faq">
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">What about Documents, Reports, and Response? <span class="chev">›</span></button>
+                  <div class="guide-a">They're already active in your dashboard — no separate install needed. The snippet above only powers the Website widget and monitor.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Where exactly do I paste the code? <span class="chev">›</span></button>
+                  <div class="guide-a">Anywhere inside the page, but just before the closing <code>&lt;/body&gt;</code> tag is best. That lets your page content load first and the widget load right after.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">How long until the widget appears? <span class="chev">›</span></button>
+                  <div class="guide-a">Usually within a few minutes of publishing. If you don't see it, try a hard refresh or clear your site's cache.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Will it slow down my site? <span class="chev">›</span></button>
+                  <div class="guide-a">No. The script loads asynchronously and is served from a fast global CDN, so it never blocks your page from rendering.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Does it work on every page? <span class="chev">›</span></button>
+                  <div class="guide-a">Yes. As long as the snippet is in a shared template (footer, theme file, or tag manager), it loads on every page automatically.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Can I change where the button appears? <span class="chev">›</span></button>
+                  <div class="guide-a">Yes. You can adjust the widget's position, color, and language from your Accessibility For All dashboard — no code changes required.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Is the widget ADA and WCAG compliant? <span class="chev">›</span></button>
+                  <div class="guide-a">Yes. It's built to meet WCAG 2.1 AA, ships with keyboard and screen-reader support, and respects users' reduced-motion settings.</div>
+                </div>
+                <div class="guide-item">
+                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">How do I update or remove it later? <span class="chev">›</span></button>
+                  <div class="guide-a">The snippet always loads the latest version automatically. To remove the widget, delete the snippet from your template and republish.</div>
+                </div>
+              </div>
+
+              <div class="btn-row">
+                <button class="btn btn-ghost" onclick="goStep(2)">Back</button>
+                <button class="btn btn-primary" onclick="finish()">Go to dashboard →</button>
+              </div>
+            </div>
+
           </div>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-white/90 flex-1">
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Documents: unlimited</li>
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Website: multiple websites + Monitor</li>
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Reports: VPAT 100% executed with 3rd-party experts</li>
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Response: suggested remediation steps</li>
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> SSO &amp; team management</li>
-            <li class="flex gap-2"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Dedicated account manager</li>
-          </ul>
-          <a href="book-demo.html" class="lg:flex-shrink-0 text-center px-8 py-3 rounded-full font-semibold bg-white text-[#0a2239] transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Book a demo</a>
         </div>
 
         <p class="text-center text-sm text-gray-600 mt-8">Need a fully certified, 3rd-party-executed VPAT on Starter, Growth, or Scale? Available per report — <button type="button" onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="underline font-semibold text-[#0b6ad4] hover:text-[#09519f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">request a quote</button>.</p>
@@ -231,77 +837,195 @@
     </section>
     <script src="contactformloader.js"></script>
     <script>
-      // Self-service plan CTAs + billing toggle, driven by pricing-config.js.
-      (function () {
-        var cfg = window.A4A_PRICING || { selfServe: false, showPrices: true, checkout: {} };
-        var billing = 'annual';
+      // Onboarding wizard: org creation → plan choice → activation.
+      // Paid-tier checkout reuses pricing-config.js's Stripe Payment Link / quote-fallback
+      // logic (checkoutUrl below) instead of collecting card details in-page — the mock
+      // card form from the design reference is deliberately not shipped here; see
+      // docs/STRIPE-SETUP.md for the real checkout mechanism.
+      var cfg = window.A4A_PRICING || { selfServe: false, showPrices: true, checkout: {} };
+      var billing = 'annual';
+      var PAID_PLANS = ['starter', 'growth', 'scale'];
+      var state = { plan: 'free', org: '', orgUrl: '', person: '', role: '' };
 
-        function fmt(n) { return '$' + Number(n).toLocaleString('en-US'); }
+      var heroCopy = {
+        1: { eb: 'Step 1 of 3', t: 'Create your organization', s: 'Gain access to the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.' },
+        2: { eb: 'Step 2 of 3', t: 'Pick the right plan', s: 'Choose how Accessibility For All scales with you. Every plan — from Free to Enterprise — includes the full suite.' },
+        quote: { eb: 'Step 2 of 3', t: 'Let’s tailor a quote', s: 'For higher-traffic sites we build a plan around your needs. The full suite is still included.' },
+        3: { eb: 'Step 3 of 3', t: 'Go live in minutes', s: 'Drop one line of code into your site and the Website widget is live. Documents, Reports, and Response are already waiting in your dashboard.' }
+      };
 
-        function checkoutUrl(plan) {
-          var links = (cfg.checkout || {})[plan] || {};
-          var url = billing === 'annual' ? links.annual : links.monthly;
-          return (cfg.selfServe && url) ? url : null;
+      function fmtPrice(n) { return '$' + Number(n).toLocaleString('en-US'); }
+
+      function checkoutUrl(plan) {
+        var links = (cfg.checkout || {})[plan] || {};
+        var url = billing === 'annual' ? links.annual : links.monthly;
+        return (cfg.selfServe && url) ? url : null;
+      }
+
+      function renderPricing() {
+        document.querySelectorAll('#onboard-wizard .price-block').forEach(function (block) {
+          var amount = block.querySelector('.price-amount');
+          var period = block.querySelector('.price-period');
+          var note = block.closest('.plan').querySelector('.price-note');
+          if (!cfg.showPrices) {
+            amount.textContent = 'Contact us';
+            period.textContent = '';
+            note.textContent = 'for current pricing';
+            return;
+          }
+          var m = block.getAttribute('data-monthly');
+          var y = block.getAttribute('data-annual');
+          if (billing === 'annual') {
+            amount.textContent = fmtPrice(y);
+            period.textContent = '/year';
+            note.textContent = 'billed annually — ' + fmtPrice(m) + '/mo billed monthly';
+          } else {
+            amount.textContent = fmtPrice(m);
+            period.textContent = '/month';
+            note.textContent = 'billed monthly — save with annual (' + fmtPrice(y) + '/yr)';
+          }
+        });
+      }
+
+      function setBilling(mode) {
+        billing = mode;
+        var monthlyBtn = document.getElementById('billingMonthly');
+        var annualBtn = document.getElementById('billingAnnual');
+        monthlyBtn.classList.toggle('active', mode === 'monthly');
+        monthlyBtn.setAttribute('aria-pressed', mode === 'monthly');
+        annualBtn.classList.toggle('active', mode === 'annual');
+        annualBtn.setAttribute('aria-pressed', mode === 'annual');
+        renderPricing();
+      }
+
+      function goStep(step) {
+        document.querySelectorAll('#onboard-wizard .step').forEach(function (s) { s.classList.remove('active'); });
+        document.querySelector('#onboard-wizard .step[data-step="' + step + '"]').classList.add('active');
+
+        var c = heroCopy[step];
+        document.getElementById('eyebrow').textContent = c.eb;
+        document.getElementById('heroTitle').textContent = c.t;
+        document.getElementById('heroSub').textContent = c.s;
+
+        var railStep = (step === 'quote') ? 2 : step;
+        document.querySelectorAll('#onboard-wizard .rail-item').forEach(function (item) {
+          var n = +item.dataset.rail;
+          var isActive = n === railStep;
+          item.classList.toggle('active', isActive);
+          item.classList.toggle('done', n < railStep);
+          if (isActive) item.setAttribute('aria-current', 'step'); else item.removeAttribute('aria-current');
+        });
+
+        document.getElementById('onboard-wizard').scrollIntoView({ behavior: 'instant', block: 'start' });
+      }
+
+      function createOrg() {
+        var name = document.getElementById('orgName').value.trim();
+        var url = document.getElementById('orgUrl').value.trim();
+        var person = document.getElementById('personName').value.trim();
+        var role = document.getElementById('personRole').value;
+        if (!name || !url || !person || !role) {
+          alert('Please fill in all fields to create your organization.');
+          return;
         }
+        state.org = name; state.orgUrl = url; state.person = person; state.role = role;
+        goStep(2);
+      }
 
-        function scrollToQuote(e) {
+      function selectPlan(plan) {
+        state.plan = plan;
+        document.querySelectorAll('#onboard-wizard .plan').forEach(function (p) {
+          var selected = p.dataset.plan === plan;
+          p.classList.toggle('selected', selected);
+          p.setAttribute('aria-checked', selected ? 'true' : 'false');
+        });
+      }
+      function planKeydown(e, plan) {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          var el = document.getElementById('pricing-contact-form-container');
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          selectPlan(plan);
         }
+      }
 
-        function render() {
-          document.querySelectorAll('.price-block').forEach(function (block) {
-            var amount = block.querySelector('.price-amount');
-            var period = block.querySelector('.price-period');
-            var note = block.querySelector('.price-note');
-            if (!cfg.showPrices) {
-              amount.textContent = 'Contact us';
-              period.textContent = '';
-              note.textContent = 'for current pricing';
-              return;
-            }
-            var m = block.getAttribute('data-monthly');
-            var y = block.getAttribute('data-annual');
-            if (billing === 'annual') {
-              amount.textContent = fmt(y);
-              period.textContent = '/year';
-              note.textContent = 'billed annually — ' + fmt(m) + '/mo billed monthly';
-            } else {
-              amount.textContent = fmt(m);
-              period.textContent = '/month';
-              note.textContent = 'billed monthly — save with annual (' + fmt(y) + '/yr)';
-            }
-          });
-
-          document.querySelectorAll('.plan-cta').forEach(function (cta) {
-            var plan = cta.getAttribute('data-plan');
-            var url = checkoutUrl(plan);
-            cta.removeEventListener('click', scrollToQuote);
-            if (url) {
-              cta.href = url;
-              cta.textContent = 'Get started';
-            } else {
-              cta.href = '#pricing-contact-form-container';
-              cta.textContent = 'Get a quote';
-              cta.addEventListener('click', scrollToQuote);
-            }
-          });
-
-          var mBtn = document.getElementById('billing-monthly');
-          var aBtn = document.getElementById('billing-annual');
-          [mBtn, aBtn].forEach(function (btn) {
-            var active = (btn === aBtn) === (billing === 'annual');
-            btn.setAttribute('aria-pressed', String(active));
-            btn.style.background = active ? '#0b6ad4' : 'transparent';
-            btn.style.color = active ? '#ffffff' : '#374151';
-          });
+      function continueFromPlan() {
+        if (state.plan === 'enterprise') {
+          document.getElementById('qOrg').textContent = state.org || '—';
+          document.getElementById('qUrl').textContent = state.orgUrl ? ('https://' + state.orgUrl) : '—';
+          document.getElementById('qPerson').textContent = state.person ? (state.person + (state.role ? (' · ' + state.role) : '')) : '—';
+          goStep('quote');
+          return;
         }
+        if (PAID_PLANS.indexOf(state.plan) !== -1) {
+          var url = checkoutUrl(state.plan);
+          if (url) {
+            window.location.href = url;
+          } else {
+            var el = document.getElementById('pricing-contact-form-container');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }
+          return;
+        }
+        activateSuite();
+      }
 
-        document.getElementById('billing-monthly').addEventListener('click', function () { billing = 'monthly'; render(); });
-        document.getElementById('billing-annual').addEventListener('click', function () { billing = 'annual'; render(); });
-        render();
+      function activateSuite() {
+        var site = state.orgUrl;
+        var slug = (state.org || 'site').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 24) || 'site';
+        var id = 'afa_' + Math.random().toString(36).slice(2, 10);
+
+        document.getElementById('installSite').textContent = site;
+        document.getElementById('embedCode').innerHTML =
+          '<span class="tok">&lt;script</span> <span class="attr">src</span>=<span class="attr">"https://cdn.accessibility-for-all.com/widget.js"</span>\n' +
+          '        <span class="attr">data-site-id</span>=<span class="attr">"' + id + '"</span>\n' +
+          '        <span class="attr">data-org</span>=<span class="attr">"' + slug + '"</span>\n' +
+          '        <span class="attr">data-domain</span>=<span class="attr">"' + site + '"</span>\n' +
+          '        <span class="attr">async</span><span class="tok">&gt;&lt;/script&gt;</span>';
+        goStep(3);
+      }
+
+      function copyCode() {
+        var text = document.getElementById('embedCode').innerText;
+        var btn = document.getElementById('copyBtn');
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied!'; btn.classList.add('copied');
+          setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
+        }).catch(function () {
+          btn.textContent = 'Copy manually';
+        });
+      }
+
+      function toggleGuide(btn) {
+        var item = btn.parentElement;
+        item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+      }
+
+      function finish() { alert('Setup complete! Taking you to your Accessibility For All dashboard.'); }
+
+      // Pre-select a plan from ?plan=free|starter|growth|scale|enterprise (used by the
+      // sitewide "Get started for free" CTAs, which link here as ?plan=free#plans).
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var requested = (params.get('plan') || '').toLowerCase();
+        if (['free', 'starter', 'growth', 'scale', 'enterprise'].indexOf(requested) !== -1) {
+          selectPlan(requested);
+        }
       })();
+
+      // Subtle parallax on the brand panel (desktop only)
+      var brandPanel = document.getElementById('brandPanel');
+      if (window.matchMedia('(min-width:961px)').matches) {
+        brandPanel.addEventListener('mousemove', function (e) {
+          var r = brandPanel.getBoundingClientRect();
+          var rx = ((e.clientY - r.top) / r.height - 0.5) * -4;
+          var ry = ((e.clientX - r.left) / r.width - 0.5) * 4;
+          brandPanel.querySelector('.card1').style.transform = 'translate(' + (ry * 2) + 'px,' + (rx * 2) + 'px)';
+          brandPanel.querySelector('.card2').style.transform = 'translate(' + (-ry * 2) + 'px,' + (-rx * 2) + 'px)';
+        });
+      }
+
+      renderPricing();
+      goStep(1);
     </script>
   </body>
 </html>

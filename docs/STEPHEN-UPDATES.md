@@ -18,15 +18,15 @@ progress. Any Stephen update should be clear about what he can see vs. what's ac
 <!-- STEPHEN_SUMMARY_WATERMARK
 last_generated: 2026-07-31
 main_commit: ce01d28
-last_pr: 20
+last_pr: 21
 note: main_commit ce01d28 is a DIRECT merge of `feat/response-product-and-pricing` (no PR
 number — merged straight to main 2026-07-30 per Stephen's go-ahead), covered as newly-live in
-the 2026-07-31 entries below (4th product "Response," Free tier, rewritten industry pages, new
-About page, new logo). As of this watermark, THREE branches are open and none have merged to
-main yet: PR #19 (onboarding wizard + CTA rework), PR #20 (legal pages — privacy policy rewrite
-+ new ToS, all open decisions resolved), and PR #21 (docs-only wrap-up trail, no site content).
-Do not describe any of #19/#20/#21 as live until they actually merge to main. last_pr:20 is the
-last actual numbered content PR reflected below (excludes #21, docs-only).
+the 2026-07-31 entry below (4th product "Response," Free tier, rewritten industry pages, new
+About page, new logo). PR #19 (onboarding wizard + CTA rework), PR #20 (legal pages — privacy
+policy rewrite + new ToS, all decisions resolved), and PR #21 (this docs-only wrap-up trail)
+were all merged to main in the same session as this watermark update — the 2026-07-31 entry
+below already describes #19/#20 as ready-for-review since it was drafted before the merges;
+treat both as NOW LIVE in the next summary rather than re-describing them as in-progress.
 -->
 
 ---
@@ -55,28 +55,24 @@ last actual numbered content PR reflected below (excludes #21, docs-only).
 - The Documents page (DocMersion) got a big overhaul: a real interactive demo you can click
   through file types on, a case study, and a simplified, collapsed FAQ.
 
-**In progress — two items ready for your review**
+**Just merged — live on staging**
 - Reworked how "Get started for free" works everywhere on the site — it now walks a visitor
   through creating their organization, confirming the Free plan (already picked for you), and
-  getting simple install instructions, all on soprisapps.com without a separate app. Preview:
-  https://accessibility-for-all.github.io/AforA-Website/pr-19/
+  getting simple install instructions, all on soprisapps.com without a separate app.
 - Rewrote the privacy policy (the old one had leftover language from a different, unrelated
-  product and made a few claims that weren't true anymore) and wrote a first Terms of Service
-  page (there wasn't one before). You already confirmed the specifics with us directly this
-  session — legal name, contact email, how long we keep data, refund policy, and Colorado as
-  the governing state — so those are baked in. Same fix also caught the About page's "Since
-  2014, 1,500+ paid customers" line, which turned out to describe SchoolBlocks, not this
-  business — replaced with things that are actually true here (25+ years of experience, 4
-  products in one suite). Preview:
-  https://accessibility-for-all.github.io/AforA-Website/pr-20/privacy-policy.html
+  product and made a few claims that weren't true anymore) and published a first Terms of
+  Service page (there wasn't one before) — legal name, contact email, how long we keep data,
+  refund policy, and Colorado as the governing state, all confirmed with you directly this
+  session. Same fix also caught the About page's "Since 2014, 1,500+ paid customers" line,
+  which turned out to describe SchoolBlocks, not this business — replaced with things that are
+  actually true here (25+ years of experience, 4 products in one suite).
 - Also fixed a bug where the preview links shared for review had actually never worked (they
   showed "page not found" no matter what) — that's fixed, so preview links going forward will
   load correctly.
 
 **Needs Stephen / a decision**
-- Both previews above are ready for a final look before merging.
-- One item still needs an actual attorney, not just us: the Terms of Service's liability section
-  should get a real legal review before real payments go live on the site.
+- One item still needs an actual attorney, not just us: the Terms of Service's warranty and
+  liability sections should get a real legal review before real payments go live on the site.
 - Standing reminder, not new this week: merging changes to the site still doesn't make them
   appear on the real `soprisapps.com` domain automatically — that still needs a one-time AWS
   fix from whoever manages your hosting account. Everything described as "live" above is live

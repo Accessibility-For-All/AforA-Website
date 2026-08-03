@@ -15,7 +15,9 @@ Internal — excluded from the deploy, never served publicly.
 - [Stripe account boundary](stripe-account-boundary.md) — MCP-connected Stripe = Blend's; A4A objects only in the client account; STRIPE-SETUP runbook when connected
 - [gtag destination auto-load](gtag-destination-autoload.md) — 2nd gtag.js tag with cx=c&gtm= params is Google's own module fetch, not a double-load regression; don't "re-fix" navbarloader
 - [Plan Mode blocks subagents too](plan-mode-blocks-subagents.md) — a mid-session Plan Mode toggle silently makes background Agent-tool subagents write plans instead of editing; check completion summaries for "I did research only" and resume via SendMessage
-- [Local env tooling gaps](local-env-tooling-gaps.md) — no `gh` CLI, no Node/Python, no browser-automation tool on this machine; static-server workaround for local preview
+- [Local env tooling gaps](local-env-tooling-gaps.md) — no Node/Python; gh CLI + a Claude_Browser tool DO work now; static-server workaround for local preview
 - [Sandbox blocks raw file writes](sandbox-blocks-raw-file-writes.md) — Bash/PowerShell binary-asset writes (images, etc.) can silently no-op under the default sandbox; verify file timestamps, use `dangerouslyDisableSandbox` if needed
 - [Receiving images from the user](receiving-images-from-user.md) — no tool pulls a pasted image to disk; ask the user to save it into the repo, then find it by scanning for the newest file
+- [⚠️ GitHub Pages source branch](github-pages-source-branch.md) — Pages source silently pointed at `main` instead of `gh-pages`, 404ing every PR preview link ever posted; fixed 2026-07-31, verify it stays on `gh-pages`
+- [Onboarding wizard: no mock payment](onboarding-wizard-no-mock-payment.md) — pricing.html's embedded wizard skips the reference build's fake card form; paid tiers reuse existing checkoutUrl()/pricing-config.js logic instead
 - [Legal entity + terms](legal-entity-and-terms.md) — confirmed entity is Accessibility For All LLC (not "Sopris Apps, LLC"), plus confirmed legal contact email, retention, refund, and governing-law terms
