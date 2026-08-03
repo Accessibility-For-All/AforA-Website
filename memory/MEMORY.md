@@ -20,3 +20,4 @@ Internal — excluded from the deploy, never served publicly.
 - [Receiving images from the user](receiving-images-from-user.md) — no tool pulls a pasted image to disk; ask the user to save it into the repo, then find it by scanning for the newest file
 - [⚠️ GitHub Pages source branch](github-pages-source-branch.md) — Pages source silently pointed at `main` instead of `gh-pages`, 404ing every PR preview link ever posted; fixed 2026-07-31, verify it stays on `gh-pages`
 - [Onboarding wizard: no mock payment](onboarding-wizard-no-mock-payment.md) — pricing.html's embedded wizard skips the reference build's fake card form; paid tiers reuse existing checkoutUrl()/pricing-config.js logic instead
+- [Legal entity + terms](legal-entity-and-terms.md) — confirmed entity is Accessibility For All LLC (not "Sopris Apps, LLC"), plus confirmed legal contact email, retention, refund, and governing-law terms
