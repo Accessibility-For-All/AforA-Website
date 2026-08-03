@@ -55,13 +55,14 @@ function loadFooter() {
             <h3 class="font-semibold text-gray-900 mb-4">Legal</h3>
             <ul class="space-y-2 text-sm">
               <li><a href="privacy-policy.html" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy policy</a></li>
+              <li><a href="terms-of-service.html" class="text-gray-600 hover:text-blue-600 transition-colors">Terms of service</a></li>
             </ul>
           </div>
         </div>
 
         <!-- Bottom Bar -->
         <div class="pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="text-sm text-gray-500">© <span id="year"></span> Sopris Apps, LLC. Accessibility For All is a product suite of Sopris Apps, LLC.</div>
+          <div class="text-sm text-gray-500">© <span id="year"></span> Accessibility For All LLC.</div>
           <div class="flex items-center gap-2 text-xs text-gray-500">
             <i class="bi bi-universal-access"></i>
             <span>WCAG 2.1 AA · Section 508 · ADA Title II</span>
