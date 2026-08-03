@@ -64,7 +64,10 @@ last actual numbered content PR reflected below (excludes #21, docs-only).
   product and made a few claims that weren't true anymore) and wrote a first Terms of Service
   page (there wasn't one before). You already confirmed the specifics with us directly this
   session — legal name, contact email, how long we keep data, refund policy, and Colorado as
-  the governing state — so those are baked in. Preview:
+  the governing state — so those are baked in. Same fix also caught the About page's "Since
+  2014, 1,500+ paid customers" line, which turned out to describe SchoolBlocks, not this
+  business — replaced with things that are actually true here (25+ years of experience, 4
+  products in one suite). Preview:
   https://accessibility-for-all.github.io/AforA-Website/pr-20/privacy-policy.html
 - Also fixed a bug where the preview links shared for review had actually never worked (they
   showed "page not found" no matter what) — that's fixed, so preview links going forward will
