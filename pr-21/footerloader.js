@@ -11,7 +11,7 @@ function loadFooter() {
               <img src="images/logo-full.png" alt="Accessibility For All" class="h-7 w-auto object-contain">
             </a>
             <p class="text-sm text-gray-500 mb-4 leading-relaxed">One suite to audit, monitor, remediate, and document — the whole journey to compliance.</p>
-            <a href="pricing.html#free-plan" class="inline-block text-sm text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors duration-200">
+            <a href="pricing.html?plan=free#plans" class="inline-block text-sm text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors duration-200">
               Get started for free
             </a>
           </div>
@@ -55,13 +55,14 @@ function loadFooter() {
             <h3 class="font-semibold text-gray-900 mb-4">Legal</h3>
             <ul class="space-y-2 text-sm">
               <li><a href="privacy-policy.html" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy policy</a></li>
+              <li><a href="terms-of-service.html" class="text-gray-600 hover:text-blue-600 transition-colors">Terms of service</a></li>
             </ul>
           </div>
         </div>
 
         <!-- Bottom Bar -->
         <div class="pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="text-sm text-gray-500">© <span id="year"></span> Sopris Apps, LLC. Accessibility For All is a product suite of Sopris Apps, LLC.</div>
+          <div class="text-sm text-gray-500">© <span id="year"></span> Accessibility For All LLC.</div>
           <div class="flex items-center gap-2 text-xs text-gray-500">
             <i class="bi bi-universal-access"></i>
             <span>WCAG 2.1 AA · Section 508 · ADA Title II</span>
