@@ -23,8 +23,8 @@ keep Formspree until the GHL path is verified end-to-end).
 - Stripe-purchase-intake webhook URL: (pending)
 - Tracking snippet: (pending)
 
-**Custody question is NOT in the email (2026-07-27):** Marcus had the "whose agency account
-does the A4A location live under" item removed from the John email before sending. It remains
-a five-hat **High** finding gating the GHL plan purchase — it must be resolved via another
-channel (Marcus/Mark/Stephen directly), not assumed answered. Don't re-add it to John's task
-list without Marcus's say-so.
+**Custody question RESOLVED (2026-08-04, Marcus directly):** the A4A location lives under
+**Blend's agency account**. The five-hat High finding is closed — the CRM asset is under
+Marcus's own agency, so deep build investment is safe. Build work started same day (Claude
+driving Marcus's logged-in Chrome session per `docs/GHL-BUILD-CHECKLIST.md` + Appendix F of
+`Clients/Accessibility for All /Marketing Plan/Blend-A4A-Marketing-Plan.docx`).
