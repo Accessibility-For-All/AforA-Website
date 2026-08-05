@@ -1,14 +1,18 @@
 # Cloudflare Pages redirects. One rule per line: <from> <to> <status>
 #
-# Legacy pages that were renamed or removed — keep their inbound links alive.
-/wcag-checker.html   /websites.html            301
-/demo.html           /docmersion-demo.html     301
-/vpat-acr.html       /reports.html             301
-/accessibility-monitor.html  /websites.html#monitor  301
+# NOTE: Pages serves extensionless URLs natively and 308-redirects /foo.html -> /foo.
+# So targets here are extensionless, and there must be NO alias whose name matches a
+# target's basename (e.g. "/pricing -> /pricing.html" loops forever against the
+# built-in 308). Pages already gives us /pricing for free — no alias needed.
 
-# Convenience aliases people type or that appear in print/collateral.
-/pricing   /pricing.html   301
-/demo      /book-demo.html 301
-/about     /about.html     301
-/privacy   /privacy-policy.html    301
-/terms     /terms-of-service.html  301
+# Legacy pages that were renamed or removed — keep their inbound links alive.
+/wcag-checker.html           /websites          301
+/demo.html                   /docmersion-demo   301
+/vpat-acr.html               /reports           301
+/accessibility-monitor.html  /websites#monitor  301
+
+# Convenience aliases for print/collateral. Only where the alias differs from the
+# target basename — anything else would collide with the built-in 308.
+/demo      /book-demo          301
+/privacy   /privacy-policy     301
+/terms     /terms-of-service   301
