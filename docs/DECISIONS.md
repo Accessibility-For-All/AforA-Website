@@ -135,3 +135,26 @@ that touches billing, cancellation, or a new legal-notice page should stay consi
 figures rather than inventing new ones. Note: the Limitation-of-Liability clause in
 terms-of-service.html is still explicitly flagged for an actual attorney's review before real
 payments launch — that one was NOT resolved by this decision, on purpose.
+
+## 2026-08-05 — Production hosting is Cloudflare Pages; canonical host is the apex, no www
+**Decision:** The site is live on **accessibilityforall.com** (apex, no www) served by
+**Cloudflare Pages** from a **client-owned Cloudflare account** (Stephen's login). `www` 301s to
+the apex via a zone Redirect Rule ("WWW to root" template, preserve query). Merge to `main`
+auto-deploys production in ~1 min. Supersedes the AWS S3/CloudFront pipeline (which never worked
+— OIDC) and GitHub Pages staging; the Cloudflare direction Stephen had pending is now executed.
+**Why apex:** Marcus's explicit call 2026-08-05. All canonicals/OG/sitemap/legal text swept.
+**Guardrail:** internal dirs ship-blocked by the Pages **build command** (`rm -rf docs memory
+.claude .cowork .github aws-setup scripts CLAUDE.md README.md`) — Pages has no exclude rules;
+do not remove `functions/` (it is the `/api/lead` endpoint).
+
+## 2026-08-05 — Form architecture: one `/api/lead` proxy; GHL webhook URLs are secrets
+**Decision:** All site forms POST JSON to **`/api/lead`** (Cloudflare Pages Function), which
+routes by `form_type` (`contact`→W1, `free_audit`→W2, `signup`/`enterprise-quote`→W3) to GHL
+inbound webhooks. The webhook URLs live ONLY in Pages env **Secrets** — never in the public
+repo/JS (resolves the standing "never in this public repo" rule). The Function drops honeypot,
+oversized, and unknown-type traffic **before** it can bill a GHL premium trigger. Formspree is
+fully retired.
+
+## 2026-08-05 — GHL account custody: A4A location lives under Blend's agency account
+**Decision:** Confirmed by Marcus. Closes the five-hat High finding that gated deep GHL build
+investment. W1/W2/W3 built and published same night.

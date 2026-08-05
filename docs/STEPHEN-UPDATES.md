@@ -10,26 +10,53 @@ seconds. Newest entry on top. **Drafts are for the user to review and send — C
 
 Internal file — excluded from the deploy, never published to the public site.
 
-**Standing context (update as it changes):** As of 2026-07-21 the site is **not yet live on
-`soprisapps.com`** — the only working URL is the GitHub staging preview
-(`https://accessibility-for-all.github.io/AforA-Website/`). A front-end hosting decision is in
-progress. Any Stephen update should be clear about what he can see vs. what's actually public.
+**Standing context (update as it changes):** As of **2026-08-05 the site is LIVE at
+`https://accessibilityforall.com`** on Cloudflare (client-owned account). Every change merged to
+`main` is on the public site about a minute later. `soprisapps.com` is legacy and untouched.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-07-31
-main_commit: ce01d28
-last_pr: 21
-note: main_commit ce01d28 is a DIRECT merge of `feat/response-product-and-pricing` (no PR
-number — merged straight to main 2026-07-30 per Stephen's go-ahead), covered as newly-live in
-the 2026-07-31 entry below (4th product "Response," Free tier, rewritten industry pages, new
-About page, new logo). PR #19 (onboarding wizard + CTA rework), PR #20 (legal pages — privacy
-policy rewrite + new ToS, all decisions resolved), and PR #21 (this docs-only wrap-up trail)
-were all merged to main in the same session as this watermark update — the 2026-07-31 entry
-below already describes #19/#20 as ready-for-review since it was drafted before the merges;
-treat both as NOW LIVE in the next summary rather than re-describing them as in-progress.
+last_generated: 2026-08-05
+main_commit: bba579a
+last_pr: 26
+note: covers the launch night (Aug 4–5): PRs #22–#26 all merged + the GoHighLevel webhook build
+and the Cloudflare cutover. PR #19/#20 were already described as ready-for-review in the
+2026-07-31 entry and went live with this launch — the 2026-08-05 entry notes that.
 -->
 
 ---
+
+## 2026-08-05 — update for Stephen
+
+**What's new / live**
+- **The website is live at accessibilityforall.com.** Your new site — the one you've been
+  reviewing on the staging link — is now the real, public site on your own domain, hosted on
+  your own Cloudflare account. The old www address forwards automatically, and your Google
+  email is completely unaffected.
+- **Every form now feeds your CRM.** Contact requests, free-audit requests, and new sign-ups
+  all flow straight into GoHighLevel as contacts, tested end to end. No more third-party form
+  inbox in the middle.
+- **Sign-up now tells customers the truth.** New customers are told a team member will contact
+  them within one business day to onboard them personally and set up payment — which is exactly
+  our process. (Heads-up: that promise is public now, so sign-ups need a same-day/next-day call.)
+- **The onboarding wizard and the new legal pages** you approved in July went live with this
+  launch as well.
+- **A full 12-month marketing plan is written** — the growth target, the channels, the budget,
+  and every email sequence, ready to review together.
+
+**In progress**
+- Loading the automated follow-up email sequences into GoHighLevel and finishing the CRM
+  pipeline setup (tags, stages, lead scoring).
+- Search-engine tuning: the site now carries the technical groundwork (sitemaps, social
+  previews, structured data), with page-title improvements coming next.
+
+**Needs Stephen / needs a decision**
+- **A same-day owner for new sign-ups.** The site promises contact within one business day —
+  who takes those calls day-to-day (you, Mark, or split)?
+- **AI crawler policy:** the site currently tells AI companies they may NOT train on its
+  content (a Cloudflare setting). Fine to leave, but it's a business stance worth a 2-minute
+  decision.
+- The Terms of Service still needs an attorney's review before we switch on self-serve card
+  payments (unchanged; personal onboarding covers payments meanwhile).
 
 <!-- TEMPLATE — copy this shape for each new entry; delete this comment block once real entries exist.
 ## YYYY-MM-DD — update for Stephen

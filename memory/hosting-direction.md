@@ -1,22 +1,24 @@
 ---
 name: hosting-direction
-description: Recommended platform = Cloudflare (site + scanner), front end in Astro; pending client sign-off
+description: EXECUTED 2026-08-05 — site LIVE on accessibilityforall.com via Cloudflare Pages (client account); merge to main = production deploy; Astro rebuild + scanner remain future phases
 metadata:
   type: project
 ---
 
-**Decided direction (2026-07-21), pending client (Stephen) approval:** move the new Accessibility
-For All site off GitHub Pages/AWS to **Cloudflare**, and build the WCAG scanner + Monitor there too.
-Front end to be rebuilt in **Astro** (`@astrojs/cloudflare` → Workers). Full rationale, comparison,
-cost/plan, and the scanner architecture: `docs/HOSTING-ANALYSIS.md`. Client PDF sent to Stephen.
+**Executed 2026-08-05 (launch night).** The Cloudflare direction recommended 2026-07-21 is now
+reality, with one change: the site was **lift-and-shifted as raw HTML** (no Astro rebuild yet).
 
-Key facts behind it:
-- Scanner is **greenfield** — `wcag-checker.html` is a front-end mock today.
-- Forms currently on **Formspree**; **GoHighLevel** is the planned CRM (host-neutral embeds).
-- Heavy doc processing already on **Render.com** (`pdf-genie-*.onrender.com`) — can remain.
-- Cloudflare plan: **Free** to launch the site, **Workers Paid ($5/mo + usage)** for the scanner
-  (Browser Rendering / Cron / R2 / D1).
-- Owner-only steps when approved: Cloudflare login, DNS, billing.
+Current production facts:
+- **Live URL:** https://accessibilityforall.com (apex is canonical — Marcus's call; `www` 301s
+  via a zone Redirect Rule). Cloudflare account is **client-owned** (Stephen's login).
+- **Deploy:** merge to `main` → Cloudflare Pages build → live in ~1 min. The Pages **build
+  command strips internal dirs** — see [[cloudflare-pages-publishes-everything]].
+- **Forms:** `/api/lead` Pages Function → GHL webhooks; URLs in Pages env Secrets.
+- **Superseded:** AWS S3/CloudFront pipeline ([[deploy-oidc-broken]] — now moot, never worked)
+  and the GitHub Pages staging root. PR previews on GitHub Pages still function but Cloudflare
+  also builds per-PR previews; prefer Cloudflare's.
+- `soprisapps.com` untouched — still the old stale S3 site; decide its fate (redirect?) later.
 
-Implication: the broken AWS S3/OIDC deploy ([[deploy-oidc-broken]]) is likely **moot** — don't
-invest in fixing it until the platform is confirmed. See [[deploy-pipeline]].
+Future phases from the original analysis, still open: Astro rebuild, scanner ("Check") on
+Workers + Browser Rendering, Monitor with Cron/R2/D1 (needs Workers Paid $5/mo when built).
+Full rationale: `docs/HOSTING-ANALYSIS.md`.

@@ -5,6 +5,12 @@ One running log of what shipped. **Newest on top.** Every merged PR adds a line 
 
 `- YYYY-MM-DD — what changed (PR #N, merged | open) — who`
 
+- 2026-08-05 — **SITE LAUNCHED**: accessibilityforall.com live on Cloudflare Pages (client-owned account); www→apex 301 via Redirect Rule; GA4+Ads verified firing (PRs #22–#26 all merged) — Marcus + Claude
+- 2026-08-05 — Canonical host switched to apex accessibilityforall.com — 94 www refs swept incl. legal-page contract text (PR #26, merged) — Claude
+- 2026-08-05 — Fixed live redirect loop on /pricing.html + /about.html (Pages built-in .html→extensionless 308 vs vanity aliases); canonicals/sitemap now extensionless (PR #25, merged) — Claude
+- 2026-08-04 — Formspree retired: all 3 forms POST JSON to /api/lead Pages Function → GHL webhooks W1/W2/W3 by form_type; honeypot + error states added (PR #24, merged) — Claude
+- 2026-08-04 — Cloudflare launch prep: legal pages renamed to new domain, _redirects, robots.txt, sitemap.xml, 404.html, /api/lead proxy; deleted redirect-stub pages; skip link + main landmark sitewide; Organization/WebSite JSON-LD; canonicals + OG/Twitter on 17 pages (PR #23, merged) — Claude
+- 2026-08-04 — Sign-up wizard made honest: collects email/phone, real confirmation ("team member contacts you for onboarding + payment"), submissions actually captured; GA4 sign_up event (PR #22, merged) — Claude
 <!-- Internal file: excluded from the S3 deploy. Not published to www.soprisapps.com. -->
 
 ---
