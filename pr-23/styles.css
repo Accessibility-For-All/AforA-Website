@@ -19,6 +19,25 @@ textarea:focus-visible, select:focus-visible, summary:focus-visible {
   border-radius: 6px;
 }
 
+/* Skip link (WCAG 2.4.1 Bypass Blocks). Off-screen until it takes focus, then
+   pinned above the fixed navbar so keyboard users can jump straight to content. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 12px 20px;
+  background: #0b6ad4;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.skip-link:focus {
+  left: 0;
+}
+
 /* Icon hover grow effect */
 .icon-hover { transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1); }
 .icon-hover:hover { transform: scale(1.12); }
