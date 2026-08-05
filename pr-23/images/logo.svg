@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" role="img" aria-label="Accessibility For All">
+  <defs>
+    <linearGradient id="keyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bcd9f5"/>
+      <stop offset="0.45" stop-color="#5ea0e0"/>
+      <stop offset="1" stop-color="#2766ad"/>
+    </linearGradient>
+    <style>
+      .wm { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 700; font-size: 92px; letter-spacing: -1px; }
+    </style>
+  </defs>
+
+  <text class="wm" x="500" y="128" text-anchor="middle">
+    <tspan fill="#13518f">A</tspan><tspan fill="#2f86da">ccessibility </tspan><tspan fill="#13518f">F</tspan><tspan fill="#2f86da">or </tspan><tspan fill="#13518f">A</tspan><tspan fill="#2f86da">ll</tspan>
+  </text>
+
+  <line x1="120" y1="205" x2="430" y2="205" stroke="#2f86da" stroke-width="3" stroke-linecap="round"/>
+  <line x1="572" y1="205" x2="880" y2="205" stroke="#2f86da" stroke-width="3" stroke-linecap="round"/>
+
+  <g stroke="#194f86" stroke-width="2" stroke-linejoin="round">
+    <circle cx="456" cy="205" r="27" fill="url(#keyGrad)"/>
+    <circle cx="456" cy="205" r="10" fill="#ffffff" stroke="#194f86" stroke-width="2"/>
+    <rect x="481" y="198" width="9" height="14" rx="2" fill="url(#keyGrad)"/>
+    <rect x="489" y="200" width="66" height="10" rx="4" fill="url(#keyGrad)"/>
+    <rect x="540" y="208" width="9" height="16" rx="2" fill="url(#keyGrad)"/>
+    <rect x="553" y="208" width="9" height="22" rx="2" fill="url(#keyGrad)"/>
+  </g>
+  <rect x="491" y="201.5" width="62" height="2.5" rx="1.2" fill="#e8f2fd" opacity="0.8"/>
+</svg>
