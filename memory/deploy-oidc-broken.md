@@ -1,9 +1,11 @@
 ---
 name: deploy-oidc-broken
-description: Production deploy has NEVER succeeded — GitHub→AWS OIDC role assumption fails; live site is the original manual S3 sync
+description: MOOT (2026-08-05) — AWS pipeline superseded by Cloudflare Pages launch; do not fix. Kept for history
 metadata:
   type: project
 ---
+
+**MOOT as of 2026-08-05** — production moved to Cloudflare Pages ([[hosting-direction]]); this pipeline was never fixed and never needs to be. Historical record follows.
 
 **Discovered 2026-07-21.** Every `deploy.yml` run on `main` has FAILED at the "Configure
 AWS credentials via OIDC" step:
