@@ -1,0 +1,57 @@
+html { font-family: 'Inter', sans-serif; font-size: 16px; }
+
+/* Brand typography: display & headings in Plus Jakarta Sans, tight tracking */
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Code, criteria IDs, and data in JetBrains Mono */
+code, kbd, pre, .font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Brand signature: bold 3px blue focus ring on every interactive element */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid #228AFF;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Skip link (WCAG 2.4.1 Bypass Blocks). Off-screen until it takes focus, then
+   pinned above the fixed navbar so keyboard users can jump straight to content. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 12px 20px;
+  background: #0b6ad4;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Icon hover grow effect */
+.icon-hover { transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1); }
+.icon-hover:hover { transform: scale(1.12); }
+
+/* Tawk.to widget color override */
+#tawkchat-minified-wrapper .tawk-min-container { background-color: #228AFF !important; }
+
+/* Ensure dropdown menus are right-justified */
+#solutions-desktop .absolute, #solutions-mobile .absolute, #products-desktop .absolute { right: 0; left: auto; }
+
+/* Desktop dropdown sticky open state (shared by Solutions & Industries) */
+#solutions-desktop-dropdown, #products-desktop-dropdown {
+  opacity: 0; pointer-events: none; transition: opacity 0.2s;
+}
+#solutions-desktop-dropdown.dropdown-open, #products-desktop-dropdown.dropdown-open {
+  opacity: 1 !important; pointer-events: auto !important;
+}
