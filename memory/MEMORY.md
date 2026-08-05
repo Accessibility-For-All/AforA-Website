@@ -22,3 +22,4 @@ Internal — excluded from the deploy, never served publicly.
 - [Onboarding wizard: no mock payment](onboarding-wizard-no-mock-payment.md) — pricing.html's embedded wizard skips the reference build's fake card form; paid tiers reuse existing checkoutUrl()/pricing-config.js logic instead
 - [⚠️ Cloudflare Pages publishes everything](cloudflare-pages-publishes-everything.md) — docs/memory/.claude are PUBLIC on Pages; needs a build command to strip them
 - [Legal entity + terms](legal-entity-and-terms.md) — confirmed entity is Accessibility For All LLC (not "Sopris Apps, LLC"), plus confirmed legal contact email, retention, refund, and governing-law terms
+- [Turnstile on forms](turnstile-on-forms.md) — widget 0x4AAAAAAEG3tg4QycOdAvhU + TURNSTILE_SECRET Pages env; env-gated enforcement; single-use token resets; purge cache after form deploys
