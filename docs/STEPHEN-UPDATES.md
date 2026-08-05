@@ -15,15 +15,49 @@ Internal file — excluded from the deploy, never published to the public site.
 `main` is on the public site about a minute later. `soprisapps.com` is legacy and untouched.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-08-05
-main_commit: bba579a
-last_pr: 26
-note: covers the launch night (Aug 4–5): PRs #22–#26 all merged + the GoHighLevel webhook build
-and the Cloudflare cutover. PR #19/#20 were already described as ready-for-review in the
-2026-07-31 entry and went live with this launch — the 2026-08-05 entry notes that.
+last_generated: 2026-08-05 (session 2)
+main_commit: b3cd268
+last_pr: 28
+note: covers everything merged after the launch-night entry: PRs #27–#31 (Turnstile spam
+protection, nav/footer SEO fix, wrap-up docs), #28 (FAQ rich results), #8 (internal docs),
+plus the Aug-5 daytime GoHighLevel CRM foundation build.
+IMPORTANT: Marcus sent the launch-night entry to Stephen WITHOUT the "full 12-month
+marketing plan is ready to walk through" paragraph and without the "In progress" list —
+so those are re-included in the 2026-08-05-b entry below. Do not treat them as already
+reported.
 -->
 
 ---
+
+## 2026-08-05-b — update for Stephen (afternoon)
+
+**What's new / live**
+- **Spam protection is on every form.** Each form on the site now runs an invisible
+  bot check before anything reaches your CRM, so the contact list stays clean as we
+  start advertising. Real visitors see nothing different.
+- **Search-engine improvements went live.** Google can now read every page's menus
+  and footer links directly (it previously needed to run our scripts to see them),
+  and the Pricing and Documents pages now carry structured Q&A data, which makes
+  them eligible to show your FAQs directly in Google search results.
+- **Your CRM now has its full skeleton.** Inside GoHighLevel we set up all the
+  customer data fields, the labels that sort leads by type and plan, and two sales
+  boards: one for demo-led deals, one for self-serve sign-ups — matching exactly how
+  the business actually works.
+
+**Ready for you**
+- **The full 12-month marketing plan** — target, channels, budget, and all the
+  email sequences. Let's walk through it this week.
+
+**Next up**
+- Loading the email follow-ups into the CRM, pipeline automations and lead scoring,
+  the AI chat assistant, and page-title updates (I'll run wording by you first).
+- Two things we found that we're fixing before spending on ads: the "free audit"
+  request form needs its own page on the site, and email sending needs proper
+  authentication set up so follow-ups land in inboxes rather than spam folders.
+
+**Needs Stephen / a decision**
+- Nothing new beyond the standing items (same-day owner for sign-ups, AI-crawler
+  policy, attorney review of the Terms before card payments switch on).
 
 ## 2026-08-05 — update for Stephen
 
