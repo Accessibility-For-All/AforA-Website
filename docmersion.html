@@ -509,6 +509,7 @@
                     <input type="url" name="website" autocomplete="url" class="rounded-xl px-4 py-3 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition" placeholder="https://yourorg.org">
                   </label>
                 </div>
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAEG3tg4QycOdAvhU" data-action="turnstile-spin-v2" data-refresh-expired="auto"></div>
                 <button type="submit" class="group relative w-full px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]" style="background: #228AFF;">
                   <span class="relative z-10"><i class="bi bi-box-arrow-up-right mr-2"></i>Create free account</span>
                 </button>
@@ -545,7 +546,11 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
               body: JSON.stringify(lead)
-            }).catch(function () {});
+            }).catch(function () {}).finally(function () {
+              // Turnstile tokens are single-use — reset so a second submit works.
+              var w = form.querySelector('.cf-turnstile');
+              if (window.turnstile && w) window.turnstile.reset(w);
+            });
           } catch (err) {}
           if (msg) msg.classList.remove('hidden');
           // Fallback if the popout was blocked: send this tab to the app.
