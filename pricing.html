@@ -698,6 +698,8 @@
 
               <div class="plan-note"><i class="bi bi-info-circle-fill"></i> Documents, Websites, Reports, and Response are included on every plan, including Enterprise — you're never asked to add tools separately.</div>
 
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAEG3tg4QycOdAvhU" data-action="turnstile-spin-v2" data-refresh-expired="auto" style="margin-top:14px"></div>
+
               <div class="btn-row">
                 <button class="btn btn-ghost" onclick="goStep(1)">Back</button>
                 <button class="btn btn-primary" id="planContinue" onclick="continueFromPlan()">Continue →</button>
@@ -979,9 +981,21 @@
           utm_medium: params.get('utm_medium') || '',
           utm_campaign: params.get('utm_campaign') || ''
         };
+        // Dedupe on the payload WITHOUT the Turnstile token — tokens rotate per
+        // attempt, and identical details should still be sent only once.
+        var dedupeKey = JSON.stringify(payload);
+        if (dedupeKey === lastSignupPayload) return; // same details already sent (e.g. back → continue)
+        lastSignupPayload = dedupeKey;
+
+        // Attach the Turnstile token (single-use — reset after the attempt so a
+        // changed plan or a retry gets a fresh one).
+        var tsWidget = document.querySelector('#onboard-wizard .cf-turnstile');
+        var tsInput = tsWidget && tsWidget.querySelector('input[name="cf-turnstile-response"]');
+        var tsToken = (tsInput && tsInput.value) ||
+          (window.turnstile && tsWidget ? window.turnstile.getResponse(tsWidget) : '');
+        if (tsToken) payload.turnstile_token = tsToken;
+
         var body = JSON.stringify(payload);
-        if (body === lastSignupPayload) return; // same details already sent (e.g. back → continue)
-        lastSignupPayload = body;
         var send = function (attempt) {
           fetch(SIGNUP_ENDPOINT, {
             method: 'POST',
@@ -990,7 +1004,11 @@
           }).then(function (r) {
             if (!r.ok) throw new Error('HTTP ' + r.status);
           }).catch(function () {
+            // Retries reuse the same token and only help for network blips; a
+            // 403 verification failure would just fail again.
             if (attempt < 3) setTimeout(function () { send(attempt + 1); }, 2000 * attempt);
+          }).finally(function () {
+            if (window.turnstile && tsWidget) window.turnstile.reset(tsWidget);
           });
         };
         send(1);

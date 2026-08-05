@@ -41,6 +41,36 @@ export async function onRequestPost({ request, env }) {
   // Honeypot: a real person never fills a field they cannot see.
   if (payload.website_url) return json(200, { ok: true });
 
+  // Turnstile (canonical siteverify). Enforced only when TURNSTILE_SECRET is
+  // configured on the environment, so previews without the secret keep working.
+  // Tokens are single-use; the client resets its widget after every attempt.
+  // The token is stripped so it never gets forwarded to GHL. Fails closed.
+  const turnstileToken = payload['cf-turnstile-response'] || payload.turnstile_token;
+  delete payload.turnstile_token;
+  delete payload['cf-turnstile-response'];
+  if (env.TURNSTILE_SECRET) {
+    if (!turnstileToken) return json(403, { ok: false, error: 'Verification required' });
+    let outcome;
+    try {
+      const verify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          secret: env.TURNSTILE_SECRET,
+          response: turnstileToken,
+          remoteip: request.headers.get('CF-Connecting-IP') || '',
+        }),
+      });
+      if (!verify.ok) throw new Error(`siteverify ${verify.status}`);
+      outcome = await verify.json();
+    } catch (err) {
+      return json(403, { ok: false, error: 'Verification failed' });
+    }
+    if (outcome.success !== true) {
+      return json(403, { ok: false, error: 'Verification failed' });
+    }
+  }
+
   const envKey = ROUTES[payload.form_type];
   if (!envKey) return json(400, { ok: false, error: 'Unknown form_type' });
 

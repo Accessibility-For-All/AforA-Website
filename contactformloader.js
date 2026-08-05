@@ -3,6 +3,22 @@
 // GoHighLevel "Website Contact Form" inbound webhook. The GHL webhook URLs live
 // in Pages environment variables, never in this file.
 
+// Cloudflare Turnstile site key (public by design). The widget is managed in the
+// Cloudflare dashboard; the secret lives ONLY in the Pages env as TURNSTILE_SECRET.
+var A4A_TURNSTILE_SITE_KEY = '0x4AAAAAAEG3tg4QycOdAvhU';
+
+// Load the Turnstile api.js once per page. Runs after the DOM (including any
+// static .cf-turnstile divs on pricing/docmersion) exists, so the implicit
+// scan renders every widget on the page.
+function a4aEnsureTurnstileScript() {
+  if (document.querySelector('script[src*="challenges.cloudflare.com/turnstile"]')) return;
+  var s = document.createElement('script');
+  s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+  s.async = true;
+  s.defer = true;
+  document.head.appendChild(s);
+}
+
 function loadContactForm(containerId, options = {}) {
   const container = document.getElementById(containerId);
   if (!container) {
@@ -85,6 +101,7 @@ function loadContactForm(containerId, options = {}) {
             <div style="position:absolute;left:-9999px" aria-hidden="true">
               <label>Website URL<input type="text" name="website_url" tabindex="-1" autocomplete="off"></label>
             </div>
+            <div class="cf-turnstile" data-sitekey="${A4A_TURNSTILE_SITE_KEY}" data-action="turnstile-spin-v2" data-refresh-expired="auto"></div>
             <button type="submit" style="background: #0b6ad4;" class="group relative w-full py-4 rounded-full text-white font-bold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]">
               <span class="relative z-10">${config.buttonText}</span>
               <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -175,6 +192,10 @@ function submitAsJson(form, endpoint) {
       if (errorEl) errorEl.classList.remove('hidden');
       if (button) button.disabled = false;
       if (buttonLabel) buttonLabel.textContent = originalLabel;
+      // Turnstile tokens are single-use: without a reset, a retry would resend
+      // the redeemed token and be rejected as timeout-or-duplicate.
+      var widget = form.querySelector('.cf-turnstile');
+      if (window.turnstile && widget) window.turnstile.reset(widget);
     });
   });
 }
@@ -193,5 +214,11 @@ document.addEventListener('DOMContentLoaded', function() {
       subtitle: "Tell us which tools you're interested in and a bit about your organization — we'll build a tailored quote for the suite.",
       buttonText: "Get my custom quote"
     });
+  }
+
+  // Render Turnstile for every .cf-turnstile on the page (the forms above plus
+  // any static widgets, e.g. the pricing wizard and DocMersion form).
+  if (document.querySelector('.cf-turnstile')) {
+    a4aEnsureTurnstileScript();
   }
 });
