@@ -18,8 +18,10 @@ function loadGoogleTag() {
 
 function loadNavbar() {
   const navbarHTML = `
+    <!-- Skip link: WCAG 2.4.1 Bypass Blocks. Visually hidden until focused. -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navbar -->
-    <nav class="fixed w-full z-30 bg-white/90 backdrop-blur shadow-sm border-b border-gray-100">
+    <nav aria-label="Main" class="fixed w-full z-30 bg-white/90 backdrop-blur shadow-sm border-b border-gray-100">
       <div class="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="index.html" class="flex items-center whitespace-nowrap">
           <img src="images/logo-full.png" alt="Accessibility For All" class="h-8 xl:h-9 w-auto object-contain">
@@ -110,7 +112,21 @@ function loadNavbar() {
     </nav>`;
 
   document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+  ensureMainLandmark();
   initializeNavbar();
+}
+
+// No page in this site wraps its content in <main>, so the skip link above would
+// have nothing to jump to and screen readers get no main landmark. Promote the
+// first content section after the navbar instead of hand-editing every page.
+function ensureMainLandmark() {
+  if (document.getElementById('main-content')) return;
+  var existingMain = document.querySelector('main');
+  var target = existingMain || document.querySelector('nav ~ section, nav ~ div, nav ~ header');
+  if (!target) return;
+  target.id = 'main-content';
+  if (!existingMain) target.setAttribute('role', 'main');
+  target.setAttribute('tabindex', '-1'); // lets the skip link move focus, not just scroll
 }
 
 function initializeNavbar() {

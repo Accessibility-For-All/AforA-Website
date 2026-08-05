@@ -1,0 +1,14 @@
+# Cloudflare Pages redirects. One rule per line: <from> <to> <status>
+#
+# Legacy pages that were renamed or removed — keep their inbound links alive.
+/wcag-checker.html   /websites.html            301
+/demo.html           /docmersion-demo.html     301
+/vpat-acr.html       /reports.html             301
+/accessibility-monitor.html  /websites.html#monitor  301
+
+# Convenience aliases people type or that appear in print/collateral.
+/pricing   /pricing.html   301
+/demo      /book-demo.html 301
+/about     /about.html     301
+/privacy   /privacy-policy.html    301
+/terms     /terms-of-service.html  301
