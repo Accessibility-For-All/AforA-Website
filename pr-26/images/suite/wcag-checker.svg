@@ -1,0 +1,81 @@
+<svg width="800" height="580" viewBox="0 0 800 580" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="wcBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f8f9fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="580" fill="url(#wcBg)"/>
+
+  <!-- Main report card -->
+  <rect x="40" y="36" width="470" height="500" rx="16" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5"/>
+  <text x="68" y="78" font-size="13" fill="#d4a574" font-weight="700" letter-spacing="1">ADA TITLE II · WCAG 2.1 AA</text>
+  <text x="68" y="104" font-size="20" fill="#2c2c2c" font-weight="800">Compliance Scan Report</text>
+  <text x="68" y="126" font-size="12.5" fill="#9aa0a8">cityofpaxton.gov  ·  scanned just now</text>
+
+  <!-- Score donut -->
+  <g transform="translate(150,250)">
+    <circle r="78" fill="none" stroke="#eef0f3" stroke-width="18"/>
+    <circle r="78" fill="none" stroke="#2f9e6b" stroke-width="18" stroke-linecap="round"
+      stroke-dasharray="402 490" transform="rotate(-90)"/>
+    <text x="0" y="2" font-size="40" fill="#2c2c2c" font-weight="800" text-anchor="middle">82%</text>
+    <text x="0" y="26" font-size="12" fill="#5b6472" text-anchor="middle">conformance</text>
+  </g>
+
+  <!-- Risk badge -->
+  <rect x="296" y="170" width="186" height="84" rx="12" fill="#eef7f1" stroke="#2f9e6b" stroke-width="1.5"/>
+  <text x="316" y="200" font-size="12" fill="#5b6472">Legal Risk Level</text>
+  <circle cx="324" cy="226" r="9" fill="#2f9e6b"/>
+  <text x="342" y="232" font-size="22" fill="#2f9e6b" font-weight="800">LOW</text>
+
+  <!-- Criteria checklist -->
+  <g font-size="13" fill="#2c2c2c">
+    <rect x="296" y="270" width="186" height="34" rx="8" fill="#f6f8f7"/>
+    <circle cx="316" cy="287" r="8" fill="#2f9e6b"/><path d="M312 287 l3 3 l5 -6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <text x="334" y="291">Color contrast</text>
+
+    <rect x="296" y="310" width="186" height="34" rx="8" fill="#f6f8f7"/>
+    <circle cx="316" cy="327" r="8" fill="#2f9e6b"/><path d="M312 327 l3 3 l5 -6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <text x="334" y="331">Keyboard access</text>
+
+    <rect x="296" y="350" width="186" height="34" rx="8" fill="#fdf3f2"/>
+    <circle cx="316" cy="367" r="8" fill="#d9534f"/><path d="M313 364 l6 6 M319 364 l-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <text x="334" y="371">Alt text (4)</text>
+
+    <rect x="296" y="390" width="186" height="34" rx="8" fill="#fdf8ee"/>
+    <circle cx="316" cy="407" r="8" fill="#e0a82e"/><text x="316" y="411" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">!</text>
+    <text x="334" y="411">Form labels (2)</text>
+  </g>
+
+  <!-- progress bar of 50+ criteria -->
+  <text x="68" y="372" font-size="12" fill="#5b6472">52 of 64 WCAG criteria pass</text>
+  <rect x="68" y="384" width="180" height="12" rx="6" fill="#eef0f3"/>
+  <rect x="68" y="384" width="146" height="12" rx="6" fill="#2f9e6b"/>
+
+  <rect x="68" y="448" width="180" height="40" rx="20" fill="#d4a574"/>
+  <text x="158" y="473" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700" letter-spacing="0.5">START FREE SCAN</text>
+
+  <!-- Side: deadline countdown card -->
+  <rect x="530" y="36" width="230" height="240" rx="16" fill="#2c2c2c"/>
+  <text x="552" y="74" font-size="12" fill="#d4a574" font-weight="700" letter-spacing="1">COMPLIANCE DEADLINE</text>
+  <text x="552" y="108" font-size="15" fill="#ffffff" font-weight="600">April 26, 2027</text>
+  <text x="552" y="128" font-size="11" fill="#9aa0a8">Large public entities</text>
+  <g transform="translate(552,150)">
+    <rect x="0" y="0" width="58" height="58" rx="8" fill="#3a3f47"/><text x="29" y="36" font-size="22" fill="#fff" text-anchor="middle" font-weight="800">329</text><text x="29" y="50" font-size="9" fill="#9aa0a8" text-anchor="middle">DAYS</text>
+    <rect x="70" y="0" width="58" height="58" rx="8" fill="#3a3f47"/><text x="99" y="36" font-size="22" fill="#fff" text-anchor="middle" font-weight="800">14</text><text x="99" y="50" font-size="9" fill="#9aa0a8" text-anchor="middle">HRS</text>
+    <rect x="140" y="0" width="58" height="58" rx="8" fill="#3a3f47"/><text x="169" y="36" font-size="22" fill="#d4a574" text-anchor="middle" font-weight="800">07</text><text x="169" y="50" font-size="9" fill="#9aa0a8" text-anchor="middle">MIN</text>
+  </g>
+  <text x="552" y="244" font-size="10.5" fill="#7d848d">DOJ Interim Final Rule · 2026</text>
+
+  <!-- Side: device alt-text mini panel -->
+  <rect x="530" y="296" width="230" height="240" rx="16" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5"/>
+  <text x="552" y="330" font-size="13" fill="#2c2c2c" font-weight="700">Issue detail</text>
+  <rect x="552" y="346" width="186" height="92" rx="8" fill="#f4f0ea"/>
+  <rect x="566" y="360" width="60" height="44" rx="4" fill="#d9c4a6"/>
+  <path d="M566 404 l20 -22 l16 16 l10 -10 l10 16 z" fill="#b89a72"/>
+  <circle cx="612" cy="372" r="6" fill="#cbb38d"/>
+  <text x="638" y="372" font-size="10" fill="#5b6472">img.banner</text>
+  <text x="638" y="388" font-size="10" fill="#d9534f" font-weight="600">missing alt</text>
+  <rect x="552" y="450" width="186" height="30" rx="6" fill="#eef7f1" stroke="#2f9e6b"/>
+  <text x="566" y="470" font-size="11" fill="#2f9e6b" font-weight="600">AI fix: "City hall at sunset"</text>
+  <text x="552" y="510" font-size="10.5" fill="#9aa0a8">Free · No sign-up required</text>
+</svg>

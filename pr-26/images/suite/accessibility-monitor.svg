@@ -1,0 +1,88 @@
+<svg width="800" height="580" viewBox="0 0 800 580" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="amBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f8f9fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="580" fill="url(#amBg)"/>
+
+  <!-- Dashboard window -->
+  <rect x="40" y="36" width="720" height="470" rx="16" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.5"/>
+  <!-- sidebar -->
+  <rect x="40" y="36" width="150" height="470" rx="16" fill="#2c2c2c"/>
+  <rect x="176" y="36" width="14" height="470" fill="#2c2c2c"/>
+  <text x="66" y="78" font-size="14" fill="#ffffff" font-weight="700">Monitor</text>
+  <rect x="60" y="104" width="116" height="30" rx="6" fill="#d4a574"/>
+  <text x="76" y="124" font-size="12" fill="#ffffff" font-weight="600">Dashboard</text>
+  <text x="76" y="160" font-size="12" fill="#9aa0a8">Sitemap</text>
+  <text x="76" y="190" font-size="12" fill="#9aa0a8">Violations</text>
+  <text x="76" y="220" font-size="12" fill="#9aa0a8">Screenshots</text>
+  <text x="76" y="250" font-size="12" fill="#9aa0a8">Team</text>
+  <text x="76" y="280" font-size="12" fill="#9aa0a8">Schedule</text>
+  <rect x="60" y="446" width="116" height="36" rx="8" fill="#3a3f47"/>
+  <circle cx="78" cy="464" r="6" fill="#2f9e6b"/>
+  <text x="92" y="468" font-size="11" fill="#cfd4da">Scan active</text>
+
+  <!-- header -->
+  <text x="214" y="76" font-size="19" fill="#2c2c2c" font-weight="800">Accessibility Overview</text>
+  <text x="214" y="98" font-size="12.5" fill="#9aa0a8">19 pages monitored · last scan 4 min ago</text>
+
+  <!-- stat cards -->
+  <g>
+    <rect x="214" y="116" width="120" height="70" rx="10" fill="#f6f8fa"/>
+    <text x="230" y="142" font-size="11" fill="#5b6472">Total issues</text>
+    <text x="230" y="170" font-size="24" fill="#2c2c2c" font-weight="800">1.7K</text>
+
+    <rect x="346" y="116" width="120" height="70" rx="10" fill="#fdf3f2"/>
+    <text x="362" y="142" font-size="11" fill="#5b6472">Critical (A)</text>
+    <text x="362" y="170" font-size="24" fill="#d9534f" font-weight="800">312</text>
+
+    <rect x="478" y="116" width="120" height="70" rx="10" fill="#fdf8ee"/>
+    <text x="494" y="142" font-size="11" fill="#5b6472">Serious (AA)</text>
+    <text x="494" y="170" font-size="24" fill="#e0a82e" font-weight="800">689</text>
+
+    <rect x="610" y="116" width="126" height="70" rx="10" fill="#eef7f1"/>
+    <text x="626" y="142" font-size="11" fill="#5b6472">Resolved</text>
+    <text x="626" y="170" font-size="24" fill="#2f9e6b" font-weight="800">+241</text>
+  </g>
+
+  <!-- donut chart -->
+  <text x="214" y="218" font-size="13" fill="#2c2c2c" font-weight="700">Issues by level</text>
+  <g transform="translate(290,310)">
+    <circle r="62" fill="none" stroke="#d9534f" stroke-width="22" stroke-dasharray="72 318" transform="rotate(-90)"/>
+    <circle r="62" fill="none" stroke="#e0a82e" stroke-width="22" stroke-dasharray="158 232" transform="rotate(-90)" stroke-dashoffset="-72"/>
+    <circle r="62" fill="none" stroke="#2f9e6b" stroke-width="22" stroke-dasharray="160 230" transform="rotate(-90)" stroke-dashoffset="-230"/>
+    <text x="0" y="-2" font-size="24" fill="#2c2c2c" font-weight="800" text-anchor="middle">1.7K</text>
+    <text x="0" y="18" font-size="10" fill="#9aa0a8" text-anchor="middle">violations</text>
+  </g>
+  <g font-size="11" fill="#5b6472">
+    <rect x="214" y="392" width="11" height="11" rx="2" fill="#d9534f"/><text x="231" y="402">Level A</text>
+    <rect x="284" y="392" width="11" height="11" rx="2" fill="#e0a82e"/><text x="301" y="402">AA</text>
+    <rect x="330" y="392" width="11" height="11" rx="2" fill="#2f9e6b"/><text x="347" y="402">AAA</text>
+  </g>
+
+  <!-- bar chart across pages -->
+  <text x="430" y="218" font-size="13" fill="#2c2c2c" font-weight="700">Violations across 19 pages</text>
+  <g>
+    <line x1="430" y1="372" x2="736" y2="372" stroke="#e5e5e5"/>
+    <rect x="438" y="300" width="20" height="72" rx="3" fill="#d4a574"/>
+    <rect x="466" y="262" width="20" height="110" rx="3" fill="#d4a574"/>
+    <rect x="494" y="320" width="20" height="52" rx="3" fill="#d4a574"/>
+    <rect x="522" y="240" width="20" height="132" rx="3" fill="#2b386b"/>
+    <rect x="550" y="288" width="20" height="84" rx="3" fill="#d4a574"/>
+    <rect x="578" y="332" width="20" height="40" rx="3" fill="#d4a574"/>
+    <rect x="606" y="276" width="20" height="96" rx="3" fill="#d4a574"/>
+    <rect x="634" y="308" width="20" height="64" rx="3" fill="#d4a574"/>
+    <rect x="662" y="250" width="20" height="122" rx="3" fill="#d4a574"/>
+    <rect x="690" y="296" width="20" height="76" rx="3" fill="#d4a574"/>
+    <rect x="718" y="318" width="18" height="54" rx="3" fill="#d4a574"/>
+  </g>
+  <!-- scan progress -->
+  <text x="430" y="402" font-size="11" fill="#5b6472">Scan progress</text>
+  <rect x="430" y="410" width="306" height="12" rx="6" fill="#eef0f3"/>
+  <rect x="430" y="410" width="214" height="12" rx="6" fill="#2f9e6b"/>
+  <text x="430" y="448" font-size="11" fill="#9aa0a8">15,000 pages · 30,000 scans · under 1 hour</text>
+
+  <text x="40" y="546" font-size="15" fill="#2c2c2c" font-weight="700">Accessibility Monitor</text>
+  <text x="40" y="568" font-size="13" fill="#5b6472">Continuous WCAG monitoring with prioritized, screenshot-linked fixes</text>
+</svg>
