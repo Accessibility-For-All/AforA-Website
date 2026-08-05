@@ -6,4 +6,4 @@ Disallow: /welcome.html
 Disallow: /thank-you-form-submission.html
 Disallow: /api/
 
-Sitemap: https://www.accessibilityforall.com/sitemap.xml
+Sitemap: https://accessibilityforall.com/sitemap.xml
