@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TX5BQW6XZ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TX5BQW6XZ6');
+</script>
+
+    <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <!-- END ACCESSIBILITY FOR ALL FAVICONS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing – Accessibility For All Suite</title>
+    <meta name="description" content="Simple self-service pricing for the Accessibility For All suite. Start Free, then pick a plan — Starter, Growth, Scale, or Enterprise — that grows with your organization.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { brand: '#3aa9ff', dark: '#0a2239' },
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="pricing-config.js"></script>
+    <script src="navbarloader.js"></script>
+    <script src="footerloader.js"></script>
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+    <!-- Onboarding wizard styles (scoped to #onboard-wizard). Global resets/typography/
+         focus-visible rules from the source prototype are intentionally omitted here —
+         styles.css already defines equivalent rules site-wide with the same values. -->
+    <style>
+      :root{
+        --blue1:#0b6ad4;
+        --blue2:#228AFF;
+        --teal:#0d9488;
+        --dark:#0a2239;
+        --ink:#1b2436;
+        --muted:#64748b;
+        --line:#e2e8f0;
+        --light:#f8fafc;
+        --soft:#eaf3ff;
+        --good:#10b981;
+      }
+
+      #onboard-wizard{
+        width:100%;
+        max-width:1400px;
+        margin:0 auto;
+        min-height:400px;
+        display:grid;
+        grid-template-columns:1.05fr .95fr;
+        align-items:stretch;
+        background:white;
+        border-radius:28px;
+        overflow:hidden;
+        box-shadow:0 40px 80px rgba(9,20,43,.14);
+      }
+
+      /* ============ LEFT BRAND / PROGRESS PANEL ============ */
+      .brand-panel{
+        position:relative;
+        background:linear-gradient(135deg,var(--blue1),var(--blue2));
+        padding:28px 64px 0;
+        color:white;
+        overflow:hidden;
+        display:flex;
+        flex-direction:column;
+      }
+
+      .brand-panel::before{
+        content:"";
+        position:absolute;
+        width:620px; height:620px;
+        top:-220px; right:-160px;
+        border-radius:50%;
+        background:radial-gradient(rgba(255,255,255,.18),transparent 70%);
+        pointer-events:none;
+      }
+      .brand-panel::after{
+        content:"";
+        position:absolute;
+        width:420px; height:420px;
+        bottom:-170px; left:-130px;
+        border-radius:50%;
+        background:radial-gradient(rgba(13,148,136,.4),transparent 70%);
+        pointer-events:none;
+      }
+
+      .content-logo{
+        height:22px;
+        width:auto;
+        display:block;
+        align-self:flex-start;
+        flex:none;
+        margin-bottom:14px;
+      }
+
+      .step-eyebrow{
+        font-size:14px;
+        font-weight:600;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        opacity:.85;
+        margin-bottom:10px;
+        position:relative;
+      }
+
+      .hero-title{
+        font-size:30px;
+        line-height:1.15;
+        font-weight:800;
+        letter-spacing:-.5px;
+        max-width:440px;
+        position:relative;
+        color:white;
+      }
+      @media(min-width:961px){
+        .hero-title{ font-size:36px; }
+      }
+
+      .hero-subtitle{
+        margin-top:14px;
+        font-size:16px;
+        line-height:1.6;
+        opacity:.92;
+        max-width:420px;
+        position:relative;
+      }
+      @media(min-width:961px){
+        .hero-subtitle{ font-size:18px; }
+      }
+
+      /* floating glass tiles */
+      .floating-card{
+        position:absolute;
+        backdrop-filter:blur(12px);
+        background:rgba(255,255,255,.13);
+        border:1px solid rgba(255,255,255,.22);
+        border-radius:18px;
+        pointer-events:none;
+      }
+      .card1{ width:120px; height:90px; right:46px; top:110px; }
+      .card2{ width:80px; height:80px; right:130px; top:216px; border-radius:24px; }
+
+      /* progress rail */
+      .rail{
+        margin-top:18px;
+        padding:0 0 4px;
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        gap:2px;
+      }
+      .rail-item{
+        display:flex;
+        align-items:center;
+        gap:16px;
+        padding:8px 0;
+        position:relative;
+        transition:.3s;
+      }
+      .rail-dot{
+        flex:none;
+        width:34px; height:34px;
+        border-radius:50%;
+        border:2px solid rgba(255,255,255,.35);
+        display:flex; align-items:center; justify-content:center;
+        font-size:14px; font-weight:700;
+        background:rgba(255,255,255,.1);
+        transition:.3s;
+        color:white;
+      }
+      .rail-label{ font-size:16px; font-weight:500; opacity:.72; transition:.3s; color:white; }
+      .rail-item.active .rail-dot{
+        background:white; color:var(--blue1);
+        border-color:white;
+        box-shadow:0 8px 20px rgba(0,0,0,.18);
+      }
+      .rail-item.active .rail-label{ opacity:1; font-weight:700; }
+      .rail-item.done .rail-dot{
+        background:rgba(255,255,255,.92); color:var(--blue1); border-color:transparent;
+      }
+      .rail-item.done .rail-label{ opacity:.92; }
+      .rail-item:not(:last-child)::after{
+        content:"";
+        position:absolute;
+        left:16px; top:42px;
+        width:2px; height:12px;
+        background:rgba(255,255,255,.28);
+      }
+
+      /* ============ RIGHT CONTENT PANEL ============ */
+      .content-panel{
+        background:white;
+        padding:24px 60px;
+        display:flex;
+        flex-direction:column;
+      }
+
+      #onboard-wizard .step{ display:none; width:100%; max-width:520px; animation:onboard-fade .35s ease; }
+      #onboard-wizard .step.active{ display:block; }
+      @keyframes onboard-fade{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;} }
+
+      #onboard-wizard .badge{
+        width:56px; height:56px;
+        margin-bottom:20px;
+        border-radius:14px;
+        background:var(--soft);
+        color:var(--blue1);
+        display:flex; align-items:center; justify-content:center;
+        font-size:22px;
+      }
+      #onboard-wizard .step h2{ font-size:24px; font-weight:800; letter-spacing:-.4px; color:var(--ink); }
+      @media(min-width:641px){
+        #onboard-wizard .step h2{ font-size:30px; }
+      }
+      #onboard-wizard .step .lead{ color:var(--muted); margin-top:10px; margin-bottom:32px; font-size:16px; line-height:1.6; }
+
+      /* form fields */
+      #onboard-wizard .field{ margin-bottom:10px; }
+      #onboard-wizard .field.row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+      #onboard-wizard .field label{ display:block; margin-bottom:5px; font-weight:600; font-size:14px; color:var(--ink); }
+      #onboard-wizard .field input, #onboard-wizard .field select{
+        width:100%; height:48px;
+        border:1px solid var(--line);
+        border-radius:12px;
+        padding:0 16px;
+        font-size:16px;
+        line-height:46px;
+        font-family:inherit;
+        color:var(--ink);
+        background:white;
+        transition:.2s;
+      }
+      #onboard-wizard .field select{ line-height:normal; }
+      #onboard-wizard .field input:hover, #onboard-wizard .field select:hover{ border-color:var(--blue2); }
+      #onboard-wizard .field input:focus, #onboard-wizard .field select:focus{ outline:none; border-color:var(--blue2); }
+
+      #onboard-wizard .input-prefix{
+        display:flex; align-items:center;
+        height:48px;
+        border:1px solid var(--line);
+        border-radius:12px;
+        padding:0 16px;
+        background:white;
+        transition:.2s;
+      }
+      #onboard-wizard .input-prefix:hover{ border-color:var(--blue2); }
+      #onboard-wizard .input-prefix:focus-within{ border-color:var(--blue2); outline:3px solid var(--blue2); outline-offset:2px; }
+      #onboard-wizard .input-prefix span{ color:var(--muted); font-size:16px; flex:none; }
+      #onboard-wizard .input-prefix input{
+        flex:1; width:auto; height:auto;
+        border:none; border-radius:0;
+        padding:0 0 0 2px;
+        line-height:normal;
+        background:transparent;
+      }
+      #onboard-wizard .input-prefix input:hover{ border:none; }
+      #onboard-wizard .input-prefix input:focus{ box-shadow:none; border:none; outline:none; }
+
+      /* buttons */
+      #onboard-wizard .btn-row{ display:flex; gap:12px; margin-top:16px; align-items:center; }
+      #onboard-wizard .btn{
+        height:48px; padding:0 24px;
+        border:none; border-radius:12px;
+        font-size:16px; font-weight:600; font-family:inherit;
+        cursor:pointer; transition:.2s;
+        display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      }
+      #onboard-wizard .btn-primary{
+        flex:1;
+        color:white;
+        background:linear-gradient(90deg,var(--blue1),var(--blue2));
+      }
+      #onboard-wizard .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 16px 35px rgba(34,138,255,.32); }
+      #onboard-wizard .btn-primary:active{ transform:translateY(0); }
+      #onboard-wizard .btn-ghost{
+        background:white; border:1px solid var(--line); color:var(--ink);
+      }
+      #onboard-wizard .btn-ghost:hover{ background:var(--light); }
+
+      /* ============ PLAN CARDS (compact, dropdown-style — collapsed row, features reveal on selection) ============ */
+      #onboard-wizard .plans{ display:grid; gap:10px; }
+      #onboard-wizard .plan{
+        border:2px solid var(--line);
+        border-radius:16px;
+        cursor:pointer;
+        transition:border-color .2s, box-shadow .2s;
+        position:relative;
+        overflow:hidden;
+      }
+      #onboard-wizard .plan:hover{ border-color:var(--blue2); }
+      #onboard-wizard .plan.selected{ border-color:var(--blue1); box-shadow:0 10px 26px rgba(34,138,255,.14); }
+
+      #onboard-wizard .plan-head{ display:flex; align-items:center; gap:14px; padding:16px 18px; }
+      #onboard-wizard .plan-radio{
+        flex:none; width:20px; height:20px; border-radius:50%;
+        border:2px solid var(--line); transition:.2s;
+        display:flex; align-items:center; justify-content:center;
+      }
+      #onboard-wizard .plan.selected .plan-radio{ border-color:var(--blue1); }
+      #onboard-wizard .plan.selected .plan-radio::after{
+        content:""; width:10px; height:10px; border-radius:50%;
+        background:linear-gradient(90deg,var(--blue1),var(--blue2));
+      }
+      #onboard-wizard .plan-name-wrap{ flex:1; display:flex; align-items:center; gap:8px; flex-wrap:wrap; min-width:0; }
+      #onboard-wizard .plan-name{ font-size:16px; font-weight:700; color:var(--ink); }
+      #onboard-wizard .plan-tag{
+        font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+        color:var(--blue1); background:var(--soft); padding:3px 9px; border-radius:20px;
+      }
+      #onboard-wizard .plan-price{ font-size:16px; font-weight:800; color:var(--ink); display:flex; align-items:baseline; gap:4px; flex:none; white-space:nowrap; }
+      #onboard-wizard .plan-price-period{ font-size:13px; font-weight:600; color:var(--muted); }
+      #onboard-wizard .plan-chevron{ color:var(--muted); font-size:13px; flex:none; transition:transform .25s ease, color .2s; }
+      #onboard-wizard .plan.selected .plan-chevron{ transform:rotate(180deg); color:var(--blue1); }
+
+      #onboard-wizard .plan-collapse{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s ease; }
+      #onboard-wizard .plan.selected .plan-collapse{ grid-template-rows:1fr; }
+      #onboard-wizard .plan-collapse-inner{ overflow:hidden; }
+      #onboard-wizard .plan-price-note{ font-size:12px; color:var(--muted); padding:2px 18px 0; }
+      #onboard-wizard .plan-desc{ font-size:14px; color:var(--muted); line-height:1.5; padding:8px 18px 0; }
+      #onboard-wizard .plan-features{ list-style:none; padding:12px 18px 18px; margin-top:12px; border-top:1px solid var(--line); display:grid; gap:6px; }
+      #onboard-wizard .plan-features li{ display:flex; gap:8px; align-items:flex-start; font-size:14px; color:var(--ink); line-height:1.5; }
+      #onboard-wizard .plan-features li i{ color:var(--blue1); margin-top:3px; flex:none; font-size:12px; }
+      #onboard-wizard .billing-toggle{ display:inline-flex; align-items:center; gap:2px; padding:4px; border:1px solid var(--line); background:var(--light); border-radius:999px; margin-bottom:20px; }
+      #onboard-wizard .billing-btn{ border:none; background:none; font-family:inherit; font-size:14px; font-weight:600; padding:9px 18px; border-radius:999px; cursor:pointer; color:var(--muted); transition:.2s; }
+      #onboard-wizard .billing-btn.active{ background:linear-gradient(90deg,var(--blue1),var(--blue2)); color:white; }
+      #onboard-wizard .billing-btn .save-tag{ font-weight:500; opacity:.85; }
+      #onboard-wizard .plan-note{
+        display:flex; align-items:center; gap:8px;
+        margin-top:16px; padding:12px 14px;
+        background:var(--soft); border-radius:12px;
+        font-size:14px; color:var(--blue1); font-weight:600;
+      }
+
+      /* ============ INSTALL / EMBED STEP ============ */
+      #onboard-wizard .code-block{
+        position:relative;
+        background:var(--dark);
+        border-radius:16px;
+        padding:22px 22px 20px;
+        margin-bottom:14px;
+      }
+      #onboard-wizard .code-block pre{
+        font-family:'JetBrains Mono',monospace;
+        font-size:13.5px;
+        line-height:1.7;
+        color:#cfe0ff;
+        white-space:pre-wrap;
+        word-break:break-all;
+      }
+      #onboard-wizard .code-block .tok{ color:#7fd1ff; }
+      #onboard-wizard .code-block .attr{ color:#9ad0a0; }
+      #onboard-wizard .copy-btn{
+        position:absolute; top:14px; right:14px;
+        height:36px; padding:0 14px;
+        border:none; border-radius:9px;
+        background:rgba(255,255,255,.12); color:white;
+        font-size:13px; font-weight:600; cursor:pointer; transition:.2s;
+        font-family:inherit;
+      }
+      #onboard-wizard .copy-btn:hover{ background:rgba(255,255,255,.22); }
+      #onboard-wizard .copy-btn.copied{ background:var(--good); }
+
+      #onboard-wizard .section-h{ font-size:18px; font-weight:700; margin:30px 0 8px; color:var(--ink); }
+      #onboard-wizard .muted-note{ font-size:14px; color:var(--muted); line-height:1.6; }
+
+      #onboard-wizard .guide{ display:flex; flex-direction:column; gap:0; margin-top:8px; }
+      #onboard-wizard .guide-item{ border-top:1px solid var(--line); }
+      #onboard-wizard .guide-q{
+        width:100%; text-align:left; background:none; border:none;
+        padding:16px 0; font-size:16px; font-weight:600; font-family:inherit;
+        color:var(--ink); cursor:pointer;
+        display:flex; justify-content:space-between; align-items:center; gap:12px;
+      }
+      #onboard-wizard .guide-q .chev{ transition:.25s; color:var(--muted); flex:none; }
+      #onboard-wizard .guide-item.open .chev{ transform:rotate(90deg); }
+      #onboard-wizard .guide-a{ display:none; padding:0 0 18px; font-size:14px; line-height:1.65; color:var(--muted); }
+      #onboard-wizard .guide-item.open .guide-a{ display:block; }
+      #onboard-wizard .guide-a code{
+        font-family:'JetBrains Mono',monospace; font-size:13px;
+        background:var(--soft); color:var(--blue1); padding:2px 6px; border-radius:6px;
+      }
+      #onboard-wizard .steps-list{ counter-reset:s; padding-left:0; list-style:none; margin-top:6px; }
+      #onboard-wizard .steps-list li{
+        counter-increment:s; position:relative; padding-left:38px; margin-bottom:14px;
+        font-size:14px; line-height:1.6; color:var(--ink);
+      }
+      #onboard-wizard .steps-list li::before{
+        content:counter(s); position:absolute; left:0; top:-2px;
+        width:26px; height:26px; border-radius:8px;
+        background:var(--soft); color:var(--blue1);
+        font-size:13px; font-weight:700;
+        display:flex; align-items:center; justify-content:center;
+      }
+
+      #onboard-wizard .summary-box{
+        background:var(--light); border:1px solid var(--line);
+        border-radius:16px; padding:22px 24px; margin-bottom:28px;
+      }
+      #onboard-wizard .summary-box .row{ display:flex; justify-content:space-between; padding:7px 0; font-size:16px; }
+      #onboard-wizard .summary-box .row span:first-child{ color:var(--muted); }
+      #onboard-wizard .summary-box .row span:last-child{ font-weight:600; color:var(--ink); }
+
+      #onboard-wizard .success-ico{
+        width:68px; height:68px; border-radius:50%;
+        background:rgba(16,185,129,.12); color:var(--good);
+        display:flex; align-items:center; justify-content:center;
+        font-size:28px; margin-bottom:22px;
+      }
+
+      /* ============ MOBILE ============ */
+      @media(max-width:960px){
+        #onboard-wizard{ grid-template-columns:1fr; min-height:0; border-radius:20px; }
+        .brand-panel{ padding:40px 28px 32px; }
+        .card1,.card2{ display:none; }
+        .rail{ margin-top:30px; padding:8px 0 0; flex-direction:row; flex-wrap:wrap; gap:6px 18px; }
+        .rail-item{ padding:4px 0; }
+        .rail-item:not(:last-child)::after{ display:none; }
+        .rail-label{ font-size:14px; }
+        .content-panel{ padding:36px 26px 48px; }
+        #onboard-wizard .field.row{ grid-template-columns:1fr; }
+      }
+    </style>
+  
+    <!-- Canonical + social preview -->
+    <link rel="canonical" href="https://www.accessibilityforall.com/pricing" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Accessibility For All" />
+    <meta property="og:url" content="https://www.accessibilityforall.com/pricing" />
+    <meta property="og:title" content="Pricing – Accessibility For All Suite" />
+    <meta property="og:description" content="Simple self-service pricing for the Accessibility For All suite. Start Free, then pick a plan — Starter, Growth, Scale, or Enterprise — that grows with your organization." />
+    <meta property="og:image" content="https://www.accessibilityforall.com/images/logo-full.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pricing – Accessibility For All Suite" />
+    <meta name="twitter:description" content="Simple self-service pricing for the Accessibility For All suite. Start Free, then pick a plan — Starter, Growth, Scale, or Enterprise — that grows with your organization." />
+    <meta name="twitter:image" content="https://www.accessibilityforall.com/images/logo-full.png" />
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar will be loaded by navbarloader.js -->
+    <!-- Hero -->
+    <section class="relative pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
+      <div class="absolute top-20 left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-3xl"></div>
+      <div class="container mx-auto px-6 max-w-5xl relative z-10 text-center">
+        <span class="inline-block text-sm font-semibold tracking-widest text-[#0b6ad4] uppercase mb-3">Pricing</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Simple plans that scale with <span class="bg-gradient-to-r from-[#0b6ad4] to-[#0d9488] bg-clip-text text-transparent">your accessibility needs</span></h1>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6">Pick a plan, install the widget (we're here to help), then enjoy the comprehensive website + documents compliance report. Keep it on to receive ongoing document remediation services, visitor intelligence, compliance reports, and ongoing monitoring.</p>
+        <p class="text-base md:text-lg text-gray-600 italic max-w-2xl mx-auto leading-relaxed mb-8 border-l-4 pl-4 text-left sm:text-center sm:border-l-0 sm:pl-0" style="border-color:#0b6ad4;">"Accessibility For All is offering such a robust free plan because we truly want everyone, including those with disabilities, to have access to your content."</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="?plan=free#plans" class="px-8 py-4 border-2 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="border-color:#0b6ad4; color:#0b6ad4;" onmouseover="this.style.background='#0b6ad4'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='#0b6ad4';"><i class="bi bi-rocket-takeoff mr-2" aria-hidden="true"></i>Get started for free</a>
+          <a href="#plans" class="group relative px-8 py-4 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background: #0b6ad4;"><span class="relative z-10">See plans &amp; pricing</span><div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free callout -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="relative rounded-3xl overflow-hidden border border-emerald-100 bg-gradient-to-r from-emerald-50 to-teal-50 p-8 md:p-10 flex flex-col md:flex-row items-center gap-6">
+          <span class="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl text-white text-2xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);" aria-hidden="true"><i class="bi bi-code-slash"></i></span>
+          <div class="flex-1 text-center md:text-left">
+            <h2 class="text-2xl font-extrabold mb-1">Get started for free — the entire suite included</h2>
+            <p class="text-gray-600">The Free plan isn't a limited trial — you get Documents, Websites, Reports, and Response, the whole suite, at no cost. After you sign up, an Accessibility For All team member walks you through onboarding, including installing our lightweight widget to activate scanning and monitoring.</p>
+          </div>
+          <a href="?plan=free#plans" class="px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all hover:scale-105 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started for free</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get started: org creation → plan choice → activation -->
+    <section id="plans" class="py-16 bg-white scroll-mt-24">
+      <div class="container mx-auto px-6 max-w-7xl">
+
+        <div id="onboard-wizard" class="login-wrapper">
+
+          <!-- LEFT: BRAND + PROGRESS -->
+          <div class="brand-panel" id="brandPanel">
+            <div class="floating-card card1"></div>
+            <div class="floating-card card2"></div>
+
+            <div class="step-eyebrow" id="eyebrow">Step 1 of 3</div>
+            <h1 class="hero-title" id="heroTitle">Tell us about your organization</h1>
+            <p class="hero-subtitle" id="heroSub">Sign up for the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.</p>
+
+            <div class="rail" id="rail" role="list" aria-label="Onboarding progress">
+              <div class="rail-item active" data-rail="1" role="listitem" aria-current="step">
+                <div class="rail-dot">1</div>
+                <div class="rail-label">Your organization</div>
+              </div>
+              <div class="rail-item" data-rail="2" role="listitem">
+                <div class="rail-dot">2</div>
+                <div class="rail-label">Choose a plan</div>
+              </div>
+              <div class="rail-item" data-rail="3" role="listitem">
+                <div class="rail-dot">3</div>
+                <div class="rail-label">What happens next</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: STEP CONTENT -->
+          <div class="content-panel" id="contentPanel">
+
+            <img class="content-logo" src="images/logo-full.png" alt="Accessibility For All">
+
+            <!-- STEP 1 — CREATE ORGANIZATION -->
+            <div class="step active" data-step="1">
+              <h2 style="margin-bottom:10px">Organization Information</h2>
+
+              <div class="field">
+                <label for="orgName">Organization name</label>
+                <input id="orgName" type="text" placeholder="Acme District" autocomplete="organization">
+              </div>
+
+              <div class="field">
+                <label for="orgUrl">Organization website</label>
+                <div class="input-prefix">
+                  <span>https://</span>
+                  <input id="orgUrl" type="text" placeholder="acme.org">
+                </div>
+              </div>
+
+              <div class="field row">
+                <div>
+                  <label for="personName">Your name</label>
+                  <input id="personName" type="text" placeholder="Jordan Lee" autocomplete="name">
+                </div>
+                <div>
+                  <label for="personRole">Your role</label>
+                  <select id="personRole">
+                    <option value="">Select a role…</option>
+                    <option>Owner / Administrator</option>
+                    <option>Web Developer</option>
+                    <option>Accessibility Coordinator</option>
+                    <option>Communications / Marketing</option>
+                    <option>IT Manager</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field row">
+                <div>
+                  <label for="personEmail">Work email</label>
+                  <input id="personEmail" type="email" placeholder="you@acme.org" autocomplete="email">
+                </div>
+                <div>
+                  <label for="personPhone">Phone (optional)</label>
+                  <input id="personPhone" type="tel" placeholder="(555) 123-4567" autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="btn-row">
+                <button class="btn btn-primary" onclick="createOrg()">Continue →</button>
+              </div>
+            </div>
+
+            <!-- STEP 2 — CHOOSE A PLAN -->
+            <div class="step" data-step="2">
+              <h2>Choose a plan</h2>
+              <p class="lead">Start free and upgrade any time. Every plan includes the complete suite — there's no à la carte pricing.</p>
+
+              <div class="billing-toggle" role="group" aria-label="Billing period">
+                <button type="button" class="billing-btn" id="billingMonthly" aria-pressed="false" onclick="setBilling('monthly')">Monthly</button>
+                <button type="button" class="billing-btn active" id="billingAnnual" aria-pressed="true" onclick="setBilling('annual')">Annual <span class="save-tag">(2 months free)</span></button>
+              </div>
+
+              <div class="plans" role="radiogroup" aria-label="Choose a plan">
+                <div class="plan selected" data-plan="free" role="radio" aria-checked="true" tabindex="0" onclick="selectPlan('free')" onkeydown="planKeydown(event,'free')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Free</span></div>
+                    <div class="plan-price">$0</div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note">free, forever</div>
+                      <div class="plan-desc">Everything you need to get started — no credit card required.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: 5 documents — transcribe &amp; assess</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: Front page + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: pre-filled partial VPAT</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation, emailed monthly</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plan" data-plan="starter" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('starter')" onkeydown="planKeydown(event,'starter')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Starter</span></div>
+                    <div class="plan-price price-block" data-monthly="59" data-annual="590"><span class="price-amount">$590</span><span class="plan-price-period price-period">/year</span></div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note price-note">billed annually — $59/mo billed monthly</div>
+                      <div class="plan-desc">Get compliant. For small organizations just getting their website and documents in order.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: 20 documents</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: 5 Pages + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: VPAT</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation steps</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Email support</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plan" data-plan="growth" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('growth')" onkeydown="planKeydown(event,'growth')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Growth</span> <span class="plan-tag">Most popular</span></div>
+                    <div class="plan-price price-block" data-monthly="149" data-annual="1490"><span class="price-amount">$1,490</span><span class="plan-price-period price-period">/year</span></div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note price-note">billed annually — $149/mo billed monthly</div>
+                      <div class="plan-desc">Stay compliant as you grow. For organizations publishing more content across a bigger site.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: 100 documents</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: 25 Pages + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: VPAT</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation steps</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Priority support</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plan" data-plan="scale" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('scale')" onkeydown="planKeydown(event,'scale')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Scale</span></div>
+                    <div class="plan-price price-block" data-monthly="399" data-annual="3990"><span class="price-amount">$3,990</span><span class="plan-price-period price-period">/year</span></div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note price-note">billed annually — $399/mo billed monthly</div>
+                      <div class="plan-desc">Prove it to procurement. For larger organizations that must document conformance at scale.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: 1,000 documents</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: 100 Pages + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: VPAT</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation steps</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Onboarding + quarterly review</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plan" data-plan="enterprise" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('enterprise')" onkeydown="planKeydown(event,'enterprise')">
+                  <div class="plan-head">
+                    <div class="plan-radio"></div>
+                    <div class="plan-name-wrap"><span class="plan-name">Enterprise</span></div>
+                    <div class="plan-price">Custom</div>
+                    <i class="bi bi-chevron-down plan-chevron"></i>
+                  </div>
+                  <div class="plan-collapse">
+                    <div class="plan-collapse-inner">
+                      <div class="plan-price-note">tailored agreement &amp; volume pricing</div>
+                      <div class="plan-desc">For organizations that need volume, procurement, and a dedicated point of contact.</div>
+                      <ul class="plan-features">
+                        <li><i class="bi bi-check-circle-fill"></i> Documents: unlimited</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Website: multiple websites + Monitor</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Reports: VPAT 100% executed with 3rd-party experts</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Response: suggested remediation steps</li>
+                        <li><i class="bi bi-check-circle-fill"></i> SSO &amp; team management</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Dedicated account manager</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-note"><i class="bi bi-info-circle-fill"></i> Documents, Websites, Reports, and Response are included on every plan, including Enterprise — you're never asked to add tools separately.</div>
+
+              <div class="btn-row">
+                <button class="btn btn-ghost" onclick="goStep(1)">Back</button>
+                <button class="btn btn-primary" id="planContinue" onclick="continueFromPlan()">Continue →</button>
+              </div>
+            </div>
+
+            <!-- STEP 2b — CUSTOM QUOTE CONFIRMATION -->
+            <div class="step" data-step="quote">
+              <div class="success-ico"><i class="bi bi-check-lg"></i></div>
+              <h2>We'll build your quote</h2>
+              <p class="lead">Thanks — a member of our team will reach out within one business day with an Enterprise plan tailored to your traffic. It still includes the full suite.</p>
+
+              <div class="summary-box">
+                <div class="row"><span>Organization</span><span id="qOrg">—</span></div>
+                <div class="row"><span>Website</span><span id="qUrl">—</span></div>
+                <div class="row"><span>Contact</span><span id="qPerson">—</span></div>
+                <div class="row"><span>Plan</span><span>Enterprise</span></div>
+              </div>
+
+              <p class="muted-note">Not sure Enterprise is the right fit? You can go back and sign up for Free, Starter, Growth, or Scale instead — a team member follows up on those too.</p>
+
+              <div class="btn-row">
+                <button class="btn btn-ghost" onclick="goStep(2)">Back to plans</button>
+                <button class="btn btn-primary" onclick="goStep(2)">Choose a different plan</button>
+              </div>
+            </div>
+
+            <!-- STEP 3 — CONFIRMATION (what happens next) -->
+            <div class="step" data-step="3">
+              <div class="success-ico"><i class="bi bi-check-lg"></i></div>
+              <h2>You're signed up!</h2>
+              <p class="lead" id="confirmLead">Thanks — an Accessibility For All team member will contact you within one business day to begin your personalized onboarding.</p>
+
+              <div class="summary-box">
+                <div class="row"><span>Organization</span><span id="cOrg">—</span></div>
+                <div class="row"><span>Website</span><span id="cUrl">—</span></div>
+                <div class="row"><span>Contact</span><span id="cContact">—</span></div>
+                <div class="row"><span>Plan</span><span id="cPlan">—</span></div>
+              </div>
+
+              <div class="section-h">What happens next</div>
+              <ol class="steps-list">
+                <li>An Accessibility For All team member reaches out within one business day — watch for an email from our team.</li>
+                <li>Together we set up your workspace: your sites, documents, monitoring, and reports, configured for your organization.</li>
+                <li>On paid plans, your team member securely sets up payment details during onboarding — you're never charged before that conversation.</li>
+              </ol>
+
+              <p class="muted-note">Need to change something, or in a hurry? Use the contact form below and mention your sign-up — we'll sort it out.</p>
+
+              <div class="btn-row">
+                <button class="btn btn-ghost" onclick="goStep(2)">Back to plans</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-600 mt-8">Need a fully certified, 3rd-party-executed VPAT on Starter, Growth, or Scale? Available per report — <button type="button" onclick="document.getElementById('pricing-contact-form-container').scrollIntoView({behavior:'smooth'})" class="underline font-semibold text-[#0b6ad4] hover:text-[#09519f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">request a quote</button>.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Frequently asked <span class="bg-gradient-to-r from-[#0a2239] to-[#0b6ad4] bg-clip-text text-transparent">questions</span></h2>
+        </div>
+        <div class="space-y-5">
+          <div class="p-6 bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Is the free WCAG audit really free?</h3>
+            <p class="text-gray-700">Yes. Tell us your site and our team will review it against 50+ WCAG 2.1 AA criteria and send you a Legal Risk Level report — no cost, no obligation.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl border border-teal-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">What happens after I sign up?</h3>
+            <p class="text-gray-700">You'll get an immediate confirmation, and an Accessibility For All team member reaches out within one business day to begin your personalized onboarding — setting up your sites, documents, and monitoring with you. On paid plans, payment details are collected securely during onboarding, so you're never charged before we've talked.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Can I change or cancel my plan?</h3>
+            <p class="text-gray-700">Yes — upgrade, downgrade, or cancel any time. Reach out through the form below and we'll take care of it. Annual plans include two months free compared to monthly billing.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">What does it take to receive a 100% complete, 3rd-party reviewed VPAT report?</h3>
+            <p class="text-gray-700">Our system can automatically complete about 40% of a VPAT through machine scanning. Legal stipulations — and the limits of automation — mean the remaining 60% must be completed through 3rd-party disability expert review. We keep a team of reviewers on standby: depending on the depth of review your report needs, you can hire these experts and have your report completed entirely within the Accessibility For All dashboard.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl border border-teal-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Will this help with the April 2027 ADA Title II deadline?</h3>
+            <p class="text-gray-700">Yes. The suite is built around WCAG 2.1 AA, the standard tied to ADA Title II. Start by auditing, then monitor and remediate, and document conformance with a VPAT/ACR.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-blue-50 to-slate-50 rounded-2xl border border-blue-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">My organization doesn't fit these plans. Can I still get a custom quote?</h3>
+            <p class="text-gray-700">Of course. Use the form below and tell us about your sites, documents, and timeline — we'll put together a quote that fits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Contact Form -->
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-slate-50">
+      <div class="container mx-auto px-6 max-w-3xl">
+        <div id="pricing-contact-form-container"></div>
+      </div>
+    </section>
+    <script src="contactformloader.js"></script>
+    <script>
+      // Onboarding wizard: org info → plan choice → sign-up confirmation.
+      // There is no self-serve provisioning yet: every sign-up is a lead our team
+      // follows up on for personalized onboarding (and payment setup on paid plans).
+      // Submissions POST to SIGNUP_ENDPOINT — Formspree for now, swapped to the
+      // GoHighLevel "Website Sign-Up" inbound-webhook URL once that workflow exists
+      // (see docs/GHL-BUILD-CHECKLIST.md). If Stripe self-serve ever turns on,
+      // checkoutUrl() (pricing-config.js) short-circuits paid plans to checkout.
+      var cfg = window.A4A_PRICING || { selfServe: false, showPrices: true, checkout: {} };
+      var billing = 'annual';
+      var PAID_PLANS = ['starter', 'growth', 'scale'];
+      var state = { plan: 'free', org: '', orgUrl: '', person: '', role: '', email: '', phone: '' };
+
+      var heroCopy = {
+        1: { eb: 'Step 1 of 3', t: 'Tell us about your organization', s: 'Sign up for the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.' },
+        2: { eb: 'Step 2 of 3', t: 'Pick the right plan', s: 'Choose how Accessibility For All scales with you. Every plan — from Free to Enterprise — includes the full suite.' },
+        quote: { eb: 'Step 2 of 3', t: 'Let’s tailor a quote', s: 'For higher-traffic sites we build a plan around your needs. The full suite is still included.' },
+        3: { eb: 'Step 3 of 3', t: 'You’re all set', s: 'An Accessibility For All team member will reach out to begin your personalized onboarding — no dashboards to figure out alone, no surprise charges.' }
+      };
+
+      function fmtPrice(n) { return '$' + Number(n).toLocaleString('en-US'); }
+
+      function checkoutUrl(plan) {
+        var links = (cfg.checkout || {})[plan] || {};
+        var url = billing === 'annual' ? links.annual : links.monthly;
+        return (cfg.selfServe && url) ? url : null;
+      }
+
+      function renderPricing() {
+        document.querySelectorAll('#onboard-wizard .price-block').forEach(function (block) {
+          var amount = block.querySelector('.price-amount');
+          var period = block.querySelector('.price-period');
+          var note = block.closest('.plan').querySelector('.price-note');
+          if (!cfg.showPrices) {
+            amount.textContent = 'Contact us';
+            period.textContent = '';
+            note.textContent = 'for current pricing';
+            return;
+          }
+          var m = block.getAttribute('data-monthly');
+          var y = block.getAttribute('data-annual');
+          if (billing === 'annual') {
+            amount.textContent = fmtPrice(y);
+            period.textContent = '/year';
+            note.textContent = 'billed annually — ' + fmtPrice(m) + '/mo billed monthly';
+          } else {
+            amount.textContent = fmtPrice(m);
+            period.textContent = '/month';
+            note.textContent = 'billed monthly — save with annual (' + fmtPrice(y) + '/yr)';
+          }
+        });
+      }
+
+      function setBilling(mode) {
+        billing = mode;
+        var monthlyBtn = document.getElementById('billingMonthly');
+        var annualBtn = document.getElementById('billingAnnual');
+        monthlyBtn.classList.toggle('active', mode === 'monthly');
+        monthlyBtn.setAttribute('aria-pressed', mode === 'monthly');
+        annualBtn.classList.toggle('active', mode === 'annual');
+        annualBtn.setAttribute('aria-pressed', mode === 'annual');
+        renderPricing();
+      }
+
+      function goStep(step) {
+        document.querySelectorAll('#onboard-wizard .step').forEach(function (s) { s.classList.remove('active'); });
+        document.querySelector('#onboard-wizard .step[data-step="' + step + '"]').classList.add('active');
+
+        var c = heroCopy[step];
+        document.getElementById('eyebrow').textContent = c.eb;
+        document.getElementById('heroTitle').textContent = c.t;
+        document.getElementById('heroSub').textContent = c.s;
+
+        var railStep = (step === 'quote') ? 2 : step;
+        document.querySelectorAll('#onboard-wizard .rail-item').forEach(function (item) {
+          var n = +item.dataset.rail;
+          var isActive = n === railStep;
+          item.classList.toggle('active', isActive);
+          item.classList.toggle('done', n < railStep);
+          if (isActive) item.setAttribute('aria-current', 'step'); else item.removeAttribute('aria-current');
+        });
+
+        document.getElementById('onboard-wizard').scrollIntoView({ behavior: 'instant', block: 'start' });
+      }
+
+      function createOrg() {
+        var name = document.getElementById('orgName').value.trim();
+        var url = document.getElementById('orgUrl').value.trim();
+        var person = document.getElementById('personName').value.trim();
+        var role = document.getElementById('personRole').value;
+        var emailInput = document.getElementById('personEmail');
+        var email = emailInput.value.trim();
+        var phone = document.getElementById('personPhone').value.trim();
+        if (!name || !url || !person || !role || !email) {
+          alert('Please fill in all fields (phone is optional) so our team can reach you.');
+          return;
+        }
+        if (!emailInput.checkValidity()) {
+          emailInput.reportValidity();
+          return;
+        }
+        state.org = name; state.orgUrl = url; state.person = person; state.role = role;
+        state.email = email; state.phone = phone;
+        goStep(2);
+      }
+
+      function selectPlan(plan) {
+        state.plan = plan;
+        document.querySelectorAll('#onboard-wizard .plan').forEach(function (p) {
+          var selected = p.dataset.plan === plan;
+          p.classList.toggle('selected', selected);
+          p.setAttribute('aria-checked', selected ? 'true' : 'false');
+        });
+      }
+      function planKeydown(e, plan) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectPlan(plan);
+        }
+      }
+
+      function continueFromPlan() {
+        if (state.plan === 'enterprise') {
+          document.getElementById('qOrg').textContent = state.org || '—';
+          document.getElementById('qUrl').textContent = state.orgUrl ? ('https://' + state.orgUrl) : '—';
+          document.getElementById('qPerson').textContent = state.person ? (state.person + (state.role ? (' · ' + state.role) : '')) : '—';
+          submitSignup('enterprise-quote');
+          goStep('quote');
+          return;
+        }
+        if (PAID_PLANS.indexOf(state.plan) !== -1) {
+          var url = checkoutUrl(state.plan);
+          if (url) {
+            window.location.href = url;
+            return;
+          }
+        }
+        submitSignup('signup');
+        showConfirmation();
+      }
+
+      function showConfirmation() {
+        var isPaid = PAID_PLANS.indexOf(state.plan) !== -1;
+        var planLabel = state.plan.charAt(0).toUpperCase() + state.plan.slice(1);
+        document.getElementById('cOrg').textContent = state.org || '—';
+        document.getElementById('cUrl').textContent = state.orgUrl ? ('https://' + state.orgUrl) : '—';
+        document.getElementById('cContact').textContent = state.person + ' · ' + state.email;
+        document.getElementById('cPlan').textContent = planLabel + (isPaid ? (' — ' + (billing === 'annual' ? 'annual' : 'monthly') + ' billing') : '');
+        document.getElementById('confirmLead').textContent = isPaid
+          ? 'Thanks — an Accessibility For All team member will contact you within one business day to begin your personalized onboarding and securely set up your payment details. You won’t be charged before then.'
+          : 'Thanks — an Accessibility For All team member will contact you within one business day to begin your personalized onboarding.';
+        goStep(3);
+      }
+
+      // Posts to the Cloudflare Pages Function, which forwards to the GoHighLevel
+      // "W3 — Website Sign-Up" inbound webhook. The GHL URL lives in Pages env vars.
+      var SIGNUP_ENDPOINT = '/api/lead';
+      var lastSignupPayload = '';
+
+      function submitSignup(kind) {
+        var isPaid = PAID_PLANS.indexOf(state.plan) !== -1;
+        var params = new URLSearchParams(window.location.search);
+        var payload = {
+          _subject: 'Sign-up (' + state.plan + '): ' + state.org,
+          form_type: kind,
+          organization: state.org,
+          website: state.orgUrl ? ('https://' + state.orgUrl) : '',
+          name: state.person,
+          role: state.role,
+          email: state.email,
+          phone: state.phone,
+          plan: state.plan,
+          billing_interval: isPaid ? billing : '',
+          page: window.location.href,
+          utm_source: params.get('utm_source') || '',
+          utm_medium: params.get('utm_medium') || '',
+          utm_campaign: params.get('utm_campaign') || ''
+        };
+        var body = JSON.stringify(payload);
+        if (body === lastSignupPayload) return; // same details already sent (e.g. back → continue)
+        lastSignupPayload = body;
+        var send = function (attempt) {
+          fetch(SIGNUP_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: body
+          }).then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+          }).catch(function () {
+            if (attempt < 3) setTimeout(function () { send(attempt + 1); }, 2000 * attempt);
+          });
+        };
+        send(1);
+        if (typeof gtag === 'function') {
+          gtag('event', 'sign_up', { method: 'onboarding_wizard', plan: state.plan });
+        }
+      }
+
+      // Pre-select a plan from ?plan=free|starter|growth|scale|enterprise (used by the
+      // sitewide "Get started for free" CTAs, which link here as ?plan=free#plans).
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var requested = (params.get('plan') || '').toLowerCase();
+        if (['free', 'starter', 'growth', 'scale', 'enterprise'].indexOf(requested) !== -1) {
+          selectPlan(requested);
+        }
+      })();
+
+      // Subtle parallax on the brand panel (desktop only)
+      var brandPanel = document.getElementById('brandPanel');
+      if (window.matchMedia('(min-width:961px)').matches) {
+        brandPanel.addEventListener('mousemove', function (e) {
+          var r = brandPanel.getBoundingClientRect();
+          var rx = ((e.clientY - r.top) / r.height - 0.5) * -4;
+          var ry = ((e.clientX - r.left) / r.width - 0.5) * 4;
+          brandPanel.querySelector('.card1').style.transform = 'translate(' + (ry * 2) + 'px,' + (rx * 2) + 'px)';
+          brandPanel.querySelector('.card2').style.transform = 'translate(' + (-ry * 2) + 'px,' + (-rx * 2) + 'px)';
+        });
+      }
+
+      renderPricing();
+      goStep(1);
+    </script>
+  </body>
+</html>
