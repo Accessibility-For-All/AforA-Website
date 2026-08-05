@@ -21,7 +21,7 @@ function loadNavbar() {
     <!-- Skip link: WCAG 2.4.1 Bypass Blocks. Visually hidden until focused. -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navbar -->
-    <nav aria-label="Main" class="fixed w-full z-30 bg-white/90 backdrop-blur shadow-sm border-b border-gray-100">
+    <nav data-a4a-nav aria-label="Main" class="fixed w-full z-30 bg-white/90 backdrop-blur shadow-sm border-b border-gray-100">
       <div class="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="index.html" class="flex items-center whitespace-nowrap">
           <img src="images/logo-full.png" alt="Accessibility For All" class="h-8 xl:h-9 w-auto object-contain">
@@ -111,7 +111,12 @@ function loadNavbar() {
       </div>
     </nav>`;
 
-  document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+  // Pages now ship the nav inlined in their HTML (SEO: crawlers see the links
+  // without executing JS). Inject only as a fallback for any page that doesn't;
+  // behaviors (dropdowns, mobile menu, landmark) initialize either way.
+  if (!document.querySelector('nav[data-a4a-nav]')) {
+    document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+  }
   ensureMainLandmark();
   initializeNavbar();
 }
