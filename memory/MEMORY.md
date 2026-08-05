@@ -23,3 +23,5 @@ Internal — excluded from the deploy, never served publicly.
 - [⚠️ Cloudflare Pages publishes everything](cloudflare-pages-publishes-everything.md) — docs/memory/.claude are PUBLIC on Pages; needs a build command to strip them
 - [Legal entity + terms](legal-entity-and-terms.md) — confirmed entity is Accessibility For All LLC (not "Sopris Apps, LLC"), plus confirmed legal contact email, retention, refund, and governing-law terms
 - [Turnstile on forms](turnstile-on-forms.md) — widget 0x4AAAAAAEG3tg4QycOdAvhU + TURNSTILE_SECRET Pages env; env-gated enforcement; single-use token resets; purge cache after form deploys
+- [GHL build state](ghl-build-state.md) — location it1L0e1mMfZM1WCQIliV; fields/tags/pipelines DONE 2026-08-05, scoring/workflows/drips NOT; email gated on DKIM (none exists)
+- [⚠️ GHL UI automation gotchas](ghl-ui-automation-gotchas.md) — dialogs swallow post-save clicks, stale refs, phantom Edit Pipeline modal, scoring delete is a silent no-op; read before driving GHL UI
