@@ -466,7 +466,7 @@
           <span class="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl text-white text-2xl" style="background:linear-gradient(135deg,#10b981,#14b8a6);" aria-hidden="true"><i class="bi bi-code-slash"></i></span>
           <div class="flex-1 text-center md:text-left">
             <h2 class="text-2xl font-extrabold mb-1">Get started for free — the entire suite included</h2>
-            <p class="text-gray-600">The Free plan isn't a limited trial — you get Documents, Websites, Reports, and Response, the whole suite, at no cost. To activate scanning and monitoring, you'll install our lightweight widget on your site; it only takes a few minutes.</p>
+            <p class="text-gray-600">The Free plan isn't a limited trial — you get Documents, Websites, Reports, and Response, the whole suite, at no cost. After you sign up, an Accessibility For All team member walks you through onboarding, including installing our lightweight widget to activate scanning and monitoring.</p>
           </div>
           <a href="?plan=free#plans" class="px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-all hover:scale-105 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background:#0b6ad4;" onmouseover="this.style.background='#09519f'" onmouseout="this.style.background='#0b6ad4'">Get started for free</a>
         </div>
@@ -485,13 +485,13 @@
             <div class="floating-card card2"></div>
 
             <div class="step-eyebrow" id="eyebrow">Step 1 of 3</div>
-            <h1 class="hero-title" id="heroTitle">Create your organization</h1>
-            <p class="hero-subtitle" id="heroSub">Gain access to the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.</p>
+            <h1 class="hero-title" id="heroTitle">Tell us about your organization</h1>
+            <p class="hero-subtitle" id="heroSub">Sign up for the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.</p>
 
             <div class="rail" id="rail" role="list" aria-label="Onboarding progress">
               <div class="rail-item active" data-rail="1" role="listitem" aria-current="step">
                 <div class="rail-dot">1</div>
-                <div class="rail-label">Create organization</div>
+                <div class="rail-label">Your organization</div>
               </div>
               <div class="rail-item" data-rail="2" role="listitem">
                 <div class="rail-dot">2</div>
@@ -499,7 +499,7 @@
               </div>
               <div class="rail-item" data-rail="3" role="listitem">
                 <div class="rail-dot">3</div>
-                <div class="rail-label">Activate the suite</div>
+                <div class="rail-label">What happens next</div>
               </div>
             </div>
           </div>
@@ -545,8 +545,19 @@
                 </div>
               </div>
 
+              <div class="field row">
+                <div>
+                  <label for="personEmail">Work email</label>
+                  <input id="personEmail" type="email" placeholder="you@acme.org" autocomplete="email">
+                </div>
+                <div>
+                  <label for="personPhone">Phone (optional)</label>
+                  <input id="personPhone" type="tel" placeholder="(555) 123-4567" autocomplete="tel">
+                </div>
+              </div>
+
               <div class="btn-row">
-                <button class="btn btn-primary" onclick="createOrg()">Create organization →</button>
+                <button class="btn btn-primary" onclick="createOrg()">Continue →</button>
               </div>
             </div>
 
@@ -693,7 +704,7 @@
                 <div class="row"><span>Plan</span><span>Enterprise</span></div>
               </div>
 
-              <p class="muted-note">In the meantime, you can switch to Free, Starter, Growth, or Scale to start using Accessibility For All right away.</p>
+              <p class="muted-note">Not sure Enterprise is the right fit? You can go back and sign up for Free, Starter, Growth, or Scale instead — a team member follows up on those too.</p>
 
               <div class="btn-row">
                 <button class="btn btn-ghost" onclick="goStep(2)">Back to plans</button>
@@ -701,89 +712,30 @@
               </div>
             </div>
 
-            <!-- STEP 3 — ACTIVATE -->
+            <!-- STEP 3 — CONFIRMATION (what happens next) -->
             <div class="step" data-step="3">
-              <div class="badge"><i class="bi bi-rocket-takeoff"></i></div>
-              <h2>Activate your suite</h2>
-              <p class="lead">Your workspace for <strong id="installSite">your site</strong> is ready. Paste the snippet below to turn on the Website widget and monitor — Documents, Reports, and Response are already live in your dashboard.</p>
+              <div class="success-ico"><i class="bi bi-check-lg"></i></div>
+              <h2>You're signed up!</h2>
+              <p class="lead" id="confirmLead">Thanks — an Accessibility For All team member will contact you within one business day to begin your personalized onboarding.</p>
 
-              <div class="code-block">
-                <button class="copy-btn" id="copyBtn" onclick="copyCode()">Copy</button>
-                <pre id="embedCode"></pre>
+              <div class="summary-box">
+                <div class="row"><span>Organization</span><span id="cOrg">—</span></div>
+                <div class="row"><span>Website</span><span id="cUrl">—</span></div>
+                <div class="row"><span>Contact</span><span id="cContact">—</span></div>
+                <div class="row"><span>Plan</span><span id="cPlan">—</span></div>
               </div>
-              <p class="muted-note">Paste this snippet once. It loads asynchronously and won't block your page from rendering.</p>
 
-              <div class="section-h">Quick install</div>
+              <div class="section-h">What happens next</div>
               <ol class="steps-list">
-                <li>Copy the embed code above.</li>
-                <li>Open the HTML of your website and paste it just before the closing <code>&lt;/body&gt;</code> tag.</li>
-                <li>Save and publish. The accessibility button appears in the corner of every page within a few minutes.</li>
+                <li>An Accessibility For All team member reaches out within one business day — watch for an email from our team.</li>
+                <li>Together we set up your workspace: your sites, documents, monitoring, and reports, configured for your organization.</li>
+                <li>On paid plans, your team member securely sets up payment details during onboarding — you're never charged before that conversation.</li>
               </ol>
 
-              <div class="section-h">Platform guides</div>
-              <p class="muted-note">Not editing raw HTML? Pick your platform.</p>
-              <div class="guide" id="guide">
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">WordPress <span class="chev">›</span></button>
-                  <div class="guide-a">Go to <strong>Appearance → Theme File Editor</strong> and open <code>footer.php</code>, then paste the code right before <code>&lt;/body&gt;</code>. If you'd rather not touch theme files, install a "header &amp; footer scripts" plugin and paste the snippet into the footer field.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Squarespace <span class="chev">›</span></button>
-                  <div class="guide-a">Open <strong>Settings → Advanced → Code Injection</strong> and paste the snippet into the <strong>Footer</strong> box, then save. It will load on every page of your site.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Wix <span class="chev">›</span></button>
-                  <div class="guide-a">Go to <strong>Settings → Custom Code → Add Custom Code</strong>. Paste the snippet, set it to load on <strong>All pages</strong>, place it in the <strong>Body – end</strong> position, and apply.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Shopify <span class="chev">›</span></button>
-                  <div class="guide-a">From your admin, open <strong>Online Store → Themes → Edit code</strong>, open <code>theme.liquid</code>, and paste the snippet immediately before <code>&lt;/body&gt;</code>. Save.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Google Tag Manager <span class="chev">›</span></button>
-                  <div class="guide-a">Create a new <strong>Custom HTML</strong> tag, paste the snippet, set the trigger to <strong>All Pages</strong>, then save and publish your container.</div>
-                </div>
-              </div>
-
-              <div class="section-h">Frequently asked questions</div>
-              <div class="guide" id="faq">
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">What about Documents, Reports, and Response? <span class="chev">›</span></button>
-                  <div class="guide-a">They're already active in your dashboard — no separate install needed. The snippet above only powers the Website widget and monitor.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Where exactly do I paste the code? <span class="chev">›</span></button>
-                  <div class="guide-a">Anywhere inside the page, but just before the closing <code>&lt;/body&gt;</code> tag is best. That lets your page content load first and the widget load right after.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">How long until the widget appears? <span class="chev">›</span></button>
-                  <div class="guide-a">Usually within a few minutes of publishing. If you don't see it, try a hard refresh or clear your site's cache.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Will it slow down my site? <span class="chev">›</span></button>
-                  <div class="guide-a">No. The script loads asynchronously and is served from a fast global CDN, so it never blocks your page from rendering.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Does it work on every page? <span class="chev">›</span></button>
-                  <div class="guide-a">Yes. As long as the snippet is in a shared template (footer, theme file, or tag manager), it loads on every page automatically.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Can I change where the button appears? <span class="chev">›</span></button>
-                  <div class="guide-a">Yes. You can adjust the widget's position, color, and language from your Accessibility For All dashboard — no code changes required.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">Is the widget ADA and WCAG compliant? <span class="chev">›</span></button>
-                  <div class="guide-a">Yes. It's built to meet WCAG 2.1 AA, ships with keyboard and screen-reader support, and respects users' reduced-motion settings.</div>
-                </div>
-                <div class="guide-item">
-                  <button class="guide-q" onclick="toggleGuide(this)" aria-expanded="false">How do I update or remove it later? <span class="chev">›</span></button>
-                  <div class="guide-a">The snippet always loads the latest version automatically. To remove the widget, delete the snippet from your template and republish.</div>
-                </div>
-              </div>
+              <p class="muted-note">Need to change something, or in a hurry? Use the contact form below and mention your sign-up — we'll sort it out.</p>
 
               <div class="btn-row">
-                <button class="btn btn-ghost" onclick="goStep(2)">Back</button>
-                <button class="btn btn-primary" onclick="finish()">Go to dashboard →</button>
+                <button class="btn btn-ghost" onclick="goStep(2)">Back to plans</button>
               </div>
             </div>
 
@@ -806,8 +758,8 @@
             <p class="text-gray-700">Yes. Tell us your site and our team will review it against 50+ WCAG 2.1 AA criteria and send you a Legal Risk Level report — no cost, no obligation.</p>
           </div>
           <div class="p-6 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl border border-teal-100">
-            <h3 class="text-lg font-bold text-gray-900 mb-2">What happens after I purchase?</h3>
-            <p class="text-gray-700">You'll get an immediate confirmation, and our team reaches out within one business day to set up your sites, documents, and monitoring. You're never left staring at an empty dashboard.</p>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">What happens after I sign up?</h3>
+            <p class="text-gray-700">You'll get an immediate confirmation, and an Accessibility For All team member reaches out within one business day to begin your personalized onboarding — setting up your sites, documents, and monitoring with you. On paid plans, payment details are collected securely during onboarding, so you're never charged before we've talked.</p>
           </div>
           <div class="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
             <h3 class="text-lg font-bold text-gray-900 mb-2">Can I change or cancel my plan?</h3>
@@ -837,21 +789,23 @@
     </section>
     <script src="contactformloader.js"></script>
     <script>
-      // Onboarding wizard: org creation → plan choice → activation.
-      // Paid-tier checkout reuses pricing-config.js's Stripe Payment Link / quote-fallback
-      // logic (checkoutUrl below) instead of collecting card details in-page — the mock
-      // card form from the design reference is deliberately not shipped here; see
-      // docs/STRIPE-SETUP.md for the real checkout mechanism.
+      // Onboarding wizard: org info → plan choice → sign-up confirmation.
+      // There is no self-serve provisioning yet: every sign-up is a lead our team
+      // follows up on for personalized onboarding (and payment setup on paid plans).
+      // Submissions POST to SIGNUP_ENDPOINT — Formspree for now, swapped to the
+      // GoHighLevel "Website Sign-Up" inbound-webhook URL once that workflow exists
+      // (see docs/GHL-BUILD-CHECKLIST.md). If Stripe self-serve ever turns on,
+      // checkoutUrl() (pricing-config.js) short-circuits paid plans to checkout.
       var cfg = window.A4A_PRICING || { selfServe: false, showPrices: true, checkout: {} };
       var billing = 'annual';
       var PAID_PLANS = ['starter', 'growth', 'scale'];
-      var state = { plan: 'free', org: '', orgUrl: '', person: '', role: '' };
+      var state = { plan: 'free', org: '', orgUrl: '', person: '', role: '', email: '', phone: '' };
 
       var heroCopy = {
-        1: { eb: 'Step 1 of 3', t: 'Create your organization', s: 'Gain access to the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.' },
+        1: { eb: 'Step 1 of 3', t: 'Tell us about your organization', s: 'Sign up for the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.' },
         2: { eb: 'Step 2 of 3', t: 'Pick the right plan', s: 'Choose how Accessibility For All scales with you. Every plan — from Free to Enterprise — includes the full suite.' },
         quote: { eb: 'Step 2 of 3', t: 'Let’s tailor a quote', s: 'For higher-traffic sites we build a plan around your needs. The full suite is still included.' },
-        3: { eb: 'Step 3 of 3', t: 'Go live in minutes', s: 'Drop one line of code into your site and the Website widget is live. Documents, Reports, and Response are already waiting in your dashboard.' }
+        3: { eb: 'Step 3 of 3', t: 'You’re all set', s: 'An Accessibility For All team member will reach out to begin your personalized onboarding — no dashboards to figure out alone, no surprise charges.' }
       };
 
       function fmtPrice(n) { return '$' + Number(n).toLocaleString('en-US'); }
@@ -924,11 +878,19 @@
         var url = document.getElementById('orgUrl').value.trim();
         var person = document.getElementById('personName').value.trim();
         var role = document.getElementById('personRole').value;
-        if (!name || !url || !person || !role) {
-          alert('Please fill in all fields to create your organization.');
+        var emailInput = document.getElementById('personEmail');
+        var email = emailInput.value.trim();
+        var phone = document.getElementById('personPhone').value.trim();
+        if (!name || !url || !person || !role || !email) {
+          alert('Please fill in all fields (phone is optional) so our team can reach you.');
+          return;
+        }
+        if (!emailInput.checkValidity()) {
+          emailInput.reportValidity();
           return;
         }
         state.org = name; state.orgUrl = url; state.person = person; state.role = role;
+        state.email = email; state.phone = phone;
         goStep(2);
       }
 
@@ -952,6 +914,7 @@
           document.getElementById('qOrg').textContent = state.org || '—';
           document.getElementById('qUrl').textContent = state.orgUrl ? ('https://' + state.orgUrl) : '—';
           document.getElementById('qPerson').textContent = state.person ? (state.person + (state.role ? (' · ' + state.role) : '')) : '—';
+          submitSignup('enterprise-quote');
           goStep('quote');
           return;
         }
@@ -959,48 +922,70 @@
           var url = checkoutUrl(state.plan);
           if (url) {
             window.location.href = url;
-          } else {
-            var el = document.getElementById('pricing-contact-form-container');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
+            return;
           }
-          return;
         }
-        activateSuite();
+        submitSignup('signup');
+        showConfirmation();
       }
 
-      function activateSuite() {
-        var site = state.orgUrl;
-        var slug = (state.org || 'site').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 24) || 'site';
-        var id = 'afa_' + Math.random().toString(36).slice(2, 10);
-
-        document.getElementById('installSite').textContent = site;
-        document.getElementById('embedCode').innerHTML =
-          '<span class="tok">&lt;script</span> <span class="attr">src</span>=<span class="attr">"https://cdn.accessibility-for-all.com/widget.js"</span>\n' +
-          '        <span class="attr">data-site-id</span>=<span class="attr">"' + id + '"</span>\n' +
-          '        <span class="attr">data-org</span>=<span class="attr">"' + slug + '"</span>\n' +
-          '        <span class="attr">data-domain</span>=<span class="attr">"' + site + '"</span>\n' +
-          '        <span class="attr">async</span><span class="tok">&gt;&lt;/script&gt;</span>';
+      function showConfirmation() {
+        var isPaid = PAID_PLANS.indexOf(state.plan) !== -1;
+        var planLabel = state.plan.charAt(0).toUpperCase() + state.plan.slice(1);
+        document.getElementById('cOrg').textContent = state.org || '—';
+        document.getElementById('cUrl').textContent = state.orgUrl ? ('https://' + state.orgUrl) : '—';
+        document.getElementById('cContact').textContent = state.person + ' · ' + state.email;
+        document.getElementById('cPlan').textContent = planLabel + (isPaid ? (' — ' + (billing === 'annual' ? 'annual' : 'monthly') + ' billing') : '');
+        document.getElementById('confirmLead').textContent = isPaid
+          ? 'Thanks — an Accessibility For All team member will contact you within one business day to begin your personalized onboarding and securely set up your payment details. You won’t be charged before then.'
+          : 'Thanks — an Accessibility For All team member will contact you within one business day to begin your personalized onboarding.';
         goStep(3);
       }
 
-      function copyCode() {
-        var text = document.getElementById('embedCode').innerText;
-        var btn = document.getElementById('copyBtn');
-        navigator.clipboard.writeText(text).then(function () {
-          btn.textContent = 'Copied!'; btn.classList.add('copied');
-          setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
-        }).catch(function () {
-          btn.textContent = 'Copy manually';
-        });
-      }
+      // Interim lead capture: same Formspree inbox as the site's contact forms.
+      // Swap this single URL for the GHL "Website Sign-Up" inbound-webhook URL when
+      // John's workflow exists — payload fields already match the GHL checklist.
+      var SIGNUP_ENDPOINT = 'https://formspree.io/f/xblyajlg';
+      var lastSignupPayload = '';
 
-      function toggleGuide(btn) {
-        var item = btn.parentElement;
-        item.classList.toggle('open');
-        btn.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+      function submitSignup(kind) {
+        var isPaid = PAID_PLANS.indexOf(state.plan) !== -1;
+        var params = new URLSearchParams(window.location.search);
+        var payload = {
+          _subject: 'Sign-up (' + state.plan + '): ' + state.org,
+          form_type: kind,
+          organization: state.org,
+          website: state.orgUrl ? ('https://' + state.orgUrl) : '',
+          name: state.person,
+          role: state.role,
+          email: state.email,
+          phone: state.phone,
+          plan: state.plan,
+          billing_interval: isPaid ? billing : '',
+          page: window.location.href,
+          utm_source: params.get('utm_source') || '',
+          utm_medium: params.get('utm_medium') || '',
+          utm_campaign: params.get('utm_campaign') || ''
+        };
+        var body = JSON.stringify(payload);
+        if (body === lastSignupPayload) return; // same details already sent (e.g. back → continue)
+        lastSignupPayload = body;
+        var send = function (attempt) {
+          fetch(SIGNUP_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: body
+          }).then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+          }).catch(function () {
+            if (attempt < 3) setTimeout(function () { send(attempt + 1); }, 2000 * attempt);
+          });
+        };
+        send(1);
+        if (typeof gtag === 'function') {
+          gtag('event', 'sign_up', { method: 'onboarding_wizard', plan: state.plan });
+        }
       }
-
-      function finish() { alert('Setup complete! Taking you to your Accessibility For All dashboard.'); }
 
       // Pre-select a plan from ?plan=free|starter|growth|scale|enterprise (used by the
       // sitewide "Get started for free" CTAs, which link here as ?plan=free#plans).
