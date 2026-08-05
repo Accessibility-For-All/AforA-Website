@@ -43,6 +43,100 @@
     <script src="footerloader.js"></script>
   </head>
   <body class="bg-white text-gray-900">
+    <!-- Nav inlined for crawlers (single source: navbarloader.js template; behaviors still init from the loader) -->
+    <!-- Skip link: WCAG 2.4.1 Bypass Blocks. Visually hidden until focused. -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Navbar -->
+    <nav data-a4a-nav aria-label="Main" class="fixed w-full z-30 bg-white/90 backdrop-blur shadow-sm border-b border-gray-100">
+      <div class="container mx-auto flex items-center justify-between px-4 py-3">
+        <a href="index.html" class="flex items-center whitespace-nowrap">
+          <img src="images/logo-full.png" alt="Accessibility For All" class="h-8 xl:h-9 w-auto object-contain">
+        </a>
+        <div class="hidden lg:flex space-x-5 xl:space-x-7 items-center">
+          <!-- Products Dropdown -->
+          <div class="relative" id="products-desktop">
+            <button id="products-desktop-btn" class="hover:text-brand transition flex items-center focus:outline-none whitespace-nowrap">
+              <span>Solutions</span>
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="products-desktop-dropdown" class="absolute right-0 mt-2 w-80 bg-white border border-gray-100 rounded-2xl shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-50 overflow-hidden p-2">
+              <a href="docmersion.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-200 group">
+                <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: #228AFF;"><i class="bi bi-files"></i></span>
+                <span><span class="block font-semibold text-gray-900 group-hover:text-blue-600">Documents</span><span class="block text-xs text-gray-500">DocMersion toolkit + Native for flagship documents</span></span>
+              </a>
+              <a href="websites.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 transition-all duration-200 group">
+                <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: linear-gradient(135deg,#10b981,#14b8a6);"><i class="bi bi-globe2"></i></span>
+                <span><span class="block font-semibold text-gray-900 group-hover:text-emerald-600">Websites</span><span class="block text-xs text-gray-500">Free WCAG Check + continuous Monitor</span></span>
+              </a>
+              <a href="reports.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-slate-50 transition-all duration-200 group">
+                <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: #0a2239;"><i class="bi bi-journal-check"></i></span>
+                <span><span class="block font-semibold text-gray-900 group-hover:text-blue-700">Reports</span><span class="block text-xs text-gray-500">Automated VPAT scans, certified human review</span></span>
+              </a>
+              <a href="remediation.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-amber-50 hover:to-orange-50 transition-all duration-200 group">
+                <span class="mt-0.5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg text-white" style="background: #b45309;"><i class="bi bi-lightbulb"></i></span>
+                <span><span class="block font-semibold text-gray-900 group-hover:text-amber-700">Response</span><span class="block text-xs text-gray-500">Suggested remediation steps, rolled up across the suite</span></span>
+              </a>
+            </div>
+          </div>
+          <!-- Industries Dropdown -->
+          <div class="relative" id="solutions-desktop">
+            <button id="solutions-desktop-btn" class="hover:text-brand transition flex items-center focus:outline-none whitespace-nowrap">
+              <span>Industries</span>
+              <svg class="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="solutions-desktop-dropdown" class="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-50 text-right overflow-hidden">
+              <a href="non-profit.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-200 text-gray-700 hover:text-blue-600 font-medium">Nonprofits</a>
+              <a href="government.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-200 text-gray-700 hover:text-blue-600 font-medium">Government</a>
+              <a href="associations.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-200 text-gray-700 hover:text-blue-600 font-medium">Associations</a>
+              <a href="education.html" class="block px-6 py-3 hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-200 text-gray-700 hover:text-blue-600 font-medium">Education</a>
+            </div>
+          </div>
+          <a href="compliance.html" class="hover:text-brand transition whitespace-nowrap">Compliance</a>
+          <a href="about.html" class="hover:text-brand transition whitespace-nowrap">About</a>
+          <a href="pricing.html" class="hover:text-brand transition whitespace-nowrap">Pricing</a>
+          <a href="book-demo.html" class="group relative ml-2 px-4 xl:px-5 py-2 rounded-full font-semibold text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 whitespace-nowrap" style="background: #0b6ad4;">
+            <span class="relative z-10">Book a demo</span>
+            <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+        </div>
+        <button class="lg:hidden text-3xl" id="mobile-menu-btn"><i class="bi bi-list"></i></button>
+      </div>
+      <!-- Mobile nav -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pb-4">
+        <div class="relative" id="products-mobile">
+          <button class="block py-2 w-full text-left hover:text-brand focus:outline-none flex justify-between items-center" id="mobile-products-btn">
+            <span>Solutions</span>
+            <svg class="w-4 h-4 ml-2 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-products-menu" class="hidden pl-3 border-l-2 border-blue-100 ml-1">
+            <a href="docmersion.html" class="block px-2 py-2 hover:text-blue-600">Documents</a>
+            <a href="websites.html" class="block px-2 py-2 hover:text-blue-600">Websites</a>
+            <a href="reports.html" class="block px-2 py-2 hover:text-blue-600">Reports</a>
+            <a href="remediation.html" class="block px-2 py-2 hover:text-blue-600">Response</a>
+          </div>
+        </div>
+        <div class="relative" id="solutions-mobile">
+          <button class="block py-2 w-full text-left hover:text-brand focus:outline-none flex justify-between items-center" id="mobile-solutions-btn">
+            <span>Industries</span>
+            <svg class="w-4 h-4 ml-2 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-solutions-menu" class="hidden pl-3 border-l-2 border-blue-100 ml-1">
+            <a href="non-profit.html" class="block px-2 py-2 hover:text-blue-600">Nonprofits</a>
+            <a href="government.html" class="block px-2 py-2 hover:text-blue-600">Government</a>
+            <a href="associations.html" class="block px-2 py-2 hover:text-blue-600">Associations</a>
+            <a href="education.html" class="block px-2 py-2 hover:text-blue-600">Education</a>
+          </div>
+        </div>
+        <a href="compliance.html" class="block py-2 hover:text-brand">Compliance</a>
+        <a href="about.html" class="block py-2 hover:text-brand">About</a>
+        <a href="pricing.html" class="block py-2 hover:text-brand">Pricing</a>
+        <a href="book-demo.html" class="group relative block py-2 mt-2 px-5 rounded-full font-semibold text-white text-center shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105" style="background: #0b6ad4;">
+          <span class="relative z-10">Book a demo</span>
+          <div class="absolute inset-0 bg-[#09519f] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </a>
+      </div>
+    </nav>
+
     <!-- Navbar will be loaded by navbarloader.js -->
     <section class="relative pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden min-h-screen">
       <div class="absolute top-20 left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-3xl"></div>
@@ -89,5 +183,76 @@
         }
       })();
     </script>
+  
+    <!-- Footer inlined for crawlers (single source: footerloader.js template) -->
+    <!-- Footer -->
+    <footer data-a4a-footer class="bg-gradient-to-t from-white to-blue-50/40 border-t border-blue-100 py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+          <!-- Brand Column -->
+          <div class="col-span-2 md:col-span-1">
+            <a href="index.html" class="flex items-center mb-4">
+              <img src="images/logo-full.png" alt="Accessibility For All" class="h-7 w-auto object-contain">
+            </a>
+            <p class="text-sm text-gray-500 mb-4 leading-relaxed">One suite to audit, monitor, remediate, and document — the whole journey to compliance.</p>
+            <a href="pricing.html?plan=free#plans" class="inline-block text-sm text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors duration-200">
+              Get started for free
+            </a>
+          </div>
+
+          <!-- Products Column -->
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-4">Solutions</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="docmersion.html" class="text-gray-600 hover:text-blue-600 transition-colors">Documents</a></li>
+              <li><a href="websites.html" class="text-gray-600 hover:text-blue-600 transition-colors">Websites</a></li>
+              <li><a href="reports.html" class="text-gray-600 hover:text-blue-600 transition-colors">Reports</a></li>
+              <li><a href="remediation.html" class="text-gray-600 hover:text-blue-600 transition-colors">Response</a></li>
+            </ul>
+          </div>
+
+          <!-- Industries Column -->
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-4">Industries</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="government.html" class="text-gray-600 hover:text-blue-600 transition-colors">Government</a></li>
+              <li><a href="education.html" class="text-gray-600 hover:text-blue-600 transition-colors">Education</a></li>
+              <li><a href="non-profit.html" class="text-gray-600 hover:text-blue-600 transition-colors">Non-Profit</a></li>
+              <li><a href="associations.html" class="text-gray-600 hover:text-blue-600 transition-colors">Associations</a></li>
+            </ul>
+          </div>
+
+          <!-- Company Column -->
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-4">Company</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="about.html" class="text-gray-600 hover:text-blue-600 transition-colors">About</a></li>
+              <li><a href="pricing.html" class="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a></li>
+              <li><a href="compliance.html" class="text-gray-600 hover:text-blue-600 transition-colors">Compliance</a></li>
+              <li><a href="docmersion-demo.html" class="text-gray-600 hover:text-blue-600 transition-colors">Live demo</a></li>
+              <li><a href="index.html#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal Column -->
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-4">Legal</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="privacy-policy.html" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy policy</a></li>
+              <li><a href="terms-of-service.html" class="text-gray-600 hover:text-blue-600 transition-colors">Terms of service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-sm text-gray-500">© <span id="year"></span> Accessibility For All LLC.</div>
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <i class="bi bi-universal-access"></i>
+            <span>WCAG 2.1 AA · Section 508 · ADA Title II</span>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

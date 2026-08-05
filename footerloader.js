@@ -2,7 +2,7 @@
 function loadFooter() {
   const footerHTML = `
     <!-- Footer -->
-    <footer class="bg-gradient-to-t from-white to-blue-50/40 border-t border-blue-100 py-12">
+    <footer data-a4a-footer class="bg-gradient-to-t from-white to-blue-50/40 border-t border-blue-100 py-12">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           <!-- Brand Column -->
@@ -71,8 +71,12 @@ function loadFooter() {
       </div>
     </footer>`;
 
-  // Insert footer at the end of body
-  document.body.insertAdjacentHTML('beforeend', footerHTML);
+  // Pages now ship the footer inlined in their HTML (SEO: crawlers see the
+  // links without executing JS). Inject only as a fallback for any page that
+  // doesn't; the year still updates either way.
+  if (!document.querySelector('footer[data-a4a-footer]')) {
+    document.body.insertAdjacentHTML('beforeend', footerHTML);
+  }
 
   // Initialize footer functionality
   initializeFooter();
