@@ -526,7 +526,7 @@
         var form = document.getElementById('dm-getstarted-form');
         if (!form) return;
         var APP_URL = 'https://admin.docmersion.com';
-        var LEAD_ENDPOINT = 'https://formspree.io/f/xblyajlg'; // same lead inbox as the contact form
+        var LEAD_ENDPOINT = '/api/lead'; // proxied to the GHL contact-form webhook
         var msg = document.getElementById('dm-getstarted-msg');
         form.addEventListener('submit', function (e) {
           e.preventDefault();
@@ -535,10 +535,16 @@
           var popout = window.open(APP_URL, 'docmersionApp', 'popup,width=1180,height=820,resizable=yes,scrollbars=yes');
           // Capture the lead in the background; never block the visitor on it.
           try {
+            var lead = { form_type: 'contact', page: window.location.href };
+            var q = new URLSearchParams(window.location.search);
+            ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) { lead[k] = q.get(k) || ''; });
+            new FormData(form).forEach(function (value, key) {
+              lead[key] = lead[key] ? lead[key] + ', ' + value : value;
+            });
             fetch(LEAD_ENDPOINT, {
               method: 'POST',
-              headers: { 'Accept': 'application/json' },
-              body: new FormData(form)
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(lead)
             }).catch(function () {});
           } catch (err) {}
           if (msg) msg.classList.remove('hidden');
