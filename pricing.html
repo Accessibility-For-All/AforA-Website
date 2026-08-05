@@ -955,10 +955,9 @@
         goStep(3);
       }
 
-      // Interim lead capture: same Formspree inbox as the site's contact forms.
-      // Swap this single URL for the GHL "Website Sign-Up" inbound-webhook URL when
-      // John's workflow exists — payload fields already match the GHL checklist.
-      var SIGNUP_ENDPOINT = 'https://formspree.io/f/xblyajlg';
+      // Posts to the Cloudflare Pages Function, which forwards to the GoHighLevel
+      // "W3 — Website Sign-Up" inbound webhook. The GHL URL lives in Pages env vars.
+      var SIGNUP_ENDPOINT = '/api/lead';
       var lastSignupPayload = '';
 
       function submitSignup(kind) {
