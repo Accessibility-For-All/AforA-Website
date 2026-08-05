@@ -5,6 +5,10 @@ One running log of what shipped. **Newest on top.** Every merged PR adds a line 
 
 `- YYYY-MM-DD — what changed (PR #N, merged | open) — who`
 
+- 2026-08-05 — Turnstile on all forms + canonical siteverify in /api/lead, env-gated via TURNSTILE_SECRET (PR #29, merged) — Claude + Marcus
+- 2026-08-05 — FAQPage schema on pricing/docmersion + duplicate-H1 fix (PR #28, open) — Claude
+- 2026-08-05 — Nav/footer inlined into all 20 pages, loaders become behavior-only with fallback (PR #30, open) — Claude
+- 2026-08-05 — NEXT-SESSION-BRIEF rewritten post-launch: GHL marketing-plan implementation is the queue (docs) — Claude
 - 2026-08-05 — **SITE LAUNCHED**: accessibilityforall.com live on Cloudflare Pages (client-owned account); www→apex 301 via Redirect Rule; GA4+Ads verified firing (PRs #22–#26 all merged) — Marcus + Claude
 - 2026-08-05 — Canonical host switched to apex accessibilityforall.com — 94 www refs swept incl. legal-page contract text (PR #26, merged) — Claude
 - 2026-08-05 — Fixed live redirect loop on /pricing.html + /about.html (Pages built-in .html→extensionless 308 vs vanity aliases); canonicals/sitemap now extensionless (PR #25, merged) — Claude
