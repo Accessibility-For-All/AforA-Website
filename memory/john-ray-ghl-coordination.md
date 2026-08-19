@@ -21,7 +21,12 @@ keep Formspree until the GHL path is verified end-to-end).
 - Contact-form webhook URL: (pending)
 - Scanner-leads webhook URL: (pending)
 - Stripe-purchase-intake webhook URL: (pending)
-- Tracking snippet: (pending)
+- Tracking snippet: **RECEIVED 2026-08-19** — GHL external-tracking id
+  `tk_755a6dc0a7a24b5c831b2ec713938d02`
+  (`https://link.msgsndr.com/js/external-tracking.js`). Marcus's call: deliver it as a
+  **GTM tag**, not hardcoded per page — see [[tracking-stack]]. GTM container
+  `GTM-TMV9R9MW` went on all 20 pages in PR #33 (2026-08-19); the GHL tag itself is
+  Marcus's to add inside GTM.
 
 **Custody question RESOLVED (2026-08-04, Marcus directly):** the A4A location lives under
 **Blend's agency account**. The five-hat High finding is closed — the CRM asset is under

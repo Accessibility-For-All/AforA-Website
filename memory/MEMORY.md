@@ -25,3 +25,5 @@ Internal — excluded from the deploy, never served publicly.
 - [Turnstile on forms](turnstile-on-forms.md) — widget 0x4AAAAAAEG3tg4QycOdAvhU + TURNSTILE_SECRET Pages env; env-gated enforcement; single-use token resets; purge cache after form deploys
 - [GHL build state](ghl-build-state.md) — location it1L0e1mMfZM1WCQIliV; fields/tags/pipelines DONE 2026-08-05, scoring/workflows/drips NOT; email gated on DKIM (none exists)
 - [⚠️ GHL UI automation gotchas](ghl-ui-automation-gotchas.md) — dialogs swallow post-save clicks, stale refs, phantom Edit Pipeline modal, scoring delete is a silent no-op; read before driving GHL UI
+- [⚠️ Tracking stack](tracking-stack.md) — GA4 hardcoded in <head>, Google Ads via navbarloader, GTM container empty; publishing GA4 in GTM without removing the inline gtag double-counts
+- [Privacy policy third-party list](privacy-policy-third-party-list.md) — policy names only Google Analytics/Ads; LinkedIn + GoHighLevel need adding once their GTM tags go live
