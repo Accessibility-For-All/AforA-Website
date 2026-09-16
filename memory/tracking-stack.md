@@ -1,6 +1,6 @@
 ---
 name: tracking-stack
-description: What actually fires on soprisapps/accessibilityforall pages — GA4 hardcoded, Google Ads from navbarloader, GTM container (empty as of 2026-08-19); the GA4 double-count trap
+description: What fires on accessibilityforall.com — GA4 hardcoded, Ads via navbarloader, LinkedIn+GHL inside GTM (live only once PR #33 merges); conversion gaps; GA4 double-count trap
 metadata:
   type: project
 ---
@@ -11,8 +11,21 @@ Three independent tag sources on the site. They are **not** all in GTM — check
 | Tag | Where it lives | Notes |
 |---|---|---|
 | GA4 `G-TX5BQW6XZ6` | hardcoded `gtag` block in every page's `<head>` | the ONLY source of GA4 data |
-| Google Ads `AW-957201829` | `navbarloader.js:8-16` | reuses `window.gtag` if present; injects its own `gtag.js` if not |
-| GTM `GTM-TMV9R9MW` | added to all 20 pages 2026-08-19 (PR #33) | **container was EMPTY (0 tags)** when installed |
+| Google Ads `AW-957201829` | `navbarloader.js:8-16` | remarketing only; reuses `window.gtag` if present, injects its own `gtag.js` if not |
+| GTM `GTM-TMV9R9MW` | PR #33 (opened 2026-08-19, **still unmerged as of 2026-09-16**) | not on production until #33 merges |
+| LinkedIn Insight `9858524` | GTM container v2, Custom HTML tag, All Pages (`gtm.js`) | fires only once GTM is on the page |
+| GoHighLevel `tk_755a…8d02` | GTM container v2, Custom HTML tag, All Pages (`gtm.js`) | loads + inits `window.ExternalTracking`; sends no page-view hit (form-submit / domain-scoped?) |
+
+Audit 2026-09-16: production fires GA4 + Ads on all 20 pages; the PR #33 preview fires all five
+(one GA4 page_view, no double count). Container has **no GA4 or Ads tags** and no hostname gating.
+
+**Conversion gaps (as of 2026-09-16):** no Google Ads conversion (`send_to: AW-…/label`) and no
+LinkedIn conversion (`lintrk('track',…)`) anywhere in code. GA4 events that exist:
+`generate_lead` (contactformloader.js, fired just before redirect to thank-you page),
+`sign_up` (pricing.html wizard — fires whether or not the POST succeeds),
+`purchase_confirmation_view` (welcome.html). **book-demo.html is a Calendly inline widget —
+bookings fire nothing.** docmersion.html's lead form fires nothing (redirects to the app).
+Ads conversions would have to come from GA4 key-event import — unverifiable from the repo.
 
 **⚠️ The double-count trap.** GA4 lives on the page, not in GTM. If a GA4 tag for
 `G-TX5BQW6XZ6` is published in the container while the hardcoded `gtag` is still in

@@ -10,7 +10,7 @@ metadata:
 both name only **Google Analytics** and **Google Ads**.
 
 LinkedIn Insight (partner `9858524`) and GoHighLevel external tracking
-(`tk_755a6dc0a7a24b5c831b2ec713938d02`) are being added via GTM — see [[tracking-stack]].
+(`tk_755a6dc0a7a24b5c831b2ec713938d02`) are PUBLISHED in GTM container v2 (confirmed 2026-09-16) and go live the moment PR #33 merges — see [[tracking-stack]].
 Once those tags go live in the container, **the policy under-discloses**: LinkedIn drops
 its own cookies and sends a hit to `px.ads.linkedin.com`, and GHL sets attribution cookies.
 
