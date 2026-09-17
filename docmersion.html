@@ -648,6 +648,7 @@
             var lead = { form_type: 'contact', page: window.location.href };
             var q = new URLSearchParams(window.location.search);
             ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) { lead[k] = q.get(k) || ''; });
+            if (typeof a4aApplyFirstTouch === 'function') a4aApplyFirstTouch(lead);
             new FormData(form).forEach(function (value, key) {
               lead[key] = lead[key] ? lead[key] + ', ' + value : value;
             });

@@ -1090,6 +1090,7 @@
           utm_medium: params.get('utm_medium') || '',
           utm_campaign: params.get('utm_campaign') || ''
         };
+        if (typeof a4aApplyFirstTouch === 'function') a4aApplyFirstTouch(payload);
         // Dedupe on the payload WITHOUT the Turnstile token — tokens rotate per
         // attempt, and identical details should still be sent only once.
         var dedupeKey = JSON.stringify(payload);
