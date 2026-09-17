@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Confirmation and redirect-stub pages carry no standalone value.
+Disallow: /welcome.html
+Disallow: /thank-you-form-submission.html
+Disallow: /api/
+
+Sitemap: https://accessibilityforall.com/sitemap.xml
