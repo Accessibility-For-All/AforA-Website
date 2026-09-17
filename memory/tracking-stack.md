@@ -12,7 +12,7 @@ Three independent tag sources on the site. They are **not** all in GTM — check
 |---|---|---|
 | GA4 `G-TX5BQW6XZ6` | hardcoded `gtag` block in every page's `<head>` | the ONLY source of GA4 data |
 | Google Ads `AW-957201829` | `navbarloader.js:8-16` | remarketing only; reuses `window.gtag` if present, injects its own `gtag.js` if not |
-| GTM `GTM-TMV9R9MW` | PR #33 (opened 2026-08-19, **still unmerged as of 2026-09-16**) | not on production until #33 merges |
+| GTM `GTM-TMV9R9MW` | **LIVE on all pages since 2026-09-17** (PR #33 merged; verified: 1 GA4 page_view, LinkedIn fires) | |
 | LinkedIn Insight `9858524` | GTM container v2, Custom HTML tag, All Pages (`gtm.js`) | fires only once GTM is on the page |
 | GoHighLevel `tk_755a…8d02` | GTM container v2, Custom HTML tag, All Pages (`gtm.js`) | loads + inits `window.ExternalTracking`; sends no page-view hit (form-submit / domain-scoped?) |
 
@@ -50,3 +50,12 @@ LinkedIn Insight partner `9858524`; GoHighLevel external-tracking id
 Adding LinkedIn + GHL means the privacy policy's Cookies & Analytics / Third-Party
 sections (which currently name only Google Analytics and Google Ads) become incomplete —
 see [[privacy-policy-third-party-list]].
+
+**2026-09-17 — GHL tag root cause found (still broken, fix pending Marcus):** the Custom HTML
+tag DOES contain `data-tracking-id="tk_755a…8d02"`, but **GTM re-creates external `<script src>`
+nodes when injecting Custom HTML and drops custom attributes** — so external-tracking.js loads
+and then logs `[LC Tracking ERROR] Required data-tracking-id attribute not found` on every page.
+LinkedIn works because its snippet is inline JS. Fix = replace the tag HTML with an inline
+creator that sets the attribute explicitly (snippet in docs/sessions/2026-09-17-marcus.md),
+then publish. Claude's GTM edit was permission-blocked 2026-09-17; Marcus pastes it.
+Also live-verified 2026-09-17: GA4 fires exactly one page_view alongside GTM (no double count).

@@ -18,13 +18,15 @@
   +2, click +5, wcag-lead +30, signup +50, demo-booked +40, reply +25. MQL 30 / hot 70
   = workflow triggers, not scoring-screen settings.
 - **Five-hat review #2 findings gate the build order** (docs/FIVE-HAT-REVIEW-2026-08-05.md):
-  - **C1: the free-audit funnel does not exist on the site.** W2 has no producer; 60% of
-    planned ad budget lands on it. Needs a site PR (audit form → form_type 'free_audit').
+  - **C1 CLOSED 2026-09-17:** two A/B landing pages live (/lp/free-audit-deadline/ +
+    /lp/free-audit-expert/) posting form_type 'free_audit' → W2, with experiment tracking.
+    Before ads: GA4 custom dimensions + Key event import (see 2026-09-17 session doc).
   - **C2: accessibilityforall.com has NO SPF/DKIM/DMARC** (dig-verified). No customer-facing
     workflow email may activate until John's F.2 + a seed test pass. stephen@ unconfirmed.
-  - H1: demo funnel invisible (Calendly → no contact/tag/event). H4: privacy policy still
-    names Formspree/Calendly, missing GHL/Turnstile. M1: enterprise-quote routes to the
-    SIGNUP webhook/pipeline — W3 must branch. Full list in the review doc.
+  - H1: demo funnel invisible (Calendly → no contact/tag/event). **H4 CLOSED 2026-09-17**
+    (privacy policy discloses GTM/LinkedIn/GHL/Turnstile). M1: enterprise-quote routes to
+    the SIGNUP webhook/pipeline — W3 must branch. **M8 + L1 also closed 2026-09-17.**
+    NEW: GHL tag in GTM broken (attribute stripped) — paste-fix in the 09-17 session doc.
 
 ## Work queue (in order)
 1. **Scoring + cleanup** (Marcus authorized deletion 2026-08-05): enable Engagement Score,

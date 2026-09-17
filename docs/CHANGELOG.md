@@ -5,6 +5,13 @@ One running log of what shipped. **Newest on top.** Every merged PR adds a line 
 
 `- YYYY-MM-DD — what changed (PR #N, merged | open) — who`
 
+- 2026-09-17 — A/B landing pages for the free-audit campaign: /lp/free-audit-deadline/ + /lp/free-audit-expert/ — closes five-hat C1; W2 has a producer (PR #38, merged) — Claude
+- 2026-09-17 — gh-pages mirror deindexed (Disallow-all robots + 4 stale pages pruned) and root-sync now enforces it permanently (PR #39 + direct gh-pages push) — Claude
+- 2026-09-17 — Perf/SEO hygiene: docbox+loaders deferred, hls pinned+relocated, preconnects, img dims, sitemap lastmod, local case-study PDF (PR #37, merged) — Claude
+- 2026-09-17 — robots.txt Disallows fixed to extensionless + thank-you page noindexed — closes a live indexation regression (PR #36, merged) — Claude
+- 2026-09-17 — First-touch UTM persistence across pages; forms carry original campaign attribution (PR #35, merged) — Claude
+- 2026-09-17 — Privacy policy discloses real stack: GTM/LinkedIn/GHL/Turnstile in, Formspree out (PR #34, merged) — Claude
+- 2026-09-17 — GTM container live on all 20 pages; verified: GA4 single page_view, LinkedIn Insight firing; GHL tag broken in-container (fix documented) (PR #33, merged) — Marcus + Claude
 - 2026-08-05 — GHL build session 1 (no site change): all 11 plan custom fields, all 18 plan tags, Sales + Self-Serve Customers pipelines created in GoHighLevel; lead scoring pending. Five-hat review #2 → docs/FIVE-HAT-REVIEW-2026-08-05.md (2 criticals: free-audit funnel missing on site, sending domain unauthenticated) — Claude + Marcus
 - 2026-08-05 — Jul-22 GHL work-order docs merged as historical reference (PR #8, merged) — Claude
 - 2026-08-05 — Turnstile on all forms + canonical siteverify in /api/lead, env-gated via TURNSTILE_SECRET (PR #29, merged) — Claude + Marcus
