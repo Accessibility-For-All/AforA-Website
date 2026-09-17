@@ -49,6 +49,14 @@ jobs:
             --exclude='_site' \
             ./ _site/
 
+      - name: Deindex the mirror (overrides main's robots.txt)
+        # The mirror duplicates the production site and must never be indexed.
+        # main's robots.txt (Allow: /) belongs to accessibilityforall.com only —
+        # without this override every root sync would re-expose the mirror.
+        run: |
+          printf 'User-agent: *\nDisallow: /\n\n# PR-preview mirror. The real site is https://accessibilityforall.com\n' > _site/robots.txt
+          rm -f _site/sitemap.xml
+
       - name: Publish to the gh-pages root
         uses: peaceiris/actions-gh-pages@v4
         with:
