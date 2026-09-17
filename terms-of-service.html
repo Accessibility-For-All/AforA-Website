@@ -50,15 +50,21 @@
       };
     </script>
     <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pdf-genie-etm2.onrender.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <!-- Navbar and Footer Loaders -->
-    <script src="navbarloader.js"></script>
-    <script src="footerloader.js"></script>
+    <script src="navbarloader.js" defer></script>
+    <script src="footerloader.js" defer></script>
     <!-- PDF Genie -->
-    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js" defer></script>
     <style>
       html {
         scroll-behavior: smooth;
@@ -97,7 +103,7 @@
     <nav data-a4a-nav aria-label="Main" class="fixed w-full z-30 bg-white/90 backdrop-blur shadow-sm border-b border-gray-100">
       <div class="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="index.html" class="flex items-center whitespace-nowrap">
-          <img src="images/logo-full.png" alt="Accessibility For All" class="h-8 xl:h-9 w-auto object-contain">
+          <img src="images/logo-full.png" alt="Accessibility For All" class="h-8 xl:h-9 w-auto object-contain" width="746" height="160">
         </a>
         <div class="hidden lg:flex space-x-5 xl:space-x-7 items-center">
           <!-- Products Dropdown -->
@@ -414,7 +420,7 @@
           <!-- Brand Column -->
           <div class="col-span-2 md:col-span-1">
             <a href="index.html" class="flex items-center mb-4">
-              <img src="images/logo-full.png" alt="Accessibility For All" class="h-7 w-auto object-contain">
+              <img src="images/logo-full.png" alt="Accessibility For All" class="h-7 w-auto object-contain" width="746" height="160">
             </a>
             <p class="text-sm text-gray-500 mb-4 leading-relaxed">One suite to audit, monitor, remediate, and document — the whole journey to compliance.</p>
             <a href="pricing.html?plan=free#plans" class="inline-block text-sm text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-4 py-2 rounded-lg transition-colors duration-200">

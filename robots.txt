@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /
 
-# This GitHub Pages mirror exists only for PR previews.
-# The real site is https://accessibilityforall.com — do not index this host.
+# PR-preview mirror. The real site is https://accessibilityforall.com
