@@ -173,6 +173,7 @@ function submitAsJson(form, endpoint) {
     ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
       data[k] = params.get(k) || '';
     });
+    if (typeof a4aApplyFirstTouch === 'function') a4aApplyFirstTouch(data);
     // Checkboxes share a name, so collect them into one comma-joined value.
     new FormData(form).forEach(function (value, key) {
       data[key] = data[key] ? data[key] + ', ' + value : value;
