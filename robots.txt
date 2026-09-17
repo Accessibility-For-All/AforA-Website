@@ -1,9 +1,11 @@
 User-agent: *
 Allow: /
 
-# Confirmation and redirect-stub pages carry no standalone value.
-Disallow: /welcome.html
-Disallow: /thank-you-form-submission.html
+# Confirmation pages carry no standalone value. Extensionless paths, because
+# Cloudflare Pages serves /foo (and 308s /foo.html to it) — an .html-suffixed
+# Disallow never matches the canonical URL. Prefix match covers both forms.
+Disallow: /welcome
+Disallow: /thank-you-form-submission
 Disallow: /api/
 
 Sitemap: https://accessibilityforall.com/sitemap.xml
