@@ -1,6 +1,6 @@
 ---
 name: privacy-policy-third-party-list
-description: privacy-policy.html names only Google Analytics + Google Ads as third parties; LinkedIn and GoHighLevel tracking were added 2026-08-19 and are not yet disclosed
+description: RESOLVED 2026-09-17 — privacy policy now discloses GTM/LinkedIn/GoHighLevel/Cloudflare-Turnstile and dropped Formspree; update BOTH #cookies and #third-parties sections when the stack changes again
 metadata:
   type: project
 ---
@@ -19,3 +19,8 @@ auditing the site is exactly the kind of person who reads the privacy policy.
 
 **Action when the GTM tags are published:** add LinkedIn and GoHighLevel to both sections
 in a `content/` PR. Not done yet — flagged to Marcus 2026-08-19, no decision recorded.
+
+**RESOLVED 2026-09-17** (same session PR as the GTM merge): both sections updated — added
+LinkedIn Insight, GoHighLevel attribution cookies + CRM role, Cloudflare/Turnstile
+(functional), GTM delivery note; **Formspree removed** (retired Aug 5). "Last updated" bumped.
+Keep this file as the checklist of what the policy currently names.
