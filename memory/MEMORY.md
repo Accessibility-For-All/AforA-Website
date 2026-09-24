@@ -26,4 +26,6 @@ Internal — excluded from the deploy, never served publicly.
 - [GHL build state](ghl-build-state.md) — location it1L0e1mMfZM1WCQIliV; fields/tags/pipelines DONE 2026-08-05, scoring/workflows/drips NOT; email gated on DKIM (none exists)
 - [⚠️ GHL UI automation gotchas](ghl-ui-automation-gotchas.md) — dialogs swallow post-save clicks, stale refs, phantom Edit Pipeline modal, scoring delete is a silent no-op; read before driving GHL UI
 - [⚠️ Tracking stack](tracking-stack.md) — GA4 inline, Ads via navbarloader, LinkedIn+GHL in GTM (needs PR #33 merged); Calendly demo bookings fire no conversion; inline gtag + GTM GA4 tag = double count
+- [First-touch contract](first-touch-contract.md) — first-touch.js is the one copy; exact attribution payload keys (first_landing_page, not landing_page); never rename a key
+- [⚠️ Preview env limits](preview-env-limits.md) — branch previews have NO GHL webhooks (forms 500); Turnstile 110200 there; alias cut to 28 chars; take URL from the PR check
 - [Privacy policy third-party list](privacy-policy-third-party-list.md) — policy names only Google Analytics/Ads; LinkedIn + GoHighLevel need adding once their GTM tags go live

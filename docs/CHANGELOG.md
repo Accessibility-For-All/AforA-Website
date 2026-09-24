@@ -5,6 +5,15 @@ One running log of what shipped. **Newest on top.** Every merged PR adds a line 
 
 `- YYYY-MM-DD — what changed (PR #N, merged | open) — who`
 
+- 2026-09-24 — Session wrap-up trail: handoff, DECISIONS (visit pricing, attribution/conversion rules, chat widget), memory gotchas (this PR, open) — Claude
+- 2026-09-24 — Calendly postMessage → GTM book_demo conversion spec, event_scheduled only; Calendly event is 30 min vs "15-minute" copy (PR #48, open) — Claude
+- 2026-09-24 — Conversions only on confirmed success (GA4 + Ads + LinkedIn via conversions.js, labels pending); sign_up-on-failure and welcome-page inflation fixed; GTM engagement spec (PR #47, open) — Claude
+- 2026-09-24 — Optional population_served select on contact form, both LPs, pricing wizard (PR #46, open) — Claude
+- 2026-09-24 — Pricing sized by monthly website visits; onboarding on every tier; overage/Free-cap policy stated; visit definition left as placeholder (PR #45, open) — Claude
+- 2026-09-24 — Inert HighLevel chat widget install path (MODE off) + keyboard audit of HighLevel's widget (PR #44, open) — Claude
+- 2026-09-24 — Every form payload carries gclid/UTM set/capture time; offline-conversion export route doc (PR #43, open, stacked on #42) — Claude
+- 2026-09-24 — Shared first-touch.js captures gclid/gbraid/wbraid/msclkid/fbclid + utm_term/content; gclid-only visits now stored (PR #42, open) — Claude
+- 2026-09-24 — CLAUDE.md header describes Cloudflare Pages, preview limits (PR #41, open) — Claude
 - 2026-09-17 — A/B landing pages for the free-audit campaign: /lp/free-audit-deadline/ + /lp/free-audit-expert/ — closes five-hat C1; W2 has a producer (PR #38, merged) — Claude
 - 2026-09-17 — gh-pages mirror deindexed (Disallow-all robots + 4 stale pages pruned) and root-sync now enforces it permanently (PR #39 + direct gh-pages push) — Claude
 - 2026-09-17 — Perf/SEO hygiene: docbox+loaders deferred, hls pinned+relocated, preconnects, img dims, sitemap lastmod, local case-study PDF (PR #37, merged) — Claude

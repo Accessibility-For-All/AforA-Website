@@ -158,3 +158,45 @@ fully retired.
 ## 2026-08-05 — GHL account custody: A4A location lives under Blend's agency account
 **Decision:** Confirmed by Marcus. Closes the five-hat High finding that gated deep GHL build
 investment. W1/W2/W3 built and published same night.
+
+## 2026-09-24 — Pricing is sized by monthly website visits (supersedes the 2026-07-22 axes)
+**Decision:** Plan allowances move from pages monitored plus documents to **monthly website visits**.
+Free: under 1,000. Starter: up to 5,000. Growth: up to 30,000. Scale: up to 100,000. Enterprise:
+above 100,000. **No dollar amount changes** ($59/$590, $149/$1,490, $399/$3,990). Every tier,
+Free included, lists all four tools (Websites, Documents, Reports, Response) and **personal
+onboarding with our team**. Stephen: "Onboarding comes with all plans until we've built an
+automated way." Going over an allowance means **a notice, then an upgrade the next month**, with no
+mid-month cutoff and no overage billing. On Free, passing 1,000 visits means monitoring continues and
+an upgrade email goes out. The one intended Free/paid difference is **the report**: Free gets a
+partially completed report, and paid tiers get the full conformance report. ("We never offer a
+completed Accessibility Compliance Report for free.")
+**Why:** Matches the market's pricing structure (competitor never named in copy). Stephen says
+the product is essentially the same at every tier, so visits are the honest differentiator.
+**Still open, not decided here:**
+- **How a "visit" is defined and measured.** Needs Stephen. `pricing.html` has an HTML-comment
+  placeholder and publishes no definition.
+- **The report ladder.** This model conflicts with the 2026-07-22 rule (signed ACR/VPAT stays out
+  of self-serve tiers below Scale, 1/yr on Scale), with the 2026-07-27 40%-automated/60%-expert
+  split, and with the per-report add-on note. The Reports lines were left exactly as they were.
+- **Documents.** With the counts retired, no tier caps document remediation.
+Shipped in PR #45 (open at time of writing).
+
+## 2026-09-24 — Attribution and conversion rules
+**Decision:**
+1. `first-touch.js` is the single source of first-touch capture, including click IDs (#42, #43).
+2. Form payload keys are **add-only, never renamed**, because HighLevel binds by exact key.
+3. Conversions fire **only on a confirmed success** (2xx, or a real post-checkout arrival), through
+   `a4aConversion()` in `conversions.js` (#47). Ads and LinkedIn IDs live there as placeholders.
+4. GA4 stays **hardcoded** on the page. Engagement and Calendly tracking in GTM is **Custom HTML that
+   calls the page's own `gtag`**, never a GA4 config tag (the double-count trap).
+**Why:** A conversion count we can't trust is worse than none, because it becomes the bidding
+signal. No conversion tracking existed before #47, so earlier "conversion" numbers aren't comparable.
+
+## 2026-09-24 — HighLevel chat widget: hardcoded, inert, off by default
+**Decision:** `chat-widget.js` pastes HighLevel's embed tag verbatim and re-creates it in JS, not
+in GTM, because GTM drops custom attributes from external scripts. It ships with `MODE = 'off'`.
+`'preview'` loads it only on `*.afora-website.pages.dev`, and `'on'` needs Stephen's go-ahead
+**plus** fixes for the keyboard defects in `memory/ghl-chat-widget-a11y.md`, **plus** a privacy
+policy line.
+**Why:** An accessibility vendor can't ship a widget that fails WCAG 2.4.7 on its own site.
+

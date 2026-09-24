@@ -26,5 +26,13 @@ environment block before assuming tooling.
   `Start-Process -WindowStyle Hidden`, and note `.claude/launch.json` must live under the
   primary working directory (`C:\Users\Dell\.claude\launch.json`), not the repo.
 
+**Cowork cloud session (2026-09-24):** the cloud container can clone this repo but **can't push**
+(the git proxy isn't authorised for it), has no `gh`, and its egress blocks accessibilityforall.com
+and `*.pages.dev`. What worked: edit and test in the cloud (Playwright plus a mock `/api/lead`
+server), then `git bundle` each branch → write it into `Development/patches/ship/` on the Mac →
+Desktop Commander on macOS runs `git fetch <bundle> b:b && git push && gh pr create` in
+`Development/AforA-Website`, where `gh` is logged in as Marcusblend. Keep each Desktop Commander call
+under ~55s, because the bridge times out at 60s.
+
 See [[plan-mode-blocks-subagents]] and [[sandbox-blocks-raw-file-writes]] for other
 environment-specific gotchas.
