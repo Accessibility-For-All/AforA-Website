@@ -1,6 +1,6 @@
 ---
 name: tracking-stack
-description: What fires on accessibilityforall.com — GA4 hardcoded, Ads via navbarloader, LinkedIn+GHL inside GTM (live only once PR #33 merges); conversion gaps; GA4 double-count trap
+description: What fires on accessibilityforall.com — GA4 hardcoded, Ads via navbarloader (other account), GTM v3 (LinkedIn, fixed GHL, engagement, Calendly book_demo); Ads acct AW-18397428128 + labels; GA4 double-count trap
 metadata:
   type: project
 ---
@@ -59,6 +59,41 @@ LinkedIn works because its snippet is inline JS. Fix = replace the tag HTML with
 creator that sets the attribute explicitly (snippet in docs/sessions/2026-09-17-marcus.md),
 then publish. Claude's GTM edit was permission-blocked 2026-09-17; Marcus pastes it.
 Also live-verified 2026-09-17: GA4 fires exactly one page_view alongside GTM (no double count).
+
+**2026-09-24 — read from the served configs, not the UIs:**
+- `gtag/js?id=G-TX5BQW6XZ6`: **Enhanced Measurement is on**, with page_view+history, scroll (90%),
+  outbound click, site search (`q,s,search,query,keyword`), video, file download and form
+  interactions (`form_start`/`form_submit`). Key events: `generate_lead`, `sign_up`,
+  `purchase_confirmation_view`, `qualify_lead`, `close_convert_lead`, `purchase`. GA4 is linked to
+  Ads (`__ccd_ga_ads_link`). **Automatic user-provided data collection is ON**
+  (`__ogt_1p_data_v2`, auto email/phone/address): hashed form data goes to Google, and the privacy
+  policy doesn't mention it.
+- `gtm.js?id=GTM-TMV9R9MW`: the GHL tag is **still the broken form** (`data-gtmsrc` + static
+  `data-tracking-id`), and production still logs `[LC Tracking ERROR]` ×5 per page.
+- The LPs' `dataLayer.push({event:'lp_view'|'form_start'})` reach **no tag**. GA4's automatic
+  `form_start` covers the second one.
+- Pending in PR #47: `conversions.js` → `a4aConversion()` fires GA4 + Ads `send_to` + LinkedIn
+  `lintrk` **only on confirmed 2xx** (labels are placeholders). It fixes `sign_up` firing on a failed
+  POST. When direct Ads conversions go live, set the GA4-imported duplicates to Secondary.
+- Pending, GTM (Marcus): `docs/GTM-ENGAGEMENT-TAGS.md` (cta_click, LP scroll_depth, lp_form_visible)
+  and `docs/GTM-CALENDLY-BOOK-DEMO.md` (book_demo on `calendly_event_scheduled` only). Every GTM tag
+  is Custom HTML calling the page's own `gtag`, never a GA4 config tag.
+
+
+**2026-09-24 (part 2) — container v3 LIVE, conversions exist:**
+- GTM **version 3** published: the GHL tag is fixed (inline `createElement` sets `data-tracking-id`);
+  plus GA4 `cta_click`, plan_select→`cta_click`, LP `scroll_depth` 25/50/75/90, `lp_form_visible`
+  (`#audit-form` 50%), Calendly listener (`/book-demo`, origin must match `*.calendly.com`), GA4 `book_demo`
+  and the Ads conversion `AW-18397428128/DIJyCLH2lIMdEKDzycRE`, both only on `calendly_event_scheduled`.
+- **Google Ads account 190-915-1292 = tag AW-18397428128.** `AW-957201829` (navbarloader) was a
+  different account (removed in part 3). Site-tag labels: free scan `-XaACKX2lIMdEKDzycRE`, contact `6rswCKj2lIMdEKDzycRE`,
+  sign-up `VPv4CK72lIMdEKDzycRE`, enterprise quote `PtS5CKv2lIMdEKDzycRE`. All actions are **Secondary** for now.
+- After publishing, a browser can serve the **old gtm.js from cache for up to 15 min**. To verify,
+  `fetch(gtm.js, {mode:'no-cors', cache:'reload'})` from the site's page, then reload.
+- GTM's element-visibility trigger (and Calendly's widget) do nothing while
+  `document.visibilityState === 'hidden'`. Test with the Chrome window in front.
+- GA4 has non-production hostnames in it (github.io mirror, localhost, pages.dev previews). Filter to
+  `hostname = accessibilityforall.com`. See [[ga4-dashboard-internals]].
 
 **2026-09-24 (part 3) — production-only tags, right Ads account (PR fix/tags-production-only):**
 - Every page head sets `window.A4A_PROD = /(^|\.)accessibilityforall\.com$/.test(location.hostname)`.
