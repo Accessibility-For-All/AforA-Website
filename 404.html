@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>/* A4A: tags run only on the production site; gtm_debug lets GTM Preview work anywhere. */
+    window.A4A_PROD=/(^|\.)accessibilityforall\.com$/.test(location.hostname);
+    if(window.A4A_PROD||/[?&]gtm_debug=/.test(location.search))(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -16,7 +18,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-TX5BQW6XZ6');
+  // A4A: count only the production site, not previews, mirrors or localhost.
+  window.A4A_PROD = /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+  if (window.A4A_PROD) gtag('config', 'G-TX5BQW6XZ6');
 </script>
 
     <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
@@ -52,8 +56,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="navbarloader.js" defer></script>
-    <script src="footerloader.js" defer></script>
+    <script src="first-touch.js?v=20260924" defer></script>
+    <script src="navbarloader.js?v=20260924" defer></script>
+    <script src="footerloader.js?v=20260924" defer></script>
+    <script src="chat-widget.js?v=20260924" defer></script>
   </head>
   <body class="font-inter bg-white text-gray-900">
     <!-- Google Tag Manager (noscript) -->
@@ -166,8 +172,8 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left mb-10">
           <a href="/websites.html" class="block p-5 rounded-2xl border border-gray-200 hover:border-[#0b6ad4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">
-            <span class="font-bold block mb-1">Free accessibility audit</span>
-            <span class="text-gray-600 text-sm">We review your site against WCAG 2.1 AA and send the findings.</span>
+            <span class="font-bold block mb-1">Free accessibility scan</span>
+            <span class="text-gray-600 text-sm">We scan up to 5 pages of your site against WCAG 2.1 AA and highlight the errors most critical to address.</span>
           </a>
           <a href="/pricing.html" class="block p-5 rounded-2xl border border-gray-200 hover:border-[#0b6ad4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b6ad4]">
             <span class="font-bold block mb-1">Plans &amp; sign-up</span>

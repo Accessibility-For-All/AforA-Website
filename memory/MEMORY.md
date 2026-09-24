@@ -30,3 +30,4 @@ Internal — excluded from the deploy, never served publicly.
 - [First-touch contract](first-touch-contract.md) — first-touch.js is the one copy; exact attribution payload keys (first_landing_page, not landing_page); never rename a key
 - [⚠️ Preview env limits](preview-env-limits.md) — branch previews have NO GHL webhooks (forms 500); Turnstile 110200 there; alias cut to 28 chars; take URL from the PR check
 - [Privacy policy third-party list](privacy-policy-third-party-list.md) — policy names only Google Analytics/Ads; LinkedIn + GoHighLevel need adding once their GTM tags go live
+- [⚠️ GHL chat widget a11y](ghl-chat-widget-a11y.md) — chat-widget.js ships MODE off; loader uses data-resources-url (plural); HighLevel widget has no focus ring, no Escape, a 2nd H1, an unnamed combobox — audit before MODE on

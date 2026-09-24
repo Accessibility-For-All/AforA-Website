@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>/* A4A: tags run only on the production site; gtm_debug lets GTM Preview work anywhere. */
+    window.A4A_PROD=/(^|\.)accessibilityforall\.com$/.test(location.hostname);
+    if(window.A4A_PROD||/[?&]gtm_debug=/.test(location.search))(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -16,7 +18,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-TX5BQW6XZ6');
+  // A4A: count only the production site, not previews, mirrors or localhost.
+  window.A4A_PROD = /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+  if (window.A4A_PROD) gtag('config', 'G-TX5BQW6XZ6');
 </script>
 
         <!-- BEGIN DOCMERSION FAVICONS -->
@@ -62,8 +66,10 @@
     <!-- HLS.js for video streaming -->
     <link rel="stylesheet" href="styles.css" />
     <!-- Navbar and Footer Loaders -->
-    <script src="navbarloader.js" defer></script>
-    <script src="footerloader.js" defer></script>
+    <script src="first-touch.js?v=20260924" defer></script>
+    <script src="navbarloader.js?v=20260924" defer></script>
+    <script src="footerloader.js?v=20260924" defer></script>
+    <script src="chat-widget.js?v=20260924" defer></script>
     <!-- PDF Genie -->
     <script src="https://pdf-genie-etm2.onrender.com/docbox.js" defer></script>
   
@@ -407,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   </div>
                   <div class="flex-grow">
                     <h3 class="font-bold text-lg mb-2 text-gray-900">Websites</h3>
-                    <p class="text-gray-600">Your donation pages and volunteer portal need to be accessible — for a mission-driven organization, that's not just legal risk, it's the mission itself. Check gives you a free audit; Monitor keeps a constantly-changing site compliant automatically.</p>
+                    <p class="text-gray-600">Your donation pages and volunteer portal need to be accessible — for a mission-driven organization, that's not just legal risk, it's the mission itself. Check gives you a free scan of up to 5 pages; Monitor keeps watch over a constantly-changing site.</p>
                   </div>
                 </div>
               </a>
@@ -563,7 +569,8 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </main>
     <!-- Footer will be loaded by footerloader.js -->
-    <script src="contactformloader.js" defer></script>
+    <script src="conversions.js?v=20260924" defer></script>
+    <script src="contactformloader.js?v=20260924" defer></script>
   
     <!-- Footer inlined for crawlers (single source: footerloader.js template) -->
     <!-- Footer -->
