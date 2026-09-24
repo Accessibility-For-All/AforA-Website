@@ -15,17 +15,50 @@ Internal file — excluded from the deploy, never published to the public site.
 `main` is on the public site about a minute later. `soprisapps.com` is legacy and untouched.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-08-05 (session 2)
-main_commit: b3cd268
-last_pr: 28
-note: covers everything merged after the launch-night entry: PRs #27–#31 (Turnstile spam
-protection, nav/footer SEO fix, wrap-up docs), #28 (FAQ rich results), #8 (internal docs),
-plus the Aug-5 daytime GoHighLevel CRM foundation build.
-IMPORTANT: Marcus sent the launch-night entry to Stephen WITHOUT the "full 12-month
-marketing plan is ready to walk through" paragraph and without the "In progress" list —
-so those are re-included in the 2026-08-05-b entry below. Do not treat them as already
-reported.
+last_generated: 2026-09-24
+main_commit: 6eb4c63
+last_pr: 40
+note: the 2026-09-24 entry covers everything merged since the Aug-5 watermark: the Sep-17
+merges #32–#40. The eight PRs opened 2026-09-24 (#41–#48) are listed only under "In progress";
+report them as new once they merge. DRAFT: Marcus hasn't sent it yet.
 -->
+
+---
+
+## 2026-09-24 — update for Stephen (draft, not yet sent)
+
+**What's new / live** (from the Sep 17 work)
+- **Two new free-audit landing pages are live for the Google Ads campaign.** One leads with the
+  deadline and one with expert human review, so we can see which message converts better.
+- **Forms now remember which ad or campaign brought someone in**, even when they fill in a form on a
+  later page. So the CRM shows where each lead really came from.
+- **Tag Manager is on every page, and LinkedIn ad tracking works.** The CRM's own tracking tag needs a
+  one-line fix on our side, which is in progress.
+- **The privacy policy now lists the actual tools the site uses.**
+- **Search and speed housekeeping:** pages that shouldn't be in Google are now correctly hidden, the
+  thank-you page no longer gets indexed, and heavy scripts load later, so pages appear faster.
+
+**In progress** (built and in review, not live yet)
+- The pricing page rewritten around **monthly website visits** (same prices), with personal
+  onboarding shown on every plan, Free included, and a plain "nothing gets cut off, no overage
+  charges" policy.
+- An optional **"population your organization serves"** question on the forms, so we can tell each
+  lead which ADA deadline applies to them.
+- Ad-click tracking all the way into the CRM, and conversion tracking that counts a lead **only** when
+  the form actually went through.
+- The chat assistant's install is ready but switched **off**. Its widget has keyboard-access issues we
+  want fixed before it goes on an accessibility company's site.
+
+**Needs Stephen / a decision**
+- **What counts as a "visit"** for the plan limits, and how a customer would see their number.
+- **Reports by plan:** does "the full report on paid plans" mean a signed, expert-reviewed report on
+  Starter and Growth? Today the page and our earlier notes disagree.
+- With document counts gone from the plans, **is document remediation unlimited on every plan**,
+  Free included?
+- **Demo length:** the site says 15 minutes, the booking calendar is set to 30, and you mentioned up
+  to 45 with questions. Which should we say? The booking form also asks 7 required questions.
+- Google's tag currently collects form emails and phone numbers automatically, in scrambled form, for
+  ad measurement. Should we **describe that in the privacy policy or switch it off**?
 
 ---
 
