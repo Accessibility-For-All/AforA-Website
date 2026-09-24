@@ -109,10 +109,18 @@ upload (HighLevel contact ID + action, e.g. `{{contact.id}}-demo`) so re-exports
 ## 6. Worth knowing: enhanced conversions for leads
 
 Google recommends **enhanced conversions for leads** over gclid import for new setups: it matches
-on the hashed **email** (which HighLevel already has) and works without a click ID. It also needs
-the website tag to send the visitor's email at form submit (`user_data`), which **is not built**.
-That would be a tracking change on a compliance vendor's site, and needs a privacy-policy check
-first, so it's a decision rather than a task. Until then the gclid route above works on its own.
+on the hashed **email** (which HighLevel already has) and works without a click ID.
+
+**Already live, and easy to miss:** the served Google tag config for `G-TX5BQW6XZ6` has **automatic
+user-provided data collection switched on**. The `__ogt_1p_data_v2` tag has auto email, phone and
+address detection enabled, which means the Google tag hashes the email/phone typed into our forms
+and sends them to Google at submit. (Read from `gtag/js?id=G-TX5BQW6XZ6` on 2026-09-24. It's a
+GA4 Admin → Data collection setting, not repo code.) That may already be enough for enhanced
+conversions for leads, but check it in Google Ads before relying on it.
+**Privacy:** the privacy policy doesn't describe hashed form data going to Google. Either describe
+it or switch it off. That's a decision for Marcus/Stephen, not a code task.
+
+Until that's settled, the gclid route above works on its own.
 
 Sources: Google Ads Help — offline conversion guidelines (answer 15081888), GCLID file import
 (7014069), Data Manager with enhanced conversions for leads (15707550), Data Manager Google Sheets
