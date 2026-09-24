@@ -29,7 +29,7 @@ function loadContactForm(containerId, options = {}) {
   // Default options
   const defaults = {
     title: "Contact Us",
-    subtitle: "Ready to make your digital presence accessible and compliant? Get in touch with us today.",
+    subtitle: "Ready to make your digital presence accessible? Get in touch with us today.",
     buttonText: "Send message",
     formAction: "/api/lead"
   };
