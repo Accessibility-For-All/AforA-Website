@@ -185,10 +185,11 @@ function submitAsJson(form, endpoint) {
       body: JSON.stringify(data)
     }).then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
-      if (typeof gtag === 'function') {
-        gtag('event', 'generate_lead', { method: 'contact_form' });
-      }
-      window.location.href = 'thank-you-form-submission.html';
+      // Confirmed 2xx only. The redirect waits for the conversion hits (max 1s)
+      // so unloading the page can't cancel them.
+      var go = function () { window.location.href = 'thank-you-form-submission.html'; };
+      if (typeof a4aConversion === 'function') a4aConversion('lead_contact', 'generate_lead', { method: 'contact_form' }, go);
+      else go();
     }).catch(function () {
       if (errorEl) errorEl.classList.remove('hidden');
       if (button) button.disabled = false;

@@ -39,6 +39,8 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css" />
+    <!-- Conversion helper (GA4 + Google Ads + LinkedIn), fired only on a confirmed submit. -->
+    <script src="/conversions.js" defer></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </head>
   <body class="font-inter bg-white text-gray-900">
@@ -292,7 +294,8 @@
           }).then(function (r) {
             if (!r.ok) throw new Error('HTTP ' + r.status);
             dataLayer.push({ event: 'generate_lead', experiment_id: EXPERIMENT, experiment_variant: VARIANT, form_type: 'free_audit' });
-            if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'audit_lp', experiment_id: EXPERIMENT, experiment_variant: VARIANT });
+            if (typeof a4aConversion === 'function') a4aConversion('lead_free_check', 'generate_lead', { method: 'audit_lp', experiment_id: EXPERIMENT, experiment_variant: VARIANT });
+            else if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'audit_lp', experiment_id: EXPERIMENT, experiment_variant: VARIANT });
             form.querySelector('[data-success-url]') /* no-op guard */;
             document.querySelector('#audit-success [data-success-url]').textContent = payload.scanned_url.replace(/^https?:\/\//i, '');
             form.classList.add('hidden');

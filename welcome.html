@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="navbarloader.js" defer></script>
     <script src="footerloader.js" defer></script>
+    <script src="conversions.js" defer></script>
   </head>
   <body class="bg-white text-gray-900">
     <!-- Google Tag Manager (noscript) -->
@@ -196,8 +197,20 @@
             (billing === 'annual' || billing === 'monthly' ? ' (' + billing + ' billing)' : '') + '.';
           document.getElementById('plan-line').innerHTML = line + ' Thank you for choosing Accessibility For All.';
         }
-        if (window.gtag) {
-          gtag('event', 'purchase_confirmation_view', { plan: plan || 'unknown', billing: billing || 'unknown' });
+        // Only a real post-checkout arrival counts (Stripe's success URL carries a
+        // known plan AND billing), and only once per browser session — a stray or
+        // reloaded visit to /welcome used to count as a purchase every time.
+        var realCheckout = !!names[plan] && (billing === 'annual' || billing === 'monthly');
+        var seenKey = 'a4a_purchase_' + plan + '_' + billing, seen = false;
+        try { seen = sessionStorage.getItem(seenKey) === '1'; } catch (e) {}
+        if (realCheckout && !seen) {
+          try { sessionStorage.setItem(seenKey, '1'); } catch (e) {}
+          var fire = function () {
+            if (typeof a4aConversion === 'function') a4aConversion('purchase', 'purchase_confirmation_view', { plan: plan, billing: billing });
+            else if (window.gtag) gtag('event', 'purchase_confirmation_view', { plan: plan, billing: billing });
+          };
+          // conversions.js is deferred; this inline script runs before it.
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fire); else fire();
         }
       })();
     </script>
