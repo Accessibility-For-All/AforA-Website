@@ -14,7 +14,7 @@ edit this repo — so **process discipline is what keeps everyone in sync.**
 - **Deploy = merge to `main`.** Cloudflare Pages builds `main` and it is live in about a minute. **Treat every merge as a release.**
 - **The Pages build command strips internal dirs:** `rm -rf docs memory .claude .cowork .github aws-setup scripts CLAUDE.md README.md`. **Never add `functions/` to it** — that is the `/api/lead` endpoint.
 - **One backend:** `functions/api/lead.js`, a Pages Function. It routes by `form_type` to GoHighLevel inbound webhooks whose URLs live **only** in Pages env Secrets. Turnstile is enforced there (Production env only).
-- **Preview = push a branch / open a PR.** Cloudflare Pages builds every branch at `https://<branch-slug>.afora-website.pages.dev` — the only preview where `/api/lead` runs. `.github/workflows/preview.yml` still posts a static-only GitHub Pages copy (`https://accessibility-for-all.github.io/AforA-Website/pr-<N>/`) — no forms there, and absolute paths 404.
+- **Preview = push a branch / open a PR.** Cloudflare Pages builds every branch at `https://<branch-slug>.afora-website.pages.dev` (slug = branch name with `/` → `-`, **cut to 28 characters**; the PR's Cloudflare check shows the exact URL) — the only preview where `/api/lead` runs, but the **Preview env has no GHL webhooks**, so forms there answer 500 and nothing reaches HighLevel. `.github/workflows/preview.yml` still posts a static-only GitHub Pages copy (`https://accessibility-for-all.github.io/AforA-Website/pr-<N>/`) — no forms there, and absolute paths 404.
 - **Superseded, don't revive:** the AWS S3/CloudFront pipeline (`deploy.yml`, `aws-setup/`, `www.soprisapps.com`) never worked (OIDC) and was abandoned on 2026-08-05 — see `docs/DECISIONS.md` and `memory/hosting-direction.md`. `deploy.yml` still exists and fails harmlessly on every merge.
 - Config the tooling reads: `.cowork/site.yml`. Full narrative: `README.md` (older; the facts above win).
 
@@ -50,7 +50,7 @@ Every contributor leaves the same trail, so the next person reconstructs nothing
 - **`aws-setup/` is admin-only infrastructure.** Terraform + IAM/OIDC. Don't touch as part of content work.
 
 ## Commands
-- Preview a change: push a branch, open a PR (`gh pr create`), open `https://<branch-slug>.afora-website.pages.dev`.
+- Preview a change: push a branch, open a PR (`gh pr create`), open the Branch Preview URL from the PR's Cloudflare Pages check.
 - Ship: merge the PR to `main` (Cloudflare Pages deploys automatically, ~1 min).
 - Watch a deploy: Cloudflare dashboard → Pages → `afora-website` (client account). The `deploy.yml` Actions run is the dead S3 pipeline — ignore its result.
 - Verify CI is actually executing before trusting it: **`/ci-reality-check`**.
