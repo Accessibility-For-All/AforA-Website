@@ -1,7 +1,7 @@
-# CLAUDE.md — AforA-Website (soprisapps.com static site)
+# CLAUDE.md — AforA-Website (accessibilityforall.com static site)
 
-Static marketing site for **Accessibility For All**, served at **https://www.soprisapps.com**
-(apex `soprisapps.com` aliases here too). Repo: `Accessibility-For-All/AforA-Website`.
+Static marketing site for **Accessibility For All**, served at **https://accessibilityforall.com**
+(apex is canonical; `www` 301s to it). Repo: `Accessibility-For-All/AforA-Website`.
 Maintained by Blend Web Marketing. Multiple people (and Claude, in Cowork / Code / VS Code)
 edit this repo — so **process discipline is what keeps everyone in sync.**
 
@@ -9,11 +9,14 @@ edit this repo — so **process discipline is what keeps everyone in sync.**
 > These two skills are the whole reason nobody loses work or context. See below.
 
 ## What this is (30 seconds)
-- **Plain static site.** Raw `*.html` + `*.js` loaders (`footerloader.js`, `contactformloader.js`) + images. **No build step, no npm, no framework.** What's in the repo root IS what ships.
-- **Deploy = merge to `main`.** GitHub Actions (`.github/workflows/deploy.yml`) syncs the repo to `s3://www.soprisapps.com` and invalidates CloudFront `E31CSAAZLD937L`. Live in ~60s. No AWS keys anywhere — deploy uses GitHub OIDC to assume an IAM role.
-- **Preview = open a PR.** `.github/workflows/preview.yml` publishes a per-PR preview to GitHub Pages and comments the URL on the PR: `https://accessibility-for-all.github.io/AforA-Website/pr-<N>/`.
-- **Folder URLs work** because CloudFront points at the S3 *website* endpoint (`/about/` → `/about/index.html` automatically). Adding `foo/index.html` gives you a working `/foo/` URL.
-- Config the tooling reads: `.cowork/site.yml`. Full narrative: `README.md`.
+- **Plain static site.** Raw `*.html` + `*.js` loaders (`navbarloader.js`, `footerloader.js`, `contactformloader.js`, `pricing-config.js`) + images. Tailwind and Bootstrap Icons come off CDNs. **No build step, no npm, no framework.** What's in the repo root IS what ships.
+- **Hosting = Cloudflare Pages**, in a **client-owned Cloudflare account** (Stephen's login, not ours). Pages project `afora-website`.
+- **Deploy = merge to `main`.** Cloudflare Pages builds `main` and it is live in about a minute. **Treat every merge as a release.**
+- **The Pages build command strips internal dirs:** `rm -rf docs memory .claude .cowork .github aws-setup scripts CLAUDE.md README.md`. **Never add `functions/` to it** — that is the `/api/lead` endpoint.
+- **One backend:** `functions/api/lead.js`, a Pages Function. It routes by `form_type` to GoHighLevel inbound webhooks whose URLs live **only** in Pages env Secrets. Turnstile is enforced there (Production env only).
+- **Preview = push a branch / open a PR.** Cloudflare Pages builds every branch at `https://<branch-slug>.afora-website.pages.dev` (slug = branch name with `/` → `-`, **cut to 28 characters**; the PR's Cloudflare check shows the exact URL) — the only preview where `/api/lead` runs, but the **Preview env has no GHL webhooks**, so forms there answer 500 and nothing reaches HighLevel. `.github/workflows/preview.yml` still posts a static-only GitHub Pages copy (`https://accessibility-for-all.github.io/AforA-Website/pr-<N>/`) — no forms there, and absolute paths 404.
+- **Superseded, don't revive:** the AWS S3/CloudFront pipeline (`deploy.yml`, `aws-setup/`, `www.soprisapps.com`) never worked (OIDC) and was abandoned on 2026-08-05 — see `docs/DECISIONS.md` and `memory/hosting-direction.md`. `deploy.yml` still exists and fails harmlessly on every merge.
+- Config the tooling reads: `.cowork/site.yml`. Full narrative: `README.md` (older; the facts above win).
 
 ## Version control — the rules (this is the core of the whole system)
 There is **no magic sync** between machines. Git IS the sync. Desktop Code, Cowork, and
@@ -40,16 +43,16 @@ Every contributor leaves the same trail, so the next person reconstructs nothing
 - **`memory/`** — cross-session facts for Claude: one fact per file, indexed in `memory/MEMORY.md`. Gotchas, resource IDs, non-obvious constraints. Read at session start.
 
 ## Guardrails (do not undo these)
-- **Internal notes never ship to the public site.** `docs/`, `.claude/`, `memory/`, and `CLAUDE.md` are excluded in **both** workflows' sync/rsync steps. If you add a new internal folder, add it to the exclude lists in `deploy.yml` AND `preview.yml`, or it will be published to `www.soprisapps.com`.
-- **No secrets in the repo, ever.** Deploy auth is OIDC role assumption — there are deliberately no AWS keys in the repo or in GitHub secrets. `.env*` is gitignored. PR previews are **public**.
+- **Internal notes never ship to the public site.** `docs/`, `.claude/`, `memory/`, and `CLAUDE.md` are stripped by the **Cloudflare Pages build command** (above) and excluded in both workflows' rsync steps. If you add a new internal folder, add it to the Pages build command (client's Cloudflare account — ask Marcus) AND the exclude lists in `deploy.yml` and `preview.yml`, or it will be published on accessibilityforall.com.
+- **No secrets in the repo, ever.** Webhook URLs and `TURNSTILE_SECRET` live only in Pages env Secrets. `.env*` is gitignored. Previews are **public**.
 - **Don't hand-edit the legacy cruft.** Files like `associations_copy_--old.html` and `government_--_old_copy.html` are dead copies. Don't edit them; if anything, a `chore/` PR should delete them (confirm with Marcus first).
-- **Absolute paths (`/logo.png`) 404 in the PR preview** (Pages serves from a subpath) but work in production — don't "fix" them to relative on account of the preview.
+- **Absolute paths (`/logo.png`) 404 in the GitHub Pages PR preview** (it serves from a subpath) but work in production and on Cloudflare previews — don't "fix" them to relative on account of the preview.
 - **`aws-setup/` is admin-only infrastructure.** Terraform + IAM/OIDC. Don't touch as part of content work.
 
 ## Commands
-- Preview a change: push a branch, open a PR (`gh pr create`), open the preview URL the bot comments.
-- Ship: merge the PR to `main` (deploy runs automatically).
-- Watch a deploy: `gh run watch <id> --exit-status` (or the Actions tab).
+- Preview a change: push a branch, open a PR (`gh pr create`), open the Branch Preview URL from the PR's Cloudflare Pages check.
+- Ship: merge the PR to `main` (Cloudflare Pages deploys automatically, ~1 min).
+- Watch a deploy: Cloudflare dashboard → Pages → `afora-website` (client account). The `deploy.yml` Actions run is the dead S3 pipeline — ignore its result.
 - Verify CI is actually executing before trusting it: **`/ci-reality-check`**.
 - Environment sanity at session start: **`/self-check`**.
 - Confirm you're in the right repo / branch / files before editing (guards against cross-project edits and concurrent-session clobbering): **`/whereami`**.
