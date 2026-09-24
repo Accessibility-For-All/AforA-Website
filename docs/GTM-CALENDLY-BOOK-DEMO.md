@@ -1,6 +1,6 @@
 # GTM — make a Calendly demo booking a trackable conversion
 
-**Container:** `GTM-TMV9R9MW` (client account). **Building and publishing it is Marcus's action.**
+**Container:** `GTM-TMV9R9MW` (client account). **Marcus approved building it and publishing after a Preview check (24 Sep).**
 Written 2026-09-24 for Job 7. `book-demo.html` embeds Calendly inline
 (`https://calendly.com/mark-100/45min`), so a booking happens inside a cross-origin iframe and the
 page never knows. Calendly *does* `postMessage` its events to the parent window. This listener
@@ -68,15 +68,24 @@ Then in GA4 → Admin → Events, **mark `book_demo` as a key event**.
 ## 5. Tag `Ads – book_demo conversion` (Custom HTML), fired by `Calendly – event scheduled`
 ```html
 <script>
-  if (typeof window.gtag === 'function') window.gtag('event', 'conversion', {
-    send_to: 'AW-957201829/BOOK_DEMO_LABEL',   // PLACEHOLDER: Marcus supplies the label
-    transaction_id: {{DLV – calendly_event_uri}}
-  });
+  if (typeof window.gtag === 'function') {
+    // The live Ads account (190-915-1292) is AW-18397428128. The AW-957201829 tag the
+    // site loads is a different account, so configure the right destination first.
+    window.gtag('config', 'AW-18397428128', { send_page_view: false });
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-18397428128/DIJyCLH2lIMdEKDzycRE',   // "A4A Demo booked - Calendly (GTM)"
+      transaction_id: {{DLV – calendly_event_uri}}
+    });
+  }
 </script>
 ```
-Create the Google Ads action as **Book demo**, category *Book appointment*, count **One**, with a
-value well above a form fill, as the Ads plan intends. Once `book_demo` is imported from GA4 too,
-keep only one of the two as Primary.
+**The Google Ads action exists (created 2026-09-24):** "A4A Demo booked - Calendly (GTM)", category
+*Book appointment*, count **One**, value $1, click-through window 90 days, **Secondary** (observation
+only). Google Ads refused to create a brand-new goal with a secondary action, so it was created
+Primary and switched to Secondary straight after; "Book appointments" now shows as an account goal
+with no primary action, so it changes no bidding. Raise the value and make it Primary once a real
+booking has been seen to fire exactly once. Once `book_demo` is imported from GA4 too, keep only one
+of the two as Primary.
 
 *(Optional, same trigger:)* LinkedIn `lintrk('track', { conversion_id: LINKEDIN_ID })`, guarded by
 `typeof window.lintrk === 'function'`.
