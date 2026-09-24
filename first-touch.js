@@ -77,15 +77,37 @@ function a4aFirstTouch() {
   catch (e) { return {}; }
 }
 
-// Merge first-touch attribution into a form payload: current-URL UTMs win,
-// stored ones fill the gaps, landing page + referrer ride along for the CRM.
-// (Payload keys are bound by exact name in HighLevel — never rename one.)
+// Merge attribution into a form payload. Every key below is ALWAYS sent, as a
+// string ('' for direct traffic) — HighLevel treats a missing key and an empty
+// one differently. Keys are bound by exact name in the HighLevel workflows
+// ("map from sample request"): add keys if needed, never rename one.
+//   UTMs       current URL wins, stored first touch fills the gaps
+//   click IDs  stored first-seen value wins; current URL is the fallback for
+//              when storage is unavailable (private windows)
+//   first_landing_page / first_referrer / gclid_captured_at  from the first touch
 function a4aApplyFirstTouch(payload) {
   var ft = a4aFirstTouch();
-  ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
-    if (!payload[k] && ft[k]) payload[k] = ft[k];
+  var q;
+  try { q = new URLSearchParams(window.location.search); } catch (e) { q = new URLSearchParams(''); }
+  var fromUrl = function (k) { return (q.get(k) || '').trim(); };
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (k) {
+    if (!payload[k]) payload[k] = fromUrl(k) || ft[k] || '';
   });
-  if (ft.first_landing_page) payload.first_landing_page = ft.first_landing_page;
-  if (ft.first_referrer) payload.first_referrer = ft.first_referrer;
+  ['gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid'].forEach(function (k) {
+    if (!payload[k]) payload[k] = ft[k] || fromUrl(k) || '';
+  });
+  var googleClickInUrl = fromUrl('gclid') || fromUrl('gbraid') || fromUrl('wbraid');
+  payload.gclid_captured_at = ft.gclid_captured_at || (googleClickInUrl ? new Date().toISOString() : '');
+  payload.first_landing_page = ft.first_landing_page || '';
+  payload.first_referrer = ft.first_referrer || '';
   return payload;
 }
+
+// A visitor can hold a cached pre-first-touch.js navbarloader.js for a few hours
+// after a deploy (zone JS cache). Its old a4aApplyFirstTouch declaration runs
+// after this file and would drop the new keys. Deferred scripts all execute
+// before DOMContentLoaded, so re-asserting here always wins; forms only call
+// this at submit time.
+(function (current) {
+  document.addEventListener('DOMContentLoaded', function () { window.a4aApplyFirstTouch = current; });
+})(a4aApplyFirstTouch);
