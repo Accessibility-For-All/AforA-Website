@@ -27,3 +27,4 @@ Internal — excluded from the deploy, never served publicly.
 - [⚠️ GHL UI automation gotchas](ghl-ui-automation-gotchas.md) — dialogs swallow post-save clicks, stale refs, phantom Edit Pipeline modal, scoring delete is a silent no-op; read before driving GHL UI
 - [⚠️ Tracking stack](tracking-stack.md) — GA4 inline, Ads via navbarloader, LinkedIn+GHL in GTM (needs PR #33 merged); Calendly demo bookings fire no conversion; inline gtag + GTM GA4 tag = double count
 - [Privacy policy third-party list](privacy-policy-third-party-list.md) — policy names only Google Analytics/Ads; LinkedIn + GoHighLevel need adding once their GTM tags go live
+- [⚠️ GHL chat widget a11y](ghl-chat-widget-a11y.md) — chat-widget.js ships MODE off; loader uses data-resources-url (plural); HighLevel widget has no focus ring, no Escape, a 2nd H1, an unnamed combobox — audit before MODE on
