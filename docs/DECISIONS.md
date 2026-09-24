@@ -173,13 +173,13 @@ completed Accessibility Compliance Report for free.")
 **Why:** Matches the market's pricing structure (competitor never named in copy). Stephen says
 the product is essentially the same at every tier, so visits are the honest differentiator.
 **Still open, not decided here:**
-- **How a "visit" is defined and measured.** Needs Stephen. `pricing.html` has an HTML-comment
-  placeholder and publishes no definition.
+- **How a "visit" is defined and measured.** *Defined 2026-09-24 night: a visit is a session (see
+  below).* Measurement is still open.
 - **The report ladder.** This model conflicts with the 2026-07-22 rule (signed ACR/VPAT stays out
   of self-serve tiers below Scale, 1/yr on Scale), with the 2026-07-27 40%-automated/60%-expert
   split, and with the per-report add-on note. The Reports lines were left exactly as they were.
 - **Documents.** With the counts retired, no tier caps document remediation.
-Shipped in PR #45 (open at time of writing).
+Shipped in PR #45 (merged 2026-09-24).
 
 ## 2026-09-24 — Attribution and conversion rules
 **Decision:**
@@ -231,3 +231,19 @@ questions need it). The weekly webinar is for digital-marketing leads with a rot
 Melody, Stephen); association webinars are separate.
 **Why:** Every public claim has to match what the product actually delivers. The full log is in the
 Claude project doc `A4A-Stephen-Review-Changes-2026-09-24` and Drive doc 07.
+
+## 2026-09-24 (night) — A visit is a session; the demo is 30 minutes; the privacy policy names Google's form-data collection
+**Decisions (Marcus):**
+- **"Definition of Visit is a session."** Pricing says: "A visit is one session: one person's single
+  sitting on your website, however many pages they view," under the plans and as a FAQ (visible and in
+  the FAQPage JSON-LD). The chatbot's pricing FAQ says the same. **How visits are measured and shown to a
+  customer is still not decided**, so no measurement method is published.
+- **"Demo length is 30 for our purposes."** This supersedes the 15-minute wording above. It matches the
+  Calendly event (30 minutes), which stays unchanged. The book-demo meta, the 404 page, the Google Ads
+  sitelink and every draft email say 30 minutes.
+- **"We should add the Google Tags info to the privacy policy."** Automatic user-provided data
+  collection stays **on**. The Cookies & Analytics section now says the Google tag can send hashed
+  email, phone and address from form submissions to Google for ad measurement, and that GA4 is linked to
+  Google Ads.
+**Why:** Each closes an open item from the Stephen update: the visit placeholder on pricing, the 15/30/45
+demo mismatch, and an undisclosed data flow. Shipped in PR #53.

@@ -15,11 +15,12 @@ Internal file — excluded from the deploy, never published to the public site.
 `main` is on the public site about a minute later. `soprisapps.com` is legacy and untouched.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-09-24 (late)
-main_commit: 42e9387
-last_pr: 51
-note: the 2026-09-24 entry covers the Sep-17 merges #32–#40 AND the Sep-24 merges #42–#48, #50, #51.
-#52 (copy sweep) is open and listed under "In review". DRAFT: Marcus hasn't sent it yet.
+last_generated: 2026-09-24 (overnight revision)
+main_commit: 7295296
+last_pr: 53
+note: the 2026-09-24 entry covers the Sep-17 merges #32–#40 AND the Sep-24 merges #42–#48, #50–#53.
+Revised overnight (still unsent) rather than adding a second entry, so Stephen gets one update.
+DRAFT: Marcus hasn't sent it yet.
 -->
 
 ---
@@ -39,7 +40,9 @@ note: the 2026-09-24 entry covers the Sep-17 merges #32–#40 AND the Sep-24 mer
 
 **Your copy review (docs 00–05): done, 24 Sep.** Every comment and edit is logged, with what we
 changed and where, in the Google Doc *"07 — Stephen's review: what changed (updated 24 Sep 2026)"*
-in the review folder. A second read-through caught seven more of your notes; they're in it too.
+in the review folder (rebuilt overnight). A second read-through caught seven more of your notes;
+they're in it too. Your five open comment threads in docs 00, 03 and 04 each have a reply saying what
+was done.
 
 **What's new / live** (24 Sep)
 - **The website's free-scan wording is yours:** up to 5 pages, our WCAG 2.1 AA checker, the most
@@ -48,7 +51,7 @@ in the review folder. A second read-through caught seven more of your notes; the
   handled." The two inaccurate lines you flagged are gone.
 - **Pricing is by monthly website visits** (same prices), with personal onboarding shown on every
   plan, Free included, and a plain "nothing gets cut off, no overage charges" policy.
-- **Google Ads match:** "Free WCAG Scan: Up to 5 Pages", a **15-minute** demo walkthrough, onboarding
+- **Google Ads match:** "Free WCAG Scan: Up to 5 Pages", a **30-minute** demo walkthrough, onboarding
   on **every** plan, "Priced by Monthly Site Visits", and a new price block showing Starter $590,
   Growth $1,490 and Scale $3,990 a year by monthly visits. The old August links on the campaigns are
   removed.
@@ -61,23 +64,34 @@ in the review folder. A second read-through caught seven more of your notes; the
 - An optional **"population your organization serves"** question on the forms tells us which ADA
   deadline applies to each lead.
 - The chat assistant's install is ready but switched **off**. Its widget has keyboard-access issues we
-  want fixed before it goes on an accessibility company's site.
+  want fixed before it goes on an accessibility company's site. Its instructions now follow your notes:
+  it calls itself A4A's assistant, leads with the free scan, monitoring and the partially completed
+  ACR, and describes Documents as PDFs, Word files and other documents, with a small install our team
+  helps with.
+- **A "visit" is one session:** one person's single sitting on your website, however many pages they
+  view. The pricing page and its FAQ say so.
+- **Demos are 30 minutes** everywhere: the booking page, the ads and the emails, matching the calendar.
+- **The privacy policy now explains** that Google's tag can send scrambled (hashed) email, phone and
+  address details from form submissions to Google to measure ads, and that Analytics is linked to
+  Google Ads.
+- The rest of the site no longer uses the words we agreed never to use ("compliant", "instantly").
+  For example, the home page's "stay compliant" is now "stay on track".
+- **Every follow-up email is loaded in the CRM, as drafts:** the prospect follow-ups, inbound nurture,
+  post-demo, new-customer onboarding, and two webinar series (the weekly one with a rotating host, and
+  the association sessions). **Nothing sends** until the sending domain is warmed up and we switch
+  each one on.
 
-**In review, not live yet**
-- A sweep of the rest of the site for the words we agreed never to use ("compliant", "instantly").
-  Thirteen pages change. For example, the home page's "stay compliant" becomes "stay on track".
-- The drip, webinar and LinkedIn drafts are rewritten to your review; they're being loaded into the
-  CRM as drafts. Nothing sends.
+**Waiting**
+- The LinkedIn ads are rewritten to your review but can't go in until LinkedIn lifts the hold on the
+  ad account.
 
 **Needs Stephen / a decision**
-- **What counts as a "visit"** for the plan limits, and how a customer would see their number.
+- **How visits are counted** and how a customer would see their number. (A visit is a session; the
+  measuring and reporting of it isn't settled.)
 - **Reports by plan:** does "the full report on paid plans" mean a signed, expert-reviewed report on
   Starter and Growth? Today the page and our earlier notes disagree.
 - With document counts gone from the plans, **is document remediation unlimited on every plan**,
   Free included?
-- **Demo length:** you said a 15-minute walkthrough, with 45 available for questions, and the ads now
-  say 15. The booking calendar itself is still set to 30 minutes with 7 required questions. Should it
-  change to match?
 - **Seven calls from your review** (each is one yes/no, listed in doc 07):
   1. Can we say an ACR is *required to have on file*? The rule requires the WCAG standard, not the
      report, so for now we say it's "the document procurement teams and partners ask for".
@@ -90,8 +104,6 @@ in the review folder. A second read-through caught seven more of your notes; the
   6. Does the portal show a "Legal Risk Level"? Two website sample graphics still mention it.
   7. You hadn't seen the free-scan wording yet (your decision 7). It's now on the landing pages and
      in the ads. Is it right? LinkedIn waits on this.
-- Google's tag currently collects form emails and phone numbers automatically, in scrambled form, for
-  ad measurement. Should we **describe that in the privacy policy or switch it off**?
 
 ---
 
