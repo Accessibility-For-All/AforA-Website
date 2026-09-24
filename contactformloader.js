@@ -75,6 +75,16 @@ function loadContactForm(containerId, options = {}) {
                 <input type="url" name="website" class="rounded-xl px-6 py-4 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-lg" placeholder="https://yourwebsite.com">
               </label>
             </div>
+            <div class="flex flex-col gap-3">
+              <label for="${containerId}-population" class="font-semibold text-gray-700">Population your organization serves <span class="font-normal text-gray-600">(optional)</span></label>
+              <select id="${containerId}-population" name="population_served" aria-describedby="${containerId}-population-hint" class="rounded-xl px-6 py-4 border-2 border-gray-200 bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300 text-lg">
+                <option value="">Select…</option>
+                <option value="Under 50,000">Under 50,000</option>
+                <option value="50,000 or more">50,000 or more</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+              <p id="${containerId}-population-hint" class="text-sm text-gray-600">For state and local government entities, this sets which ADA Title II deadline applies. School districts: use the population of the area you serve, not enrollment.</p>
+            </div>
             <fieldset class="flex flex-col gap-3">
               <legend class="font-semibold text-gray-700 mb-1">Accessibility For All Tools You're Interested In:</legend>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">

@@ -654,6 +654,17 @@
                 </div>
               </div>
 
+              <div class="field">
+                <label for="orgPopulation">Population your organization serves <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+                <select id="orgPopulation" aria-describedby="orgPopulationHint">
+                  <option value="">Select…</option>
+                  <option value="Under 50,000">Under 50,000</option>
+                  <option value="50,000 or more">50,000 or more</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+                <p id="orgPopulationHint" style="margin-top:5px;font-size:13px;line-height:1.45;color:var(--muted)">For state and local government entities, this sets which ADA Title II deadline applies. School districts: use the population of the area you serve, not enrollment.</p>
+              </div>
+
               <div class="field row">
                 <div>
                   <label for="personName">Your name</label>
@@ -929,7 +940,7 @@
       var cfg = window.A4A_PRICING || { selfServe: false, showPrices: true, checkout: {} };
       var billing = 'annual';
       var PAID_PLANS = ['starter', 'growth', 'scale'];
-      var state = { plan: 'free', org: '', orgUrl: '', person: '', role: '', email: '', phone: '' };
+      var state = { plan: 'free', org: '', orgUrl: '', person: '', role: '', email: '', phone: '', population: '' };
 
       var heroCopy = {
         1: { eb: 'Step 1 of 3', t: 'Tell us about your organization', s: 'Sign up for the full digital accessibility suite including website scans, document remediation and insights, ACR reports and recommended responses.' },
@@ -1011,6 +1022,7 @@
         var emailInput = document.getElementById('personEmail');
         var email = emailInput.value.trim();
         var phone = document.getElementById('personPhone').value.trim();
+        var population = document.getElementById('orgPopulation').value; // optional
         if (!name || !url || !person || !role || !email) {
           alert('Please fill in all fields (phone is optional) so our team can reach you.');
           return;
@@ -1020,7 +1032,7 @@
           return;
         }
         state.org = name; state.orgUrl = url; state.person = person; state.role = role;
-        state.email = email; state.phone = phone;
+        state.email = email; state.phone = phone; state.population = population;
         goStep(2);
       }
 
@@ -1084,6 +1096,7 @@
           _subject: 'Sign-up (' + state.plan + '): ' + state.org,
           form_type: kind,
           organization: state.org,
+          population_served: state.population || '',
           website: state.orgUrl ? ('https://' + state.orgUrl) : '',
           name: state.person,
           role: state.role,
