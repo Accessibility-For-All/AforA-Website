@@ -15,12 +15,11 @@ Internal file — excluded from the deploy, never published to the public site.
 `main` is on the public site about a minute later. `soprisapps.com` is legacy and untouched.
 
 <!-- STEPHEN_SUMMARY_WATERMARK
-last_generated: 2026-09-24
-main_commit: 6eb4c63
-last_pr: 40
-note: the 2026-09-24 entry covers everything merged since the Aug-5 watermark: the Sep-17
-merges #32–#40. The eight PRs opened 2026-09-24 (#41–#48) are listed only under "In progress";
-report them as new once they merge. DRAFT: Marcus hasn't sent it yet.
+last_generated: 2026-09-24 (late)
+main_commit: 42e9387
+last_pr: 51
+note: the 2026-09-24 entry covers the Sep-17 merges #32–#40 AND the Sep-24 merges #42–#48, #50, #51.
+#52 (copy sweep) is open and listed under "In review". DRAFT: Marcus hasn't sent it yet.
 -->
 
 ---
@@ -28,40 +27,47 @@ report them as new once they merge. DRAFT: Marcus hasn't sent it yet.
 ## 2026-09-24 — update for Stephen (draft, not yet sent)
 
 **What's new / live** (from the Sep 17 work)
-- **Two new free-audit landing pages are live for the Google Ads campaign.** One leads with the
-  deadline and one with expert human review, so we can see which message converts better.
+- **Two free-scan landing pages are live for the Google Ads campaign**, each with a different
+  message, so we can see which one converts better (both now use your wording, below).
 - **Forms now remember which ad or campaign brought someone in**, even when they fill in a form on a
   later page. So the CRM shows where each lead really came from.
-- **Tag Manager is on every page, and LinkedIn ad tracking works.** The CRM's own tracking tag needs a
-  one-line fix on our side, which is in progress.
+- **Tag Manager is on every page, and LinkedIn ad tracking works.** The CRM's own tracking tag now
+  works too.
 - **The privacy policy now lists the actual tools the site uses.**
 - **Search and speed housekeeping:** pages that shouldn't be in Google are now correctly hidden, the
   thank-you page no longer gets indexed, and heavy scripts load later, so pages appear faster.
 
 **Your copy review (docs 00–05): done, 24 Sep.** Every comment and edit is logged, with what we
-changed and where, in the Google Doc *"07 — Stephen's review: changes made"* in the review folder.
-- **Live now:** the Google Ads say "Free WCAG Scan: Up to 5 Pages", the demo sitelink says a
-  **15-minute** walkthrough, and the callout says onboarding on **every** plan. The chat assistant's
-  answers about the free scan, the tools and the partial report use your wording.
-- **Live now:** the CRM's tracking tag is fixed, and the site now records demo bookings, button
-  clicks and how far people scroll on the ad landing pages. A new one-screen Google Analytics
-  dashboard, **"A4A — Marketing at a glance"**, shows traffic, channels, campaigns, the landing pages
-  and leads.
-- **Ready for review, not live yet:** the website's free-scan wording (up to 5 pages, our WCAG 2.1 AA
-  checker, the most critical errors highlighted, results in the online portal), including your
-  headline "Where does your ADA compliance stand?" and "Websites, documents and ACR reports. Get
-  everything handled." The drip, webinar and LinkedIn drafts are rewritten to match.
+changed and where, in the Google Doc *"07 — Stephen's review: what changed (updated 24 Sep 2026)"*
+in the review folder. A second read-through caught seven more of your notes; they're in it too.
 
-**In progress** (built and in review, not live yet)
-- The pricing page rewritten around **monthly website visits** (same prices), with personal
-  onboarding shown on every plan, Free included, and a plain "nothing gets cut off, no overage
-  charges" policy.
-- An optional **"population your organization serves"** question on the forms, so we can tell each
-  lead which ADA deadline applies to them.
-- Ad-click tracking all the way into the CRM, and conversion tracking that counts a lead **only** when
-  the form actually went through.
+**What's new / live** (24 Sep)
+- **The website's free-scan wording is yours:** up to 5 pages, our WCAG 2.1 AA checker, the most
+  critical errors highlighted, results in the online portal. The two ad landing pages now lead with
+  "Where does your ADA compliance stand?" and "Websites, documents and ACR reports. Get everything
+  handled." The two inaccurate lines you flagged are gone.
+- **Pricing is by monthly website visits** (same prices), with personal onboarding shown on every
+  plan, Free included, and a plain "nothing gets cut off, no overage charges" policy.
+- **Google Ads match:** "Free WCAG Scan: Up to 5 Pages", a **15-minute** demo walkthrough, onboarding
+  on **every** plan, "Priced by Monthly Site Visits", and a new price block showing Starter $590,
+  Growth $1,490 and Scale $3,990 a year by monthly visits. The old August links on the campaigns are
+  removed.
+- **Cleaner numbers:** analytics and ad tracking now run only on accessibilityforall.com, so test
+  copies of the site no longer inflate traffic. A lead counts as a conversion only when the form
+  actually went through, and ad clicks are carried into the CRM with each lead.
+- The site now records **demo bookings**, button clicks and how far people scroll on the ad landing
+  pages. A one-screen Google Analytics dashboard, **"A4A — Marketing at a glance"**, shows traffic,
+  channels, campaigns, the landing pages and leads.
+- An optional **"population your organization serves"** question on the forms tells us which ADA
+  deadline applies to each lead.
 - The chat assistant's install is ready but switched **off**. Its widget has keyboard-access issues we
   want fixed before it goes on an accessibility company's site.
+
+**In review, not live yet**
+- A sweep of the rest of the site for the words we agreed never to use ("compliant", "instantly").
+  Thirteen pages change. For example, the home page's "stay compliant" becomes "stay on track".
+- The drip, webinar and LinkedIn drafts are rewritten to your review; they're being loaded into the
+  CRM as drafts. Nothing sends.
 
 **Needs Stephen / a decision**
 - **What counts as a "visit"** for the plan limits, and how a customer would see their number.
@@ -72,7 +78,7 @@ changed and where, in the Google Doc *"07 — Stephen's review: changes made"* i
 - **Demo length:** you said a 15-minute walkthrough, with 45 available for questions, and the ads now
   say 15. The booking calendar itself is still set to 30 minutes with 7 required questions. Should it
   change to match?
-- **Six wording calls from your review** (each is one yes/no, listed in doc 07):
+- **Seven calls from your review** (each is one yes/no, listed in doc 07):
   1. Can we say an ACR is *required to have on file*? The rule requires the WCAG standard, not the
      report, so for now we say it's "the document procurement teams and partners ask for".
   2. "No one who uses our services has ever received a complaint": can we verify it? If so, doc 07
@@ -82,6 +88,8 @@ changed and where, in the Google Doc *"07 — Stephen's review: changes made"* i
   4. "Conformance Report" (the industry and VPAT term) or "Compliance Report"?
   5. A documented plan as a "new legal requirement": the rule doesn't say that, so we dropped it.
   6. Does the portal show a "Legal Risk Level"? Two website sample graphics still mention it.
+  7. You hadn't seen the free-scan wording yet (your decision 7). It's now on the landing pages and
+     in the ads. Is it right? LinkedIn waits on this.
 - Google's tag currently collects form emails and phone numbers automatically, in scrambled form, for
   ad measurement. Should we **describe that in the privacy policy or switch it off**?
 
