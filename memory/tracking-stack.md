@@ -1,6 +1,6 @@
 ---
 name: tracking-stack
-description: What fires on accessibilityforall.com — GA4 hardcoded, Ads via navbarloader, LinkedIn+GHL inside GTM (live only once PR #33 merges); conversion gaps; GA4 double-count trap
+description: What fires on accessibilityforall.com — GA4 hardcoded, Ads via navbarloader (other account), GTM v3 (LinkedIn, fixed GHL, engagement, Calendly book_demo); Ads acct AW-18397428128 + labels; GA4 double-count trap
 metadata:
   type: project
 ---
@@ -79,3 +79,18 @@ Also live-verified 2026-09-17: GA4 fires exactly one page_view alongside GTM (no
   and `docs/GTM-CALENDLY-BOOK-DEMO.md` (book_demo on `calendly_event_scheduled` only). Every GTM tag
   is Custom HTML calling the page's own `gtag`, never a GA4 config tag.
 
+
+**2026-09-24 (part 2) — container v3 LIVE, conversions exist:**
+- GTM **version 3** published: the GHL tag is fixed (inline `createElement` sets `data-tracking-id`);
+  plus GA4 `cta_click`, plan_select→`cta_click`, LP `scroll_depth` 25/50/75/90, `lp_form_visible`
+  (`#audit-form` 50%), Calendly listener (`/book-demo`, origin must match `*.calendly.com`), GA4 `book_demo`
+  and the Ads conversion `AW-18397428128/DIJyCLH2lIMdEKDzycRE`, both only on `calendly_event_scheduled`.
+- **Google Ads account 190-915-1292 = tag AW-18397428128.** `AW-957201829` (navbarloader) is a
+  different account. Site-tag labels: free scan `-XaACKX2lIMdEKDzycRE`, contact `6rswCKj2lIMdEKDzycRE`,
+  sign-up `VPv4CK72lIMdEKDzycRE`, enterprise quote `PtS5CKv2lIMdEKDzycRE`. All actions are **Secondary** for now.
+- After publishing, a browser can serve the **old gtm.js from cache for up to 15 min**. To verify,
+  `fetch(gtm.js, {mode:'no-cors', cache:'reload'})` from the site's page, then reload.
+- GTM's element-visibility trigger (and Calendly's widget) do nothing while
+  `document.visibilityState === 'hidden'`. Test with the Chrome window in front.
+- GA4 has non-production hostnames in it (github.io mirror, localhost, pages.dev previews). Filter to
+  `hostname = accessibilityforall.com`. See [[ga4-dashboard-internals]].

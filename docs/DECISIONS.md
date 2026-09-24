@@ -200,3 +200,34 @@ in GTM, because GTM drops custom attributes from external scripts. It ships with
 policy line.
 **Why:** An accessibility vendor can't ship a widget that fails WCAG 2.4.7 on its own site.
 
+
+## 2026-09-24 — Conversions: direct site-tag actions, Secondary until proven
+**Decision (Marcus):** Claude created the Google Ads conversion actions in account **190-915-1292**
+(tag **AW-18397428128**): Free scan, Contact form, Sign-up, Enterprise quote and Demo booked
+(Calendly, via GTM). All start **Secondary**. No Purchase action exists while checkout is off.
+After the first real lead and booking each fire exactly once, they become **Primary**, and the
+GA4-imported `generate_lead`/`sign_up` go **Secondary**, so Ads never bids on a double count.
+**Why:** A new action only becomes the bidding signal after it has been seen to count correctly.
+`AW-957201829` (in `navbarloader.js`) is a different Ads account, so remarketing only.
+
+## 2026-09-24 — No Microsoft Clarity; GA4 is the analytics tool
+**Decision (Marcus):** Don't install Clarity. Funnels and paths live in GA4: the dashboard
+**"A4A — Marketing at a glance"**, filtered to the production hostname, plus explorations as needed.
+**Why:** One analytics tool, one privacy-policy line, no session recordings on public-sector visitors.
+
+## 2026-09-24 — GTM engagement + Calendly tags published after a Preview check
+**Decision (Marcus):** Claude builds and publishes after checking Preview on production. Version 3 is
+live. GTM tags stay Custom HTML that calls the page's own `gtag` (see the 2026-09-24 attribution rules).
+The book-demo conversion fires **only** on `calendly_event_scheduled` from a `calendly.com` origin.
+
+## 2026-09-24 — Stephen's review: the free scan's wording
+**Decision (Stephen, doc 00):** "The free scan includes up to 5 pages scanned by our WCAG 2.1 AA
+compliance checker with integrated highlighting of errors most critical to address." Results arrive
+as an **invite to the online portal**, **usually within one business day**. We call it the **free
+accessibility scan**. We never say "reviewed by a real team, not a bot" or "Legal Risk Level report"
+for the free scan. Onboarding is on **every** plan, Free included. The free plan gets a **pre-filled,
+partially completed ACR**, never a completed one. The demo is a **15-minute walkthrough** (45 if
+questions need it). The weekly webinar is for digital-marketing leads with a rotating host (Mark,
+Melody, Stephen); association webinars are separate.
+**Why:** Every public claim has to match what the product actually delivers. The full log is in the
+Claude project doc `A4A-Stephen-Review-Changes-2026-09-24` and Drive doc 07.

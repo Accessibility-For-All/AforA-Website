@@ -38,6 +38,20 @@ report them as new once they merge. DRAFT: Marcus hasn't sent it yet.
 - **Search and speed housekeeping:** pages that shouldn't be in Google are now correctly hidden, the
   thank-you page no longer gets indexed, and heavy scripts load later, so pages appear faster.
 
+**Your copy review (docs 00–05): done, 24 Sep.** Every comment and edit is logged, with what we
+changed and where, in the Google Doc *"07 — Stephen's review: changes made"* in the review folder.
+- **Live now:** the Google Ads say "Free WCAG Scan: Up to 5 Pages", the demo sitelink says a
+  **15-minute** walkthrough, and the callout says onboarding on **every** plan. The chat assistant's
+  answers about the free scan, the tools and the partial report use your wording.
+- **Live now:** the CRM's tracking tag is fixed, and the site now records demo bookings, button
+  clicks and how far people scroll on the ad landing pages. A new one-screen Google Analytics
+  dashboard, **"A4A — Marketing at a glance"**, shows traffic, channels, campaigns, the landing pages
+  and leads.
+- **Ready for review, not live yet:** the website's free-scan wording (up to 5 pages, our WCAG 2.1 AA
+  checker, the most critical errors highlighted, results in the online portal), including your
+  headline "Where does your ADA compliance stand?" and "Websites, documents and ACR reports. Get
+  everything handled." The drip, webinar and LinkedIn drafts are rewritten to match.
+
 **In progress** (built and in review, not live yet)
 - The pricing page rewritten around **monthly website visits** (same prices), with personal
   onboarding shown on every plan, Free included, and a plain "nothing gets cut off, no overage
@@ -55,8 +69,19 @@ report them as new once they merge. DRAFT: Marcus hasn't sent it yet.
   Starter and Growth? Today the page and our earlier notes disagree.
 - With document counts gone from the plans, **is document remediation unlimited on every plan**,
   Free included?
-- **Demo length:** the site says 15 minutes, the booking calendar is set to 30, and you mentioned up
-  to 45 with questions. Which should we say? The booking form also asks 7 required questions.
+- **Demo length:** you said a 15-minute walkthrough, with 45 available for questions, and the ads now
+  say 15. The booking calendar itself is still set to 30 minutes with 7 required questions. Should it
+  change to match?
+- **Six wording calls from your review** (each is one yes/no, listed in doc 07):
+  1. Can we say an ACR is *required to have on file*? The rule requires the WCAG standard, not the
+     report, so for now we say it's "the document procurement teams and partners ask for".
+  2. "No one who uses our services has ever received a complaint": can we verify it? If so, doc 07
+     has a safer way to say it.
+  3. "Not ADA compliant" in image A. We avoid "compliant", so image A uses your "New Liability
+     Risk…" line instead.
+  4. "Conformance Report" (the industry and VPAT term) or "Compliance Report"?
+  5. A documented plan as a "new legal requirement": the rule doesn't say that, so we dropped it.
+  6. Does the portal show a "Legal Risk Level"? Two website sample graphics still mention it.
 - Google's tag currently collects form emails and phone numbers automatically, in scrambled form, for
   ad measurement. Should we **describe that in the privacy policy or switch it off**?
 
