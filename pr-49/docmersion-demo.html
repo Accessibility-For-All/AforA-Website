@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>/* A4A: tags run only on the production site; gtm_debug lets GTM Preview work anywhere. */
+    window.A4A_PROD=/(^|\.)accessibilityforall\.com$/.test(location.hostname);
+    if(window.A4A_PROD||/[?&]gtm_debug=/.test(location.search))(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -16,7 +18,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-TX5BQW6XZ6');
+  // A4A: count only the production site, not previews, mirrors or localhost.
+  window.A4A_PROD = /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+  if (window.A4A_PROD) gtag('config', 'G-TX5BQW6XZ6');
 </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,8 +50,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <!-- Navbar and Footer Loaders -->
-    <script src="navbarloader.js" defer></script>
-    <script src="footerloader.js" defer></script>
+    <script src="first-touch.js?v=20260924" defer></script>
+    <script src="navbarloader.js?v=20260924" defer></script>
+    <script src="footerloader.js?v=20260924" defer></script>
+    <script src="chat-widget.js?v=20260924" defer></script>
     <!-- PDF Genie -->
     <script src="https://pdf-genie-etm2.onrender.com/docbox.js" defer></script>
   
@@ -272,7 +278,8 @@
 
     <!-- Footer will be loaded by footerloader.js -->
 
-    <script src="contactformloader.js" defer></script>
+    <script src="conversions.js?v=20260924" defer></script>
+    <script src="contactformloader.js?v=20260924" defer></script>
   
     <!-- Footer inlined for crawlers (single source: footerloader.js template) -->
     <!-- Footer -->

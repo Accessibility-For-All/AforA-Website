@@ -8,11 +8,18 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-TX5BQW6XZ6');
-  gtag('config', 'AW-957201829');
+  // A4A: count only the production site, not previews, mirrors or localhost.
+  window.A4A_PROD = /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+  if (window.A4A_PROD) {
+    gtag('config', 'G-TX5BQW6XZ6');
+    gtag('config', 'AW-18397428128'); // Google Ads account 190-915-1292, the one running the campaigns
+    window.__a4aAdsConfigured = true;
+  }
 </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>/* A4A: tags run only on the production site; gtm_debug lets GTM Preview work anywhere. */
+    window.A4A_PROD=/(^|\.)accessibilityforall\.com$/.test(location.hostname);
+    if(window.A4A_PROD||/[?&]gtm_debug=/.test(location.search))(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -20,8 +27,8 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free ADA Website Audit — Know Your Legal Risk | Accessibility For All</title>
-    <meta name="description" content="The ADA Title II deadline is April 26, 2027 for large public entities. Get a free, human-reviewed WCAG 2.1 AA audit and a Legal Risk Level report within one business day.">
+    <title>Free ADA Website Accessibility Scan | Accessibility For All</title>
+    <meta name="description" content="Where does your ADA compliance stand? Get a free WCAG 2.1 AA scan of up to 5 pages of your website, with the errors most critical to address highlighted. Portal invite within one business day.">
     <!-- Paid campaign landing page: keep out of organic index (AdsBot still crawls; robots.txt must NOT block /lp/) -->
     <meta name="robots" content="noindex, follow">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -39,7 +46,11 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css" />
+    <!-- First-touch attribution (gclid + UTMs), shared with the main site. Deferred: runs before any submit. -->
+    <script src="/first-touch.js?v=20260924" defer></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- Conversion helper (GA4 + Google Ads + LinkedIn), fired only on a confirmed submit. -->
+    <script src="/conversions.js?v=20260924" defer></script>
   </head>
   <body class="font-inter bg-white text-gray-900">
     <!-- Google Tag Manager (noscript) -->
@@ -61,16 +72,17 @@
         <div class="container mx-auto px-6 max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div>
             <p class="text-xs font-semibold tracking-widest uppercase mb-3" style="color:#0b6ad4;">DOJ ADA Title II · WCAG 2.1 AA</p>
-            <h1 class="text-3xl md:text-4xl xl:text-5xl font-extrabold leading-tight mb-5">The ADA website deadline is <span class="text-[#0b6ad4]">April 26, 2027</span>. Do you know your legal risk?</h1>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">Get a free, human-reviewed audit of your website against 50+ WCAG 2.1 AA criteria — with a Legal Risk Level report in your inbox within one business day. No cost, no obligation.</p>
+            <h1 class="text-3xl md:text-4xl xl:text-5xl font-extrabold leading-tight mb-5">Where does your <span class="text-[#0b6ad4]">ADA compliance</span> stand?</h1>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">Get a free scan of up to 5 pages of your website with our WCAG 2.1 AA checker — the standard in the DOJ's ADA Title II rule. The errors most critical to address are highlighted, and we'll invite you to your online portal with the results within one business day. No cost, no obligation.</p>
             <ul class="space-y-3 mb-6">
-              <li class="flex items-start gap-3 text-gray-800"><i class="bi bi-check-circle-fill mt-1" style="color:#0b6ad4;" aria-hidden="true"></i><span>Know exactly where you stand before the DOJ deadline</span></li>
-              <li class="flex items-start gap-3 text-gray-800"><i class="bi bi-check-circle-fill mt-1" style="color:#0b6ad4;" aria-hidden="true"></i><span>Reviewed by a real accessibility team — not a bot</span></li>
-              <li class="flex items-start gap-3 text-gray-800"><i class="bi bi-check-circle-fill mt-1" style="color:#0b6ad4;" aria-hidden="true"></i><span>Legal Risk Level report in 1 business day</span></li>
+              <li class="flex items-start gap-3 text-gray-800"><i class="bi bi-check-circle-fill mt-1" style="color:#0b6ad4;" aria-hidden="true"></i><span>See where your website stands against WCAG 2.1 AA</span></li>
+              <li class="flex items-start gap-3 text-gray-800"><i class="bi bi-check-circle-fill mt-1" style="color:#0b6ad4;" aria-hidden="true"></i><span>The errors most critical to address, highlighted first</span></li>
+              <li class="flex items-start gap-3 text-gray-800"><i class="bi bi-check-circle-fill mt-1" style="color:#0b6ad4;" aria-hidden="true"></i><span>Results in your online portal within 1 business day</span></li>
             </ul>
             <div class="hidden lg:flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
-              <span>Human-reviewed</span><span aria-hidden="true">·</span>
-              <span>50+ WCAG 2.1 AA criteria</span><span aria-hidden="true">·</span>
+              <span>Free</span><span aria-hidden="true">·</span>
+              <span>Up to 5 pages</span><span aria-hidden="true">·</span>
+              <span>WCAG 2.1 AA</span><span aria-hidden="true">·</span>
               <span>1 business day</span>
             </div>
           </div>
@@ -79,18 +91,18 @@
           <div class="relative">
             <div class="absolute -inset-3 bg-gradient-to-r from-blue-200 to-teal-200 rounded-3xl opacity-20 blur-2xl" aria-hidden="true"></div>
             <form id="audit-form" class="relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-7 md:p-9 flex flex-col gap-5" novalidate>
-              <h2 class="text-xl font-bold">Check your legal risk — free</h2>
+              <h2 class="text-xl font-bold">Scan up to 5 pages — free</h2>
               <div>
-                <label for="lp-url" class="block font-semibold text-gray-700 mb-1">Website to audit <span class="text-red-700">*</span></label>
+                <label for="lp-url" class="block font-semibold text-gray-700 mb-1">Website to scan <span class="text-red-700">*</span></label>
                 <input id="lp-url" name="scanned_url" type="text" required autocomplete="url" inputmode="url" placeholder="yourdistrict.org"
                   class="w-full rounded-xl px-4 py-3 border-2 border-gray-200 focus:border-blue-500 outline-none transition" aria-describedby="lp-url-err">
-                <p id="lp-url-err" class="hidden text-sm font-semibold text-red-700 mt-1">Please enter the website you'd like us to review.</p>
+                <p id="lp-url-err" class="hidden text-sm font-semibold text-red-700 mt-1">Please enter the website you'd like us to scan.</p>
               </div>
               <div>
                 <label for="lp-email" class="block font-semibold text-gray-700 mb-1">Work email <span class="text-red-700">*</span></label>
                 <input id="lp-email" name="email" type="email" required autocomplete="email" placeholder="you@yourdistrict.org"
                   class="w-full rounded-xl px-4 py-3 border-2 border-gray-200 focus:border-blue-500 outline-none transition" aria-describedby="lp-email-err">
-                <p id="lp-email-err" class="hidden text-sm font-semibold text-red-700 mt-1">Please enter a valid work email so we can send your report.</p>
+                <p id="lp-email-err" class="hidden text-sm font-semibold text-red-700 mt-1">Please enter a valid work email so we can invite you to your portal.</p>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -104,22 +116,33 @@
                     class="w-full rounded-xl px-4 py-3 border-2 border-gray-200 focus:border-blue-500 outline-none transition">
                 </div>
               </div>
+              <div>
+                <label for="lp-population" class="block font-semibold text-gray-700 mb-1">Population your organization serves <span class="font-normal text-gray-600">(optional)</span></label>
+                <select id="lp-population" name="population_served" aria-describedby="lp-population-hint"
+                  class="w-full rounded-xl px-4 py-3 border-2 border-gray-200 bg-white focus:border-blue-500 outline-none transition">
+                  <option value="">Select…</option>
+                  <option value="Under 50,000">Under 50,000</option>
+                  <option value="50,000 or more">50,000 or more</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+                <p id="lp-population-hint" class="text-sm text-gray-600 mt-1">For state and local government entities, this sets which ADA Title II deadline applies. School districts: use the population of the area you serve, not enrollment.</p>
+              </div>
               <div style="position:absolute;left:-9999px" aria-hidden="true">
                 <label>Website URL<input type="text" name="website_url" tabindex="-1" autocomplete="off"></label>
               </div>
               <div class="cf-turnstile" data-sitekey="0x4AAAAAAEG3tg4QycOdAvhU" data-action="turnstile-spin-v2" data-refresh-expired="auto"></div>
               <button type="submit" class="w-full py-4 rounded-full text-white font-bold text-lg shadow-lg hover:shadow-2xl transition-all hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2239]" style="background:#0b6ad4;">
-                <span data-btn-label>Get My Legal Risk Report</span>
+                <span data-btn-label>Get My Free Scan</span>
               </button>
               <p role="alert" data-form-error class="hidden text-center text-sm font-semibold text-red-700">
                 Something went wrong. Please try again, or email <a href="mailto:info@accessibilityforall.com" class="underline">info@accessibilityforall.com</a>.
               </p>
-              <p class="text-center text-xs text-gray-500">No cost. No obligation. No sales call required — we email your report within one business day.</p>
+              <p class="text-center text-xs text-gray-500">No cost. No obligation. No sales call required — we'll invite you to your online portal within one business day.</p>
             </form>
             <div id="audit-success" class="relative bg-white rounded-3xl shadow-2xl border border-emerald-200 p-9 text-center hidden" role="status">
               <i class="bi bi-check-circle-fill text-4xl text-emerald-500" aria-hidden="true"></i>
-              <h2 class="text-2xl font-extrabold mt-3 mb-2">Your audit is queued</h2>
-              <p class="text-gray-700">Our team will review <strong data-success-url></strong> against 50+ WCAG 2.1 AA criteria and email your Legal Risk Level report within one business day.</p>
+              <h2 class="text-2xl font-extrabold mt-3 mb-2">Your scan is queued</h2>
+              <p class="text-gray-700">We'll scan up to 5 pages of <strong data-success-url></strong> against WCAG 2.1 AA and email you an invite to your online portal with the results within one business day.</p>
             </div>
           </div>
         </div>
@@ -128,21 +151,21 @@
       <!-- CREDIBILITY STRIP -->
       <section class="py-8 border-y border-gray-100 bg-white">
         <div class="container mx-auto px-6 max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div><p class="font-extrabold text-lg" style="color:#0b6ad4;">Human-reviewed</p><p class="text-sm text-gray-600">by a real accessibility team</p></div>
-          <div><p class="font-extrabold text-lg" style="color:#0b6ad4;">50+ criteria</p><p class="text-sm text-gray-600">WCAG 2.1 AA checks</p></div>
-          <div><p class="font-extrabold text-lg" style="color:#0b6ad4;">Legal Risk Level</p><p class="text-sm text-gray-600">a named, plain-language report</p></div>
-          <div><p class="font-extrabold text-lg" style="color:#0b6ad4;">1 business day</p><p class="text-sm text-gray-600">report in your inbox</p></div>
+          <div><p class="font-extrabold text-lg" style="color:#0b6ad4;">Up to 5 pages</p><p class="text-sm text-gray-600">scanned free</p></div>
+          <div><p class="font-extrabold text-lg" style="color:#0b6ad4;">WCAG 2.1 AA</p><p class="text-sm text-gray-600">the standard in the Title II rule</p></div>
+          <div><p class="font-extrabold text-lg" style="color:#0b6ad4;">Critical errors</p><p class="text-sm text-gray-600">highlighted to fix first</p></div>
+          <div><p class="font-extrabold text-lg" style="color:#0b6ad4;">1 business day</p><p class="text-sm text-gray-600">portal invite in your inbox</p></div>
         </div>
       </section>
 
       <!-- HOW IT WORKS -->
       <section class="py-14">
         <div class="container mx-auto px-6 max-w-5xl">
-          <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-10">How the free audit works</h2>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-10">How the free scan works</h2>
           <ol class="grid grid-cols-1 md:grid-cols-3 gap-8 list-none">
             <li class="text-center"><span class="inline-flex h-12 w-12 items-center justify-center rounded-full text-white font-extrabold text-lg mb-3" style="background:#0b6ad4;" aria-hidden="true">1</span><h3 class="font-bold mb-1">Submit your website</h3><p class="text-gray-600 text-sm">Thirty seconds — the form above is all we need.</p></li>
-            <li class="text-center"><span class="inline-flex h-12 w-12 items-center justify-center rounded-full text-white font-extrabold text-lg mb-3" style="background:#0b6ad4;" aria-hidden="true">2</span><h3 class="font-bold mb-1">Our team reviews it</h3><p class="text-gray-600 text-sm">A specialist checks your site against 50+ WCAG 2.1 AA success criteria.</p></li>
-            <li class="text-center"><span class="inline-flex h-12 w-12 items-center justify-center rounded-full text-white font-extrabold text-lg mb-3" style="background:#0b6ad4;" aria-hidden="true">3</span><h3 class="font-bold mb-1">You get the report</h3><p class="text-gray-600 text-sm">Your Legal Risk Level, top violations, and a prioritized fix list — with an optional walkthrough.</p></li>
+            <li class="text-center"><span class="inline-flex h-12 w-12 items-center justify-center rounded-full text-white font-extrabold text-lg mb-3" style="background:#0b6ad4;" aria-hidden="true">2</span><h3 class="font-bold mb-1">We scan up to 5 pages</h3><p class="text-gray-600 text-sm">Our WCAG 2.1 AA checker scans your pages and highlights the errors most critical to address.</p></li>
+            <li class="text-center"><span class="inline-flex h-12 w-12 items-center justify-center rounded-full text-white font-extrabold text-lg mb-3" style="background:#0b6ad4;" aria-hidden="true">3</span><h3 class="font-bold mb-1">You see the results</h3><p class="text-gray-600 text-sm">Within one business day we invite you to your online portal to review what we found — with an optional walkthrough from our team.</p></li>
           </ol>
         </div>
       </section>
@@ -150,7 +173,7 @@
       
       <section class="py-14 bg-[#0a2239] text-white">
         <div class="container mx-auto px-6 max-w-3xl">
-          <h2 class="text-2xl md:text-3xl font-extrabold mb-6 text-center">The deadlines are set — and they're real</h2>
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-6 text-center">Where the ADA Title II deadlines stand</h2>
           <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse">
               <caption class="sr-only">ADA Title II web accessibility compliance deadlines</caption>
@@ -174,8 +197,8 @@
       <!-- HONESTY BLOCK -->
       <section class="py-14 bg-gradient-to-br from-blue-50 to-slate-50">
         <div class="container mx-auto px-6 max-w-3xl text-center">
-          <h2 class="text-2xl md:text-3xl font-extrabold mb-4">An overlay widget won't protect you on April 26, 2027.</h2>
-          <p class="text-lg text-gray-700 leading-relaxed">Automated overlays don't make a website WCAG-conformant — and they show up named in accessibility lawsuits. The only defensible position is knowing your actual violations and fixing them. That starts with a human-reviewed audit of what's really on your pages.</p>
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-4">An overlay widget won't fix your website.</h2>
+          <p class="text-lg text-gray-700 leading-relaxed">Automated overlays don't make a website WCAG-conformant — and they show up named in accessibility lawsuits. Real progress means knowing the actual issues on your pages and fixing them. The free scan is a fast way to see where to start.</p>
         </div>
       </section>
 
@@ -192,11 +215,12 @@
         <div class="container mx-auto px-6 max-w-3xl">
           <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-8">Questions we always get</h2>
           <div class="space-y-3">
-            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">Is it really free?</summary><p class="text-gray-700 mt-2">Yes. A specialist reviews your site and you get the full Legal Risk Level report by email — no cost, no obligation, and nobody calls you unless you ask.</p></details>
-            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">What happens after I submit?</summary><p class="text-gray-700 mt-2">We review your site against 50+ WCAG 2.1 AA criteria and email your report within one business day. It includes your risk level, the top violations we found, and what to fix first.</p></details>
+            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">Is it really free?</summary><p class="text-gray-700 mt-2">Yes. We scan up to 5 pages of your site and you see the results in your online portal — no cost, no obligation, and nobody calls you unless you ask.</p></details>
+            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">What happens after I submit?</summary><p class="text-gray-700 mt-2">Our WCAG 2.1 AA checker scans up to 5 pages of your site and highlights the errors most critical to address. Within one business day we email you an invite to your online portal, where you can review what it found.</p></details>
+            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">Is the free scan a full accessibility audit?</summary><p class="text-gray-700 mt-2">No — it's a starting point. The free scan checks up to 5 pages with our automated WCAG 2.1 AA checker. Automated checks can't catch every accessibility issue, so if you want a deeper look, our team can walk you through the results and what comes next.</p></details>
             <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">What are the actual legal deadlines?</summary><div class="text-gray-700 mt-2"><p>Under the DOJ's ADA Title II rule (as extended in April 2026): state and local government entities with 50,000+ population must meet WCAG 2.1 AA by <strong>April 26, 2027</strong>; entities under 50,000 and special district governments by <strong>April 26, 2028</strong>. Private-sector websites face ADA Title III complaints with no fixed date.</p></div></details>
-            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">Doesn't an accessibility widget make me compliant?</summary><p class="text-gray-700 mt-2">No. Overlay widgets don't make a site conform to WCAG, and sites using them appear in accessibility lawsuits. Compliance means finding and fixing the actual issues — which is what the audit shows you.</p></details>
-            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">Who sees my information?</summary><p class="text-gray-700 mt-2">Only our team. We use your email to send the report and your URL to run the review — details in our <a href="/privacy-policy" class="underline" style="color:#0b6ad4;">privacy policy</a>.</p></details>
+            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">Can't an accessibility widget handle this?</summary><p class="text-gray-700 mt-2">No. Overlay widgets don't make a site conform to WCAG, and sites using them appear in accessibility lawsuits. Real progress means finding and fixing the actual issues — and the free scan shows you where to start.</p></details>
+            <details class="rounded-xl border border-gray-200 p-4"><summary class="font-semibold cursor-pointer">Who sees my information?</summary><p class="text-gray-700 mt-2">Only our team. We use your email to invite you to your portal and your URL to run the scan — details in our <a href="/privacy-policy" class="underline" style="color:#0b6ad4;">privacy policy</a>.</p></details>
           </div>
         </div>
       </section>
@@ -204,8 +228,8 @@
       <!-- FINAL CTA -->
       <section class="py-14 text-white" style="background:linear-gradient(135deg,#0a2239,#0b6ad4);">
         <div class="container mx-auto px-6 max-w-3xl text-center">
-          <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Deadlines move fast in a public agency. Find out where you stand this week — free.</h2>
-          <a href="#audit-form" class="inline-block px-8 py-4 rounded-full bg-white font-bold text-lg shadow-lg hover:shadow-2xl transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" style="color:#0a2239;">Get My Legal Risk Report</a>
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Find out where your website stands this week — free.</h2>
+          <a href="#audit-form" class="inline-block px-8 py-4 rounded-full bg-white font-bold text-lg shadow-lg hover:shadow-2xl transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" style="color:#0a2239;">Get My Free Scan</a>
         </div>
       </section>
     </main>
@@ -221,19 +245,8 @@
     <script>
       (function () {
         var VARIANT = 'a';
-        var EXPERIMENT = 'audit_lp_2026q4';
+        var EXPERIMENT = 'scan_lp_2026q4';
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // First-touch attribution: same storage contract as navbarloader.js on the main site.
-        try {
-          if (!localStorage.getItem('a4a_first_touch')) {
-            var q0 = new URLSearchParams(window.location.search);
-            var ref = document.referrer || '';
-            var ext = ref && ref.indexOf(window.location.origin) !== 0;
-            var ft0 = { utm_source: q0.get('utm_source') || '', utm_medium: q0.get('utm_medium') || '', utm_campaign: q0.get('utm_campaign') || '', first_landing_page: window.location.pathname + window.location.search, first_referrer: ext ? ref : '', first_seen: new Date().toISOString() };
-            if (ft0.utm_source || ft0.utm_medium || ft0.utm_campaign || ft0.first_referrer) localStorage.setItem('a4a_first_touch', JSON.stringify(ft0));
-          }
-        } catch (e) {}
 
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({ event: 'lp_view', experiment_id: EXPERIMENT, experiment_variant: VARIANT });
@@ -271,17 +284,13 @@
             email: email,
             first_name: document.getElementById('lp-name').value.trim(),
             company: document.getElementById('lp-org').value.trim(),
+            population_served: document.getElementById('lp-population').value,
             website_url: form.querySelector('[name=website_url]').value,
             page: window.location.href
           };
           var q = new URLSearchParams(window.location.search);
           ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) { payload[k] = q.get(k) || ''; });
-          try {
-            var ft = JSON.parse(localStorage.getItem('a4a_first_touch') || 'null') || {};
-            ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) { if (!payload[k] && ft[k]) payload[k] = ft[k]; });
-            if (ft.first_landing_page) payload.first_landing_page = ft.first_landing_page;
-            if (ft.first_referrer) payload.first_referrer = ft.first_referrer;
-          } catch (e2) {}
+          if (typeof a4aApplyFirstTouch === 'function') a4aApplyFirstTouch(payload); // first-touch.js
           var ts = form.querySelector('input[name="cf-turnstile-response"]');
           if (ts && ts.value) payload.turnstile_token = ts.value;
 
@@ -292,7 +301,8 @@
           }).then(function (r) {
             if (!r.ok) throw new Error('HTTP ' + r.status);
             dataLayer.push({ event: 'generate_lead', experiment_id: EXPERIMENT, experiment_variant: VARIANT, form_type: 'free_audit' });
-            if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'audit_lp', experiment_id: EXPERIMENT, experiment_variant: VARIANT });
+            if (typeof a4aConversion === 'function') a4aConversion('lead_free_check', 'generate_lead', { method: 'audit_lp', experiment_id: EXPERIMENT, experiment_variant: VARIANT });
+            else if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'audit_lp', experiment_id: EXPERIMENT, experiment_variant: VARIANT });
             form.querySelector('[data-success-url]') /* no-op guard */;
             document.querySelector('#audit-success [data-success-url]').textContent = payload.scanned_url.replace(/^https?:\/\//i, '');
             form.classList.add('hidden');

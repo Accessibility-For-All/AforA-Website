@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>/* A4A: tags run only on the production site; gtm_debug lets GTM Preview work anywhere. */
+    window.A4A_PROD=/(^|\.)accessibilityforall\.com$/.test(location.hostname);
+    if(window.A4A_PROD||/[?&]gtm_debug=/.test(location.search))(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -16,7 +18,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-TX5BQW6XZ6');
+  // A4A: count only the production site, not previews, mirrors or localhost.
+  window.A4A_PROD = /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+  if (window.A4A_PROD) gtag('config', 'G-TX5BQW6XZ6');
 </script>
     <!-- BEGIN ACCESSIBILITY FOR ALL FAVICONS -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -52,8 +56,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="navbarloader.js" defer></script>
-    <script src="footerloader.js" defer></script>
+    <script src="first-touch.js?v=20260924" defer></script>
+    <script src="navbarloader.js?v=20260924" defer></script>
+    <script src="conversions.js?v=20260924" defer></script>
+    <script src="footerloader.js?v=20260924" defer></script>
+    <script src="chat-widget.js?v=20260924" defer></script>
   </head>
   <body class="bg-white text-gray-900">
     <!-- Google Tag Manager (noscript) -->
@@ -196,8 +203,20 @@
             (billing === 'annual' || billing === 'monthly' ? ' (' + billing + ' billing)' : '') + '.';
           document.getElementById('plan-line').innerHTML = line + ' Thank you for choosing Accessibility For All.';
         }
-        if (window.gtag) {
-          gtag('event', 'purchase_confirmation_view', { plan: plan || 'unknown', billing: billing || 'unknown' });
+        // Only a real post-checkout arrival counts (Stripe's success URL carries a
+        // known plan AND billing), and only once per browser session — a stray or
+        // reloaded visit to /welcome used to count as a purchase every time.
+        var realCheckout = !!names[plan] && (billing === 'annual' || billing === 'monthly');
+        var seenKey = 'a4a_purchase_' + plan + '_' + billing, seen = false;
+        try { seen = sessionStorage.getItem(seenKey) === '1'; } catch (e) {}
+        if (realCheckout && !seen) {
+          try { sessionStorage.setItem(seenKey, '1'); } catch (e) {}
+          var fire = function () {
+            if (typeof a4aConversion === 'function') a4aConversion('purchase', 'purchase_confirmation_view', { plan: plan, billing: billing });
+            else if (window.gtag) gtag('event', 'purchase_confirmation_view', { plan: plan, billing: billing });
+          };
+          // conversions.js is deferred; this inline script runs before it.
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fire); else fire();
         }
       })();
     </script>

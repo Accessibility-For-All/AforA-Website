@@ -1,62 +1,32 @@
 // Navbar Loader - Loads consistent navbar across all pages
 
-// First-touch attribution. Ads land on one page but forms get submitted from
-// another, so the UTMs in the CURRENT url are usually empty by submit time.
-// Remember the first attributable arrival (utm_* or an external referrer) and
-// let every form builder fall back to it. Runs here because this file loads on
-// every page. localStorage is wrapped: private windows may throw.
-(function () {
-  try {
-    if (localStorage.getItem('a4a_first_touch')) return;
-    var q = new URLSearchParams(window.location.search);
-    var ref = document.referrer || '';
-    var external = ref && ref.indexOf(window.location.origin) !== 0;
-    var ft = {
-      utm_source: q.get('utm_source') || '',
-      utm_medium: q.get('utm_medium') || '',
-      utm_campaign: q.get('utm_campaign') || '',
-      first_landing_page: window.location.pathname + window.location.search,
-      first_referrer: external ? ref : '',
-      first_seen: new Date().toISOString()
-    };
-    if (ft.utm_source || ft.utm_medium || ft.utm_campaign || ft.first_referrer) {
-      localStorage.setItem('a4a_first_touch', JSON.stringify(ft));
-    }
-  } catch (e) {}
-})();
+// First-touch attribution moved to first-touch.js (shared with the nav-less /lp/
+// pages). It still defines a4aFirstTouch() / a4aApplyFirstTouch(), and every page
+// loads it before this file.
 
-// Read the stored first touch (empty object when none / storage unavailable).
-function a4aFirstTouch() {
-  try { return JSON.parse(localStorage.getItem('a4a_first_touch') || 'null') || {}; }
-  catch (e) { return {}; }
-}
-
-// Merge first-touch attribution into a form payload: current-URL UTMs win,
-// stored ones fill the gaps, landing page + referrer ride along for the CRM.
-function a4aApplyFirstTouch(payload) {
-  var ft = a4aFirstTouch();
-  ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
-    if (!payload[k] && ft[k]) payload[k] = ft[k];
-  });
-  if (ft.first_landing_page) payload.first_landing_page = ft.first_landing_page;
-  if (ft.first_referrer) payload.first_referrer = ft.first_referrer;
-  return payload;
-}
-
-// Load Google Ads tag. Every page already loads gtag.js + GA4 (G-TX5BQW6XZ6)
-// in its <head>, so reuse that library and only add the Ads config here —
-// injecting a second gtag.js would double-load the library on every page.
+// Load the Google Ads tag for account 190-915-1292 (AW-18397428128), the account that
+// runs the campaigns. Every page already loads gtag.js + GA4 (G-TX5BQW6XZ6) in its
+// <head>, so reuse that library and only add the Ads config here — injecting a second
+// gtag.js would double-load the library on every page.
+// Production only: the page head sets window.A4A_PROD (recomputed here if a cached
+// head didn't). conversions.js shares window.__a4aAdsConfigured, so the Ads
+// destination is configured once per page whichever script runs first.
 function loadGoogleTag() {
+  var prod = typeof window.A4A_PROD === 'boolean'
+    ? window.A4A_PROD
+    : /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+  if (!prod || window.__a4aAdsConfigured) return;
   window.dataLayer = window.dataLayer || [];
   if (typeof window.gtag !== 'function') {
     const gtagScript = document.createElement('script');
     gtagScript.async = true;
-    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-957201829';
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18397428128';
     document.head.appendChild(gtagScript);
     window.gtag = function () { dataLayer.push(arguments); };
     window.gtag('js', new Date());
   }
-  window.gtag('config', 'AW-957201829');
+  window.gtag('config', 'AW-18397428128');
+  window.__a4aAdsConfigured = true;
 }
 
 function loadNavbar() {
