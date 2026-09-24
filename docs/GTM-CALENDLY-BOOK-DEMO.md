@@ -69,8 +69,8 @@ Then in GA4 → Admin → Events, **mark `book_demo` as a key event**.
 ```html
 <script>
   if (typeof window.gtag === 'function') {
-    // The live Ads account (190-915-1292) is AW-18397428128. The AW-957201829 tag the
-    // site loads is a different account, so configure the right destination first.
+    // The live Ads account (190-915-1292) is AW-18397428128. The site configures it on
+    // every production page; this config (no page view) is a harmless safety net.
     window.gtag('config', 'AW-18397428128', { send_page_view: false });
     window.gtag('event', 'conversion', {
       send_to: 'AW-18397428128/DIJyCLH2lIMdEKDzycRE',   // "A4A Demo booked - Calendly (GTM)"

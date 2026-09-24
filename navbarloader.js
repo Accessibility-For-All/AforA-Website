@@ -4,20 +4,29 @@
 // pages). It still defines a4aFirstTouch() / a4aApplyFirstTouch(), and every page
 // loads it before this file.
 
-// Load Google Ads tag. Every page already loads gtag.js + GA4 (G-TX5BQW6XZ6)
-// in its <head>, so reuse that library and only add the Ads config here —
-// injecting a second gtag.js would double-load the library on every page.
+// Load the Google Ads tag for account 190-915-1292 (AW-18397428128), the account that
+// runs the campaigns. Every page already loads gtag.js + GA4 (G-TX5BQW6XZ6) in its
+// <head>, so reuse that library and only add the Ads config here — injecting a second
+// gtag.js would double-load the library on every page.
+// Production only: the page head sets window.A4A_PROD (recomputed here if a cached
+// head didn't). conversions.js shares window.__a4aAdsConfigured, so the Ads
+// destination is configured once per page whichever script runs first.
 function loadGoogleTag() {
+  var prod = typeof window.A4A_PROD === 'boolean'
+    ? window.A4A_PROD
+    : /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+  if (!prod || window.__a4aAdsConfigured) return;
   window.dataLayer = window.dataLayer || [];
   if (typeof window.gtag !== 'function') {
     const gtagScript = document.createElement('script');
     gtagScript.async = true;
-    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-957201829';
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18397428128';
     document.head.appendChild(gtagScript);
     window.gtag = function () { dataLayer.push(arguments); };
     window.gtag('js', new Date());
   }
-  window.gtag('config', 'AW-957201829');
+  window.gtag('config', 'AW-18397428128');
+  window.__a4aAdsConfigured = true;
 }
 
 function loadNavbar() {

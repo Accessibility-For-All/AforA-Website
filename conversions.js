@@ -10,9 +10,9 @@
 // Google Ads (account 190-915-1292): Goals → Conversions → <action> → Tag setup →
 //   "Use Google Tag Manager" shows the Conversion ID and label. Paste ONLY the
 //   label. An empty label means that Ads conversion does not fire.
-//   NOTE: this account's conversion ID is 18397428128. The AW-957201829 tag that
-//   navbarloader.js and the /lp/ heads load belongs to a different Ads account
-//   (it is not this account's tag), so conversions MUST go to AW-18397428128.
+//   NOTE: this account's conversion ID is 18397428128. navbarloader.js and the
+//   /lp/ heads configure the same AW-18397428128 destination (the old
+//   AW-957201829 tag belonged to a different Ads account and was removed).
 // LinkedIn: Campaign Manager → Analyze → Conversion tracking → <conversion> →
 //   "Event-specific" method → the numeric conversion_id.
 // When the direct Ads conversions go live, set the GA4-imported copies of the
@@ -43,13 +43,21 @@ var A4A_CONVERSIONS = {
 //   done      optional callback, called ONCE after GA4 acknowledges the hit or
 //             after 1s, whichever comes first — use it to delay a redirect so the
 //             hits aren't cancelled by the page unloading.
+// Tags count only on the production site. Every page head sets window.A4A_PROD;
+// recompute it if a cached head didn't.
+function a4aIsProd() {
+  return typeof window.A4A_PROD === 'boolean'
+    ? window.A4A_PROD
+    : /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+}
 // The Ads destination must be configured before an event can be sent to it.
-// Configure it once, as soon as gtag exists (it is defined inline in every page head).
-var a4aAdsConfigured = false;
+// Configure it once per page, as soon as gtag exists (defined inline in every page
+// head). The flag is shared with navbarloader.js and the /lp/ heads, which
+// configure the same destination, so it is never configured twice.
 function a4aEnsureAds() {
   var cfg = window.A4A_CONVERSIONS || {};
-  if (a4aAdsConfigured || !cfg.adsId || typeof window.gtag !== 'function') return;
-  a4aAdsConfigured = true;
+  if (window.__a4aAdsConfigured || !cfg.adsId || !a4aIsProd() || typeof window.gtag !== 'function') return;
+  window.__a4aAdsConfigured = true;
   window.gtag('config', cfg.adsId);
 }
 a4aEnsureAds();
@@ -68,7 +76,7 @@ function a4aConversion(key, ga4Event, params, done) {
       p.event_timeout = 1000;
       window.gtag('event', ga4Event, p);
       var label = cfg.adsLabels && cfg.adsLabels[key];
-      if (label) {
+      if (label && a4aIsProd()) {
         a4aEnsureAds();
         var ads = { send_to: cfg.adsId + '/' + label };
         if (params && params.transaction_id) ads.transaction_id = params.transaction_id;
@@ -76,7 +84,7 @@ function a4aConversion(key, ga4Event, params, done) {
       }
     }
     var li = cfg.linkedinIds && cfg.linkedinIds[key];
-    if (li && typeof window.lintrk === 'function') window.lintrk('track', { conversion_id: Number(li) });
+    if (li && a4aIsProd() && typeof window.lintrk === 'function') window.lintrk('track', { conversion_id: Number(li) });
   } catch (e) {}
   if (typeof window.gtag !== 'function') finish();
   setTimeout(finish, 1000);

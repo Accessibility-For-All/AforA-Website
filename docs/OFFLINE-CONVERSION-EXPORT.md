@@ -68,7 +68,7 @@ The contact-field route above avoids depending on it.)*
 - **Age limit:** a conversion uploaded **more than 90 days after the click is not imported**
   (63 days for enhanced conversions for leads). Uploads within ~24h of the click may not be
   recorded yet; processing takes 24–48h.
-- The click IDs must come from **this** Google Ads account (AW-957201829) with **auto-tagging on**
+- The click IDs must come from **this** Google Ads account (190-915-1292, tag AW-18397428128) with **auto-tagging on**
   (Admin → Account settings → Auto-tagging). If auto-tagging is off, no gclid ever reaches the
   site and every column here stays empty — check this first.
 

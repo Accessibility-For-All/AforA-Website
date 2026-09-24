@@ -11,7 +11,7 @@ Three independent tag sources on the site. They are **not** all in GTM — check
 | Tag | Where it lives | Notes |
 |---|---|---|
 | GA4 `G-TX5BQW6XZ6` | hardcoded `gtag` block in every page's `<head>` | the ONLY source of GA4 data |
-| Google Ads `AW-957201829` | `navbarloader.js:8-16` | remarketing only; reuses `window.gtag` if present, injects its own `gtag.js` if not |
+| Google Ads `AW-18397428128` (acct 190-915-1292) | `navbarloader.js` `loadGoogleTag()` + the /lp/ heads | remarketing + conversion destination; was `AW-957201829` (a different account) until 2026-09-24 |
 | GTM `GTM-TMV9R9MW` | **LIVE on all pages since 2026-09-17** (PR #33 merged; verified: 1 GA4 page_view, LinkedIn fires) | |
 | LinkedIn Insight `9858524` | GTM container v2, Custom HTML tag, All Pages (`gtm.js`) | fires only once GTM is on the page |
 | GoHighLevel `tk_755a…8d02` | GTM container v2, Custom HTML tag, All Pages (`gtm.js`) | loads + inits `window.ExternalTracking`; sends no page-view hit (form-submit / domain-scoped?) |
@@ -59,3 +59,16 @@ LinkedIn works because its snippet is inline JS. Fix = replace the tag HTML with
 creator that sets the attribute explicitly (snippet in docs/sessions/2026-09-17-marcus.md),
 then publish. Claude's GTM edit was permission-blocked 2026-09-17; Marcus pastes it.
 Also live-verified 2026-09-17: GA4 fires exactly one page_view alongside GTM (no double count).
+
+**2026-09-24 (part 3) — production-only tags, right Ads account (PR fix/tags-production-only):**
+- Every page head sets `window.A4A_PROD = /(^|\.)accessibilityforall\.com$/.test(location.hostname)`.
+  GTM loads only when it's true, or when the URL has `gtm_debug=` (so GTM Preview still works on branch
+  previews). GA4 `config`, the Ads `config` (navbarloader + /lp/ heads) and conversions.js all need it
+  to be true. Previews, the github.io mirror and localhost send nothing, which fixes the GA4 hostname pollution.
+- `AW-957201829` is gone. Ads config is `AW-18397428128`, done once per page through the shared
+  `window.__a4aAdsConfigured` flag.
+- **Shared scripts carry `?v=YYYYMMDD`** (navbarloader, footerloader, first-touch, contactformloader,
+  conversions, chat-widget) because Cloudflare's edge holds JS for about 4 hours. **Bump the version in every
+  page when one of those files changes**, or visitors get the old JS alongside the new HTML.
+- Tests: `test_tags.py` maps `accessibilityforall.com` to 127.0.0.1 with Chromium
+  `--host-resolver-rules` to exercise the production path locally.

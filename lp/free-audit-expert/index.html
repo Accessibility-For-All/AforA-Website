@@ -8,11 +8,18 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-TX5BQW6XZ6');
-  gtag('config', 'AW-957201829');
+  // A4A: count only the production site, not previews, mirrors or localhost.
+  window.A4A_PROD = /(^|\.)accessibilityforall\.com$/.test(location.hostname);
+  if (window.A4A_PROD) {
+    gtag('config', 'G-TX5BQW6XZ6');
+    gtag('config', 'AW-18397428128'); // Google Ads account 190-915-1292, the one running the campaigns
+    window.__a4aAdsConfigured = true;
+  }
 </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>/* A4A: tags run only on the production site; gtm_debug lets GTM Preview work anywhere. */
+    window.A4A_PROD=/(^|\.)accessibilityforall\.com$/.test(location.hostname);
+    if(window.A4A_PROD||/[?&]gtm_debug=/.test(location.search))(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -40,10 +47,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css" />
     <!-- First-touch attribution (gclid + UTMs), shared with the main site. Deferred: runs before any submit. -->
-    <script src="/first-touch.js" defer></script>
+    <script src="/first-touch.js?v=20260924" defer></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <!-- Conversion helper (GA4 + Google Ads + LinkedIn), fired only on a confirmed submit. -->
-    <script src="/conversions.js" defer></script>
+    <script src="/conversions.js?v=20260924" defer></script>
   </head>
   <body class="font-inter bg-white text-gray-900">
     <!-- Google Tag Manager (noscript) -->
